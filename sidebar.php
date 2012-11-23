@@ -70,11 +70,6 @@ jQuery(document).ready(function($) {
 -->
 
 <!--
-    <div class="r_frame"><h1>今日の一枚<img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></h1></div>
-      <p class="t_photo">Gakugei Univ, April '12</p>
-      <p class="t_photo_img"><img src="<?php bloginfo('template_directory'); ?>/img/t_photo/2012-04-09.jpg" class="img_yoko" /></p>
--->
-<!--
     <div class="r_frame"><h1>Author</h1></div>
 <p class="f_left"><img src="<?php bloginfo('template_directory'); ?>/img/me.png" width="100px"/></p>
 <p>Kiyoshi</p>
@@ -93,5 +88,5 @@ jQuery(document).ready(function($) {
 -->
 
     <div class="r_frame"><h1>読書メーター</h1></div>
-      <p class="img_center"><a href="http://book.akahoshitakuya.com/u/68613" title="最近読んだ本"><img src="http://img.bookmeter.com/bp_image/160/69/68613.jpg" border="0" alt="最近読んだ本"></a></p>
+      <p><a href="http://book.akahoshitakuya.com/u/68613" title="最近読んだ本"><img src="http://img.bookmeter.com/bp_image/160/69/68613.jpg" border="0" alt="最近読んだ本"></a></p>
   </div>

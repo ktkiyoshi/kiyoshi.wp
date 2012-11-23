@@ -11,9 +11,7 @@
 
   <div id="left">
     <div class="l_frame">
-      <h1 class="entry_title">
-        <strong><?php single_term_title(); ?></strong>
-      </h1>
+      <h1 class="entry_title"><?php single_term_title(); ?></h1>
       <?php
         global $wp_rewrite;
         $paginate_base = get_pagenum_link(1);
@@ -36,30 +34,38 @@
       ?>
         <?php while (have_posts()) : the_post(); $counter++; ?>
           <?php if ($counter <= 3) { ?>
-            <p class="f_left">
+            <div class="f_left">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
               <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a>
-            </p>
-            <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-            <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
-            <p class="exp_2">
-              <?php echo mb_substr(get_the_excerpt(),0,80);?>...
-              <p class="old_entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-              &raquo;<?php the_title(); ?>の続きを読む</a></p>
-            </p>
+            </div>
+            <div class="new_entry">
+              <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+              <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
+              <p class="exp_2">
+                <?php echo mb_substr(get_the_excerpt(),0,80);?>...
+                <p class="new_entry_more">
+                  <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                  &raquo;<?php the_title(); ?>の続きを読む</a>
+                </p>
+              </p>
+            </div>
             <div class="reset"></div>
           <?php }else{ ?>
-            <p class="f_left">
+            <div class="f_left">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
               <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a>
-            </p>
-            <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-            <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
-            <p class="exp_2">
-              <?php echo mb_substr(get_the_excerpt(),0,80);?>...
-              <p class="old_entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-              &raquo;<?php the_title(); ?>の続きを読む</a></p>
-            </p>
+            </div>
+            <div class="new_entry">
+              <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+              <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
+              <p class="exp_2">
+                <?php echo mb_substr(get_the_excerpt(),0,80);?>...
+                <p class="new_entry_more">
+                  <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                  &raquo;<?php the_title(); ?>の続きを読む</a>
+                </p>
+              </p>
+            </div>
             <div class="reset"></div>
           <?php } ?>
           <?php if ($counter == 10) { break; }?>

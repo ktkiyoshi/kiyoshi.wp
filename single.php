@@ -11,14 +11,12 @@
 
   <div id="left">
     <div class="l_frame">
-      <h1 class="entry_title">
-        <p><strong><?php the_title(); ?></strong></p>
-        <p class="entry_meta">
-          <?php the_time('Y-m-d (D) G:i') ?> | 
-          <?php the_category(' | ') ?> | 
-          <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?>
-        </p>
-      </h1>
+      <h1 class="entry_title"><?php the_title(); ?></h1>
+      <p class="entry_meta">
+        <?php the_time('Y-m-d (D) G:i') ?> | 
+        <?php the_category(' | ') ?> | 
+        <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?>
+      </p>
       <div class="entry">
         <?php the_post();the_content(); ?>
         <br />

@@ -8,24 +8,12 @@ Version:1.0
 */
 
 /* default style sheet */
-* {
-	margin: 0;
-	padding: 0;
-}
+* { margin: 0; padding: 0; }
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, 
-fieldset, input, textarea, p, blockquote, th, td{
-    margin: 0; 
-    padding: 0;
-}
-h1, h2, h3, h4, h5, h6{
-    font-size: 100%; 
-    font-weight: normal;
-}
+fieldset, input, textarea, p, blockquote, th, td{ margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6{ font-size: 100%; font-weight: normal; }
 ol, ul{ list-style:none; }
 fieldset, img{ border:0; } 
 table{ border-collapse: collapse; }
 caption, th{ text-align: left; }
-address, caption, cite, code, dfn, em, strong, th, var{
-    font-style: normal; 
-    font-weight: normal;
-}
+address, caption, cite, code, dfn, em, strong, th, var{ font-style: normal;  font-weight: normal; }
