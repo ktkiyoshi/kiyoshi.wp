@@ -71,22 +71,25 @@ jQuery(document).ready(function($) {
 
 <!--
     <div class="r_frame"><h1>Author</h1></div>
-<p class="f_left"><img src="<?php bloginfo('template_directory'); ?>/img/me.png" width="100px"/></p>
-<p>Kiyoshi</p>
-<div>
-<dl>
-<dt>Birthday | 1988/10/17</dt>
-<dt>From | Yokohama</dt>
-<dt>Blood Type | O</dt>
-<dt>Hobby | Movie, Web design</dt>
-<dt>Job | Engineer</dt>
-<dt>Blog | <a href="http://kt-kiyoshi.com/wp/">超日記</a></dt>
-<dt>Mobile | GalaxyS</dt>
-<dt>PC | MacBookPro, VAIO</dt>
-</dl>
-</div>
+    <p class="f_left">
+      <img src="<?php bloginfo('template_directory'); ?>/img/me.png" width="100px"/>
+    </p>
+    <p>Kiyoshi</p>
+    <div>
+      <dl>
+      <dt>Birthday | 1988/10/17</dt>
+      <dt>From | Yokohama</dt>
+      <dt>Blood Type | O</dt>
+      <dt>Hobby | Movie, Web design</dt>
+      <dt>Job | Engineer</dt>
+      <dt>Blog | <a href="http://kt-kiyoshi.com/wp/">超日記</a></dt>
+      <dt>Mobile | GalaxyS</dt>
+      <dt>PC | MacBookPro, VAIO</dt>
+    </dl>
+    </div>
 -->
 
     <div class="r_frame"><h1>読書メーター</h1></div>
-      <p><a href="http://book.akahoshitakuya.com/u/68613" title="最近読んだ本"><img src="http://img.bookmeter.com/bp_image/160/69/68613.jpg" border="0" alt="最近読んだ本"></a></p>
-  </div>
+      <p><a href="http://book.akahoshitakuya.com/u/68613" title="最近読んだ本">
+      <img src="http://img.bookmeter.com/bp_image/160/69/68613.jpg" border="0" alt="最近読んだ本"></a></p>
+    </div>

@@ -11,9 +11,7 @@
 
   <div id="left">
     <div class="l_frame">
-      <h1 class="entry_title">
-        <p><strong>お探しのページはありません</strong></p>
-      </h1>
+      <h1 class="entry_title">お探しのページはありません</h1>
       <div class="entry"><a href="/wp">TOPへ戻る</a></div>
     </div>
   </div>

@@ -79,8 +79,8 @@ jQuery(document).ready(function($) {
               </p>
             </p>
           </div>
-        <?php } if (($counter%3) == 1 ) { ?>
-          <div class="reset"></div>
+        <?php } if ($counter != 1 && ($counter%3) == 1 ) { ?>
+          <div class="reset"><br /></div>
         <?php } if ($counter == 10) { ?>
           <div class="reset"></div>
         <?php break; } endwhile; ?>
@@ -148,6 +148,7 @@ jQuery(document).ready(function($) {
 
     <div class="history">
       <ul>
+        <li><span>'12.11.24</span>  indexのデザインを変更しました．</li>
         <li><span>'12.09.17</span>  サイドバーに"開発中"メニューを設置しました．</li>
         <li><span>'12.07.02</span>  facebook Like，Google+ buttonを設置しました．</li>
         <li><span>'12.06.23</span>  超日記をオリジナルテーマに変更しました．</li>

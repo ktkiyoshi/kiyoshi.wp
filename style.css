@@ -199,8 +199,13 @@ hr { margin:15px 15px 20px; color:#cccccc; }
 /*********************
 *** Special Option ***
 *********************/
+.f_right { float:right; }
 .f_left { float:left; }
-.f_left img { margin:7px 15px 10px 7px; }
+.f_left img {
+  margin:7px 15px 10px 7px;
+  padding:5px;
+  border: 1px solid #cccccc;
+}
 .exp_1, .exp_2 { vertical-align:middle; }
 .new_entry { }
 .new_entry .exp_1 { padding:5px 0px 1px 10px; font-weight:bold; }
@@ -208,8 +213,6 @@ hr { margin:15px 15px 20px; color:#cccccc; }
 .old_entries { float:left; width:202px; text-align:center; }
 .old_entries .exp_2 { font-size:8pt; margin:0px 5px; }
 .old_entries img { width:150px; margin:3px 0px }
-
-.f_right { float:right; }
 .reset { clear:both; }
 .img_yoko { width:200px; }
 .img_tate { height:200px; }
