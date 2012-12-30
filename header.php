@@ -53,6 +53,11 @@ if (has_post_thumbnail()){
 <?php wp_head(); ?>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/index.css" type="text/css" />
+<!--
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/entry.css" type="text/css" />
+-->
+
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>jquery/img_preview/img_preview.js"></script>
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>header_img.js"></script>
 

@@ -59,15 +59,15 @@ function catch_that_image() {
     ob_end_clean();
     $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
     $first_img = $matches [1] [0];
-if(empty($first_img)){
-        $first_img = "";
+    if(empty($first_img)){
+        $first_img = 'http://kt-kiyoshi.com/wp/images/nophoto.jpg';
     }
     return $first_img;
 }
 
 /* Delete [...] */
 function new_excerpt_more($more) {
-	return '';
+    return '';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 

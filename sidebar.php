@@ -17,11 +17,17 @@ jQuery(document).ready(function($) {
     <?php endif; ?>
     -->
 
+  <div class="affiliate">
+    <!-- Rakuten Widget FROM HERE --><script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="0c90124c.ed5776d5.0c90124d.28929496";rakuten_items="ctsmatch";rakuten_genreId=0;rakuten_size="200x350";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";</script><script type="text/javascript" src="http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script><!-- Rakuten Widget TO HERE -->
+  </div>
+
+<!--
     <div class="r_frame"><h1>開発中
       <a href="http://dev.kt-kiyoshi.com/projects/cooking"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></h1></div>
       <ul>
       <li><a href="http://cooking.kt-kiyoshi.com/">Cooking System</a></li>
       </ul>
+-->
 
     <div class="r_frame">
       <h1>ブログエントリー
@@ -90,6 +96,8 @@ jQuery(document).ready(function($) {
 -->
 
     <div class="r_frame"><h1>読書メーター</h1></div>
+  <div class="affiliate">
       <p><a href="http://book.akahoshitakuya.com/u/68613" title="最近読んだ本">
       <img src="http://img.bookmeter.com/bp_image/160/69/68613.jpg" border="0" alt="最近読んだ本"></a></p>
     </div>
+  </div>

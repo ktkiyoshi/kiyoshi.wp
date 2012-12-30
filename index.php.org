@@ -20,18 +20,20 @@ jQuery(document).ready(function($) {
 <body>
 <div id="container">
   <div id="header">
+    <div class="top_img">
+      <a href="/wp"><img src="<?php echo image(); ?>" /></a>
+    </div>
+<!--
+  <?php require('menu.php'); ?>
 <!--
     <div class="top_img">
-      <a href="/wp"><img src="<?php echo image(); ?>" /></a>      
+      <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top-img.png" /></a>
     </div>
 -->
   </div>
 
   <div id="left">
-    <p class="top_img">
-    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/tmp_title.png" /></a>   
-    </p>
- <!-- tabs menu start -->
+    <!-- tabs menu start -->
     <div id="tabs">
       <ul>
         <li><a href="#panel1">最新記事</a></li>
@@ -86,15 +88,21 @@ jQuery(document).ready(function($) {
       </div>
 
       <div id="panel2" class="panel">
-          <div class="f_left">
-            <img src="<?php bloginfo('template_directory'); ?>/img/screenshot.png" class="img_yoko" />
-          </div>
-          <div class="new_entry">
-            <p class="exp_1">超日記をオリジナルテーマ化</p>
-            <p class="exp_2"><small>2012-6-22</small></p>
-            <p class="exp_2">超日記とぷりてぃを融合し，CMSであるWordpressを用いた<br />ブログ兼サイトのハイブリッド仕様に生まれ変わりました．</br />※オリジナルテーマのため，不具合が見られる可能性があります．
-          </div>
-          <div class="reset"></div>
+        <h1>超日記をオリジナルテーマ化</h1>
+        <div class="f_left"><img src="<?php bloginfo('template_directory'); ?>/img/screenshot.png" class="img_yoko" /></div>
+        <div>
+          <p class="exp_1">2012.06.22 ついにCMS化</p>
+          <p class="exp_2">超日記とぷりてぃを融合し，CMSであるWordpressを用いた<br />
+          ブログ兼サイトのハイブリッド仕様に生まれ変わりました．</br />
+          ※オリジナルテーマのため，不具合が見られる可能性があります．</p>
+        </div>
+        <div class="reset"></div>
+        <hr />
+        <h1>本日の一枚を更新</h1>
+        <div>
+          <p class="exp_1">東京学芸大学（東京都小金井市）の桜</p>
+          <p><img src="<?php bloginfo('template_directory'); ?>/img/t_photo/2012-04-09.jpg" class="img_yoko" /></p>
+        </div>
       </div>
 
       <div id="panel3" class="panel">
