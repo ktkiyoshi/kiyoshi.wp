@@ -10,3 +10,8 @@ fieldset, img{ border:0; }
 table{ border-collapse: collapse; }
 caption, th{ text-align: left; }
 address, caption, cite, code, dfn, em, strong, th, var{ font-style: normal;  font-weight: normal; }
+
+.fixed {
+  position: fixed;
+  top: 20px;
+}

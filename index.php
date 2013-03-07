@@ -16,27 +16,27 @@ jQuery(document).ready(function($) {
 });
 </script> 
 </head>
-
 <body>
 <div id="container">
-  <div id="header">
+
 <!--
-    <div class="top_img">
-      <a href="/wp"><img src="<?php echo image(); ?>" /></a>      
-    </div>
--->
+<div id="header">
+  <div class="logo"><a href="/wp">
+    <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" /></a>
   </div>
+</div>
+-->
 
   <div id="left">
     <p class="top_img">
-    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/tmp_title.png" /></a>   
+    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_003.png" /></a>
     </p>
  <!-- tabs menu start -->
     <div id="tabs">
       <ul>
         <li><a href="#panel1">最新記事</a></li>
         <li><a href="#panel2">更新情報</a></li>
-        <!--<li><a href="#panel3">超日記</a></li>-->
+<!--        <li><a href="#panel3">超日記</a></li>-->
         <li><a href="#panel4">YRP野比</a></li>
       </ul>
     <div id="panel1" class="panel">
@@ -97,7 +97,11 @@ jQuery(document).ready(function($) {
           <div class="reset"></div>
       </div>
 
+<!--
       <div id="panel3" class="panel">
+        <div class="f_left">
+          <?php include("http://kt-kiyoshi.com/blog.php"); ?>
+        </div>
         <div class="f_left">
           <h1>最新記事</h1>
           <p class="exp_1"><a href="<?php echo $blogurl; ?>"><?php echo $title; ?>
@@ -112,9 +116,9 @@ jQuery(document).ready(function($) {
         </div>
         <div class="reset"></div>
       </div>
+-->
 
       <div id="panel4" class="panel">
-        <h1>YRPブログ</h1>
         <div class="f_left">
           <a href="http://kt-kiyoshi.com/yrp/"><img src="<?php bloginfo('template_directory'); ?>/img/yrp-poster.jpeg" class="img_tate" /></a>
         </div>
@@ -135,9 +139,8 @@ jQuery(document).ready(function($) {
     <!-- tabs menu end -->
 
     <div class="l_frame">
-      <h1>更新履歴<a href="" id="old_history"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></h1>
+      <h1>Update History<a href="" id="old_history"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></h1>
     </div>
-
     <div class="history">
       <ul>
         <li><span>'12.11.24</span>  indexのデザインを変更しました．</li>
@@ -154,6 +157,10 @@ jQuery(document).ready(function($) {
           <li><span>'12.05.13</span>  タブメニューを取り付けました。</li>
         </div>
       </ul>
+    </div>
+    <div class="affiliate">
+      <a href="http://hb.afl.rakuten.co.jp/hsc/108caad3.394b54eb.108caacf.034b8c67/" target="_blank">
+      <img src="http://hbb.afl.rakuten.co.jp/hsb/108caad3.394b54eb.108caacf.034b8c67/" border="0"></a>
     </div>
   </div>
 

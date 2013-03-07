@@ -1,5 +1,5 @@
-  <div class="logo"><a href="/wp">
-    <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" /></a>
+  <div class="logo">
+    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png" /></a>
   </div>
   <div class="right_menu">
     <ul>

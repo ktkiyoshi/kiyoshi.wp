@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/*
+Theme Name:Super_Diary
+Description:This is made for Super_Diary
+Author:Kiyoshi
+Author URI:http://kt-kiyoshi.com/
+Version:1.0
+*/
+
+/*********************
+***  Basic Option  ***
+*********************/
+body {
+  font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo",
+              "ＭＳ Ｐゴシック", "MS P Gothic","Osaka",Verdana,Arial,Helvetica,sans-serif;
+  font-size:10pt;
+  background:#ffffff;
+  color:#696969;
+}
+#container {
+  margin:auto;
+  padding:auto;
+  width:900px;
+}
+
+a { text-decoration: none; }
+a:hover, a:link, a:visited { color:#696969; }
+strong { font-weight: bold; }
+hr { margin:15px 15px 20px; color:#cccccc; }
+
+h1  {
+  font-family: 'Droid Sans Mono', sans-serif;
+  border-left: 4px #696969 solid;
+  padding-left: 10px;
+  font-size: 14px;
+}
+h2 {
+  position: relative;
+  font-size: 15px;
+  line-height: 1;
+  padding: 14px 5px 5px 10px;
+  margin: 0px 0px 8px 0px;
+  width: 90%;
+  border-bottom: 1px solid #696969; 
+}
+h2:before {
+  content: "";
+  position: absolute;
+  background: #999;
+  top: 0;
+  left: -5px;
+  height: 10px;
+  width: 10px;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+h2:after {
+  content: "";
+  position: absolute;
+  background:#777;
+  top: 15px;
+  left: -10px;
+  height: 7px;
+  width: 7px;
+  -moz-transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+h3 { }
+h4 { }
+h5 { }
+
+.f_right { float:right; }
+.f_left { float:left; }
+.reset { clear:both; }
+
+/*
+*  Web Font
+*  font-family: 'Droid Sans Mono', sans-serif;
+*  font-family: 'Prosto One', cursive;
+*/

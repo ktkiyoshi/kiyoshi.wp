@@ -41,10 +41,10 @@ if (has_post_thumbnail()){
 <?php } else if ( preg_match( $searchPattern, $str, $imgurl ) && !is_archive()) { ?>
   <meta property="og:image" content="<?php echo $imgurl[2] ?>">
 <?php } else { ?>
-  <meta property="og:image" content="http://kt-kiyoshi.com/img/screenshot.png">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/screenshot.png">
 <?php }
 } else { ?>
-  <meta property="og:image" content="http://kt-kiyoshi.com/img/screenshot.png">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/screenshot.png">
 <?php } ?>
 <!-- OGP -->
 
@@ -54,12 +54,25 @@ if (has_post_thumbnail()){
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/index.css" type="text/css" />
-<!--
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/entry.css" type="text/css" />
--->
 
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>jquery/img_preview/img_preview.js"></script>
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>header_img.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script type="text/javascript">
+jQuery(function($) {
+var nav    = $('#ads'),
+    offset = nav.offset();
+$(window).scroll(function () {
+  if($(window).scrollTop() > offset.top - 20) {
+    nav.addClass('fixed');
+  } else {
+    nav.removeClass('fixed');
+  }
+});
+
+});
+</script>
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
