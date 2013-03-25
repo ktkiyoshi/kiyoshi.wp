@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
       </ul>
 
       <ul class="no_list">
-        <li><select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
+        <li><select name="archive-dropdown" class="dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
         <option value=""><?php echo attribute_escape(__('Select Month')); ?></option>
         <?php wp_get_archives('type=monthly&format=option&show_post_count=1&cat=-54'); ?>
         </select></li>
