@@ -8,15 +8,13 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
 <!-- OGP -->
-<meta property="fb:admins" content="100001174154207" />
-<meta property="fb:app_id" content="112219258880440" />
-<?php
-if (is_front_page()){
-echo '<meta property="og:type" content="blog" />';echo "\n";
-} else {
-echo '<meta property="og:type" content="article" />';echo "\n";
-}
-?>
+  <meta property="fb:admins" content="100001174154207" />
+  <meta property="fb:app_id" content="112219258880440" />
+<?php if (is_front_page()){ ?>
+  <meta property="og:type" content="blog" />
+<?php } else { ?>
+  <meta property="og:type" content="article" />
+<?php } ?>
 <?php if (is_single()){ ?>
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
   <meta property="og:description" content="<?php echo mb_substr(get_the_excerpt(), 0, 100); ?>">
@@ -53,10 +51,13 @@ if (has_post_thumbnail()){
 <?php wp_head(); ?>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+<?php if (is_page('Galary')){ ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/galary.css" type="text/css" />
+<?php } else { ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/index.css" type="text/css" />
+<?php } ?>
 
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>jquery/img_preview/img_preview.js"></script>
-<script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>header_img.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 <script type="text/javascript">
