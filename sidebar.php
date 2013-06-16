@@ -23,13 +23,6 @@ jQuery(document).ready(function($) {
   <!-- Rakuten Widget TO HERE -->
   </div>
 
-<!--
-    <div class="r_frame"><h1>開発中
-      <a href="http://dev.kt-kiyoshi.com/projects/cooking"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></h1></div>
-      <ul>
-      <li><a href="http://cooking.kt-kiyoshi.com/">Cooking System</a></li>
-      </ul>
--->
     <div id="ads">
     <div class="r_frame">
       <h1>Blog Entry<a href="" id="entry_list">

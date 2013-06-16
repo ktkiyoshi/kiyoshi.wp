@@ -31,11 +31,13 @@ Version:1.0
 }
 #header .top_img img { padding:7px 0px; }
 
-/*** LEFT ***/
+/***********
+*** LEFT ***
+***********/
 #left {
   float:left;
   width:640px;
-  margin:0px 0px 10px 10px;
+  margin:0px 0px 10px 0px;
 }
 #left .top_img img { padding:5px; }
 #left .affiliate {
@@ -63,11 +65,12 @@ Version:1.0
 }
 .history {
   font-size:9pt;
-  padding-left:10px;
-<!--
-  height: 100px;
+  margin: 0px 12px 0px 0px;
+  padding: 0px 0px 0px 7px;
+/*
+  height: 125px;
   overflow: auto;
--->
+*/
 }
 .history ul li {
   padding:3px 0px 3px 22px;
@@ -81,7 +84,7 @@ Version:1.0
 #right {
   float:left;
   width:240px;
-  margin:0px 10px 10px 0px;
+  margin:0px 0px 10px 0px;
 }
 #right .affiliate { text-align:center; }
 #right ul li {
@@ -102,13 +105,30 @@ Version:1.0
   -webkit-border-radius:7px;
   -moz-border-radius:7px;
 }
-.r_frame .more { float:right;   margin: 0px;
-padding:2px 5px 0px 0px; }
+.r_frame .more {
+  float: right;
+  margin: 0px;
+  padding:2px 5px 0px 0px;
+}
 
-/*** FOOTER ***/
+/*************
+*** CENTER ***
+*************/
+#center {
+  clear:both;
+  margin:20px 0px 10px;
+  padding: 5px;
+  border:1px solid #c0c0c0;
+  -webkit-border-radius:7px;
+  -moz-border-radius:7px;
+}
+
+/*************
+*** FOOTER ***
+*************/
 #footer {
   clear:both;
-  margin:20px 10px 10px;
+  margin:20px 0px 10px;
   border:1px solid #c0c0c0;
   -webkit-border-radius:7px;
   -moz-border-radius:7px;
@@ -321,46 +341,3 @@ div#respond { margin:5px 15px; }
 div#respond label { line-height:25px; } 
 div#respond #reply-title { display:none; }
 .comment-form-comment { padding-bottom:7px; }
-
-/********************
-***  Global Navi  ***
-********************/
-ul#gnavi{
-  list-style:none;
-  width:900px;
-  text-align:center;
-}
-ul#gnavi li{
-  line-height:30px;
-  list-style:none;
-  float:left;
-  width:150px;
-  height:32px;
-}
-ul#gnavi a{
-  display:block;
-  background-color:#dcdcdc;
-  border: 1px solid #c0c0c0;
-}
-ul#gnavi a:hover {
-  display:block;
-  background-color:#000000;
-  border: 1px solid #000000;
-  color:#ffffff;
-}
-.home {
-  -webkit-border-top-left-radius:7px;
-  -moz-border-radius-topleft:7px;
-  -webkit-border-bottom-left-radius:7px;
-  -moz-border-radius-bottomleft:7px;
-}
-.no_menu {
-  width:148px;
-  height:30px;
-  background-color:#dcdcdc;
-  border:1px solid #c0c0c0;
-  -webkit-border-top-right-radius:7px;
-  -moz-border-radius-topright:7px;
-  -webkit-border-bottom-right-radius:7px;
-  -moz-border-radius-bottomright:7px;
-}
