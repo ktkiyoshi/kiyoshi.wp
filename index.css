@@ -43,7 +43,7 @@ Version:1.0
 #left .affiliate {
   padding:5px;
   text-align:center;
-  }
+}
 .l_frame {
   width:608px;
   padding:7px 7px 7px 10px;
@@ -99,8 +99,8 @@ Version:1.0
 }
 .r_frame {
   width:218px;
-  padding:7px 10px;
-  margin:5px 0px;
+  padding:7px 10px 7px 7px;
+  margin:5px 0px 7px 0px;
   border:1px solid #c0c0c0;
   -webkit-border-radius:7px;
   -moz-border-radius:7px;

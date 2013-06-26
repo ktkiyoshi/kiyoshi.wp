@@ -65,7 +65,7 @@ jQuery(document).ready(function($) {
           <div class="old_entries">
             <p class="exp_1">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> 
-              <span class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></span>
+              <span class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></a></span>
             </p>
             <p><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
             <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a></p>

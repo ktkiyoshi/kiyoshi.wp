@@ -51,8 +51,8 @@ if (has_post_thumbnail()){
 <?php wp_head(); ?>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
-<?php if (is_page('Galary')){ ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/galary.css" type="text/css" />
+<?php if (is_page('Gallery')){ ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/gallery.css" type="text/css" />
 <?php } else { ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/index.css" type="text/css" />
 <?php } ?>
