@@ -39,6 +39,9 @@ Version:1.0
   width:640px;
   margin:0px 0px 10px 0px;
 }
+#slide {
+  margin:7px 0px 3px;
+}
 #left .top_img img { padding:5px; }
 #left .affiliate {
   padding:5px;
@@ -55,7 +58,7 @@ Version:1.0
 .l_frame img{
   padding:5px;
   margin:10px 15px 10px 15px;
-  border: 1px solid #cccccc;
+  border: 1px solid #c0c0c0;
 }
 .l_frame .more { 
   float: right;
@@ -96,6 +99,12 @@ Version:1.0
   margin-left:5px;
   padding:5px 0px 5px 10px;
   background-image:none;
+}
+#right .side_img {
+  text-align: center;
+}
+#right .side_img img {
+  border: 1px solid #c0c0c0;
 }
 .r_frame {
   width:218px;
@@ -191,8 +200,6 @@ Version:1.0
 /*********************
 *** Special Option ***
 *********************/
-.f_right { float:right; }
-.f_left { float:left; }
 .f_left img {
   margin:7px 15px 10px 7px;
   padding:5px;

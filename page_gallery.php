@@ -3,32 +3,8 @@
 Template Name: Gallery
 */
 ?>
-
-<?php
-$limit=30;
-/* Instagram */
-define('USER_NAME', 'ktkiyoshi');
-define('USER_ID', '207703315');
-define('ACCESS_TOKEN', '207703315.e222e56.74b77feb8d3e453cbdf66059b2216728');
-define('API_URL_USER', 'https://api.instagram.com/v1/users/'.USER_ID.'?access_token='.ACCESS_TOKEN);
-define('API_URL_MEDIA', 'https://api.instagram.com/v1/users/'.USER_ID.'/media/recent?access_token='.ACCESS_TOKEN);
-
-$uri = array(API_URL_USER, API_URL_MEDIA.'&count='.$limit);
-$options = array(
-  CURLOPT_POST => false,
-  CURLOPT_SSL_VERIFYPEER => false,
-  CURLOPT_RETURNTRANSFER => true
-);
-for($i = 0; $i < count($uri); $i++) {
-  $ch = curl_init();
-  curl_setopt_array($ch, $options);
-  curl_setopt($ch, CURLOPT_URL, $uri[$i]);
-  $json[$i] = json_decode(curl_exec($ch), true);
-  curl_close($ch);
-}
-$user = $json[0][data];
-$media = $json[1][data];
-?>
+<!-- Instagram -->
+<?php require_once('instagram.php'); ?>
 
 <?php get_header(); ?>
 </head>
@@ -82,7 +58,8 @@ $media = $json[1][data];
 
   <div id="right">
     <div class="r_frame">
-      <h1>Recent <?php echo $user[counts][media]; ?> Instagram's Photos</h1>
+<!--  <h1>Recent <?php echo $user[counts][media]; ?> Instagram's Photos</h1> -->
+      <h1>Recent 30 Instagram's Photos</h1>
     </div>
     <div class="r_frame">
 <?php
@@ -92,7 +69,7 @@ $media = $json[1][data];
 ?>
         <div class="photos">
           <p class="exp_1">
-            <?php echo date('Y/m/d H:i', $caption[created_time]); ?> 
+            <?php echo date('Y/m/d', $caption[created_time]); ?> 
           </p>
           <p><a href="<?php echo $media[$i][link]; ?>" title="<?php echo $caption[text]; ?>">
           <img src="<?php echo $images[thumbnail][url]; ?>" class="img_yoko"/></a></p>

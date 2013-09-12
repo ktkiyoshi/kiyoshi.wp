@@ -1,3 +1,6 @@
+<!-- Instagram -->
+<?php require_once('instagram.php'); ?>
+
 <script type="text/javascript">
 jQuery(document).ready(function($) {
   $(document).ready(function(){
@@ -23,7 +26,19 @@ jQuery(document).ready(function($) {
   <!-- Rakuten Widget TO HERE -->
   </div>
 
-    <div id="ads">
+  <div>
+    <div class="r_frame">
+      <h1>Photo Gallery</h1>
+    </div>
+    <p class="side_img">
+      <a href="/wp/gallery"><img src="<?php bloginfo('template_directory'); ?>/img/gallery_side.png" /></a>
+    </p>
+    <p class="t_right" style="padding:5px 10px 0px 0px;">
+      <small>Last Update:<?php $caption = $media[0][caption]; echo date('Y/m/d', $caption[created_time]); ?></small>
+    </P>
+  </div>
+
+  <div id="ads">
     <div class="r_frame">
       <h1>Blog Entry<a href="" id="entry_list">
         <img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" />
@@ -69,32 +84,6 @@ jQuery(document).ready(function($) {
 <!--
 //Add Widgets
 <?php dynamic_sidebar(); ?>
--->
-
-<!--
-    <div class="r_frame"><h1>Author</h1></div>
-    <p class="f_left">
-      <img src="<?php bloginfo('template_directory'); ?>/img/me.png" width="100px"/>
-    </p>
-    <p>Kiyoshi</p>
-    <div>
-      <dl>
-      <dt>Birthday | 1988/10/17</dt>
-      <dt>From | Yokohama</dt>
-      <dt>Blood Type | O</dt>
-      <dt>Hobby | Movie, Web design, Snow Board</dt>
-      <dt>Job | System Engineer</dt>
-      <dt>Blog | <a href="http://kt-kiyoshi.com/wp/">超日記</a></dt>
-      <dt>Mobile | GalaxyS</dt>
-      <dt>PC | MacBookPro, VAIO</dt>
-    </dl>
-    </div>
-    <div class="r_frame"><h1>読書メーター</h1></div>
-    <div class="affiliate">
-      <p><a href="http://book.akahoshitakuya.com/u/68613" title="最近読んだ本">
-      <img src="http://img.bookmeter.com/bp_image/160/69/68613.jpg" border="0" alt="最近読んだ本">
-      </a></p>
-    </div>
 -->
     </div>
   </div>
