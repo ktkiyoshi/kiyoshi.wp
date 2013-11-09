@@ -44,8 +44,12 @@
               <p class="exp_2">
                 <?php echo mb_substr(get_the_excerpt(),0,80);?>...
                 <p class="new_entry_more">
+<!--
                   <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                   &raquo;<?php the_title(); ?>の続きを読む</a>
+-->
+                  <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                  &raquo;続きを読む</a>
                 </p>
               </p>
             </div>
