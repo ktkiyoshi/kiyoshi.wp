@@ -29,14 +29,9 @@ jQuery(document).ready(function($) {
 -->
 
   <div id="left">
-    <div id="slide">
-      <?php if ( function_exists( "easingsliderlite" ) ) { easingsliderlite(); } ?>
-    </div>
-<!--
     <p class="top_img">
-    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_007.png" /></a>
+    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_008.png" /></a>
     </p>
--->
  <!-- tabs menu start -->
     <div id="tabs">
       <ul>
@@ -58,8 +53,12 @@ jQuery(document).ready(function($) {
             <p class="exp_2">
               <?php echo mb_substr(get_the_excerpt(),0,120);?>...
               <p class="new_entry_more">
+<!--
                 <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                 &raquo;<?php the_title(); ?>の続きを読む</a>
+-->
+                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                &raquo;続きを読む</a>
               </p>
             </p>
           </div>
@@ -78,8 +77,12 @@ jQuery(document).ready(function($) {
             <p class="exp_2">
               <?php echo mb_substr(get_the_excerpt(),0,50);?>...
               <p class="old_entry_more">
+<!--
                 <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                 &raquo;<?php the_title(); ?>の続きを読む</a>
+-->
+                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                &raquo;続きを読む</a>
               </p>
             </p>
           </div>
