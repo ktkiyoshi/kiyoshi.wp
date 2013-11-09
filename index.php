@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 <!-- Exclude ABOUT & IT -->
 <?php query_posts("cat=-54,-58"); ?>
+<!-- Instagram -->
+<?php require_once('instagram.php'); ?>
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
@@ -143,6 +145,28 @@ jQuery(document).ready(function($) {
       </div>
     </div>
     <!-- tabs menu end -->
+
+    <div class="l_frame">
+      <h1>Recent Gallery<a href="" id="old_history"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></h1>
+    </div>
+    <?php
+     for($i=0; $i < count($media); $i++) {
+      $caption = $media[$i][caption];
+      $images = $media[$i][images];
+    ?>
+    <div class="photos">
+        <p class="exp_1">
+          <?php echo date('Y/m/d', $caption[created_time]); ?> 
+        </p>
+        <p><a href="<?php echo $media[$i][link]; ?>" title="<?php echo $caption[text]; ?>">
+          <img src="<?php echo $images[thumbnail][url]; ?>" class="img_yoko"/></a></p>
+          <span class="exp_2"><a href="<?php echo $media[$i][link]; ?>"><?php echo $caption[text]; ?></a></span>
+        </div>
+        <?php if (($i%3) == 2 || ($i+1) == count($media)) { ?>
+        <div class="reset"><br /></div>
+        <?php } ?>
+  <?php } ?>
+    </div>
 
     <div class="l_frame">
       <h1>Update History<a href="" id="old_history"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></h1>
