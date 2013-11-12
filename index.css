@@ -351,3 +351,10 @@ div#respond { margin:5px 15px; }
 div#respond label { line-height:25px; } 
 div#respond #reply-title { display:none; }
 .comment-form-comment { padding-bottom:7px; }
+
+/*************
+**** PHOTOS ***
+**************/
+.photos { float:left; width:202px; text-align:center; }
+.photos .exp_2 { font-size:8pt; margin:0px 5px; }
+.photos img { width:150px; margin:3px 0px }
