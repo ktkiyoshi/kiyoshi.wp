@@ -34,7 +34,9 @@ jQuery(document).ready(function($) {
       <a href="/wp/gallery"><img src="<?php bloginfo('template_directory'); ?>/img/gallery_side.png" /></a>
     </p>
     <p class="t_right" style="padding:5px 10px 0px 0px;">
+<!--
       <small>Last Update:<?php $caption = $media[0][caption]; echo date('Y/m/d', $caption[created_time]); ?></small>
+-->
     </P>
   </div>
 
