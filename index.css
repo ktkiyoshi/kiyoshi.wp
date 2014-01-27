@@ -306,7 +306,7 @@ p.new_entry_more a:hover, p.old_entry_more a:hover {
   color: white;
   background: #808080;
   border-color: #ccc;
-  font-weight:bold:
+  font-weight:bold;
 }
 .page-navi .next, .page-navi .prev {
   border:0 none;
