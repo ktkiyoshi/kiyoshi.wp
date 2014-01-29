@@ -11,23 +11,23 @@ Version:1.0
 *** HEADER ***
 *************/
 #header {
-  float:left;
-  padding:5px 0px;
+  float: left;
+  padding: 5px 0px;
 }
 #header .logo {
-  float:left;
-  width:155px;
-  padding-left:15px
+  float: left;
+  width: 155px;
+  padding-left: 15px
 }
 #header .right_menu {
-  width:710px;
-  float:right;
-  text-align:right;
-  padding:12px 20px 0px 0px;
+  width: 710px;
+  float: right;
+  text-align: right;
+  padding: 12px 20px 0px 0px;
 }
 #header .right_menu ul li {
-  display:inline;
-  list-style-type:none;
+  display: inline;
+  list-style-type: none;
 }
 #header .top_img img { padding:7px 0px; }
 
@@ -55,29 +55,26 @@ Version:1.0
   -webkit-border-radius:7px;
   -moz-border-radius:7px;
 }
-.l_frame img{
-  padding:5px;
-  margin:10px 15px 10px 15px;
-  border: 1px solid #c0c0c0;
+.l_frame p.title {
+  font-family: 'Droid Sans Mono', sans-serif;
+  position: relative;
+  font-size: 14px;
+  line-height: 1;
+  padding: 5px 5px 5px 10px;
+  border-left: 5px #696969 solid;
 }
-.l_frame .more { 
+.l_frame img.more {
   float: right;
   margin: 0px;
-  padding: 2px 10px 0px 0px;
-  border: 0px;
+  /*padding:2px 5px 0px 0px;*/
 }
 .history {
-  font-size:9pt;
-  margin: 0px 12px 0px 0px;
+  font-size: 14px;
   padding: 0px 0px 0px 7px;
-/*
-  height: 125px;
-  overflow: auto;
-*/
 }
 .history ul li {
-  padding:3px 0px 3px 22px;
-  background:url(img/br_next_icon&16.png) 1px 3px no-repeat;
+  padding: 0px 0px 0px 22px;
+  background: url(img/br_next_icon&16.png) 1px 3px no-repeat;
 }
 .history ul li span { font-weight:bold; }
 
@@ -85,23 +82,25 @@ Version:1.0
 *** RIGHT ***
 ************/
 #right {
-  float:left;
-  width:240px;
-  margin:0px 0px 10px 0px;
+  float: left;
+  width: 240px;
+  margin: 0px 0px 10px 0px;
 }
-#right .affiliate { text-align:center; }
+#right .affiliate {
+  text-align: center;
+}
 #right ul {
   width: 230px;
 }
 #right ul li {
-  margin-left:5px;
-  padding:5px 0px 5px 30px;
-  background:url(img/checkbox_checked_icon&16.png) 7px 6px no-repeat;
+  margin-left: 5px;
+  padding: 5px 0px 5px 30px;
+  background: url(img/checkbox_checked_icon&16.png) 7px 6px no-repeat;
 }
 #right ul.no_list li {
-  margin-left:5px;
-  padding:5px 0px 5px 10px;
-  background-image:none;
+  margin-left: 5px;
+  padding: 5px 0px 5px 10px;
+  background-image: none;
 }
 #right .side_img {
   text-align: center;
@@ -117,10 +116,18 @@ Version:1.0
   -webkit-border-radius:7px;
   -moz-border-radius:7px;
 }
-.r_frame .more {
+.r_frame p.title {
+  font-family: 'Droid Sans Mono', sans-serif;
+  position: relative;
+  font-size: 14px;
+  line-height: 1;
+  padding: 5px 5px 5px 10px;
+  border-left: 5px #696969 solid;
+}
+.r_frame img.more {
   float: right;
   margin: 0px;
-  padding:2px 5px 0px 0px;
+  /*padding:2px 5px 0px 0px;*/
 }
 
 /*************
@@ -158,117 +165,125 @@ Version:1.0
   padding:7px 7px 7px 10px;
   margin:5px 0px 0px;
 }
+.f_frame p.title {
+  font-family: 'Droid Sans Mono', sans-serif;
+  position: relative;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 3px;
+  padding: 5px 5px 5px 10px;
+  border-left: 5px #696969 solid;
+}
 .copyright {
-  font-family: 'Prosto One', cursive;
-  float:right;
-  font-size:10px;
-  text-align:right;
-  padding:3px 10px;
-  position:absolute;
-  right:0;
-  bottom:0;
+  font-family: 'Droid Sans Mono', sans-serif;
+  float: right;
+  font-size: 10px;
+  text-align: right;
+  padding: 3px 10px;
+  position: absolute;
+  right: 0;
+  bottom:0 ;
 }
 
 /*******************
 ***   Tab Menu   ***
 *******************/
 #tabs .panel {
-  display:none;
-  margin:7px 12px 7px 0px;
-  padding:10px;
-  border:1px solid #cccccc;
+  display: none;
+  margin: 7px 12px 7px 0px;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 #tabs img{
-  padding:5px;
-  border: 1px solid #cccccc;
+  padding: 5px;
+  border: 1px solid #ccc;
 }
 #tabs ul {
-  overflow:hidden;
-  list-style:none;
-  margin-left:10px;
-  border-left:1px solid #cccccc;
+  overflow: hidden;
+  list-style: none;
+  margin-left: 10px;
+  border-left: 1px solid #ccc;
 }
 #tabs li {
-  float:left;
-  display:inline;
-  padding:8px 12px;
-  border-top:1px solid #cccccc;
-  border-right:1px solid #cccccc;
-  border-bottom:1px solid #cccccc;
+  float: left;
+  display: inline;
+  padding: 8px 12px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
-#tabs li.active a, #tabs li.active { color:#ffffff; background-color:#000000; }
-#tabs li.active a:hover { color:#ffffff; }
-#tabs li a:hover { color:#666666; text-decoration:underline; }
+#tabs li.active a, #tabs li.active {
+  color: #fff;
+  background-color:#000;
+}
+#tabs li.active a:hover {
+  color: #fff;
+}
+#tabs li a:hover {
+  color: #666;
+  text-decoration: underline;
+}
 
 /*********************
 *** Special Option ***
 *********************/
 .f_left img {
-  margin:7px 15px 10px 7px;
-  padding:5px;
+  margin: 7px 15px 10px 7px;
+  padding: 5px;
   border: 1px solid #cccccc;
 }
-.exp_1, .exp_2 { vertical-align:middle; }
-.new_entry .exp_1 { padding:5px 0px 1px 10px; font-weight:bold; }
-.new_entry .exp_2 { padding:2px 0px 1px 10px; line-height:1.7; }
-.old_entries { float:left; width:202px; text-align:center; }
-.old_entries .exp_2 { font-size:8pt; margin:0px 5px; }
-.old_entries img { width:150px; margin:3px 0px }
-.img_yoko { width:200px; }
-.img_tate { height:200px; }
+.exp_1, .exp_2 { vertical-align: middle; }
+.new_entry .exp_1 { padding: 5px 0px 1px 10px; font-weight: bold; }
+.new_entry .exp_2 { padding: 2px 0px 1px 10px; line-height: 1.7; }
+.old_entries { float: left; width: 202px; text-align: center; }
+.old_entries .exp_2 { font-size: 8pt; margin: 0px 5px; }
+.old_entries img { width: 150px; margin: 3px 0px }
+.img_yoko { width: 200px; }
+.img_tate { height: 200px; }
 
 /******************
 *** Entry style ***
 ******************/
 .entry {
-  margin:5px 15px;
-  line-height:1.7;
+  margin: 5px 15px;
+  line-height: 1.7;
 }
 .entry img{
-  padding:5px;
-  margin:6px 10px;
-  border:1px solid #cccccc;
-}
-h1.entry_title {
-  font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo",
-              "ＭＳ Ｐゴシック", "MS P Gothic","Osaka",Verdana,Arial,Helvetica,sans-serif;
-  margin:5px 0px 1px 7px;
-  padding-top: 2px;
-  font-weight: bold;
-  font-size: 120%;
-  line-height: 28px;
+  padding: 5px;
+  margin: 6px 10px;
+  border: 1px solid #cccccc;
 }
 .entry_meta {
   font-family: 'Droid Sans Mono', sans-serif;
-  margin:7px 0px 0px 15px;
+  margin: 7px 0px 0px 15px;
 }
-p.entries_more { margin:15px 5px; }
+p.entries_more { margin: 15px 5px; }
 p.entries_more a { 
-  padding:6px 9px;
-  background:#808080;
-  color:#FFFFFF;
+  padding: 6px 9px;
+  background: #808080;
+  color: #FFF;
 }
 p.entries_more a:hover { 
-  padding:6px 9px;
-  background:#000;
-  color:#FFFFFF;
+  padding: 6px 9px;
+  background: #000;
+  color: #FFF;
 }
 p.new_entry_more {
-  margin:9px 0px 10px 5px;
-  padding-left:235px;
+  margin: 9px 0px 10px 5px;
+  padding-left: 235px;
 }
 p.old_entry_more {
-  margin:9px 0px 10px 5px;
-  width:180px;
+  margin: 9px 0px 10px 5px;
+  width: 180px;
 }
 p.new_entry_more a, p.old_entry_more a { 
-  padding:6px 9px;
-  background:#808080;
-  color:#FFF;
+  padding: 6px 9px;
+  background: #808080;
+  color: #FFF;
 }
 p.new_entry_more a:hover, p.old_entry_more a:hover { 
-  padding:6px 9px;
-  background:#000;
+  padding: 6px 9px;
+  background: #000;
   color: #FFF;
 }
 
@@ -276,9 +291,9 @@ p.new_entry_more a:hover, p.old_entry_more a:hover {
 *** Thumbnail ***
 ****************/
 .thumbnail img {
-  margin:2px;
-  padding:2px;
-  width:70px;
+  margin: 2px;
+  padding: 2px;
+  width: 70px;
 }
 #imgPreviewWithStyles {
   background: #222222;
@@ -297,64 +312,75 @@ p.new_entry_more a:hover, p.old_entry_more a:hover {
 ****************/
 .page-navi {
   color: #696969;
-  background:white;
+  background: white;
   margin: 1em auto;
-  line-height:2em;
-  text-align:center;
+  line-height: 2em;
+  text-align: center;
 }
 .page-navi .current {
   color: white;
   background: #808080;
   border-color: #ccc;
-  font-weight:bold;
+  font-weight: bold;
 }
 .page-navi .next, .page-navi .prev {
-  border:0 none;
-  background:transparent;
-  text-decoration:underline;
-  font-size:smaller;
-  font-weight:bold;
+  border: 0 none;
+  background: transparent;
+  text-decoration: underline;
+  font-size: smaller;
+  font-weight: bold;
 }
 a.page-numbers, .page-navi .current {
   color: #696969;
   padding: 2px .4em;
-  border:solid 1px #ccc;
-  text-decoration:none;
-  font-size:smaller;
+  border: solid 1px #ccc;
+  text-decoration: none;
+  font-size: smaller;
 }
 a.page-numbers:hover {
-  color:white;
+  color: white;
   background: #808080;
 }
 
 /*********************
 *** Comments style ***
 *********************/
-div.comments { margin:5px 15px 10px 15px; }
-div.comments li { list-style-type:none; }
-div.comments a.url { line-height:25px; }
+div.comments { margin: 5px 15px 10px 15px; }
+div.comments li { list-style-type: none; }
+div.comments a.url { line-height: 25px; }
 div.comments p { 
-  margin:3px;
-  padding:5px 7px;
-  background-color:#dcdcdc;
-  border:1px solid #c0c0c0;
-  -webkit-border-top-left-radius:7px;
-  -moz-border-radius-topleft:7px;
-  -webkit-border-bottom-left-radius:7px;
-  -moz-border-radius-bottomleft:7px;
-  -webkit-border-top-right-radius:7px;
-  -moz-border-radius-topright:7px;
-  -webkit-border-bottom-right-radius:7px;
-  -moz-border-radius-bottomright:7px;
+  margin: 3px;
+  padding: 5px 7px;
+  background-color: #dcdcdc;
+  border: 1px solid #c0c0c0;
+  -webkit-border-top-left-radius: 7px;
+  -moz-border-radius-topleft: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  -moz-border-radius-bottomleft: 7px;
+  -webkit-border-top-right-radius: 7px;
+  -moz-border-radius-topright: 7px;
+  -webkit-border-bottom-right-radius: 7px;
+  -moz-border-radius-bottomright: 7px;
 }
-div#respond { margin:5px 15px; }
-div#respond label { line-height:25px; } 
-div#respond #reply-title { display:none; }
-.comment-form-comment { padding-bottom:7px; }
+div#respond { margin: 5px 15px; }
+div#respond label { line-height: 25px; } 
+div#respond #reply-title { display: none; }
+.comment-form-comment { padding-bottom: 7px; }
 
 /*************
 **** PHOTOS ***
 **************/
-.photos { float:left; width:202px; text-align:center; }
-.photos .exp_2 { font-size:8pt; margin:0px 5px; }
-.photos img { width:150px; margin:3px 0px; border: none; }
+.photos {
+  float: left;
+  width: 202px;
+  text-align: center;
+}
+.photos .exp_2 {
+  font-size: 8pt;
+  margin: 0px 5px;
+}
+.photos img {
+  width: 150px;
+  margin: 3px 0px;
+  border: none;
+}

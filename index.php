@@ -3,7 +3,6 @@
 <?php query_posts("cat=-54,-58"); ?>
 <!-- Instagram -->
 <?php require_once('instagram.php'); ?>
-
 <script type="text/javascript">
 jQuery(document).ready(function($) {
   $(document).ready(function(){
@@ -38,13 +37,12 @@ jQuery(document).ready(function($) {
     <p class="top_img">
     <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_009.png" /></a>
     </p>
- <!-- tabs menu start -->
+    <!-- tabs menu start -->
     <div id="tabs">
       <ul>
         <li><a href="#panel1">最新記事</a></li>
         <li><a href="#panel2">更新情報</a></li>
-<!--        <li><a href="#panel3">超日記</a></li>-->
-        <li><a href="#panel4">YRP野比</a></li>
+        <li><a href="#panel3">YRP野比</a></li>
       </ul>
     <div id="panel1" class="panel">
       <?php while (have_posts()) : the_post(); $counter++; ?>
@@ -76,7 +74,7 @@ jQuery(document).ready(function($) {
           <div class="old_entries">
             <p class="exp_1">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> 
-              <span class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></a></span>
+              <p class="exp_2"><?php the_time('Y-m-d (D) G:i') ?></p>
             </p>
             <p><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
             <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a></p>
@@ -112,28 +110,7 @@ jQuery(document).ready(function($) {
           <div class="reset"></div>
       </div>
 
-<!--
       <div id="panel3" class="panel">
-        <div class="f_left">
-          <?php include("http://kt-kiyoshi.com/blog.php"); ?>
-        </div>
-        <div class="f_left">
-          <h1>最新記事</h1>
-          <p class="exp_1"><a href="<?php echo $blogurl; ?>"><?php echo $title; ?>
-          <span style="font-size:8pt"> -<?php echo $post_date; ?>-</spam></a></p>
-          <p style="margin-right:10px"><a href="<?php echo $blogurl; ?>">
-          <img src="<?php echo $content; ?>" class="img_yoko" /></a></p>
-        </div>
-        <div class="f_left">
-          <h1>現在の超日記</h1>
-          <p class="doc_edit">Entry : <?php echo $count; ?></p>
-          <p class="comment">Comment : <?php echo $count2; ?></p>
-        </div>
-        <div class="reset"></div>
-      </div>
--->
-
-      <div id="panel4" class="panel">
         <div class="f_left">
           <a href="http://kt-kiyoshi.com/yrp/"><img src="<?php bloginfo('template_directory'); ?>/img/yrp-poster.jpeg" class="img_tate" /></a>
         </div>
@@ -154,7 +131,7 @@ jQuery(document).ready(function($) {
     <!-- tabs menu end -->
 
     <div class="l_frame">
-      <h1>Recent 3 Photos</h1>
+      <p class="title">Recent 3 Photos</p>
     </div>
     <div class="l_frame">
     <?php
@@ -178,7 +155,7 @@ jQuery(document).ready(function($) {
     </div>
 
     <div class="l_frame">
-      <h1>Update History<a href="" id="old_history"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></h1>
+      <p class="title">Update History<a href="" id="old_history"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></p>
     </div>
     <div class="history">
       <ul>

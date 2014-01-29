@@ -1,6 +1,5 @@
 <!-- Instagram -->
 <?php require_once('instagram.php'); ?>
-
 <script type="text/javascript">
 jQuery(document).ready(function($) {
   $(document).ready(function(){
@@ -12,13 +11,6 @@ jQuery(document).ready(function($) {
 });
 </script> 
   <div id="right">
-    <!-- index.php only
-    <?php if(!is_home()): ?>
-      <div>
-        <a href="/wordpress"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png" /></a>
-      </div>
-    <?php endif; ?>
-    -->
 
   <div class="affiliate">
   <!-- Rakuten Widget FROM HERE -->
@@ -28,7 +20,7 @@ jQuery(document).ready(function($) {
 
   <div>
     <div class="r_frame">
-      <h1>Photo Gallery</h1>
+      <p class="title">Photo Gallery</p>
     </div>
     <p class="side_img">
       <a href="/wp/gallery"><img src="<?php bloginfo('template_directory'); ?>/img/gallery_side.png" /></a>
@@ -37,14 +29,16 @@ jQuery(document).ready(function($) {
 <!--
       <small>Last Update:<?php $caption = $media[0][caption]; echo date('Y/m/d', $caption[created_time]); ?></small>
 -->
-    </P>
+    </p>
   </div>
 
   <div id="ads">
     <div class="r_frame">
-      <h1>Blog Entry<a href="" id="entry_list">
+      <p class="title">Blog Entry
+        <a href="" id="entry_list">
         <img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" />
-      </a></h1>
+        </a>
+      </p>
     </div>
       <ul>
         <?php

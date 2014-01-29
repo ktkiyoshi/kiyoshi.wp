@@ -3,16 +3,16 @@
   <div style="margin-left:7px">
     <div class="f_frame">
       <ul>
-        <?php wp_list_bookmarks('category_before=&category_after=&title_before=<h1 style="margin-bottom:3px;">&title_after=</h1>&category=37'); ?>
+        <?php wp_list_bookmarks('category_before=&category_after=&title_before=<p class="title">&title_after=</p>&category=37'); ?>
       </ul>
     </div>
     <div class="f_frame">
       <ul>
-        <?php wp_list_bookmarks('category_before=&category_after=&title_before=<h1 style="margin-bottom:3px;">&title_after=</h1>&category=2'); ?>
+        <?php wp_list_bookmarks('category_before=&category_after=&title_before=<p class="title">&title_after=</p>&category=2'); ?>
       </ul>
     </div>
     <div class="f_frame">
-      <h1 style="margin-bottom:3px;">Administrator</h1>
+      <p class="title">Administrator</p>
       <ul>
         <?php wp_register(); ?>
         <li><?php wp_loginout(); ?></li>
@@ -22,7 +22,7 @@
     </div>
     <div class="copyright">
       <p class="img_center"><a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png" /></a></p>
-      <p>Copyright (C) <script type="text/javascript">myDate = new Date();myYear = myDate.getFullYear();document.write(myYear);</script> Kiyoshi All Rights Reserved.</p>
+      <p>Copyright(C) <script type="text/javascript">myDate = new Date();myYear = myDate.getFullYear();document.write(myYear);</script> Kiyoshi All Rights Reserved.</p>
     </div>
   </div>
   <div class="reset"></div>
