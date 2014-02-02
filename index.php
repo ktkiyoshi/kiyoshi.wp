@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
 </head>
 <body>
 <div id="container">
-
+<p><i class="fa fa-pencil-square-o"></i> 旗アイコン</p>
 <!--
 <div id="header">
   <div class="logo"><a href="/wp">

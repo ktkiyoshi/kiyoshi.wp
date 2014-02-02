@@ -94,13 +94,21 @@ Version:1.0
 }
 #right ul li {
   margin-left: 5px;
-  padding: 5px 0px 5px 30px;
-  background: url(img/checkbox_checked_icon&16.png) 7px 6px no-repeat;
+  padding: 5px 0px 5px 10px;
+  /*background: url(img/checkbox_checked_icon&16.png) 7px 6px no-repeat;*/
+}
+#right ul li:before {
+  content: "\f046";
+  font-family: FontAwesome;
+  display: inline-block;
 }
 #right ul.no_list li {
   margin-left: 5px;
   padding: 5px 0px 5px 10px;
   background-image: none;
+}
+#right ul.no_list li:before {
+  content: "";
 }
 #right .side_img {
   text-align: center;
