@@ -30,7 +30,6 @@ strong { font-weight: bold; }
 hr { margin: 15px 15px 20px; color:#cccccc; }
 
 h1  {
-  font-family: 'Droid Sans Mono', sans-serif;
   position: relative;
   font-size: 18px;
   line-height: 1;
@@ -38,11 +37,10 @@ h1  {
   border-left: 5px #696969 solid;
 }
 h2 {
-  font-family: 'Droid Sans Mono', sans-serif;
   position: relative;
   font-size: 17px;
   line-height: 1;
-  margin: 0px 0px 17px 0px;
+  margin: 35px 0px 25px 0px;
   padding: 10px 0px 10px 15px;
   border-left: 7px solid #999;
   width: 95%;
@@ -59,15 +57,16 @@ h2:after {
 h3 {
   font-size: 16px;
   font-weight: bold;
-  margin: 12px 0px;
+  margin: 15px 0px 15px;
 }
 h4 {
   font-size: 12px;
 }
+
 .bq {
   border-left: 5px solid #c0c0c0;
   background: #eee;
-  margin: 0px 0px 0px 10px;
+  margin: 0px 0px 22px 10px;
   padding: 10px;
 }
 /*.bq:before {
@@ -76,6 +75,64 @@ h4 {
   color: #ddd;
   position: absolute;
 }*/
+
+/******************
+*** Entry style ***
+******************/
+.entry {
+  margin: 5px 15px;
+  line-height: 1.7;
+}
+.entry p {
+  margin: 0px 0px 22px 0px;
+}
+.entry ul {
+  margin: 0px 0px 22px 25px;
+}
+.entry ul li{
+  list-style: square;
+}
+.entry img {
+  padding: 5px;
+  margin: 3px 7px;
+  border: 1px solid #cccccc;
+}
+.entry_meta {
+  font-family: 'Droid Sans Mono', sans-serif;
+  margin: 7px 0px 0px 15px;
+}
+p.entries_more {
+  margin: 15px 5px;
+}
+p.entries_more a { 
+  padding: 6px 9px;
+  background: #808080;
+  color: #FFF;
+}
+p.entries_more a:hover { 
+  padding: 6px 9px;
+  background: #000;
+  color: #FFF;
+}
+p.new_entry_more {
+  margin: 9px 0px 10px 5px;
+  padding-left: 235px;
+}
+p.old_entry_more {
+  margin: 9px 0px 10px 5px;
+  width: 180px;
+}
+p.new_entry_more a, p.old_entry_more a { 
+  padding: 6px 9px;
+  background: #808080;
+  color: #FFF;
+}
+p.new_entry_more a:hover, p.old_entry_more a:hover { 
+  padding: 6px 9px;
+  background: #000;
+  color: #FFF;
+}
+
 .f_right { float: right; }
 .f_left { float: left; }
 .t_right { text-align: right; }

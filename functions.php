@@ -128,4 +128,6 @@ if ( function_exists('register_sidebar') ) {
   register_sidebar();
 }
 
+/* Remove <p> */
+remove_filter('the_content', 'wpautop');
 ?>

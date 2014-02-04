@@ -54,7 +54,7 @@ jQuery(document).ready(function($) {
             <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
             <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
             <p class="exp_2">
-              <?php echo mb_substr(get_the_excerpt(),0,120);?>...
+              <?php echo mb_substr(get_the_excerpt(),0,100);?>...
               <p class="new_entry_more">
 <!--
                 <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
