@@ -102,7 +102,13 @@ h4 {
   margin: 0px 0px 22px 25px;
 }
 .entry ul li{
-  list-style: square;
+  list-style-type: square;
+}
+.entry ol {
+  margin: 0px 0px 22px 25px;
+}
+.entry ol li{
+  list-style-type: decimal;
 }
 .entry dl {
   margin: 0px 0px 22px 25px;
