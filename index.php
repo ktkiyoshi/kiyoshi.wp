@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
 
   <div id="left">
     <p class="top_img">
-    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_009.png" /></a>
+    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_009_l.png" /></a>
     </p>
     <!-- tabs menu start -->
     <div id="tabs">
@@ -96,6 +96,7 @@ jQuery(document).ready(function($) {
         <?php break; } endwhile; ?>
         </div>
       </div>
+      <?php wp_reset_query(); ?>
 
       <div id="panel2" class="panel">
           <div class="f_left">
@@ -130,6 +131,31 @@ jQuery(document).ready(function($) {
     <!-- tabs menu end -->
 
     <div class="l_frame">
+      <p class="title">Tech Entries</p>
+    </div>
+    <?php $it_posts=get_posts('numberposts=1&category=-54'); ?>
+    <div class="l_frame">
+      <?php foreach ($it_posts as $it) : setup_postdata($it); ?>
+          <div class="f_left">
+            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a>
+          </div>
+          <div class="new_entry">
+            <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+            <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
+            <p class="exp_2">
+              <?php echo mb_substr(get_the_excerpt(),0,100);?>...
+              <p class="new_entry_more">
+                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                &raquo;続きを読む</a>
+              </p>
+            </p>
+          </div>
+        <?php endforeach; ?>
+    </div>
+    <?php wp_reset_postdata(); ?>
+
+    <div class="l_frame">
       <p class="title">Recent 3 Photos</p>
     </div>
     <div class="l_frame">
@@ -153,6 +179,7 @@ jQuery(document).ready(function($) {
     <?php } ?>
     </div>
 
+<!--
     <div class="l_frame">
       <p class="title">Update History<a href="" id="old_history"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></p>
     </div>
@@ -165,6 +192,8 @@ jQuery(document).ready(function($) {
       <a href="http://hb.afl.rakuten.co.jp/hsc/108caad3.394b54eb.108caacf.034b8c67/" target="_blank">
       <img src="http://hbb.afl.rakuten.co.jp/hsb/108caad3.394b54eb.108caacf.034b8c67/" border="0"></a>
     </div>
+-->
+
   </div>
 
 <?php get_sidebar(); ?>

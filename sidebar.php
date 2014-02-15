@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
     </div>
       <ul>
         <?php
-        $lastposts = get_posts('numberposts=10&orderby=post_date&category=-54');
+        $lastposts = get_posts('numberposts=10&orderby=post_date&category=-54,-58');
         foreach($lastposts as $post) :
         $counter++;
         setup_postdata($post);

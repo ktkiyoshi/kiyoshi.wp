@@ -1,5 +1,4 @@
 <?php
-
 function replaceImagePath($arg) {
   $content = str_replace('"/img/', '"' . get_bloginfo('template_directory') . '/img/', $arg);
   return $content;
@@ -25,13 +24,13 @@ function image_index(){
 /* Header img */
 function image(){
   $rdmimg = array();
-  $rdmimg[0]=get_template_directory_uri() ."/img/header/image1_900.png";
-  $rdmimg[1]=get_template_directory_uri() ."/img/header/image2_900.png";
-  $rdmimg[2]=get_template_directory_uri() ."/img/header/image3_900.png";
-  $rdmimg[3]=get_template_directory_uri() ."/img/header/image4_900.png";
-  $rdmimg[4]=get_template_directory_uri() ."/img/header/image5_900.png";
-  $rdmimg[5]=get_template_directory_uri() ."/img/header/image6_900.png";
-  $rdmimg[6]=get_template_directory_uri() ."/img/header/image7_900.png";
+  $rdmimg[0]=get_template_directory_uri() ."/img/header/image1_1000.png";
+  $rdmimg[1]=get_template_directory_uri() ."/img/header/image2_1000.png";
+  $rdmimg[2]=get_template_directory_uri() ."/img/header/image3_1000.png";
+  $rdmimg[3]=get_template_directory_uri() ."/img/header/image4_1000.png";
+  $rdmimg[4]=get_template_directory_uri() ."/img/header/image5_1000.png";
+  $rdmimg[5]=get_template_directory_uri() ."/img/header/image6_1000.png";
+  $rdmimg[6]=get_template_directory_uri() ."/img/header/image7_1000.png";
   return $rdmimg[rand(0,6)];
 }
 

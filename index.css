@@ -36,7 +36,7 @@ Version:1.0
 ***********/
 #left {
   float:left;
-  width:640px;
+  width:740px;
   margin:0px 0px 10px 0px;
 }
 #slide {
@@ -48,7 +48,7 @@ Version:1.0
   text-align:center;
 }
 .l_frame {
-  width:608px;
+  width:708px;
   padding:7px 7px 7px 10px;
   margin:5px 0px 7px 0px;
   border:1px solid #c0c0c0;
@@ -243,12 +243,21 @@ Version:1.0
 .exp_1, .exp_2 { vertical-align: middle; }
 .new_entry .exp_1 { padding: 5px 0px 1px 10px; font-weight: bold; }
 .new_entry .exp_2 { padding: 2px 0px 1px 10px; line-height: 1.7; }
-.old_entries { float: left; width: 202px; text-align: center; }
-.old_entries .exp_2 { font-size: 8pt; margin: 0px 5px; }
-.old_entries img { width: 150px; margin: 3px 0px }
+.old_entries {
+  float: left;
+  width: 235px;
+  text-align: center;
+}
+.old_entries .exp_2 {
+  font-size: 10pt;
+  margin: 0px 5px;
+}
+.old_entries img {
+  width: 180px;
+  margin: 3px 0px
+}
 .img_yoko { width: 200px; }
 .img_tate { height: 200px; }
-
 
 
 /****************
@@ -336,15 +345,15 @@ div#respond #reply-title { display: none; }
 **************/
 .photos {
   float: left;
-  width: 202px;
+  width: 235px;
   text-align: center;
 }
 .photos .exp_2 {
-  font-size: 8pt;
+  font-size: 10pt;
   margin: 0px 5px;
 }
 .photos img {
-  width: 150px;
+  width: 180px;
   margin: 3px 0px;
   border: none;
 }
