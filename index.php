@@ -133,9 +133,10 @@ jQuery(document).ready(function($) {
     <div class="l_frame">
       <p class="title">Tech Entries</p>
     </div>
-    <?php $it_posts=get_posts('numberposts=1&category=-54'); ?>
+    <?php global $post; ?>
+    <?php $mypost = get_posts( array( 'numberposts' => 2, 'category' => -54 ));?>
     <div class="l_frame">
-      <?php foreach ($it_posts as $it) : setup_postdata($it); ?>
+        <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
           <div class="f_left">
             <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
             <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a>
