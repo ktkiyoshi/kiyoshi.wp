@@ -134,7 +134,7 @@ jQuery(document).ready(function($) {
       <p class="title">Tech Entries</p>
     </div>
     <?php global $post; ?>
-    <?php $mypost = get_posts( array( 'numberposts' => 2, 'category' => -54 ));?>
+    <?php $mypost = get_posts( array( 'numberposts' => 3, 'category' => 58 ));?>
     <div class="l_frame">
         <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
           <div class="f_left">
