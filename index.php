@@ -23,6 +23,11 @@ jQuery(document).ready(function($) {
 </script> 
 </head>
 <body>
+<?php
+  if($_SERVER["HTTP_HOST"] = 'localhost') {
+    echo "LOCALHOST";
+  }
+?>
 <div id="container">
 <!--
 <div id="header">
