@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 <body>
 <?php
   if($_SERVER["HTTP_HOST"] = 'localhost') {
-    echo "LOCALHOST";
+//    echo "LOCALHOST";
   }
 ?>
 <div id="container">
