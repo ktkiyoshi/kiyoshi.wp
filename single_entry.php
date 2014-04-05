@@ -22,9 +22,10 @@
         <br />
         <!-- Place this tag where you want the +1 button to render -->
         <g:plusone size="medium" annotation="none"></g:plusone>
-        <br />
         <!-- facebook -->
         <div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+        <!-- Hatena -->
+        <a href="http://b.hatena.ne.jp/entry/<?php the_permalink(); ?>" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="<?php the_title(); ?>"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
       </div>
     </div>
 
