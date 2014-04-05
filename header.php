@@ -1,31 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <!-- facebook -->
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" />
-<?php /*  require_once("db_index.dat");*/ ?>
-
+<html>
 <head>
 <title><?php wp_title ( '|', true,'right' ); ?><?php bloginfo('name'); ?></title>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<meta name="viewport" content="width=device-width">
 <!-- OGP -->
-  <meta property="fb:admins" content="100001174154207" />
-  <meta property="fb:app_id" content="112219258880440" />
+<meta property="fb:admins" content="100001174154207" />
+<meta property="fb:app_id" content="112219258880440" />
 <?php if (is_front_page()){ ?>
-  <meta property="og:type" content="blog" />
+<meta property="og:type" content="blog" />
 <?php } else { ?>
-  <meta property="og:type" content="article" />
+<meta property="og:type" content="article" />
 <?php } ?>
 <?php if (is_single()){ ?>
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
-  <meta property="og:description" content="<?php echo mb_substr(get_the_excerpt(), 0, 100); ?>">
+<meta property="og:description" content="<?php echo mb_substr(get_the_excerpt(), 0, 100); ?>">
 <?php endwhile; endif; ?>
-  <meta property="og:title" content="<?php the_title();?>">
-  <meta property="og:url" content="<?php the_permalink();?>">
+<meta property="og:title" content="<?php the_title();?>">
+<meta property="og:url" content="<?php the_permalink();?>">
 <?php } else { ?>
-  <meta property="og:description" content="<?php bloginfo('description');?>">
-  <meta property="og:title" content="<?php bloginfo('name');?>">
-  <meta property="og:url" content="<?php bloginfo('url');?>">
+<meta property="og:description" content="<?php bloginfo('description');?>">
+<meta property="og:title" content="<?php bloginfo('name');?>">
+<meta property="og:url" content="<?php bloginfo('url');?>">
 <?php } ?>
-  <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 <?php
   $str = $post->post_content;
   $searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
