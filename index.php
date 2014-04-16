@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
 
   <div id="left">
     <p class="top_img">
-    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_010_l.png" /></a>
+    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_011_l.png" /></a>
     </p>
     <!-- tabs menu start -->
     <div id="tabs">
