@@ -1,15 +1,35 @@
+  <div class="reset"></div>
+</div><!-- /#wrapper -->
+<footer>
   <div id="footer">
-
-  <div style="margin-left:7px">
-    <div class="f_frame">
-      <ul>
-        <?php wp_list_bookmarks('category_before=&category_after=&title_before=<p class="title">&title_after=</p>&category=37'); ?>
-      </ul>
+    <div class="f_frame category_list">
+      <p class="title">カテゴリ一覧</p>
+        <ul>
+        <?php $categories = get_categories('exclude=54','hide_empty=true'); foreach($categories as $category) : ?>
+          <li><a href="<?php echo get_category_link($category->cat_ID); ?>">
+          <?php echo get_catname($category->cat_ID);?>(<?php echo $category->count; ?>)</a></li>
+        <?php endforeach; ?>
+        </ul>
     </div>
-    <div class="f_frame">
-      <ul>
-        <?php wp_list_bookmarks('category_before=&category_after=&title_before=<p class="title">&title_after=</p>&category=2'); ?>
-      </ul>
+    <div class="f_frame archive_list">
+      <p class="title">アーカイブ一覧</p>
+      <?php $archives = get_archives_array(); $this_year = ''; ?>
+      <?php if($archives): ?>
+        <ul>
+        <?php foreach($archives as $archive): ?>
+        <?php if($this_year == '' || $this_year != $archive->year) { ?>
+          <p><?php echo $archive->year; ?>年</p>
+        <?php $m_cnt = 0; } ?>
+          <li>
+            <a href="<?php echo get_month_link($archive->year, $archive->month); ?>">
+            <?php echo $archive->month; ?>月(<?php echo $archive->posts; ?>)</a>
+            <?php if($m_cnt == 5) { echo "<br />"; } ?>
+          </li>
+          <?php $this_year = $archive->year; $m_cnt++; ?>
+          <?php endforeach; ?>
+        </ul>
+      <?php endif; ?>
+
     </div>
     <div class="f_frame">
       <p class="title">Administrator</p>
@@ -20,52 +40,63 @@
         <li><a href="/wiki">ウィキ</a></li>
       </ul>
     </div>
+    <div class="reset"></div>
     <div class="copyright">
-      <p class="img_center"><a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png" /></a></p>
       <p>Copyright(C) <script type="text/javascript">myDate = new Date();myYear = myDate.getFullYear();document.write(myYear);</script> Kiyoshi All Rights Reserved.</p>
     </div>
   </div>
-  <div class="reset"></div>
-  </div>
+</footer>
 
-</div><!-- container -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>side-fixed.js"></script>
 
-<!--imgPreview-->
-<script>
-jQuery.noConflict();
-(function($){  
-$('.thumbnail img').imgPreview({
-    containerID: 'imgPreviewWithStyles',
-    imgCSS: {
-        height: 200
-    },
-    onShow: function(link){
-        $(link).stop().animate({opacity:0.4});
-        $('img', this).css({opacity:0});
-    },
-    onLoad: function(){
-        $(this).animate({opacity:1}, 300);
-    },
-    onHide: function(link){
-        $(link).stop().animate({opacity:1});
-    }
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+  $(function() {
+    $('#tabs a[href^="#panel"]').click(function(){
+        $("#tabs li").removeClass("active");
+        $(this).parent().addClass("active");
+        $("#tabs .panel").hide();
+        $(this.hash).fadeIn();
+        return false;
+    });
+    $('#tabs a[href^="#panel"]:eq(0)').trigger('click');
+  });
 });
-})(jQuery);
 </script>
 
 <script type="text/javascript">
-jQuery(function($) {
-var nav    = $('#ads'),
-    offset = nav.offset();
-$(window).scroll(function () {
-  if($(window).scrollTop() > offset.top - 20) {
-    nav.addClass('fixed');
-  } else {
-    nav.removeClass('fixed');
-  }
-});
+jQuery(document).ready(function($) {
+  $(document).ready(function(){
+    $("#old_entry").click(function(){
+      $('#box_entry').slideToggle(500)
+      return false;
+    });
+    $("#old_photos").click(function(){
+      $('#box_photos').slideToggle(500)
+      return false;
+    });
+    $("#old_history").click(function(){
+      $('#box_history').slideToggle(500)
+      return false;
+    });
+  });
 });
 </script>
+
+<!-- <script type="text/javascript">
+jQuery(function($) {
+  var nav = $('#ads'),
+      offset = nav.offset();
+  $(window).scroll(function () {
+    if($(window).scrollTop() > offset.top - 20) {
+      nav.addClass('fixed');
+    } else {
+      nav.removeClass('fixed');
+    }
+  });
+});
+</script> -->
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -79,7 +110,6 @@ $(window).scroll(function () {
 </script>
 
 <!-- Google+ -->
-<!-- Place this render call where appropriate -->
 <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -97,6 +127,7 @@ $(window).scroll(function () {
   js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=112219258880440";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
 <?php wp_footer(); ?>
 </body>
 </html>

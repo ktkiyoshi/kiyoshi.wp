@@ -2,19 +2,19 @@
 </head>
 
 <body>
-<div id="container">
+<div id="wrapper">
   <div id="header">
     <div class="top_img">
       <a href="/wp"><img src="<?php echo image(); ?>" /></a>
     </div>
   </div>
 
-  <div id="left">
+  <section>
     <div class="l_frame">
       <h1 class="entry_title"><?php the_title(); ?></h1>
       <p class="entry_meta">
-        <?php the_time('Y-m-d (D) G:i') ?> | 
-        <?php the_category(' | ') ?> | 
+        <?php the_time('Y-m-d (D) G:i') ?> |
+        <?php the_category(' | ') ?> |
         <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?>
       </p>
       <div class="entry">
@@ -34,7 +34,7 @@
     <div class="l_frame">
       <?php comments_template(); ?>
     </div>
-  </div>
+  </section>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

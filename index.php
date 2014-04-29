@@ -1,206 +1,87 @@
 <?php get_header(); ?>
-<!-- Exclude ABOUT & IT -->
 <?php query_posts("cat=-54,-58"); ?>
-<!-- Instagram -->
 <?php require_once('instagram.php'); ?>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-  $(document).ready(function(){
-    $("#old_entry").click(function(){
-      $('#box_entry').slideToggle(500)
-      return false;
-    });
-    $("#old_photos").click(function(){
-      $('#box_photos').slideToggle(500)
-      return false;
-    });
-    $("#old_history").click(function(){
-      $('#box_history').slideToggle(500)
-      return false;
-    });
-  });
-});
-</script> 
 </head>
 <body>
-<?php
-  if($_SERVER["HTTP_HOST"] = 'localhost') {
-//    echo "LOCALHOST";
-  }
-?>
-<div id="container">
-<!--
-<div id="header">
-  <div class="logo"><a href="/wp">
-    <img src="<?php bloginfo('template_directory'); ?>/img/logo.png" /></a>
-  </div>
-</div>
--->
-
-  <div id="left">
-    <p class="top_img">
-    <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_011_l.png" /></a>
-    </p>
-    <!-- tabs menu start -->
-    <div id="tabs">
+<div id="wrapper">
+  <header id="header">
+    <h1><a href="/wp">超日記</a></h1>
+    <nav>
       <ul>
-        <li><a href="#panel1">最新記事</a></li>
-        <li><a href="#panel2">更新情報</a></li>
-        <li><a href="#panel3">YRP野比</a></li>
+        <li><a href="">ABOUT</a></li>
+        <li><a href="/wp/gallery">GALLERY</a></li>
       </ul>
-    <div id="panel1" class="panel">
-      <?php while (have_posts()) : the_post(); $counter++; ?>
-        <?php if ($counter <= 1) { ?>
-          <div class="f_left">
-            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-            <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a>
-          </div>
-          <div class="new_entry">
-            <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-            <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
-            <p class="exp_2">
-              <?php echo mb_substr(get_the_excerpt(),0,100);?>...
-              <p class="new_entry_more">
-<!--
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                &raquo;<?php the_title(); ?>の続きを読む</a>
--->
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                &raquo;続きを読む</a>
-              </p>
-            </p>
-          </div>
-          <div class="reset">
-            <p class="entries_more"><a href="" id="old_entry">&raquo;過去の記事</a></p>
-          </div>
+    </nav>
+  </header><!-- /#header -->
+
+  <div id="main">
+    <div id="content">
+      <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_011_l.png" class="top_img"></a>
+      <nav id="tabs">
+        <ul class="panels">
+          <li class="panel_title"><a href="#panel1">最新記事</a></li>
+        </ul>
+
+        <div id="panel1" class="panel">
+          <?php while (have_posts()) : the_post(); $counter++; ?>
+          <?php if ($counter <= 1) { ?>
+          <article>
+            <header>
+              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+              <ul class="entry_meta">
+                <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
+                <li>| <?php the_category(' | ') ?></li>
+                <li><?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
+              </ul>
+            </header>
+            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_A f_left"/></a>
+            <p class="description"><?php echo mb_substr(get_the_excerpt(),0,100);?>...</p>
+            <p class="entry_more ml215"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
+          </article>
+          <div class="reset"></div>
+          <p class="read_past_entries"><a href="" id="old_entry">&raquo;過去の記事</a></p>
+
           <div id="box_entry" style="display:none">
-        <?php }else{ ?>
-          <div class="old_entries">
-            <p class="exp_1">
-              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> 
-              <p class="exp_2"><?php the_time('Y-m-d (D) G:i') ?></p>
-            </p>
-            <p><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-            <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a></p>
-            <p class="exp_2">
-              <?php echo mb_substr(get_the_excerpt(),0,50);?>...
-              <p class="old_entry_more">
-<!--
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                &raquo;<?php the_title(); ?>の続きを読む</a>
--->
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                &raquo;続きを読む</a>
-              </p>
-            </p>
+          <?php }else{ ?>
+            <article class="past_entries f_left t_center">
+              <time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time>
+              <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B" /></a>
+              <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+              <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
+            </article>
+          <?php } if ($counter != 1 && ($counter%3) == 1 ) { ?>
+            <div class="reset"><br /></div>
+          <?php } if ($counter == 10) { ?>
+            <div class="reset"></div>
+          <?php break; } endwhile; ?>
           </div>
-        <?php } if ($counter != 1 && ($counter%3) == 1 ) { ?>
-          <div class="reset"><br /></div>
-        <?php } if ($counter == 10) { ?>
-          <div class="reset"></div>
-        <?php break; } endwhile; ?>
         </div>
-      </div>
-      <?php wp_reset_query(); ?>
+        <?php wp_reset_query(); ?>
+      </nav>
 
-      <div id="panel2" class="panel">
-          <div class="f_left">
-            <img src="<?php bloginfo('template_directory'); ?>/img/screenshot.png" class="img_yoko" />
-          </div>
-          <div class="new_entry">
-            <p class="exp_1">超日記をオリジナルテーマ化</p>
-            <p class="exp_2"><small>2012-6-22</small></p>
-            <p class="exp_2">超日記とぷりてぃを融合し，CMSであるWordpressを用いた<br />ブログ兼サイトのハイブリッド仕様に生まれ変わりました．</br />※オリジナルテーマのため，不具合が見られる可能性があります．
-          </div>
-          <div class="reset"></div>
-      </div>
-
-      <div id="panel3" class="panel">
-        <div class="f_left">
-          <a href="http://kt-kiyoshi.com/yrp/"><img src="<?php bloginfo('template_directory'); ?>/img/yrp-poster.jpeg" class="img_tate" /></a>
-        </div>
-        <p class="exp_1">2012.05.04-05 YRP合宿#1</p>
-        <div class="thumbnail">
-          <img src="<?php bloginfo('template_directory'); ?>/img/yrp_img/gw1.jpg" alt="carp"/>
-          <img src="<?php bloginfo('template_directory'); ?>/img/yrp_img/gw2.jpg" alt="view on hill" />
-          <img src="<?php bloginfo('template_directory'); ?>/img/yrp_img/gw3.jpg" alt="UNI" />
-          <img src="<?php bloginfo('template_directory'); ?>/img/yrp_img/gw4.jpg" alt="bird" /><br />
-          <img src="<?php bloginfo('template_directory'); ?>/img/yrp_img/gw5.jpg" alt="And I" />
-          <img src="<?php bloginfo('template_directory'); ?>/img/yrp_img/gw6.jpg" alt="kapibara" />
-          <img src="<?php bloginfo('template_directory'); ?>/img/yrp_img/gw7.jpg" alt="molmot" />
-          <img src="<?php bloginfo('template_directory'); ?>/img/yrp_img/gw8.jpg" alt="saboten" />
-        </div>
-        <div class="reset"></div>
-      </div>
-    </div>
-    <!-- tabs menu end -->
-
-    <div class="l_frame">
-      <p class="title">Tech Entries</p>
-    </div>
-    <?php global $post; ?>
-    <?php $mypost = get_posts( array( 'numberposts' => 3, 'category' => 58 ));?>
-    <div class="l_frame">
+      <section>
+        <ul class="panels">
+          <li class="panel_title"><a>技術記事</a></li>
+        </ul>
+        <?php global $post; $mypost = get_posts( array( 'numberposts' => 3, 'category' => 58 ));?>
+        <div class="l_frame">
         <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
-          <div class="f_left">
-            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-            <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a>
-          </div>
-          <div class="new_entry">
-            <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-            <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
-            <p class="exp_2">
-              <?php echo mb_substr(get_the_excerpt(),0,100);?>...
-              <p class="new_entry_more">
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                &raquo;続きを読む</a>
-              </p>
-            </p>
-          </div>
+          <article class="mb20">
+            <div class="f_left">
+              <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                <img src="<?php echo catch_that_image(); ?>" class="thumbnail_A f_left"/>
+              </a>
+              <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+              <p class="description"><?php echo mb_substr(get_the_excerpt(),0,65);?>...</p>
+              <p class="entry_more ml215"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
+            </div>
+            <div class="reset"></div>
+          </article>
         <?php endforeach; ?>
-    </div>
-    <?php wp_reset_postdata(); ?>
-
-    <div class="l_frame">
-      <p class="title">Recent 3 Photos</p>
-    </div>
-    <div class="l_frame">
-    <?php
-     //for($i=0; $i < count($media); $i++) {
-     for($i=0; $i < 3; $i++) {
-      $caption = $media[$i][caption];
-      $images = $media[$i][images];
-    ?>
-      <div class="photos">
-        <p class="exp_1">
-          <?php echo date('Y/m/d', $caption[created_time]); ?> 
-        </p>
-        <p><a href="<?php echo $media[$i][link]; ?>" title="<?php echo $caption[text]; ?>">
-        <img src="<?php echo $images[thumbnail][url]; ?>" class="img_yoko"/></a></p>
-        <span class="exp_2"><a href="<?php echo $media[$i][link]; ?>"><?php echo $caption[text]; ?></a></span>
-      </div>
-      <?php if (($i%3) == 2 || ($i+1) == count($media)) { ?>
-      <div class="reset"><br /></div>
-      <?php } ?>
-    <?php } ?>
-    </div>
-
-<!--
-    <div class="l_frame">
-      <p class="title">Update History<a href="" id="old_history"><img src="<?php bloginfo('template_directory'); ?>/img/zoom_icon&16.png" class="more" /></a></p>
-    </div>
-    <div class="history">
-      <ul>
-        <?php require_once('history.php'); ?>
-      </ul>
-    </div>
-    <div class="affiliate">
-      <a href="http://hb.afl.rakuten.co.jp/hsc/108caad3.394b54eb.108caacf.034b8c67/" target="_blank">
-      <img src="http://hbb.afl.rakuten.co.jp/hsb/108caad3.394b54eb.108caacf.034b8c67/" border="0"></a>
-    </div>
--->
-
-  </div>
-
+        <?php wp_reset_postdata(); ?>
+        </div>
+      </section>
+    </div><!-- /#content -->
 <?php get_sidebar(); ?>
+  </div><!-- /#main -->
 <?php get_footer(); ?>

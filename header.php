@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<!-- facebook -->
 <html>
 <head>
 <title><?php wp_title ( '|', true,'right' ); ?><?php bloginfo('name'); ?></title>
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<meta charset="<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width">
-<!-- OGP -->
 <meta property="fb:admins" content="100001174154207" />
 <meta property="fb:app_id" content="112219258880440" />
 <?php if (is_front_page()){ ?>
@@ -33,42 +31,22 @@ if (has_post_thumbnail()){
   $image_id = get_post_thumbnail_id();
   $image = wp_get_attachment_image_src( $image_id, 'full');
 ?>
-  <meta property="og:image" content="<?php echo $image[0] ?>">
+<meta property="og:image" content="<?php echo $image[0] ?>">
 <?php } else if ( preg_match( $searchPattern, $str, $imgurl ) && !is_archive()) { ?>
-  <meta property="og:image" content="<?php echo $imgurl[2] ?>">
+<meta property="og:image" content="<?php echo $imgurl[2] ?>">
 <?php } else { ?>
-  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/screenshot.png">
+<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/screenshot.png">
 <?php }
 } else { ?>
-  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/screenshot.png">
+<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/screenshot.png">
 <?php } ?>
-<!-- OGP -->
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 <?php if (is_page('Gallery')){ ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/gallery.css" type="text/css" />
-<?php } else { ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/index.css" type="text/css" />
 <?php } ?>
+<script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>side-fixed.js"></script>
 
-<script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>jquery/img_preview/img_preview.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-  $(function() {
-    $('#tabs a[href^="#panel"]').click(function(){
-        $("#tabs li").removeClass("active");
-        $(this).parent().addClass("active");
-        $("#tabs .panel").hide();
-        $(this.hash).fadeIn();
-        return false;
-    });
-    $('#tabs a[href^="#panel"]:eq(0)').trigger('click');
-  });
-});
-</script>
-
-<!-- Load wordpress default jquery -->
 <?php wp_enqueue_script( 'jquery' ); ?>
 <?php wp_head(); ?>

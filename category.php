@@ -2,14 +2,14 @@
 </head>
 
 <body>
-<div id="container">
+<div id="wrapper">
   <div id="header">
     <div class="top_img">
       <a href="/wp"><img src="<?php echo image(); ?>" /></a>
     </div>
   </div>
 
-  <div id="left">
+  <section>
     <div class="l_frame">
       <h1 class="entry_title"><?php single_term_title(); ?></h1>
       <?php
@@ -75,7 +75,7 @@
           <?php if ($counter == 10) { break; }?>
         <?php endwhile; ?>
     </div>
-  </div>
+  </section>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

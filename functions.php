@@ -2,7 +2,7 @@
 function replaceImagePath($arg) {
   $content = str_replace('"/img/', '"' . get_bloginfo('template_directory') . '/img/', $arg);
   return $content;
-}  
+}
 add_action('the_content', 'replaceImagePath');
 
 
@@ -39,16 +39,16 @@ function super_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment; ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
   <div id="comment-<?php comment_ID(); ?>">
-    <?php printf(get_comment_author_link()) ?> | 
+    <?php printf(get_comment_author_link()) ?> |
     <?php if ($comment->comment_approved == '0') : ?>
       <em><?php _e('Your comment is awaiting moderation.') ?></em><br />
     <?php endif; ?>
-    <?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a> | 
+    <?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a> |
     <?php edit_comment_link('[Edit]') ?>
     <?php comment_text() ?>
   </div>
 <?php
-        }
+}
 
 /* The first image */
 function catch_that_image() {
@@ -91,7 +91,7 @@ function my_getarchives_category_where($where, $args){
     global  $wpdb;//データベース、テーブル関連の情報が入っているグローバル定数
     if (isset($args['cat'])){
         // 引数にcatと名前の付いた変数がカンマ区切りでセットされている場合、それぞれの数字を分割して配列$selectedCategoriesに格納する
-        $selectedCategories = explode(',',$args['cat']); 
+        $selectedCategories = explode(',',$args['cat']);
         //それぞれの配列の数字が、負の場合=>$categoriesOutに、正の場合=>$categoriesInに、カンマ区切りで付け加える。
         foreach ($selectedCategories as $key) {
             if($key<0){
@@ -102,7 +102,7 @@ function my_getarchives_category_where($where, $args){
         }
         //それぞれの変数の最後の,文字を削除
         $categoriesIn = rtrim($categoriesIn,",");
-        $categoriesOut = rtrim($categoriesOut,","); 
+        $categoriesOut = rtrim($categoriesOut,",");
         //$whereでSQLのwhere句を作成する。
         $where .= ' AND '.$wpdb->prefix.'posts.ID IN (SELECT DISTINCT ID FROM '.$wpdb->prefix.'posts'
                 .' JOIN '.$wpdb->prefix.'term_relationships term_relationships ON term_relationships.object_id = '.$wpdb->prefix.'posts.ID'
@@ -129,4 +129,92 @@ if ( function_exists('register_sidebar') ) {
 
 /* Remove <p> */
 remove_filter('the_content', 'wpautop');
+
+/**
+* @function get_archives_array
+* @param post_type(string) / period(string) / year(Y) / limit(int)
+* @return array
+*/
+if(!function_exists('get_archives_array')){
+    function get_archives_array($args = ''){
+        global $wpdb, $wp_locale;
+
+        $defaults = array(
+            'post_type' => '',
+            'period'  => 'monthly',
+            'year' => '',
+            'limit' => ''
+        );
+        $args = wp_parse_args($args, $defaults);
+        extract($args, EXTR_SKIP);
+
+        if($post_type == ''){
+            $post_type = 'post';
+        }elseif($post_type == 'any'){
+            $post_types = get_post_types(array('public'=>true, '_builtin'=>false, 'show_ui'=>true));
+            $post_type_ary = array();
+            foreach($post_types as $post_type){
+                $post_type_obj = get_post_type_object($post_type);
+                if(!$post_type_obj){
+                    continue;
+                }
+
+                if($post_type_obj->has_archive === true){
+                    $slug = $post_type_obj->rewrite['slug'];
+                }else{
+                    $slug = $post_type_obj->has_archive;
+                }
+
+                array_push($post_type_ary, $slug);
+            }
+
+            $post_type = join("', '", $post_type_ary);
+        }else{
+            if(!post_type_exists($post_type)){
+                return false;
+            }
+        }
+        if($period == ''){
+            $period = 'monthly';
+        }
+        if($year != ''){
+            $year = intval($year);
+            $year = " AND DATE_FORMAT(post_date, '%Y') = ".$year;
+        }
+        if($limit != ''){
+            $limit = absint($limit);
+            $limit = ' LIMIT '.$limit;
+        }
+
+        $where  = "WHERE post_type IN ('".$post_type."') AND post_status = 'publish'{$year}";
+        $join   = "";
+        $where  = apply_filters('getarchivesary_where', $where, $args);
+        $join   = apply_filters('getarchivesary_join' , $join , $args);
+
+        if($period == 'monthly'){
+                $query = "SELECT YEAR(post_date) AS 'year', MONTH(post_date) AS 'month', count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC $limit";
+        }elseif($period == 'yearly'){
+            $query = "SELECT YEAR(post_date) AS 'year', count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date) ORDER BY post_date DESC $limit";
+        }
+
+        $key = md5($query);
+        $cache = wp_cache_get('get_archives_array', 'general');
+        if(!isset($cache[$key])){
+            $arcresults = $wpdb->get_results($query);
+            $cache[$key] = $arcresults;
+            wp_cache_set('get_archives_array', $cache, 'general');
+        }else{
+            $arcresults = $cache[$key];
+        }
+        if($arcresults){
+            $output = (array)$arcresults;
+        }
+
+        if(empty($output)){
+            return false;
+        }
+
+        return $output;
+    }
+}
 ?>
