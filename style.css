@@ -1,6 +1,13 @@
-@import url("default.css");
-@import url("basic.css");
-@import url("css/font-awesome.css");
+/*
+Theme Name:Super_Diary
+Description:This is made for Super_Diary
+Author:Kiyoshi
+Author URI:http://kt-kiyoshi.com/
+Version:1.0
+*/
+@import url("css/default.css");
+@import url("css/common.css");
+@import url("css/font-awesome.min.css");
 
 /* web font */
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
