@@ -28,10 +28,18 @@
           <?php endforeach; ?>
         </ul>
       <?php endif; ?>
-
     </div>
+
+    <div class="f_frame author_info">
+      <p class="title">中の人</p>
+      <ul>
+        <li>こんな人が書いてます</li>
+        <li><img src="<?php bloginfo('template_directory'); ?>/img/profile.jpg" class="thumbnail_D f_left"></li>
+      </ul>
+    </div>
+
     <div class="f_frame">
-      <p class="title">Administrator</p>
+      <p class="title">管理者用</p>
       <ul>
         <?php wp_register(); ?>
         <li><?php wp_loginout(); ?></li>
@@ -104,13 +112,17 @@ jQuery(document).ready(function($) {
   })();
 </script>
 
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
 <!-- Facebook -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=112219258880440";
+  js.async = true;
+  js.src = "//connect.facebook.net/en_EN/all.js#xfbml=1&appId=112219258880440";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 

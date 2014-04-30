@@ -35,13 +35,15 @@
         <?php } endforeach; ?>
       </ul>
       </section>
-
+<!--
     <div class="r_frame">
-      <p class="title">Author Profile</p>
+      <p class="title"></p>
     </div>
     <section>
+      <ul>
+      </ul>
     </section>
-
+ -->
 <!--
 //Add Widgets
 <?php dynamic_sidebar(); ?>

@@ -25,13 +25,13 @@
         <div id="panel1" class="panel">
           <?php while (have_posts()) : the_post(); $counter++; ?>
           <?php if ($counter <= 1) { ?>
-          <article>
+          <article class="index">
             <header>
               <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
               <ul class="entry_meta">
                 <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
                 <li>| <?php the_category(' | ') ?></li>
-                <li><?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
+                <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
               </ul>
             </header>
             <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_A f_left"/></a>
@@ -66,7 +66,7 @@
         <?php global $post; $mypost = get_posts( array( 'numberposts' => 3, 'category' => 58 ));?>
         <div class="l_frame">
         <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
-          <article class="mb20">
+          <article class="index mb20">
             <div class="f_left">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                 <img src="<?php echo catch_that_image(); ?>" class="thumbnail_A f_left"/>
