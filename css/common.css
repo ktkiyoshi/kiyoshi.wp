@@ -8,6 +8,10 @@ body {
 a { text-decoration: none; }
 a:hover, a:link, a:visited { color:#666; }
 hr { margin: 15px 15px 20px; color:#CCC; }
+img {
+max-width: 100%;
+height: auto;
+}
 .f_right { float: right; }
 .f_left { float: left; }
 .t_right { text-align: right; }
@@ -16,7 +20,7 @@ hr { margin: 15px 15px 20px; color:#CCC; }
 .reset { clear: both; }
 
 #wrapper {
-  width: 1050px;
+  width: 1000px;
   height: 100%;
   margin: 0 auto;
   padding: 0 5px;
@@ -61,7 +65,7 @@ hr { margin: 15px 15px 20px; color:#CCC; }
 *** CONTENT ***
 ***************/
 #content {
-  width: 730px;
+  width: 680px;
   float: left;
 }
 #content .top_img {
@@ -238,7 +242,7 @@ footer {
   margin-top: 20px;
 }
 #footer {
-  width: 1050px;
+  width: 1000px;
   margin: 0 auto;
   padding: 0 5px;
 }
@@ -272,7 +276,7 @@ footer {
   display: inline;
 }
 #footer .author_info {
-  width: 30%;
+  width: 28%;
 }
 #footer .author_info li {
   color: #999;
@@ -309,7 +313,7 @@ footer {
   margin-bottom: 22px;
 }
 #content article.single .entry .bq p {
-  margin: 0px;
+  margin: 0;
 }
 #content article.single .entry table {
   margin-bottom: 22px;
@@ -384,6 +388,14 @@ article .bq {
   padding: 10px;
 }
 
+#content article.archive time {
+  font-family: 'Droid Sans Mono', sans-serif;
+  display: block;
+}
+#content article.archive .description {
+  padding: 5px 5px 10px 0;
+}
+
 /****************
 *** Page navi ***
 ****************/
@@ -427,20 +439,8 @@ a.page-numbers:hover {
   margin: 5px 15px 10px 15px;
   list-style-type: none;
   }
-.comment li { list-style-type: none; }
 .comment p {
-  margin: 5px;
-  padding: 5px 7px;
-  background-color: #dcdcdc;
-  border: 1px solid #c0c0c0;
-  -webkit-border-top-left-radius: 7px;
-  -moz-border-radius-topleft: 7px;
-  -webkit-border-bottom-left-radius: 7px;
-  -moz-border-radius-bottomleft: 7px;
-  -webkit-border-top-right-radius: 7px;
-  -moz-border-radius-topright: 7px;
-  -webkit-border-bottom-right-radius: 7px;
-  -moz-border-radius-bottomright: 7px;
+  margin: 5px 15px;
 }
 
 /*

@@ -3,17 +3,25 @@
 
 <body>
 <div id="wrapper">
-  <div id="header">
-    <div class="top_img">
+  <header id="header">
+    <h1><a href="/wp">超日記</a></h1>
+    <nav>
+      <ul>
+        <li><a href="">ABOUT</a></li>
+        <li><a href="/wp/gallery">GALLERY</a></li>
+      </ul>
+    </nav>
+<!--     <div class="top_img">
       <a href="/wp"><img src="<?php echo image(); ?>" /></a>
-    </div>
-  </div>
+    </div> -->
+  </header><!-- /#header -->
 
-  <section>
-    <div class="l_frame">
-      <h1 class="entry_title">
-        <?php echo get_query_var('year').'年'.get_query_var('monthnum').'月'; ?>
-      </h1>
+  <div class="main">
+    <div id="content">
+      <section>
+        <ul class="panels">
+          <li class="panel_title"><a><?php echo get_query_var('year').'年'.get_query_var('monthnum').'月'; ?></a></li>
+        </ul>
       <?php
         $query_array = $wp_query->query_vars;
         $query_array['category__not_in'] = array(54);
@@ -37,50 +45,31 @@
         echo paginate_links($pagination);
         echo '</div>'."\n";
       ?>
-        <?php while (have_posts()) : the_post(); $counter++; ?>
-          <?php if ($counter <= 10) { ?>
+        <?php while (have_posts()) : the_post(); ?>
+          <article class="index archive mb20">
             <div class="f_left">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-              <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a>
-            </div>
-            <div class="new_entry">
-              <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-              <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
-              <p class="exp_2">
+              <img src="<?php echo catch_that_image(); ?>" class="thumbnail_A f_left"/></a>
+              <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+              <p><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></p>
+              <p class="description">
                 <?php echo mb_substr(get_the_excerpt(),0,80);?>...
-                <p class="new_entry_more">
-<!--
-                  <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                  &raquo;<?php the_title(); ?>の続きを読む</a>
--->
+                <p class="entry_more ml215">
                   <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                   &raquo;続きを読む</a>
                 </p>
               </p>
             </div>
             <div class="reset"></div>
-          <?php }else{ ?>
-            <div class="f_left">
-              <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-              <img src="<?php echo catch_that_image(); ?>" class="img_yoko"/></a>
-            </div>
-            <div class="new_entry">
-              <p class="exp_1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-              <p class="exp_2"><small><?php the_time('Y-m-d (D) G:i') ?></small></p>
-              <p class="exp_2">
-                <?php echo mb_substr(get_the_excerpt(),0,80);?>...
-                <p class="new_entry_more">
-                  <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                  &raquo;<?php the_title(); ?>の続きを読む</a>
-                </p>
-              </p>
-            </div>
-            <div class="reset"></div>
-          <?php } ?>
-          <?php if ($counter == 10) { break; }?>
-        <?php endwhile; ?>
-    </div>
-  </section>
-
+            </article>
+        <?php endwhile;
+          echo '<div class="page-navi">'."\n";
+          echo paginate_links($pagination);
+          echo '</div>'."\n";
+        ?>
+      </section>
+    </div><!-- /#content -->
 <?php get_sidebar(); ?>
+  <div class="reset"></div>
+  </div><!-- /#main -->
 <?php get_footer(); ?>
