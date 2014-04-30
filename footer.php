@@ -1,4 +1,3 @@
-  <div class="reset"></div>
 </div><!-- /#wrapper -->
 <footer>
   <div id="footer">
@@ -84,20 +83,7 @@ jQuery(document).ready(function($) {
 });
 </script>
 
-<!-- <script type="text/javascript">
-jQuery(function($) {
-  var nav = $('#ads'),
-      offset = nav.offset();
-  $(window).scroll(function () {
-    if($(window).scrollTop() > offset.top - 20) {
-      nav.addClass('fixed');
-    } else {
-      nav.removeClass('fixed');
-    }
-  });
-});
-</script> -->
-
+<!-- Google Analytics -->
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-31926749-1']);

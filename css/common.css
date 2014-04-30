@@ -16,7 +16,7 @@ hr { margin: 15px 15px 20px; color:#CCC; }
 .reset { clear: both; }
 
 #wrapper {
-  width: 1000px;
+  width: 1050px;
   height: 100%;
   margin: 0 auto;
   padding: 0 5px;
@@ -182,59 +182,51 @@ hr { margin: 15px 15px 20px; color:#CCC; }
 ************/
 #side {
   float: right;
-  width: 260px;
+  width: 310px;
 }
-#side .affiliate {
-  text-align: center;
+#sidefixed {
+  width: 310px;
 }
-#side #ads {
-  background-color: #FFF;
-}
-#side ul {
-  width: 260px;
-}
-#side ul li {
-  padding: 5px 5px 5px 10px;
-}
-#side ul li:before {
-  content: "\f046";
-  font-family: FontAwesome;
-  display: inline-block;
-}
-#side ul.no_list li {
-  margin-left: 5px;
-  padding: 5px 0px 5px 10px;
-  background-image: none;
-}
-#side ul.no_list li:before {
-  content: "";
-}
-#side .side_img {
-  text-align: center;
-}
-#side .side_img img {
-  border: 1px solid #c0c0c0;
-}
-.r_frame {
-  width:241px;
+#side .r_frame {
   padding:7px 10px 7px 7px;
   margin:5px 0px 7px 0px;
   border:1px solid #c0c0c0;
-  -webkit-border-radius:7px;
-  -moz-border-radius:7px;
+/*  -webkit-border-radius:7px;
+  -moz-border-radius:7px;*/
 }
-.r_frame p.title {
+#side .r_frame p.title {
   font-family: 'Droid Sans Mono', sans-serif;
-  position: relative;
-  font-size: 14px;
   line-height: 1;
   padding: 5px 5px 5px 10px;
   border-left: 5px #666 solid;
 }
-.r_frame img.more {
-  float: right;
-  margin: 0px;
-  /*padding:2px 5px 0px 0px;*/
+#side ul {
+  margin: 15px 0;
+}
+#side li {
+  margin: 5px 0 10px;
+  padding: 0 5px 5px 10px;
+  font-size: 85%;
+}
+#side li:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#side time {
+  font-family: 'Droid Sans Mono', sans-serif;
+  display: block;
+  line-height: 1;
+  padding: 2px 0 5px;
+}
+#side li .thumbnail_C {
+  width: 90px;
+  padding: 2px;
+  border: 1px solid #CCC;
+  margin: 0 5px;
+}
+#side li .title {
+  line-height: 140%;
 }
 
 /* Earch Entry */
@@ -283,9 +275,10 @@ article .bq {
 footer {
   background: #444;
   color: #CCC;
+  margin-top: 20px;
 }
 #footer {
-  width: 1000px;
+  width: 1050px;
   margin: 0 auto;
   padding: 0 5px;
 }
