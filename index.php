@@ -42,17 +42,23 @@
 
           <div id="box_entry" style="display:none">
           <?php }else{ ?>
+            <?php if ($counter == 10) { ?>
+            <div class="count10">
+            <?php } ?>
             <article class="past_entries f_left t_center">
-              <time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time>
+              <time datetime="<?php the_time('Y-m-d (D)') ?>" pubdate><?php the_time('Y-m-d (D)') ?></time>
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B" /></a>
               <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
               <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
             </article>
+            <?php if ($counter == 10) { ?>
+            </div>
+            <?php } ?>
           <?php } if ($counter != 1 && ($counter%3) == 1 ) { ?>
-            <div class="reset"><br /></div>
-          <?php } if ($counter == 10) { ?>
-            <div class="reset"></div>
-          <?php break; } endwhile; ?>
+            <div class="reset box_entry_pc"><br /></div>
+          <?php } if (($counter%2) == 1 ) { ?>
+            <div class="reset box_entry_sp"><br /></div>
+          <?php } if ($counter == 10) { break; } endwhile; ?>
           </div>
         </div>
         <?php wp_reset_query(); ?>

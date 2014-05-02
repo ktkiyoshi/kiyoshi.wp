@@ -4,6 +4,8 @@ body {
   font: 14px/24px "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","MS PGothic",Helvetica,Arial,Sans-Serif;
   background: #FFF;
   color: #666;
+  word-break:break-all;
+  -webkit-text-size-adjust: 100%;
 }
 a { text-decoration: none; }
 a:hover, a:link, a:visited { color:#666; }
@@ -11,6 +13,9 @@ hr { margin: 15px 15px 20px; color:#CCC; }
 img {
 max-width: 100%;
 height: auto;
+}
+textarea {
+  width: 100%;
 }
 .f_right { float: right; }
 .f_left { float: left; }
@@ -93,7 +98,7 @@ height: auto;
   margin: 5px 10px;
 }
 #content article .thumbnail_B {
-  width: 180px;
+  width: 80%;
   padding: 5px;
   border: 1px solid #CCC;
 }
@@ -122,11 +127,18 @@ height: auto;
 #content .past_entries time {
   font-family: 'Droid Sans Mono', sans-serif;
   font-size: 85%;
+  display: block;
 }
 #content .past_entries p {
   font-size: 90%;
   font-weight: bold;
   padding: 0 5px;
+}
+#content .box_entry_pc {
+  display: block;
+}
+#content .box_entry_sp {
+  display: none;
 }
 
 /**************
@@ -280,9 +292,6 @@ footer {
 #footer .category_list {
   width: 25%;
 }
-#footer .author_info {
-  /*width: 20%;*/
-}
 #footer .author_info li {
   color: #999;
 }
@@ -292,6 +301,12 @@ footer {
   border: 1px solid #CCC;
   margin: 5px;
 }
+#footer .archive_pc {
+  display: block;
+}
+#footer .archive_sp {
+  display: none;
+  }
 #footer .copyright {
   font-family: 'Droid Sans Mono', sans-serif;
   font-size: 75%;
@@ -336,12 +351,38 @@ footer {
   list-style-type: decimal;
 }
 #content article.single .entry img {
-  padding: 5px;
-  margin: 3px 7px;
+  display: block;
+  width: 90%;
+  padding: 5px !important;
+  margin: 3px auto !important;
   border: 1px solid #CCC;
+}
+/* For Reading Mater */
+#content article table {
+  margin: 0 auto 22px !important;
+}
+#content article table div {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+#content article table div img {
+  float: left
+}
+#content article table div p {
+  font-size: 85% !important;
+  line-height: 1.2 !important;
+  padding: 0 10px !important;
+}
+#content article table div p a,
+#content article table div p span {
+  display: block !important;
+  padding: 3px 0 !important;
 }
 .social {
   margin: 5px 0 15px 15px;
+  line-height: 2em;
 }
 .social iframe, .social div {
   display: inline;
@@ -396,7 +437,10 @@ article .bq {
   margin: 0px 0px 22px 10px;
   padding: 10px;
 }
-
+#content article.archive {
+  margin: 7px;
+  padding: 10px;
+}
 #content article.archive time {
   font-family: 'Droid Sans Mono', sans-serif;
   display: block;
@@ -409,34 +453,29 @@ article .bq {
 *** Page navi ***
 ****************/
 .page-navi {
-  color: #666;
-  background: white;
   margin: 1em auto;
-  line-height: 2em;
   text-align: center;
 }
 .page-navi .current {
-  color: white;
+  color: #FFF;
   background: #808080;
-  border-color: #CCC;
   font-weight: bold;
 }
 .page-navi .next, .page-navi .prev {
   border: 0 none;
   background: transparent;
   text-decoration: underline;
-  font-size: smaller;
+  font-size: 85%;
   font-weight: bold;
 }
 a.page-numbers, .page-navi .current {
-  color: #666;
-  padding: 2px .4em;
+  padding: 5px .6em;
   border: solid 1px #CCC;
-  text-decoration: none;
-  font-size: smaller;
+  font-size: 85%;
+  line-height: 2.7em;
 }
 a.page-numbers:hover {
-  color: white;
+  color: #FFF;
   background: #808080;
 }
 
@@ -497,13 +536,54 @@ img[width="0"] {
 @media screen and (max-width: 665px) {
   #footer {
     width: 417px;
-    max-width: 665px;
-    margin: 0 auto;
   }
   #footer .category_list {
     width: 45%;
   }
 }
-/* max-479px for SP */
-@media screen and (max-width: 479px) {
+/* max-420px for SP */
+@media screen and (max-width: 420px) {
+  #content article .thumbnail_A {
+    float: none;
+    width: 220px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #content article .title {
+    padding-top: 0;
+  }
+  #content article .description {
+    margin-left: 0;
+    padding: 0 0 5px 0;
+  }
+  #content article .entry_more {
+    margin-left: 0;
+    margin-right: 5px;
+    float: right;
+  }
+  #content .past_entries {
+    width: 50%;
+  }
+  #content .past_entries .entry_more {
+    float: none;
+  }
+  #footer {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #footer .f_frame {
+    width: 95%;
+  }
+  #footer .archive_pc, #content .box_entry_pc, .count10 {
+    display: none;
+  }
+  #footer .archive_sp, #content .box_entry_sp {
+    display: block;
+  }
+}
+@media screen and (max-width: 330px) {
+  #footer {
+    width: 95%;
+  }
 }

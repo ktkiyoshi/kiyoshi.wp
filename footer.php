@@ -13,8 +13,9 @@
           <li>
             <a href="<?php echo get_month_link($archive->year, $archive->month); ?>">
             <?php echo $archive->month; ?>月(<?php echo $archive->posts; ?>)</a>
-            <?php if($m_cnt == 5) { echo "<br />"; } ?>
           </li>
+          <?php if($m_cnt == 5) { echo "<br class='archive_pc' />"; } ?>
+          <?php if($m_cnt == 3 || $m_cnt == 7) { echo "<br class='archive_sp' />"; } ?>
           <?php $this_year = $archive->year; $m_cnt++; ?>
           <?php endforeach; ?>
         </ul>
