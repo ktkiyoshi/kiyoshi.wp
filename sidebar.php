@@ -9,7 +9,7 @@
     <div class="r_frame">
       <p class="title">Newest Entries</p>
     </div>
-    <section>
+    <section id="fixed_point">
       <ul>
         <?php
         $lastposts = get_posts('numberposts=10&orderby=post_date&category=-54,-58');
@@ -35,15 +35,6 @@
         <?php } endforeach; ?>
       </ul>
       </section>
-<!--
-    <div class="r_frame">
-      <p class="title"></p>
-    </div>
-    <section>
-      <ul>
-      </ul>
-    </section>
- -->
 <!--
 //Add Widgets
 <?php dynamic_sidebar(); ?>

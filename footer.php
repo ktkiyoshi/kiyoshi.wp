@@ -1,15 +1,6 @@
 </div><!-- /#wrapper -->
 <footer>
   <div id="footer">
-    <div class="f_frame category_list">
-      <p class="title">カテゴリ一覧</p>
-        <ul>
-        <?php $categories = get_categories('exclude=54','hide_empty=true'); foreach($categories as $category) : ?>
-          <li><a href="<?php echo get_category_link($category->cat_ID); ?>">
-          <?php echo get_catname($category->cat_ID);?>(<?php echo $category->count; ?>)</a></li>
-        <?php endforeach; ?>
-        </ul>
-    </div>
     <div class="f_frame archive_list">
       <p class="title">アーカイブ一覧</p>
       <?php $archives = get_archives_array(); $this_year = ''; ?>
@@ -30,21 +21,21 @@
       <?php endif; ?>
     </div>
 
+    <div class="f_frame category_list">
+      <p class="title">カテゴリ一覧</p>
+        <ul>
+        <?php $categories = get_categories('exclude=54','hide_empty=true'); foreach($categories as $category) : ?>
+          <li><a href="<?php echo get_category_link($category->cat_ID); ?>">
+          <?php echo get_catname($category->cat_ID);?>(<?php echo $category->count; ?>)</a></li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
+
     <div class="f_frame author_info">
       <p class="title">中の人</p>
       <ul>
         <li>こんな人が書いてます</li>
         <li><img src="<?php bloginfo('template_directory'); ?>/img/profile.jpg" class="thumbnail_D f_left"></li>
-      </ul>
-    </div>
-
-    <div class="f_frame">
-      <p class="title">管理者用</p>
-      <ul>
-        <?php wp_register(); ?>
-        <li><?php wp_loginout(); ?></li>
-        <?php wp_meta(); ?>
-        <li><a href="/wiki">ウィキ</a></li>
       </ul>
     </div>
     <div class="reset"></div>

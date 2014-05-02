@@ -68,10 +68,10 @@ height: auto;
 #content {
   float: left;
   width: 68%;
-  max-width: 680px;
+  /*max-width: 680px;*/
 }
 #content .top_img {
-  padding: 5px;
+  /*padding: 5px;*/
 }
 #content article .entry_meta {
   overflow: hidden;
@@ -99,6 +99,7 @@ height: auto;
 }
 #content article .description {
   padding: 10px 5px 10px 0;
+  margin-left: 212px;
 }
 #content .read_past_entries {
   margin: 10px 0;
@@ -231,6 +232,7 @@ height: auto;
   margin: 0 5px;
 }
 #side li .title {
+  margin-left: 106px;
   line-height: 140%;
 }
 
@@ -244,6 +246,7 @@ footer {
   margin-top: 20px;
 }
 #footer {
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -267,17 +270,18 @@ footer {
   padding: 7px 7px 7px 10px;
   margin: 5px 0px 0px;
 }
-#footer .category_list {
-  width: 25%;
-}
 #footer .archive_list {
-  width: 40%;
+  width: 400px;
+  margin-left: 20px;
 }
 #footer .archive_list li {
   display: inline;
 }
+#footer .category_list {
+  width: 25%;
+}
 #footer .author_info {
-  width: 28%;
+  /*width: 20%;*/
 }
 #footer .author_info li {
   color: #999;
@@ -465,4 +469,41 @@ img[width="0"] {
 }
 .ml215 {
   margin-left: 215px;
+}
+
+/* max-869px for footer 2 column */
+@media screen and (max-width: 869px) {
+  #footer {
+    width: 665px;
+    max-width: 869px;
+    margin: 0 auto;
+  }
+  #footer .archive_list {
+    margin-left: 0;
+  }
+}
+/* max-720px for nothing sidebar */
+@media screen and (max-width: 720px) {
+  #side {display: none;}
+  #content {
+    margin-right: 0;
+    width: 100%;
+  }
+  #header nav {
+    margin-right: 0;
+  }
+}
+/* max-665px for footer 1 column */
+@media screen and (max-width: 665px) {
+  #footer {
+    width: 417px;
+    max-width: 665px;
+    margin: 0 auto;
+  }
+  #footer .category_list {
+    width: 45%;
+  }
+}
+/* max-479px for SP */
+@media screen and (max-width: 479px) {
 }
