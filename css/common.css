@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 body {
   font: 14px/24px "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","MS PGothic",Helvetica,Arial,Sans-Serif;
   background: #FFF;
@@ -10,12 +9,10 @@ body {
 a { text-decoration: none; }
 a:hover, a:link, a:visited { color:#666; }
 hr { margin: 15px 15px 20px; color:#CCC; }
+textarea { width: 100%; }
 img {
-max-width: 100%;
-height: auto;
-}
-textarea {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 .f_right { float: right; }
 .f_left { float: left; }
@@ -241,10 +238,10 @@ textarea {
   width: 90px;
   padding: 2px;
   border: 1px solid #CCC;
-  margin: 0 5px;
+  margin: 0 5px 0 0;
 }
 #side li .title {
-  margin-left: 106px;
+  margin-left: 101px;
   line-height: 140%;
 }
 
@@ -491,10 +488,19 @@ a.page-numbers:hover {
   margin: 5px 15px;
 }
 
-/*
-*  Web Font
-*  font-family: 'Droid Sans Mono', sans-serif;
-*/
+/*********************
+*** Gallery style ***
+*********************/
+#content .instagram {
+  width: 33%;
+}
+#content .instagram time {
+  font-family: 'Droid Sans Mono', sans-serif;
+  display: block;
+}
+#content .instagram .thumbnail_E {
+  width: 95%;
+}
 
 /* ページ最下部の余白対応 */
 img[width="0"] {
@@ -580,6 +586,9 @@ img[width="0"] {
   }
   #footer .archive_sp, #content .box_entry_sp {
     display: block;
+  }
+  #content .instagram {
+    width: 50%;
   }
 }
 @media screen and (max-width: 330px) {

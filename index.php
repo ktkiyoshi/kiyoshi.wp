@@ -56,7 +56,7 @@
             <?php } ?>
           <?php } if ($counter != 1 && ($counter%3) == 1 ) { ?>
             <div class="reset box_entry_pc"><br /></div>
-          <?php } if (($counter%2) == 1 ) { ?>
+          <?php } if ($counter != 1 && ($counter%2) == 1 ) { ?>
             <div class="reset box_entry_sp"><br /></div>
           <?php } if ($counter == 10) { break; } endwhile; ?>
           </div>
