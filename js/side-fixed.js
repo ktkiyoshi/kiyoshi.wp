@@ -20,13 +20,13 @@ $(window).load(function () {
 
       if(wd.height() < sideArea.height()){
         if(starPoint < wd.scrollTop() && wd.scrollTop() + wd.height() < breakPoint){
-          sideArea.css({"position": "fixed", "bottom": "20px"});
+          sideArea.css({"position": "fixed", "bottom": "20px", "margin-right": "5px"});
 
         }else if(wd.scrollTop() + wd.height() >= breakPoint){
-          sideArea.css({"position": "absolute", "bottom": "0"});
+          sideArea.css({"position": "absolute", "bottom": "0", "margin-right": "0"});
 
         } else {
-          sideArea.css("position", "static");
+          sideArea.css({"position": "static", "margin-right": "0px"});
 
         }
 
@@ -35,16 +35,16 @@ $(window).load(function () {
         var sideBtm = wd.scrollTop() + sideArea.height();
 
         if(mainArea.offset().top < wd.scrollTop() && sideBtm < breakPoint){
-          sideArea.css({"position": "fixed", "top": "20px"});
+          sideArea.css({"position": "fixed", "top": "20px", "margin-right": "5px"});
 
         }else if(sideBtm >= breakPoint){
 
           var fixedSide = mainH - sideH;
 
-          sideArea.css({"position": "absolute", "top": fixedSide});
+          sideArea.css({"position": "absolute", "top": fixedSide, "margin-right": "0"});
 
         } else {
-          sideArea.css("position", "static");
+          sideArea.css({"position": "static", "margin-right": "0"});
         }
       }
 

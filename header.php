@@ -45,8 +45,6 @@ if (has_post_thumbnail()){
 <?php if (is_page('Gallery')){ ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/gallery.css" type="text/css" />
 <?php } ?>
-<script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>side-fixed.js"></script>
-
 <?php wp_enqueue_script( 'jquery' ); ?>
 <?php wp_head(); ?>
+</head>
