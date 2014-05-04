@@ -1,19 +1,7 @@
 <?php get_header(); ?>
 <body>
 <div id="wrapper">
-  <header id="header">
-    <h1><a href="/wp">超日記</a></h1>
-    <nav>
-      <ul>
-        <li><a href="">ABOUT</a></li>
-        <li><a href="/wp/gallery">GALLERY</a></li>
-      </ul>
-    </nav>
-<!--     <div class="top_img">
-      <a href="/wp"><img src="<?php echo image(); ?>" /></a>
-    </div> -->
-  </header><!-- /#header -->
-
+  <?php require("header_parts.php"); ?>
   <div class="main">
     <div id="content">
       <section>

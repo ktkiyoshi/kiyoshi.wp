@@ -1,16 +1,7 @@
 <?php get_header(); ?>
 <body>
 <div id="wrapper">
-  <header id="header">
-    <h1><a href="/wp">超日記</a></h1>
-    <nav>
-      <ul>
-        <li><a href="">ABOUT</a></li>
-        <li><a href="/wp/gallery">GALLERY</a></li>
-      </ul>
-    </nav>
-  </header><!-- /#header -->
-
+  <?php require("header_parts.php"); ?>
   <div class="main">
     <div id="content">
       <article class="single">
@@ -25,7 +16,7 @@
         <div class="entry">
           <?php the_post();the_content(); ?>
         </div>
-        <?php require("socialbutton.php"); ?>
+        <?php require("social_button.php"); ?>
       </article>
 
       <section>

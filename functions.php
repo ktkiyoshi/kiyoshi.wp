@@ -14,13 +14,6 @@ function get_javascript_uri() {
   return $javascript_uri = get_template_directory_uri() . "/js/";
 }
 
-/* Header img of index */
-function image_index(){
-  $rdmimg = array();
-  $rdmimg[0]=get_template_directory_uri() ."/img/top-img.png";
-  return $rdmimg[rand(0,5)];
-}
-
 /* Header img */
 function image(){
   $rdmimg = array();
@@ -138,7 +131,6 @@ remove_filter('the_content', 'wpautop');
 if(!function_exists('get_archives_array')){
     function get_archives_array($args = ''){
         global $wpdb, $wp_locale;
-
         $defaults = array(
             'post_type' => '',
             'period'  => 'monthly',
@@ -147,7 +139,6 @@ if(!function_exists('get_archives_array')){
         );
         $args = wp_parse_args($args, $defaults);
         extract($args, EXTR_SKIP);
-
         if($post_type == ''){
             $post_type = 'post';
         }elseif($post_type == 'any'){
@@ -158,16 +149,13 @@ if(!function_exists('get_archives_array')){
                 if(!$post_type_obj){
                     continue;
                 }
-
                 if($post_type_obj->has_archive === true){
                     $slug = $post_type_obj->rewrite['slug'];
                 }else{
                     $slug = $post_type_obj->has_archive;
                 }
-
                 array_push($post_type_ary, $slug);
             }
-
             $post_type = join("', '", $post_type_ary);
         }else{
             if(!post_type_exists($post_type)){
@@ -185,18 +173,15 @@ if(!function_exists('get_archives_array')){
             $limit = absint($limit);
             $limit = ' LIMIT '.$limit;
         }
-
         $where  = "WHERE post_type IN ('".$post_type."') AND post_status = 'publish'{$year}";
         $join   = "";
         $where  = apply_filters('getarchivesary_where', $where, $args);
         $join   = apply_filters('getarchivesary_join' , $join , $args);
-
         if($period == 'monthly'){
                 $query = "SELECT YEAR(post_date) AS 'year', MONTH(post_date) AS 'month', count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC $limit";
         }elseif($period == 'yearly'){
             $query = "SELECT YEAR(post_date) AS 'year', count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date) ORDER BY post_date DESC $limit";
         }
-
         $key = md5($query);
         $cache = wp_cache_get('get_archives_array', 'general');
         if(!isset($cache[$key])){
@@ -209,11 +194,9 @@ if(!function_exists('get_archives_array')){
         if($arcresults){
             $output = (array)$arcresults;
         }
-
         if(empty($output)){
             return false;
         }
-
         return $output;
     }
 }

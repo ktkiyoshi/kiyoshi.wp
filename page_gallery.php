@@ -3,22 +3,11 @@
 Template Name: Gallery
 */
 ?>
-<!-- Instagram -->
 <?php require_once('instagram.php'); ?>
-
 <?php get_header(); ?>
 <body>
 <div id="wrapper">
-  <header id="header">
-    <h1><a href="/wp">超日記</a></h1>
-    <nav>
-      <ul>
-        <li><a href="">ABOUT</a></li>
-        <li><a href="/wp/gallery">GALLERY</a></li>
-      </ul>
-    </nav>
-  </header><!-- /#header -->
-
+  <?php require("header_parts.php"); ?>
   <div id="main">
     <div id="content">
       <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/gallery_001.png" /></a>

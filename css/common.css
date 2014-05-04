@@ -407,7 +407,7 @@ article.single h1 {
 }
 article h2 {
   position: relative;
-  font-size: 140%;
+  font-size: 145%;
   font-weight: bold;
   margin: 25px 0;
   padding: 10px 0 10px 15px;
@@ -424,7 +424,7 @@ article h2:after {
   border-bottom: 1px solid #999;
 }
 article h3 {
-  font-size: 130%;
+  font-size: 135%;
   font-weight: bold;
   margin: 15px 0px 15px;
 }
@@ -581,10 +581,10 @@ img[width="0"] {
   #footer .f_frame {
     width: 95%;
   }
-  #footer .archive_pc, #content .box_entry_pc, .count10 {
+  #footer .display_pc, #content .box_entry_pc, .count10 {
     display: none;
   }
-  #footer .archive_sp, #content .box_entry_sp {
+  #footer .display_sp, #content .box_entry_sp {
     display: block;
   }
   #content .instagram {
@@ -596,3 +596,11 @@ img[width="0"] {
     width: 95%;
   }
 }
+
+
+/* How to use FontAwesome */
+/*#side ul li:before {
+  content: "\f046";
+  font-family: FontAwesome;
+  display: inline-block;
+}*/

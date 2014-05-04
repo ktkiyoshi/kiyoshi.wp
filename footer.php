@@ -14,8 +14,8 @@
             <a href="<?php echo get_month_link($archive->year, $archive->month); ?>">
             <?php echo $archive->month; ?>月(<?php echo $archive->posts; ?>)</a>
           </li>
-          <?php if($m_cnt == 5) { echo "<br class='archive_pc' />"; } ?>
-          <?php if($m_cnt == 3 || $m_cnt == 7) { echo "<br class='archive_sp' />"; } ?>
+          <?php if($m_cnt == 5) { echo "<br class='display_pc' />"; } ?>
+          <?php if($m_cnt == 3 || $m_cnt == 7) { echo "<br class='display_sp' />"; } ?>
           <?php $this_year = $archive->year; $m_cnt++; ?>
           <?php endforeach; ?>
         </ul>
@@ -69,14 +69,6 @@ jQuery(document).ready(function($) {
   $(document).ready(function(){
     $("#old_entry").click(function(){
       $('#box_entry').slideToggle(500)
-      return false;
-    });
-    $("#old_photos").click(function(){
-      $('#box_photos').slideToggle(500)
-      return false;
-    });
-    $("#old_history").click(function(){
-      $('#box_history').slideToggle(500)
       return false;
     });
   });

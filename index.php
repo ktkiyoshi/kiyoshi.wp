@@ -1,18 +1,9 @@
 <?php get_header(); ?>
-<?php query_posts("cat=-54,-58"); ?>
+<?php query_posts("cat=-58"); ?>
 <?php require_once('instagram.php'); ?>
 <body>
 <div id="wrapper">
-  <header id="header">
-    <h1><a href="/wp">超日記</a></h1>
-    <nav>
-      <ul>
-        <li><a href="">ABOUT</a></li>
-        <li><a href="/wp/gallery">GALLERY</a></li>
-      </ul>
-    </nav>
-  </header><!-- /#header -->
-
+  <?php require("header_parts.php"); ?>
   <div id="main">
     <div id="content">
       <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_011_l.png" class="top_img"></a>
