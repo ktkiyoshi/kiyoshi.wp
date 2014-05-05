@@ -9,6 +9,7 @@ body {
 a { text-decoration: none; }
 a:hover, a:link, a:visited { color:#666; }
 hr { margin: 15px 15px 20px; color:#CCC; }
+strong, b {font-weight: bold !important;}
 textarea { width: 100%; }
 img {
   max-width: 100%;
