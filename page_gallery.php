@@ -10,7 +10,7 @@ Template Name: Gallery
   <?php require("header_parts.php"); ?>
   <div id="main">
     <div id="content">
-      <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/gallery_001.png" /></a>
+      <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/gallery_001.png" class="top_img" /></a>
       <section>
         <?php
           for($i=0; $i < count($media); $i++) {
