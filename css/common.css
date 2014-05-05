@@ -369,28 +369,33 @@ footer {
 }
 
 /* For Reading Mater */
-#content article table {
+#content article.single table {
   margin: 0 auto 22px !important;
 }
-#content article table div {
+#content article.single table div {
   border: none !important;
   margin: 0 !important;
   padding: 0 !important;
   width: 100% !important;
 }
-#content article table div img {
+#content article.single table div img {
   float: left
 }
-#content article table div p {
+#content article.single table div p {
   font-size: 85% !important;
   line-height: 1.2 !important;
   padding: 0 10px !important;
 }
-#content article table div p a,
-#content article table div p span {
+#content article.single table div p a,
+#content article.single table div p span {
   display: block !important;
   padding: 3px 0 !important;
 }
+/* For Source Code */
+#content article.single .crayon-table {
+  margin-bottom: 0 !important;
+}
+/* For Social Buttons */
 .social {
   margin: 5px 0 15px 15px;
   line-height: 2em;
