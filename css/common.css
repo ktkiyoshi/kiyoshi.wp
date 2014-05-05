@@ -298,10 +298,10 @@ footer {
   border: 1px solid #CCC;
   margin: 5px;
 }
-#footer .archive_pc {
+#footer .display_pc {
   display: block;
 }
-#footer .archive_sp {
+#footer .display_sp {
   display: none;
   }
 #footer .copyright {
@@ -363,6 +363,10 @@ footer {
   margin: 3px auto !important;
   border: 1px solid #CCC;
 }
+#content article.single .entry img.sp {
+  width: 40%;
+}
+
 /* For Reading Mater */
 #content article table {
   margin: 0 auto 22px !important;
