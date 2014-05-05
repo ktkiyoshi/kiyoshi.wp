@@ -40,11 +40,7 @@ if (has_post_thumbnail()){
 } else { ?>
 <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/screenshot.png">
 <?php } ?>
-
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
-<?php if (is_page('Gallery')){ ?>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/gallery.css" type="text/css" />
-<?php } ?>
 <?php wp_enqueue_script( 'jquery' ); ?>
 <?php wp_head(); ?>
 </head>
