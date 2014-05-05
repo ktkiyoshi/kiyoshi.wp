@@ -395,9 +395,10 @@ footer {
   line-height: 2em;
 }
 .social iframe, .social div {
-  display: inline;
+  display: inline !important;
   margin-right: 3px;
   vertical-align: bottom !important;
+  line-height: 1;
 }
 .twitter-share-button {
   width: 90px !important;
@@ -534,12 +535,12 @@ img[width="0"] {
     margin-left: 0;
   }
 }
-/* max-720px for nothing sidebar */
-@media screen and (max-width: 720px) {
+/* max-768px for nothing sidebar */
+@media screen and (max-width: 768px) {
   #side {display: none;}
   #content {
-    margin-right: 0;
     width: 100%;
+    margin-right: 0;
   }
   #header nav {
     margin-right: 0;
