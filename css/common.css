@@ -327,7 +327,8 @@ footer {
 }
 #content article.single .entry p {
   font-size: 110%;
-  margin-top: 22px;
+  /*margin-top: 22px;*/
+  margin-bottom: 22px;
 }
 #content article.single .entry p:first-child {
   margin-top: 10px;
@@ -338,7 +339,7 @@ footer {
 #content article.single .entry .bq {
   border-left: 5px solid #c0c0c0;
   background: #eee;
-  margin: 22px 0px 22px 10px;
+  margin: 15px 0 15px 10px;
   padding: 10px;
 }
 #content article.single .entry .bq p {
@@ -348,7 +349,7 @@ footer {
   margin-bottom: 22px;
 }
 #content article.single .entry ul, .entry ol, .entry dl {
-  margin: 15px 0 15px 25px;
+  margin: 22px 0 22px 25px;
 }
 #content article.single .entry ul li{
   list-style-type: square;
@@ -446,7 +447,7 @@ article h2:after {
 article h3 {
   font-size: 135%;
   font-weight: bold;
-  margin: 22px 0px 22px;
+  margin: 22px 0px 15px;
 }
 #content article.archive {
   margin: 7px;
