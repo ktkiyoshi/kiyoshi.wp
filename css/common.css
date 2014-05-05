@@ -396,7 +396,7 @@ footer {
   line-height: 2em;
 }
 .social iframe, .social div {
-  display: inline !important;
+  display: inline-block !important;
   margin-right: 3px;
   vertical-align: bottom !important;
   line-height: 1;
