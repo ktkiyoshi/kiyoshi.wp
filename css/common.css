@@ -74,7 +74,8 @@ img {
   /*max-width: 680px;*/
 }
 #content .top_img {
-  /*padding: 5px;*/
+  display: block;
+  margin: 3px auto !important;
 }
 #content article .entry_meta {
   overflow: hidden;
