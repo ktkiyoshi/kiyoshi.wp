@@ -415,7 +415,7 @@ footer {
   width: 40%;
   margin: 3px 0 0 20px !important;
 }
-#content article.single table {
+#content article.single table.book {
   width: 250px;
   margin: 0 auto 22px !important;
 }
@@ -444,8 +444,6 @@ footer {
   margin-bottom: 0 !important;
 }
 
-/* For Reading Mater */
-/* For Source Code */
 /* For Social Buttons */
 .social {
   margin: 5px 0 15px 15px;
