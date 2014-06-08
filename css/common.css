@@ -416,6 +416,7 @@ footer {
   margin: 3px 0 0 20px !important;
 }
 #content article.single table {
+  width: 250px;
   margin: 0 auto 22px !important;
 }
 #content article.single table div {
