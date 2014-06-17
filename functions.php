@@ -1,4 +1,29 @@
 <?php
+/* Popular Entries Ranking on sidebar */
+function popularRanking() {
+  global $wpdb;
+  $result = $wpdb->get_results("SELECT
+    wp.ID,(ws.fb_like+ws.fb_share+ws.fb_comment+ws.tweet+ws.go_plus+ws.hatena) AS count,
+    wp.post_date AS date, YEAR(wp.post_date) AS year, DATE_FORMAT(wp.post_date, '%m') AS month,
+    DATE_FORMAT(wp.post_date, '%d') AS day, wp.post_name, wp.post_title, wp.post_content
+    FROM wp_posts wp, wp_social ws
+    WHERE wp.ID = ws.ID AND wp.post_type = 'post' AND wp.post_status = 'publish'
+    ORDER BY count DESC, wp.post_date DESC LIMIT 5;");
+  foreach ($result as $val) {
+    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $val->post_content, $matches);
+    $tmp = array(
+      'url' => get_template_directory_uri()."/".$val->year."/".$val->month."/".$val->day."/".$val->post_name,
+      'post_title' => $val->post_title,
+      'date' => $val->year."-".$val->month."-".$val->day,
+      'image' => $matches[1][0],
+      'count' => $val->count
+      );
+    $populars[$n] = $tmp;
+    $n++;
+  }
+  return $populars;
+}
+
 function replaceImagePath($arg) {
   $content = str_replace('"/img/', '"' . get_bloginfo('template_directory') . '/img/', $arg);
   return $content;
@@ -49,7 +74,7 @@ function catch_that_image() {
     $first_img = '';
     ob_start();
     ob_end_clean();
-    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
     $first_img = $matches [1] [0];
     if(empty($first_img)){
         $first_img = 'http://kt-kiyoshi.com/wp/images/nophoto.jpg';
