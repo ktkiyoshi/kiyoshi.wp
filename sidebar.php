@@ -9,7 +9,7 @@
     <div class="r_frame">
       <p class="title">Newest Entries</p>
     </div>
-    <section id="fixed_point">
+    <section>
       <ul>
         <?php
         $lastposts = get_posts('numberposts=10&orderby=post_date&category=-54,-58');
@@ -34,7 +34,34 @@
         </li>
         <?php } endforeach; ?>
       </ul>
-      </section>
+    </section>
+
+    <div class="r_frame">
+      <p class="title">Popular Entries</p>
+    </div>
+    <section id="fixed_point">
+      <ul>
+      <?php
+        $populars = popularRanking();
+        foreach($populars as $post) {
+        ?>
+        <li>
+          <a href="<?php echo $post['url']; ?>" title="<?php echo $post['post_title']; ?>">
+            <img src="<?php echo $post['image']; ?>" class="thumbnail_C f_left"/>
+            <time datetime="<?php echo $post['date']; ?>" pubdate><?php echo $post['date']; ?></time>
+            <p class="title">
+            <?php if(mb_strlen($post['post_title'])>80) {
+                    $title= mb_substr($post['post_title'],0,80);
+                    echo $title. ･･･ ;
+                  } else {
+                    echo $post['post_title'];
+                  }?>
+            </p>
+          </a>
+        </li>
+        <?php } ?>
+      </ul>
+    </section>
 <!--
 //Add Widgets
 <?php dynamic_sidebar(); ?>
