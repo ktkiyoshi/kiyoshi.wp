@@ -231,6 +231,12 @@ img {
   padding: 10px;
   border: 1px solid #CCC;
 }
+#content #pre_next .thumbnail_F {
+  width: 180px;
+  padding: 2px;
+  border: 1px solid #CCC;
+  margin: 0 5px 0 0;
+}
 
 /***********
 *** SIDE ***

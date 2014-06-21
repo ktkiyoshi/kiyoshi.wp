@@ -82,6 +82,19 @@ function catch_that_image() {
     return $first_img;
 }
 
+/* The first image for specific entry */
+function specific_entry_image($post) {
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    $first_img = $matches [1] [0];
+    if(empty($first_img)){
+        $first_img = 'http://kt-kiyoshi.com/wp/images/nophoto.jpg';
+    }
+    return $first_img;
+}
+
 /* Delete [...] */
 function new_excerpt_more($more) {
     return '';
