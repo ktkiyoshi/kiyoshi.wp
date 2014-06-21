@@ -215,6 +215,7 @@ img {
 #content section .panels {
   overflow: hidden;
   margin-left: 10px;
+  margin-bottom: 5px;
 }
 #content section .panel_title {
   float: left;
