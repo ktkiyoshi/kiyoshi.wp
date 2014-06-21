@@ -29,7 +29,7 @@
             $args = array(
                 'category__in' => array($categories[0]),
                 'post__not_in' => array($post->ID),
-                'showposts' => 6,
+                'showposts' => 3,
                 'caller_get_posts' => 1,
                 'orderby' => 'rand'
             );
