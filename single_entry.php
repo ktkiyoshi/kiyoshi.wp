@@ -34,32 +34,32 @@
 
 
       <?php
-        if ( $prevpost ) {
-          echo '
-          <div class="f_left" style="width:50%">
-          <p><a href="'.get_permalink($prevpost->ID).'">&#60;&#60;&nbsp;前の記事</a></p>
-          <p>
-            <a href="'.get_permalink($prevpost->ID).'">
-            <img src="'.specific_entry_image($prevpost).'" class="thumbnail_F" />
-            '.get_the_title($prevpost->ID).'</a>
-          </p>
-          </div>';
-        } else {
-          echo '<div><a href="/wp">トップへ戻る</a></div>';
-        }
-        if ( $nextpost ) {
-          echo '
-          <div class="t_right" style="">
-          <p><a href="'.get_permalink($nextpost->ID).'">次の記事&nbsp;&#62;&#62;</a></p>
-          <p>
-            <a href="'.get_permalink($nextpost->ID).'">
-            <img src="'.specific_entry_image($nextpost).'" class="thumbnail_F" />
-            '.get_the_title($nextpost->ID).'</a>
-          </p>
-          </div>';
-        } else {
-          echo '<div><a href="/wp">トップへ戻る</a></div>';
-        }
+        // if ( $prevpost ) {
+        //   echo '
+        //   <div class="f_left" style="width:50%">
+        //   <p><a href="'.get_permalink($prevpost->ID).'">&#60;&#60;&nbsp;前の記事</a></p>
+        //   <p>
+        //     <a href="'.get_permalink($prevpost->ID).'">
+        //     <img src="'.specific_entry_image($prevpost).'" class="thumbnail_F" />
+        //     '.get_the_title($prevpost->ID).'</a>
+        //   </p>
+        //   </div>';
+        // } else {
+        //   echo '<div><a href="/wp">トップへ戻る</a></div>';
+        // }
+        // if ( $nextpost ) {
+        //   echo '
+        //   <div class="t_right" style="">
+        //   <p><a href="'.get_permalink($nextpost->ID).'">次の記事&nbsp;&#62;&#62;</a></p>
+        //   <p>
+        //     <a href="'.get_permalink($nextpost->ID).'">
+        //     <img src="'.specific_entry_image($nextpost).'" class="thumbnail_F" />
+        //     '.get_the_title($nextpost->ID).'</a>
+        //   </p>
+        //   </div>';
+        // } else {
+        //   echo '<div><a href="/wp">トップへ戻る</a></div>';
+        // }
       ?>
       <div class="reset"><br /></div>
       </section>
