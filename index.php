@@ -6,7 +6,7 @@
   <?php require("header_parts.php"); ?>
   <div id="main">
     <div id="content">
-      <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_012_l.png" class="top_img"></a>
+      <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_013_l.png" class="top_img"></a>
       <nav id="tabs">
         <ul class="panels">
           <li class="panel_title"><a href="#panel1">最新記事</a></li>
