@@ -37,8 +37,8 @@
             if( $my_query->have_posts() ) { ?>
                 <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
                 <article class="past_entries f_left t_center">
-                  <time datetime="<?php the_time('Y-m-d (D)') ?>" pubdate><?php the_time('Y-m-d (D)') ?></time>
-                  <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B" /></a>
+                  <time datetime="<?php the_time('Y-m-d (D)') ?>" pubdate><?php the_time('Y-m-d (D)'); ?></time>
+                  <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B" /></a>
                   <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
                 </article>
                 <?php
@@ -51,12 +51,18 @@
       </section>
 
       <section>
+      <?php
+      $pdate = strtotime(the_date('Y-m-d','','',false));
+      $today = strtotime(date('Y-m-d'));
+      $diff = ($today - $pdate) / ( 60 * 60 * 24);
+      if (commentNumber($post->ID) > 0 || $diff < commentCloseDays()) { ?>
         <ul class="panels">
           <li class="panel_title"><a><?php comments_number('コメント','コメント','コメント'); ?></a></li>
         </ul>
         <div class="l_frame">
           <?php comments_template(); ?>
         </div>
+      <?php } ?>
       </section>
     </div><!-- /#content -->
 <?php get_sidebar(); ?>

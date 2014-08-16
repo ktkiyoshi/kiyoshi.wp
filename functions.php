@@ -62,11 +62,24 @@ function super_comments($comment, $args, $depth) {
       <em><?php _e('Your comment is awaiting moderation.') ?></em><br />
     <?php endif; ?>
     <?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a> |
-    <?php edit_comment_link('[Edit]') ?>
+    <?php edit_comment_link('Edit') ?>
     <?php comment_text() ?>
   </div>
 <?php
 }
+
+function commentNumber($post_id) {
+  global $wpdb;
+  $query = "SELECT count(*) FROM wp_comments WHERE comment_post_ID = '$post_id'";
+  return $wpdb->get_var($query);
+}
+
+function commentCloseDays() {
+  global $wpdb;
+  $query = "SELECT option_value FROM wp_options WHERE option_name = 'close_comments_days_old'";
+  return $wpdb->get_var($query);
+}
+
 
 /* The first image */
 function catch_that_image() {
