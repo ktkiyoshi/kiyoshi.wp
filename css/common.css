@@ -479,6 +479,9 @@ article.index h1 {
   font-weight: bold;
   padding: 3px 0 0 5px;
 }
+article.archive h1 {
+  font-size: 145%;
+}
 article.single h1 {
   font-size: 180%;
   line-height: 150%;

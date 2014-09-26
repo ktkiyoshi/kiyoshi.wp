@@ -35,8 +35,9 @@
           <article class="index archive mb20">
             <div class="f_left">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-              <img src="<?php echo catch_that_image(); ?>" class="thumbnail_A f_left"/></a>
-              <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                <img src="<?php echo catch_that_image(); ?>" class="thumbnail_B f_left"/>
+              </a>
+              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
               <p><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></p>
               <p class="description">
                 <?php echo mb_substr(get_the_excerpt(),0,80);?>...
