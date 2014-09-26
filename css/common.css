@@ -112,44 +112,57 @@ img {
   display: block;
   margin: 3px auto !important;
 }
+#content article {
+  margin-bottom: 50px;
+}
 #content article .entry_meta {
   overflow: hidden;
   font-family: 'Droid Sans Mono', sans-serif;
   margin-left: 15px;
 }
-#content article .title {
-  padding-top: 5px;
+#content article .entry_info {
+  margin: 5px 15px 0;
 }
 #content article .entry_meta li {
   float: left;
   padding-right: 5px;
-  font-size: 85%;
 }
 #content article .thumbnail_A {
+  display: block;
+  width: 90%;
+  margin: 3px auto 10px;
+  padding: 5px;
+  border: 1px solid #CCC;
+}
+#content article .thumbnail_B {
   width: 180px;
   padding: 5px;
   border: 1px solid #CCC;
   margin: 5px 10px;
 }
-#content article .thumbnail_B {
-  width: 80%;
-  padding: 5px;
-  border: 1px solid #CCC;
+#content article .description_A {
+  font-size: 110%;
+  line-height: 1.8;
+  margin: 0px 10px 15px;
 }
-#content article .description {
+#content article .description_B {
   padding: 10px 5px 10px 0;
   margin-left: 212px;
+}
+#content article .entry_more {
+  text-align: right;
+  margin-right: 30px;
 }
 #content .read_past_entries {
   margin: 10px 0;
 }
 #content article .entry_more a, #content .read_past_entries a {
-  padding: 6px 9px;
+  padding: 7px 10px;
   background: #808080;
   color: #FFF;
 }
 #content article .entry_more a:hover, #content .read_past_entries a:hover {
-  padding: 6px 9px;
+  padding: 7px 10px;
   background: #000;
   color: #FFF;
 }
@@ -177,14 +190,12 @@ img {
 ***   TAB   ***
 **************/
 #tabs .panels {
-  overflow: hidden;
+  margin-bottom: 10px;
   list-style: none;
-  margin-left: 10px;
 }
 #tabs .panel_title {
-  float: left;
   display: inline;
-  padding: 8px 12px;
+  padding: 10px 30px;
   border: 1px solid #CCC;
 }
 #tabs li.active {
@@ -203,10 +214,9 @@ img {
   text-decoration: underline;
 }
 #tabs .panel {
-  display: none;
-  margin: 7px;
-  padding: 10px;
-  border: 1px solid #CCC;
+  /*display: none;*/
+  /*margin: 7px;*/
+  /*padding: 10px;*/
 }
 
 /**********************
@@ -363,14 +373,12 @@ footer {
 #content article.single .entry_meta li {
   float: left;
   padding-right: 5px;
-  font-size: 95%;
 }
 #content article.single .entry {
   margin: 5px 15px 0;
 }
 #content article.single .entry p {
   font-size: 110%;
-  /*margin-top: 22px;*/
   margin-bottom: 22px;
   line-height: 1.8;
 }
@@ -409,8 +417,8 @@ footer {
 #content article.single .entry img {
   display: block;
   width: 90%;
-  padding: 5px !important;
   margin: 3px auto !important;
+  padding: 5px !important;
   border: 1px solid #CCC;
 }
 #content article.single .entry img.sp {
@@ -466,16 +474,16 @@ footer {
 *** h1 - h4 ***
 **************/
 article.index h1 {
-  font-size: 130%;
+  font-size: 180%;
   line-height: 150%;
   font-weight: bold;
   padding: 3px 0 0 5px;
 }
 article.single h1 {
-  font-size: 170%;
+  font-size: 180%;
   line-height: 150%;
   font-weight: bold;
-  padding-left: 10px;
+  padding: 3px 0 0 5px;
 }
 article h2 {
   position: relative;
