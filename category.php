@@ -32,7 +32,7 @@
         echo '</div>'."\n";
       ?>
         <?php while (have_posts()) : the_post(); ?>
-          <article class="index archive mb20">
+          <article class="index archive">
             <div class="f_left">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                 <img src="<?php echo catch_that_image(); ?>" class="thumbnail_B f_left"/>

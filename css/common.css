@@ -112,9 +112,6 @@ img {
   display: block;
   margin: 3px auto !important;
 }
-#content article {
-  margin-bottom: 50px;
-}
 #content article .entry_meta {
   overflow: hidden;
   font-family: 'Droid Sans Mono', sans-serif;
@@ -213,12 +210,13 @@ img {
   color: #666;
   text-decoration: underline;
 }
-#tabs .panel {
-  /*display: none;*/
-  /*margin: 7px;*/
-  /*padding: 10px;*/
-}
 
+/**********************
+*** CONTENT INDEX ***
+**********************/
+#content article.index {
+  margin-bottom: 50px;
+}
 /**********************
 *** CONTENT SECTION ***
 **********************/
