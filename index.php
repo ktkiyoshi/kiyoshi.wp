@@ -38,7 +38,7 @@
 
       <section>
         <div id="panel2" class="panel">
-        <?php global $post; $mypost = get_posts( array( 'numberposts' => 3, 'category' => 58 ));?>
+        <?php global $post; $mypost = get_posts( array( 'numberposts' => 10, 'category' => 58 ));?>
         <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
           <article class="index mb20">
             <header>
