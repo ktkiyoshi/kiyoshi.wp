@@ -396,6 +396,7 @@ footer {
   margin: 0;
 }
 #content article.single .entry table {
+  margin-left: 5px;
   margin-bottom: 22px;
 }
 #content article.single .entry ul {
@@ -431,7 +432,7 @@ footer {
   border: none !important;
   margin: 0 !important;
 //  padding: 0 !important;
-  width: 100% !important;
+//  width: 100% !important;
 }
 #content article.single table div img {
   float: left;
