@@ -49,9 +49,11 @@
                 <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
               </ul>
             </header>
+            <div class="entry_info">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B f_left"/></a>
               <p class="description_B"><?php echo mb_substr(get_the_excerpt(),0,100);?>...</p>
               <p class="entry_more ml215"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
+            </div>
           </article>
           <div class="reset"></div>
         <?php endforeach; ?>

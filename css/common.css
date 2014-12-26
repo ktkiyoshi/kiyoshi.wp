@@ -132,7 +132,7 @@ img {
   border: 1px solid #CCC;
 }
 #content article .thumbnail_B {
-  width: 85%;
+  width: 212px;
   padding: 5px;
   border: 1px solid #CCC;
   margin: 5px 10px;
@@ -634,12 +634,16 @@ img[width="0"] {
 }
 /* max-420px for SP */
 @media screen and (max-width: 420px) {
-  #content article .thumbnail_A {
-    float: none;
-    width: 220px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  #content article .description_A {
+    margin: 0px 3px 3px;
+  }
+  #content article .description_B {
+    font-size: 110%;
+    margin-left: 0;
+    clear: both;
+  }
+  #content article .thumbnail_B {
+    width: 90%;
   }
   #content article .title {
     padding-top: 0;
