@@ -38,7 +38,7 @@
                 <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
                 <article class="past_entries f_left t_center">
                   <time datetime="<?php the_time('Y-m-d (D)') ?>" pubdate><?php the_time('Y-m-d (D)'); ?></time>
-                  <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B" /></a>
+                  <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_D" /></a>
                   <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
                 </article>
                 <?php
