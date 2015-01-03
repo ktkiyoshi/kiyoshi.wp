@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/*************
+*** COMMON ***
+*************/
 body {
   font: 14px / 24px "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", Helvetica, Arial, Sans-Serif;
   background: #FFF;
@@ -6,56 +9,44 @@ body {
   word-break: break-all;
   -webkit-text-size-adjust: 100%;
 }
-
 a {
   text-decoration: none;
 }
 a:hover, a:link, a:visited {
   color: #666;
 }
-
 hr {
   margin: 15px 15px 20px;
   color: #CCC;
 }
-
 strong, b {
   font-weight: bold !important;
 }
-
 textarea {
   width: 100%;
 }
-
 img {
   max-width: 100%;
   height: auto;
 }
-
 .f_right {
   float: right;
 }
-
 .f_left {
   float: left;
 }
-
 .t_right {
   text-align: right;
 }
-
 .t_center {
   text-align: center;
 }
-
 .t_left {
   text-align: left;
 }
-
 .reset {
   clear: both;
 }
-
 #wrapper {
   max-width: 1000px;
   height: 100%;
@@ -255,11 +246,9 @@ img {
   width: 31%;
   max-width: 310px;
 }
-
 #sidefixed {
   max-width: 310px;
 }
-
 #side .r_frame {
   padding: 7px 10px 7px 7px;
   margin: 5px 0px 7px 0px;
@@ -310,7 +299,6 @@ footer {
   color: #CCC;
   margin-top: 20px;
 }
-
 #footer {
   width: 100%;
   max-width: 1000px;
@@ -408,11 +396,9 @@ footer {
 #content article.single .entry ul {
   margin: 22px 0 22px 25px;
 }
-
 .entry ol, .entry dl {
   margin: 22px 0 22px 25px;
 }
-
 #content article.single .entry ul li {
   list-style-type: square;
 }
@@ -437,8 +423,8 @@ footer {
 #content article.single table div {
   border: none !important;
   margin: 0 !important;
-//  padding: 0 !important;
-//  width: 100% !important;
+  /*padding: 0 !important;*/
+  /*width: 100% !important;*/
 }
 #content article.single table div img {
   float: left;
@@ -470,7 +456,6 @@ footer {
   vertical-align: bottom !important;
   line-height: 1;
 }
-
 .twitter-share-button {
   width: 90px !important;
 }
@@ -516,7 +501,6 @@ article h3 {
   font-weight: bold;
   margin: 22px 0px 15px;
 }
-
 #content article.archive {
   margin: 7px;
   padding: 10px;
@@ -530,7 +514,7 @@ article h3 {
 }
 
 /****************
-*** Page navi ***
+*** Page Navi ***
 ****************/
 .page-navi {
   margin: 1em auto;
@@ -548,28 +532,25 @@ article h3 {
   font-size: 85%;
   font-weight: bold;
 }
-
 a.page-numbers, .page-navi .current {
   padding: 5px .6em;
   border: solid 1px #CCC;
   font-size: 85%;
   line-height: 2.7em;
 }
-
 a.page-numbers:hover {
   color: #FFF;
   background: #808080;
 }
 
-/*********************
-*** Comment style ***
-*********************/
+/**************
+*** Comment ***
+**************/
 .comment, #respond {
   font-family: 'Droid Sans Mono', sans-serif;
   margin: 5px 15px 10px 15px;
   list-style-type: none;
 }
-
 .comment p {
   margin: 5px 15px;
 }
@@ -587,18 +568,15 @@ a.page-numbers:hover {
 #content .instagram .thumbnail_E {
   width: 95%;
 }
-
 /* ページ最下部の余白対応 */
 img[width="0"] {
   position: absolute;
   top: 0px;
 }
-
 /* margin-xxxxx: xxpx; */
 .mb20 {
   margin-bottom: 20px;
 }
-
 .ml215 {
   margin-left: 215px;
 }
@@ -619,12 +597,10 @@ img[width="0"] {
   #side {
     display: none;
   }
-
   #content {
     width: 100%;
     margin-right: 0;
   }
-
   #header nav {
     margin-right: 0;
   }
@@ -669,7 +645,6 @@ img[width="0"] {
   #content .past_entries .entry_more {
     float: none;
   }
-
   #footer {
     width: 80%;
     margin: 0 auto;
@@ -680,15 +655,12 @@ img[width="0"] {
   #footer .display_pc {
     display: none;
   }
-
   #content .box_entry_pc, .count10 {
     display: none;
   }
-
   #footer .display_sp {
     display: block;
   }
-
   #content .box_entry_sp {
     display: block;
   }
@@ -696,9 +668,17 @@ img[width="0"] {
     width: 50%;
   }
 }
+@media screen and (max-width: 375px) {
+  #tabs .panel_title {
+    padding: 10px 20px;
+  }
+}
 @media screen and (max-width: 330px) {
   #footer {
     width: 95%;
+  }
+  #tabs .panel_title {
+    padding: 10px 15px;
   }
 }
 /* How to use FontAwesome */
