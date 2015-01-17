@@ -463,21 +463,15 @@ footer {
 /**************
 *** h1 - h4 ***
 **************/
-article.index h1 {
+article h1 {
   font-size: 180%;
   line-height: 150%;
   font-weight: bold;
   /*padding: 3px 0 0 5px;*/
-  padding: 3px 0 5px 5px;
+  padding: 3px 0 3px 5px;
 }
 article.archive h1 {
   font-size: 145%;
-}
-article.single h1 {
-  font-size: 180%;
-  line-height: 150%;
-  font-weight: bold;
-  padding: 3px 0 0 5px;
 }
 article h2 {
   position: relative;
