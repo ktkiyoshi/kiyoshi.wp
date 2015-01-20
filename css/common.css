@@ -371,7 +371,8 @@ footer {
 }
 #content article.single .entry p {
   font-size: 110%;
-  margin-bottom: 22px;
+  /*margin-bottom: 22px;*/
+  margin-bottom: 20px;
   line-height: 1.8;
 }
 #content article.single .entry p:first-child {
@@ -394,7 +395,8 @@ footer {
   margin-bottom: 22px;
 }
 #content article.single .entry ul {
-  margin: 22px 0 22px 25px;
+  /*margin: 22px 0 22px 25px;*/
+  margin: 0 0 20px 25px;
 }
 .entry ol, .entry dl {
   margin: 22px 0 22px 25px;
@@ -464,7 +466,8 @@ footer {
 *** h1 - h4 ***
 **************/
 article h1 {
-  font-size: 180%;
+  /*font-size: 180%;*/
+  font-size: 185%;
   line-height: 150%;
   font-weight: bold;
   /*padding: 3px 0 0 5px;*/
@@ -475,22 +478,32 @@ article.archive h1 {
 }
 article h2 {
   position: relative;
-  font-size: 145%;
+  font-size: 165%;
   font-weight: bold;
-  /*margin: 30px 0 25px;*/
   margin: 35px 0 20px;
-  padding: 10px 0 10px 15px;
-  border-left: 7px solid #999;
+  padding: 10px 0 10px 30px;
   width: 95%;
+  border-bottom: 2px solid #B92A2C;
 }
-article h2:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 0;
-  width: 100%;
-  border-bottom: 1px solid #999;
+h2:before{
+    content: "□";
+    font-size: 95%;
+    position: absolute;
+    color: #ff6b6e;
+    top: -0.5em;
+    left: 0.3em;
+    height: 12px;
+    width: 12px;
+}
+h2:after{
+    content: "□";
+    font-size: 80%;
+    position: absolute;
+    color: #999;
+    top: -0.1em;
+    left: 0;
+    height: 12px;
+    width: 12px;
 }
 article h3 {
   font-size: 135%;
