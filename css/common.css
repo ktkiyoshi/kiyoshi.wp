@@ -480,7 +480,8 @@ article h2 {
   position: relative;
   font-size: 165%;
   font-weight: bold;
-  margin: 35px 0 20px;
+  /*margin: 35px 0 20px;*/
+  margin: 40px 0 20px;
   padding: 10px 0 10px 30px;
   width: 95%;
   border-bottom: 2px solid #B92A2C;
