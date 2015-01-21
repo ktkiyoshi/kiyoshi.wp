@@ -491,7 +491,7 @@ h2:before{
     font-size: 95%;
     position: absolute;
     color: #ff6b6e;
-    top: -0.5em;
+    top: -0.4em;
     left: 0.3em;
     height: 12px;
     width: 12px;
@@ -501,7 +501,7 @@ h2:after{
     font-size: 80%;
     position: absolute;
     color: #999;
-    top: -0.1em;
+    top: 0;
     left: 0;
     height: 12px;
     width: 12px;
