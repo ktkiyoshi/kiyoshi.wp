@@ -432,6 +432,15 @@ footer {
   width: 40%;
   margin: 3px 0 0 20px !important;
 }
+#content article.single .entry img.tb {
+  width: 60%;
+  margin: 3px 0 0 20px !important;
+}
+#content article.single .entry p.word {
+  font-size: 135%;
+  font-weight: bold;
+  margin: 30px 0px 30px;
+}
 #content article.single table.book {
   width: 250px;
   margin: 0 auto 22px !important;
@@ -540,12 +549,6 @@ article h3:before{
   left: 0.5em;
   height: 12px;
   width: 12px;
-}
-article h4 {
-  font-size: 135%;
-  font-weight: bold;
-  /*margin: 22px 0px 15px;*/
-  margin: 30px 0px 30px;
 }
 #content article.archive {
   margin: 7px;
