@@ -145,6 +145,9 @@ img {
   padding: 10px 5px 10px 0;
   margin-left: 212px;
 }
+#content article .next {
+  text-align: right;
+}
 #content article .entry_more {
   text-align: right;
   margin-right: 30px;
@@ -152,12 +155,16 @@ img {
 #content .read_past_entries {
   margin: 10px 0;
 }
-#content article .entry_more a, #content .read_past_entries a {
+#content article .entry_more a,
+#content .read_past_entries a,
+#content article.single .entry .next a {
   padding: 7px 10px;
   background: #808080;
   color: #FFF;
 }
-#content article .entry_more a:hover, #content .read_past_entries a:hover {
+#content article .entry_more a:hover,
+#content .read_past_entries a:hover,
+#content article.single .entry .next a:hover {
   padding: 7px 10px;
   background: #000;
   color: #FFF;
@@ -377,6 +384,14 @@ footer {
   margin-bottom: 20px;
   line-height: 1.8;
 }
+#content article.single .entry p.word {
+  font-size: 135%;
+  font-weight: bold;
+  margin: 30px 0px 30px;
+}
+#content article.single .entry a.link {
+  text-decoration: underline;
+}
 #content article.single .entry p:first-child {
   margin-top: 10px;
 }
@@ -436,11 +451,6 @@ footer {
   width: 60%;
   margin: 3px 0 0 20px !important;
 }
-#content article.single .entry p.word {
-  font-size: 135%;
-  font-weight: bold;
-  margin: 30px 0px 30px;
-}
 #content article.single table.book {
   width: 250px;
   margin: 0 auto 22px !important;
@@ -459,7 +469,8 @@ footer {
   line-height: 1.2 !important;
   padding: 0 10px !important;
 }
-#content article.single table div p a, #content article.single table div p span {
+#content article.single table div p a,
+#content article.single table div p span {
   display: block !important;
   padding: 3px 0 !important;
 }
@@ -510,7 +521,7 @@ article h2 {
   /*width: 95%;*/
   border-bottom: 2px solid #B92A2C;
 }
-h2:before{
+h2:before {
   content: "\f096";
   font-family: FontAwesome;
   font-size: 95%;
@@ -521,7 +532,7 @@ h2:before{
   height: 12px;
   width: 12px;
 }
-h2:after{
+h2:after {
   content: "\f096";
   font-family: FontAwesome;
   font-size: 80%;

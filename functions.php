@@ -159,7 +159,7 @@ if ( function_exists('register_sidebar') ) {
 }
 
 /* Remove <p> */
-remove_filter('the_content', 'wpautop');
+/*remove_filter('the_content', 'wpautop');*/
 
 /**
 * @function get_archives_array
