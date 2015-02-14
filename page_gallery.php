@@ -3,7 +3,7 @@
 Template Name: Gallery
 */
 ?>
-<?php require_once('instagram.php'); ?>
+<?php require_once('insta.php'); ?>
 <?php get_header(); ?>
 <body>
 <div id="wrapper">
