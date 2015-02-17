@@ -6,7 +6,7 @@ body {
   font: 14px / 1.7 'Noto Sans Japanese', serif;
 /*  font: 14px / 1.7 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", Helvetica, Arial, Sans-Serif;*/
   letter-spacing: 0.5px;
-  background: #FFF;
+  background: snow;
   color: #666;
   word-break: break-all;
   -webkit-text-size-adjust: 100%;
@@ -54,6 +54,7 @@ img {
   height: 100%;
   margin: 0 auto;
   padding: 0 5px;
+  background: snow;
 }
 
 /*************
@@ -380,7 +381,6 @@ footer {
 }
 #content article.single .entry p {
   font-size: 110%;
-  /*margin-bottom: 22px;*/
   margin-bottom: 20px;
   line-height: 1.8;
 }
@@ -406,25 +406,20 @@ footer {
   padding: 10px 10px 10px 40px;
 }
 #content article.single .entry .bq:before {
-    content: "\f10d";
-    font-family: FontAwesome;
-    font-size: 170%;
-    position: absolute;
-    color: #999;
-    top: 0em;
-    left: 0.4em;
-    height: 12px;
-    width: 12px;
+  content: "\f10d";
+  font-family: FontAwesome;
+  font-size: 170%;
+  position: absolute;
+  color: #999;
+  top: 0em;
+  left: 0.4em;
+  height: 12px;
+  width: 12px;
 }
 #content article.single .entry .bq p {
   margin: 0;
 }
-#content article.single .entry table {
-  margin-left: 5px;
-  margin-bottom: 22px;
-}
 #content article.single .entry ul {
-  /*margin: 22px 0 22px 25px;*/
   margin: 0 0 20px 25px;
 }
 .entry ol, .entry dl {
@@ -451,36 +446,6 @@ footer {
   width: 60%;
   margin: 3px 0 0 20px !important;
 }
-#content article.single table.book {
-  width: 250px;
-  margin: 0 auto 22px !important;
-}
-#content article.single table div {
-  border: none !important;
-  margin: 0 !important;
-  /*padding: 0 !important;*/
-  /*width: 100% !important;*/
-}
-#content article.single table div img {
-  float: left;
-}
-#content article.single table div p {
-  font-size: 85% !important;
-  line-height: 1.2 !important;
-  padding: 0 10px !important;
-}
-#content article.single table div p a,
-#content article.single table div p span {
-  display: block !important;
-  padding: 3px 0 !important;
-}
-#content article.single .crayon-syntax {
-  margin-bottom: 22px !important;
-}
-#content article.single .crayon-table {
-  margin-bottom: 0 !important;
-}
-
 /* For Social Buttons */
 .social {
   margin: 5px 0 15px 15px;
@@ -500,11 +465,9 @@ footer {
 *** h1 - h4 ***
 **************/
 article h1 {
-  /*font-size: 180%;*/
   font-size: 185%;
   line-height: 150%;
   font-weight: bold;
-  /*padding: 3px 0 0 5px;*/
   padding: 3px 0 3px 5px;
 }
 article.archive h1 {
@@ -514,11 +477,8 @@ article h2 {
   position: relative;
   font-size: 165%;
   font-weight: bold;
-  /*margin: 35px 0 20px;*/
   margin: 40px 0 20px;
-  /*padding: 10px 0 10px 30px;*/
   padding: 8px 0 8px 32px;
-  /*width: 95%;*/
   border-bottom: 2px solid #B92A2C;
 }
 h2:before {
