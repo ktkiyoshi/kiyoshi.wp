@@ -6,7 +6,7 @@ body {
   font: 14px / 1.7 'Noto Sans Japanese', serif;
 /*  font: 14px / 1.7 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", Helvetica, Arial, Sans-Serif;*/
   letter-spacing: 0.5px;
-  background: snow;
+  background: #FFF;
   color: #666;
   word-break: break-all;
   -webkit-text-size-adjust: 100%;
@@ -54,7 +54,6 @@ img {
   height: 100%;
   margin: 0 auto;
   padding: 0 5px;
-  background: snow;
 }
 
 /*************
