@@ -3,8 +3,7 @@
 *** COMMON ***
 *************/
 body {
-  font: 14px / 1.7 'Noto Sans Japanese', serif;
-/*  font: 14px / 1.7 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", Helvetica, Arial, Sans-Serif;*/
+  font: 14px / 1.7 'Noto Sans Japanese',"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Meiryo,"メイリオ","ＭＳ Ｐゴシック",Helvetica,Sans-Serif,serif;
   letter-spacing: 0.5px;
   background: #FFF;
   color: #666;
@@ -444,6 +443,9 @@ footer {
 #content article.single .entry img.tb {
   width: 60%;
   margin: 3px 0 0 20px !important;
+}
+#content article.single .entry table {
+  margin-bottom: 20px;
 }
 /* For Social Buttons */
 .social {
