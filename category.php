@@ -10,7 +10,7 @@
         </ul>
       <?php
         $query_array = $wp_query->query_vars;
-        $query_array['category__not_in'] = array(54);
+        $query_array['posts_per_page'] = 20;
         query_posts($query_array);
         global $wp_rewrite;
         $paginate_base = get_pagenum_link(1);

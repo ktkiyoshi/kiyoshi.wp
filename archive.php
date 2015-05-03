@@ -10,7 +10,9 @@
         </ul>
       <?php
         $query_array = $wp_query->query_vars;
-        $query_array['category__not_in'] = array(54);
+        $query_array['posts_per_page'] = 31;
+        $query_array['orderby'] = 'date';
+        $query_array['order'] = 'ASC';
         query_posts($query_array);
         global $wp_rewrite;
         $paginate_base = get_pagenum_link(1);
@@ -27,9 +29,9 @@
                              'mid_size' => 5,
                              'current' => ($paged ? $paged : 1)
                            );
-        echo '<div class="page-navi">'."\n";
-        echo paginate_links($pagination);
-        echo '</div>'."\n";
+        // echo '<div class="page-navi">'."\n";
+        // echo paginate_links($pagination);
+        // echo '</div>'."\n";
       ?>
         <?php while (have_posts()) : the_post(); ?>
           <article class="index archive">
