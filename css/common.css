@@ -444,13 +444,13 @@ footer {
   width: 60%;
   margin: 3px 0 0 20px !important;
 }
+/*
 #content article.single .entry table {
   width: 90%;
   margin: 0 0 20px 20px;
   border-collapse: collapse;
 }
 #content article.single .entry table th {
-  /*width: 25%;*/
   padding: 6px;
   text-align: left;
   vertical-align: top;
@@ -464,6 +464,7 @@ footer {
   border: 1px solid #b9b9b9;
   margin-bottom: 20px;
 }
+*/
 /* For Social Buttons */
 .social {
   margin: 5px 0 15px 15px;

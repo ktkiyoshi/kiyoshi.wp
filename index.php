@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-<?php query_posts(""); ?>
-<?php #query_posts("cat=-58"); ?>
+<?php query_posts("cat=-80"); ?>
 <body>
 <div id="wrapper">
   <?php require("header_parts.php"); ?>
