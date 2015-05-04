@@ -726,3 +726,6 @@ img[width="0"] {
     padding: 10px 15px;
   }
 }
+.w100 {
+  width: 100%;
+}

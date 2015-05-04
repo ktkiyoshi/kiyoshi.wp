@@ -35,7 +35,7 @@
       ?>
         <?php while (have_posts()) : the_post(); ?>
           <article class="index archive">
-            <div class="f_left">
+            <div class="f_left w100">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                 <img src="<?php echo catch_that_image(); ?>" class="thumbnail_B f_left"/>
               </a>
