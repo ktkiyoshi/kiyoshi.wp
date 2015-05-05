@@ -263,7 +263,7 @@ function pageList($meta_key, $meta_value)
               <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
               <p><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></p>
               <p class="description">
-                <?php the_content();?>
+                <?php echo get_the_excerpt();//the_content();?>
               </p>
             </div>
             <div class="reset"></div>
