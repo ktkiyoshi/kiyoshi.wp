@@ -11,7 +11,7 @@ Template Name: Photo
     <div id="content">
       <section>
 <?php
-　// function.phpを参照
+  // in function.php
   pageList('page_category', 'photo_diary');
 ?>
       </section>
