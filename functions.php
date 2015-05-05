@@ -238,4 +238,39 @@ if(!function_exists('get_archives_array')){
         return $output;
     }
 }
+
+/* Listing pages using custom field */
+function pageList($meta_key, $meta_value)
+{
+  $query = array(
+    'post_type' => 'post',
+    'meta_key' => $meta_key,
+    'meta_value' => $meta_value,
+    'showposts' => 20,
+  );
+  $wp_query = new WP_Query($query);
+
+  $str = '';
+  if ($wp_query->have_posts()) {
+    while ($wp_query->have_posts()) {
+      $wp_query->the_post();
+?>
+          <article class="index archive">
+            <div class="f_left w100">
+              <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                <img src="<?php echo catch_that_image(); ?>" class="thumbnail_B f_left"/>
+              </a>
+              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+              <p><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></p>
+              <p class="description">
+                <?php the_content();?>
+              </p>
+            </div>
+            <div class="reset"></div>
+            </article>
+<?php
+    }
+  }
+  wp_reset_query();
+}
 ?>

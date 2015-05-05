@@ -1,5 +1,9 @@
 <?php
-require('/var/www/sec/instagram.php');
+if($_SERVER["HTTP_HOST"] != 'kt-kiyoshi.com') {
+	require('instagram.php');
+} else {
+	require('/var/www/sec/instagram.php');
+}
 $limit=30;
 
 $uri = array(API_URL_USER, API_URL_MEDIA.'&count='.$limit);
