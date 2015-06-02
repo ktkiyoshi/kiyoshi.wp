@@ -113,8 +113,7 @@ img {
   margin: 5px 15px 0;
 }
 #content article .entry_meta li {
-  float: left;
-  padding-right: 5px;
+  display: inline;
 }
 #content article .thumbnail_A {
   display: block;
@@ -370,10 +369,6 @@ footer {
 #content article.single {
   margin: 10px 0 25px;
 }
-#content article.single .entry_meta li {
-  float: left;
-  padding-right: 5px;
-}
 #content article.single .entry {
   margin: 5px 15px 0;
 }
@@ -618,6 +613,9 @@ img[width="0"] {
 }
 .ml215 {
   margin-left: 215px;
+}
+.mr20 {
+  margin-right: 20px;
 }
 
 /* max-869px for footer 2 column */
