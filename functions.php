@@ -239,38 +239,47 @@ if(!function_exists('get_archives_array')){
     }
 }
 
-/* Listing pages using custom field */
-function pageList($meta_key, $meta_value)
-{
-  $query = array(
-    'post_type' => 'post',
-    'meta_key' => $meta_key,
-    'meta_value' => $meta_value,
-    'showposts' => 20,
-  );
-  $wp_query = new WP_Query($query);
+/* Custom Post for PhotoDiary */
+add_action( 'init', 'register_cpt_photo' );
 
-  $str = '';
-  if ($wp_query->have_posts()) {
-    while ($wp_query->have_posts()) {
-      $wp_query->the_post();
-?>
-          <article class="index archive">
-            <div class="f_left w100">
-              <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                <img src="<?php echo catch_that_image(); ?>" class="thumbnail_B f_left"/>
-              </a>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-              <p><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></p>
-              <p class="description">
-                <?php echo get_the_excerpt();//the_content();?>
-              </p>
-            </div>
-            <div class="reset"></div>
-            </article>
-<?php
-    }
-  }
-  wp_reset_query();
+function register_cpt_photo() {
+
+    $labels = array(
+        'menu_name' => _x( '写真日記', 'photo' ),         // 管理画面左メニュー
+        'name' => _x( '投稿一覧', 'photo' ),              // 管理画面右ラベル
+        'singular_name' => _x( 'なぞラベル', 'photo' ),
+        'add_new' => _x( '新規追加', 'photo' ),           // 管理画面左メニュー
+        'add_new_item' => _x( '新規投稿を追加', 'photo' ), // 管理画面右ラベル
+        'edit_item' => _x( '投稿の編集', 'photo' ),
+        'new_item' => _x( 'New PhotoDiary', 'photo' ),
+        'view_item' => _x( 'View PhotoDiary', 'photo' ),
+        'search_items' => _x( 'Search PhotoDiary', 'photo' ),
+        'not_found' => _x( 'No PhotoDiary found', 'photo' ),
+        'not_found_in_trash' => _x( 'No PhotoDiary found in Trash', 'photo' ),
+        'parent_item_colon' => _x( 'Parent PhotoDiary:', 'photo' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => false,
+
+        'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
+        'taxonomies' => array( 'category', 'post_tag' ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+
+
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => true,
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => true,
+        'capability_type' => 'post'
+    );
+
+    register_post_type( 'photo', $args );
 }
 ?>
