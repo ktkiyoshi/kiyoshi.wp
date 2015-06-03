@@ -12,7 +12,7 @@
         <?php global $post; $mypost = get_posts( array( 'post_type' => 'photo' ));?>
         <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
           <li class="photo">
-              <a href="<?php the_permalink() ?>"><img src="<?php echo catch_that_image(); ?>" /></a><br />
+              <a href="/wp/photo"><img src="<?php echo catch_that_image(); ?>" /></a><br />
               <time datetime="<?php the_time('Y-m-d (D)') ?>" pubdate><?php the_time('Y-m-d (D)') ?></time>
           </li>
         <?php endforeach; ?>
