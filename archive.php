@@ -52,9 +52,9 @@
             <div class="reset"></div>
             </article>
         <?php endwhile;
-          echo '<div class="page-navi">'."\n";
-          echo paginate_links($pagination);
-          echo '</div>'."\n";
+          // echo '<div class="page-navi">'."\n";
+          // echo paginate_links($pagination);
+          // echo '</div>'."\n";
         ?>
       </section>
     </div><!-- /#content -->

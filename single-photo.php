@@ -18,17 +18,17 @@
       </article>
     </div><!-- /#topContent -->
 
-<?php
- global $post;
- $args = array(
-  'numberposts' => 10,
-  'post_type' => 'photo', // Custom Post Name
-  'post__not_in' => array($post->ID) //表示中の記事を除外
- );
-?>
+    <?php
+     global $post;
+     $args = array(
+      'numberposts' => 10,
+      'post_type' => 'photo', // Custom post name
+      'post__not_in' => array($post->ID) // Except current post
+     );
+    ?>
     <div id="content">
-<?php $myPosts = get_posts($args); if($myPosts) : ?>
-<?php foreach($myPosts as $post) : setup_postdata($post); ?>
+    <?php $myPosts = get_posts($args); if($myPosts) : ?>
+    <?php foreach($myPosts as $post) : setup_postdata($post); ?>
       <article class="single">
         <div class="entry">
           <a href="<?php the_permalink(); ?>"><?php the_content(); ?></a>
@@ -39,9 +39,7 @@
           <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
         </ul>
       </article>
-
-<?php endforeach; endif; wp_reset_postdata(); ?>
-
+    <?php endforeach; endif; wp_reset_postdata(); ?>
     </div><!-- /#content -->
 
 <?php get_sidebar(); ?>
