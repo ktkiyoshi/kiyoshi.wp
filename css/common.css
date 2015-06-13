@@ -91,7 +91,6 @@ img {
 #main {
   width: 100%;
 }
-
 #topContent .head {
   text-align: center;
   margin-bottom: 20px;
@@ -102,8 +101,21 @@ img {
 }
 #topContent .head li.photo img {
   height: 120px;
+  margin: 0 auto;
   padding: 3px;
   border: 1px solid #CCC;
+}
+/******************
+*** slick photo ***
+*******************/
+.slick-prev:before, .slick-next:before {
+    color :#666 !important;
+}
+.slick-prev {
+  left: 0px !important;
+}
+.slick-next {
+  right: 0px !important;
 }
 
 /**************
@@ -654,12 +666,12 @@ img[width="0"] {
 }
 /* max-869px for footer 2 column and photo-diary */
 @media screen and (max-width: 869px) {
-  .photo {
+/*  .photo {
     width: 30% !important;
   }
   .photo:last-child {
     display: none !important;
-  }
+  }*/
   #footer {
     width: 665px;
     max-width: 869px;
@@ -684,12 +696,12 @@ img[width="0"] {
 }
 /* max-665px for footer 1 column and photo-diary */
 @media screen and (max-width: 665px) {
-  .photo {
+/*  .photo {
     width: 45% !important;
   }
   .photo:nth-child(3) {
     display: none !important;
-  }
+  }*/
   #footer {
     width: 417px;
   }
@@ -699,12 +711,12 @@ img[width="0"] {
 }
 /* max-440px for photo-diary */
 @media screen and (max-width: 440px) {
-  .photo {
+/*  .photo {
     width: 90% !important;
   }
   .photo:nth-child(2) {
     display: none !important;
-  }
+  }*/
 }
 /* max-420px for SP */
 @media screen and (max-width: 420px) {

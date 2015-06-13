@@ -65,6 +65,7 @@
       <?php } ?>
       </section>
     </div><!-- /#content -->
+
 <?php get_sidebar(); ?>
   <div class="reset"></div>
   </div><!-- /#main -->

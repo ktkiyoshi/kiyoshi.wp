@@ -45,9 +45,45 @@
     </div>
   </div>
 </footer>
-
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>side-fixed.js"></script>
+<script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>slick/slick.js"></script>
+<script type="text/javascript">
+$(function(){
+  $('.slides').slick({
+    arrows: true,
+    dots: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 869,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 665,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 440,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+});
+</script>
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {

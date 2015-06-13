@@ -8,6 +8,8 @@ Version: 1.0
 @import url("css/default.css");
 @import url("css/common.css");
 /*@import url("css/font-awesome.min.css");*/
+@import url("css/slick/slick.css");
+@import url("css/slick/slick-theme.css");
 
 /* web font */
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);

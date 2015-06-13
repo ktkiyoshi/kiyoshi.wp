@@ -3,19 +3,20 @@
 <body>
 <div id="wrapper">
   <?php require("header_parts.php"); ?>
-
   <div id="main">
     <!-- <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_013_l.png" class="top_img"></a> -->
     <div id="topContent">
       <div class="head">
         <ul>
         <?php global $post; $mypost = get_posts( array( 'post_type' => 'photo' ));?>
+        <div class="slides">
         <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
           <li class="photo">
-              <a href="<?php the_permalink(); ?>"><img src="<?php echo catch_that_image(); ?>" /></a><br />
+              <a href="<?php the_permalink(); ?>"><img src="<?php echo catch_that_image(); ?>" /></a>
               <time datetime="<?php the_time('Y-m-d (D)') ?>" pubdate><?php the_time('Y-m-d (D)') ?></time>
           </li>
         <?php endforeach; ?>
+        </div>
         </ul>
         <!-- <div class="reset"></div> -->
       <?php wp_reset_postdata(); ?>
