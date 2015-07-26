@@ -282,4 +282,9 @@ function register_cpt_photo() {
 
     register_post_type( 'photo', $args );
 }
+
+/* Don't change "" to ”” */
+remove_filter('the_content', 'wptexturize');
+remove_filter('the_excerpt', 'wptexturize');
+remove_filter('the_title', 'wptexturize');
 ?>
