@@ -8,7 +8,7 @@
     <div id="topContent">
       <div class="head">
         <ul>
-        <?php global $post; $mypost = get_posts( array( 'post_type' => 'photo' ));?>
+        <?php global $post; $mypost = get_posts( array( 'numberposts' => 4, 'post_type' => 'photo' ));?>
         <div class="slides">
         <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
           <li class="photo">
