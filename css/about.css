@@ -1,0 +1,57 @@
+@charset "UTF-8";
+h4.twitter:before {
+  content: "\f081";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0.05em;
+  left: 0.5em;
+}
+h4.computer:before {
+  content: "\f109";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0.05em;
+  left: 0.5em;
+}
+h4.camera:before {
+  content: "\f030";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0.05em;
+  left: 0.5em;
+}
+h4.television:before {
+  content: "\f26c";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0.05em;
+  left: 0.5em;
+}
+h4.music:before {
+  content: "\f001";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0.05em;
+  left: 0.5em;
+}
+h4.book:before {
+  content: "\f02d";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0.05em;
+  left: 0.5em;
+}
+h4.movie:before {
+  content: "\f008";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0.05em;
+  left: 0.5em;
+}
+h4.game:before {
+  content: "\f11b";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0.05em;
+  left: 0.5em;
+}
