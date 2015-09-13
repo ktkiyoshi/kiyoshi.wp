@@ -341,13 +341,9 @@ footer {
 *** SINGLE ENTRY ***
 *******************/
 #topContent article.single,
-#content article.single {
-  margin: 10px 0 25px;
-}
+#content article.single { margin: 10px 0 25px; }
 #topContent article.single .entry,
-#content article.single .entry {
-  margin: 5px 15px 0;
-}
+#content article.single .entry { margin: 5px 15px 0; }
 #topContent article.single .entry p,
 #content article.single .entry p {
   font-size: 110%;
@@ -361,17 +357,11 @@ footer {
   margin: 30px 0px 30px;
 }
 #topContent article.single .entry a.link,
-#content article.single .entry a.link {
-  text-decoration: underline;
-}
+#content article.single .entry a.link { text-decoration: underline; }
 #topContent article.single .entry p:first-child,
-#content article.single .entry p:first-child {
-  margin-top: 10px;
-}
+#content article.single .entry p:first-child { margin-top: 10px; }
 #topContent article.single .entry p:last-child,
-#content article.single .entry p:last-child {
-  margin-bottom: 10px;
-}
+#content article.single .entry p:last-child { margin-bottom: 10px; }
 #topContent article.single .entry .bq,
 #content article.single .entry .bq {
   position: relative;
@@ -393,24 +383,14 @@ footer {
   width: 12px;
 }
 #topContent article.single .entry .bq p,
-#content article.single .entry .bq p {
-  margin: 0;
-}
+#content article.single .entry .bq p { margin: 0; }
 #topContent article.single .entry ul,
-#content article.single .entry ul {
-  margin: 0 0 20px 25px;
-}
-.entry ol, .entry dl {
-  margin: 22px 0 22px 25px;
-}
+#content article.single .entry ul { margin: 0 0 20px 25px; }
+.entry ol, .entry dl { margin: 22px 0 22px 25px; }
 #topContent article.single .entry ul li,
-#content article.single .entry ul li {
-  list-style-type: square;
-}
+#content article.single .entry ul li { list-style-type: square; }
 #topContent article.single .entry ol li,
-#content article.single .entry ol li {
-  list-style-type: decimal;
-}
+#content article.single .entry ol li { list-style-type: decimal; }
 #topContent article.single .entry img,
 #content article.single .entry img {
   display: block;
@@ -466,9 +446,7 @@ footer {
   vertical-align: bottom !important;
   line-height: 1;
 }
-.twitter-share-button {
-  width: 90px !important;
-}
+.twitter-share-button { width: 90px !important; }
 /**************
 *** h1 - h4 ***
 **************/
@@ -478,9 +456,7 @@ article h1 {
   font-weight: bold;
   padding: 3px 0 3px 5px;
 }
-article.archive h1 {
-  font-size: 145%;
-}
+article.archive h1 { font-size: 145%; }
 article h2 {
   position: relative;
   font-size: 165%;
@@ -536,9 +512,7 @@ article h3.about {
   padding: 0px 0px 10px 0px;
   border-bottom: none;
 }
-article h3.about:before {
-  content: "";
-}
+article h3.about:before { content: ""; }
 article h4.about {
   position: relative;
   font-size: 110%;
@@ -546,6 +520,16 @@ article h4.about {
   padding: 2px 0px 0px 30px;
   font-weight: bolder;
   border-bottom: 1px solid #999;
+}
+article h4.it {
+  font-family: source-code-pro, sans-serif;
+  position: relative;
+  font-size: 180%;
+  font-weight: bolder;
+  margin: 5px 15px 10px;
+  padding: 5px 0 5px 25px;
+  border: 1px dotted #999;
+  letter-spacing: 1px;
 }
 /****************
 *** PAGE NAVI ***
@@ -587,12 +571,6 @@ a.page-numbers:hover {
 .comment p {
   margin: 5px 15px;
 }
-/*********************
-*** Profile style ***
-*********************/
-
-
-
 /*********************
 *** Gallery style ***
 *********************/
