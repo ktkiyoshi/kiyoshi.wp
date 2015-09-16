@@ -179,8 +179,8 @@ img       { max-width: 100%; height: auto; }
   list-style: none;
 }
 #tabs .panel_title {
-  display: inline;
-  padding: 10px 30px;
+  display: inline-block;
+  padding: 7px 27px;
   border: 1px solid #CCC;
 }
 #tabs li.active {
