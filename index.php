@@ -5,6 +5,8 @@
   <?php require("header_parts.php"); ?>
   <div id="main">
     <!-- <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_013_l.png" class="top_img"></a> -->
+
+<!--
     <div id="topContent">
       <div class="head">
         <ul>
@@ -18,10 +20,10 @@
         <?php endforeach; ?>
         </div>
         </ul>
-        <!-- <div class="reset"></div> -->
       <?php wp_reset_postdata(); ?>
       </div>
     </div>
+-->
 
     <div id="content">
       <nav id="tabs">

@@ -278,10 +278,21 @@ img       { max-width: 100%; height: auto; }
   border: 1px solid #CCC;
   margin: 0 5px 0 0;
 }
-#side li .title {
+#side li p.postTitle {
   margin-left: 101px;
   line-height: 140%;
 }
+#side li .thumbnail_F {
+  width: 120px;
+  padding: 2px;
+  border: 1px solid #CCC;
+}
+#side li.photoDiary {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0;
+}
+
 /*************
 *** FOOTER ***
 *************/
