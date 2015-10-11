@@ -420,30 +420,21 @@ footer {
   width: 60%;
   margin: 3px 0 0 20px !important;
 }
-/*
-#topCntent article.single .entry table,
 #content article.single .entry table {
   width: 90%;
   margin: 0 0 20px 20px;
   border-collapse: collapse;
 }
-#topContent article.single .entry table th,
-#content article.single .entry table th {
-  padding: 6px;
-  text-align: left;
-  vertical-align: top;
+#content article.single .entry table.normalTable th {
   color: #333;
+  padding: 6px;
   background-color: #eee;
   border: 1px solid #b9b9b9;
 }
-#topContent article.single .entry table td,
-#content article.single .entry table td {
+#content article.single .entry table.normalTable td {
   padding: 6px;
-  background-color: #fff;
   border: 1px solid #b9b9b9;
-  margin-bottom: 20px;
 }
-*/
 /********************
 *** SOCIAL BUTTON ***
 ********************/
