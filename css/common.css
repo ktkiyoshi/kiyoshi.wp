@@ -426,6 +426,9 @@ footer {
   margin: 0 0 20px 20px;
   border-collapse: collapse;
 }
+#content article.single .entry table th {
+  font-weight: bolder;
+}
 #content article.single .entry table.normalTable th {
   color: #333;
   padding: 6px;
@@ -632,6 +635,7 @@ a.page-numbers:hover {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px;
+  margin-bottom: 20px;
   height: 0;
   overflow: hidden;
 }
