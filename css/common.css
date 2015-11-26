@@ -439,6 +439,13 @@ footer {
   padding: 6px;
   border: 1px solid #b9b9b9;
 }
+/************************
+*** syntaxhighlighter ***
+************************/
+#content article.single .entry .codeFrame {
+  margin: 0 0 20px 0 !important;
+  padding: 8px 5px 6px 5px !important;
+}
 /********************
 *** SOCIAL BUTTON ***
 ********************/
@@ -459,14 +466,14 @@ footer {
 article h1 {
   font-size: 185%;
   line-height: 150%;
-  font-weight: bold;
+  font-weight: bolder;
   padding: 3px 0 3px 5px;
 }
 article.archive h1 { font-size: 145%; }
 article h2 {
   position: relative;
   font-size: 165%;
-  font-weight: bold;
+  font-weight: bolder;
   margin: 40px 0 20px;
   padding: 8px 0 8px 32px;
   border-bottom: 2px solid #B92A2C;
@@ -496,11 +503,13 @@ article h2:after {
 article h3 {
   position: relative;
   font-size: 135%;
-  font-weight: bold;
+  font-weight: bolder;
   margin: 30px 0px 20px;
-  padding: 0px 0px 10px 37px;
+  /*padding: 0px 0px 10px 37px;*/
+  padding: 0px 0px 5px 12px;
   border-bottom: 1px solid #999;
 }
+/*
 article h3:before{
   content: "\f046";
   font-family: FontAwesome;
@@ -510,15 +519,23 @@ article h3:before{
   height: 12px;
   width: 12px;
 }
+*/
 article h3.about {
   position: relative;
   font-size: 135%;
-  font-weight: bold;
+  font-weight: bolder;
   margin: 30px 0px 10px;
   padding: 0px 0px 10px 0px;
   border-bottom: none;
 }
 article h3.about:before { content: ""; }
+article h4 {
+  position: relative;
+  font-size: 115%;
+  font-weight: bolder;
+  margin: 7px 0px 7px;
+  padding: 0px 0px 0px 12px;
+}
 article h4.about {
   position: relative;
   font-size: 110%;
