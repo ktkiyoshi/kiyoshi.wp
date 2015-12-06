@@ -115,7 +115,7 @@ img       { max-width: 100%; height: auto; }
   width: 212px;
   padding: 5px;
   border: 1px solid #CCC;
-  margin: 5px 10px;
+  margin: 5px 10px 20px;
 }
 #content article .thumbnail_D {
   width: 85%;
