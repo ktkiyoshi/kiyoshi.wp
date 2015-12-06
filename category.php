@@ -5,9 +5,11 @@
   <div class="main">
     <div id="content">
       <section>
+<!--
         <ul class="panels">
           <li class="panel_title"><a><?php single_term_title(); ?></a></li>
         </ul>
+-->
       <?php
         $query_array = $wp_query->query_vars;
         $query_array['posts_per_page'] = 20;
@@ -32,6 +34,23 @@
         echo '</div>'."\n";
       ?>
         <?php while (have_posts()) : the_post(); ?>
+          <article class="index mb20">
+            <header>
+              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+              <ul class="entry_meta">
+                <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
+                <li>| <?php the_category(' | ') ?></li>
+                <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
+              </ul>
+            </header>
+            <div class="entry_info">
+              <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B f_left"/></a>
+              <p class="description_B"><?php echo mb_strimwidth(get_the_excerpt(), 0, 150, "...", "UTF-8"); ?></p>
+              <p class="entry_more ml215"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
+            </div>
+            <div class="reset"></div>
+          </article>
+<!--
           <article class="index archive">
             <div class="f_left w100">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
@@ -48,7 +67,8 @@
               </p>
             </div>
             <div class="reset"></div>
-            </article>
+          </article>
+-->
         <?php endwhile;
           echo '<div class="page-navi">'."\n";
           echo paginate_links($pagination);
