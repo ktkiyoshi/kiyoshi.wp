@@ -127,7 +127,7 @@ img       { max-width: 100%; height: auto; }
   margin-left: 15px;
 }
 #content article .entry_info {
-  margin: 5px 15px 0;
+  margin: 10px 15px 0;
 }
 #topContent article .entry_meta li,
 #content article .entry_meta li {
@@ -381,7 +381,7 @@ footer {
 *** SINGLE ENTRY ***
 *******************/
 #topContent article.single,
-#content article.single { margin: 10px 0 25px; }
+#content article.single { margin: 0 0 25px; }
 #topContent article.single .entry,
 #content article.single .entry { margin: 5px 15px 0; }
 #topContent article.single .entry p,
