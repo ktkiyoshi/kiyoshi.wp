@@ -47,46 +47,18 @@
 </footer>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>side-fixed.js"></script>
-<script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>slick/slick.js"></script>
-<script type="text/javascript">
-$(function(){
-  $('.slides').slick({
-    arrows: true,
-    dots: false,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    infinite: true,
-    responsive: [
-      {
-        breakpoint: 869,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 665,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 440,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  });
-});
-</script>
-
 <script type="text/javascript">
 jQuery(document).ready(function($) {
+  $(function(){
+    $('.catNav li a').each(function(){
+      var $href = $(this).attr('href');
+      if(location.href.match($href)) {
+        $(this).parent().addClass('active');
+      } else {
+        $(this).parent().removeClass('active');
+      }
+    });
+  });
   $(function() {
     $('#tabs a[href^="#panel"]').click(function(){
         $("#tabs li").removeClass("active");
@@ -97,11 +69,6 @@ jQuery(document).ready(function($) {
     });
     $('#tabs a[href^="#panel"]:eq(0)').trigger('click');
   });
-});
-</script>
-
-<script type="text/javascript">
-jQuery(document).ready(function($) {
   $(document).ready(function(){
     $("#old_entry").click(function(){
       $('#box_entry').slideToggle(500)
@@ -110,7 +77,6 @@ jQuery(document).ready(function($) {
   });
 });
 </script>
-
 <!-- Google+ -->
 <script type="text/javascript">
   (function() {
@@ -119,10 +85,8 @@ jQuery(document).ready(function($) {
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
-
 <!-- Twitter -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
 <!-- Facebook -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -133,7 +97,6 @@ jQuery(document).ready(function($) {
   js.src = "//connect.facebook.net/en_EN/all.js#xfbml=1&appId=112219258880440";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
 <?php wp_footer(); ?>
 </body>
 </html>

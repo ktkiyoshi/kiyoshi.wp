@@ -39,20 +39,50 @@ img       { max-width: 100%; height: auto; }
   font-size: 200%;
   letter-spacing: .3em;
 }
-#header nav {
+#header nav.txtNav {
   float: right;
   margin-right: 50px;
   letter-spacing: .2em;
 }
-#header nav li {
+#header nav.txtNav li {
   float: left;
   margin: 0 7px;
   font-family: 'Droid Sans Mono', sans-serif;
   font-size: 120%;
 }
-#header nav li a:hover {
+#header nav.txtNav li a:hover {
   border-bottom: 2px #666 solid;
 }
+.catNav ul {
+  text-align: center;
+}
+.catNav li {
+  display: inline-block;
+  border: 1px #ccc solid;
+  padding: 5px 15px;
+  margin: 5px;
+}
+.catNav li.active {
+  background: #000;
+  color: #fff;
+}
+.catNav li.active a {
+  background: #000;
+  color: #fff;
+}
+.catNav li:before {
+  font: 115% FontAwesome;
+  padding: 0 7px 0 0;
+  font-size: 115%;
+}
+.catNav li.home:before { content: "\f015"; }
+.catNav li.tech:before { content: "\f109"; }
+.catNav li.book:before { content: "\f02d"; }
+.catNav li.movie:before { content: "\f008"; }
+.catNav li.live:before { content: "\f001"; }
+.catNav li.travel:before { content: "\f072"; }
+.catNav li.pokemon:before { content: "\f11b"; }
+.catNav li a:hover { text-decoration: underline; }
 /***********
 *** MAIN ***
 ************/
@@ -85,7 +115,6 @@ img       { max-width: 100%; height: auto; }
 #content {
   float: left;
   width: 68%;
-  /*max-width: 680px;*/
 }
 #content .top_img {
   display: block;
@@ -656,8 +685,8 @@ a.page-numbers:hover {
   height: 0;
   overflow: hidden;
 }
-.video-container iframe,  
-.video-container object,  
+.video-container iframe,
+.video-container object,
 .video-container embed {
   position: absolute;
   top: 0;

@@ -4,34 +4,15 @@
 <div id="wrapper">
   <?php require("header_parts.php"); ?>
   <div id="main">
-    <!-- <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/title_013_l.png" class="top_img"></a> -->
-
-<!--
-    <div id="topContent">
-      <div class="head">
-        <ul>
-        <?php global $post; $mypost = get_posts( array( 'numberposts' => 4, 'post_type' => 'photo' ));?>
-        <div class="slides">
-        <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
-          <li class="photo">
-              <a href="<?php the_permalink(); ?>"><img src="<?php echo catch_that_image(); ?>" /></a>
-              <time datetime="<?php the_time('Y-m-d (D)') ?>" pubdate><?php the_time('Y-m-d (D)') ?></time>
-          </li>
-        <?php endforeach; ?>
-        </div>
-        </ul>
-      <?php wp_reset_postdata(); ?>
-      </div>
-    </div>
--->
-
     <div id="content">
       <nav id="tabs">
+<!--
         <ul class="panels t_center">
           <li class="panel_title"><a href="#panel1">最新記事</a></li>
           <li class="panel_title"><a href="#panel2">技術記事</a></li>
           <li class="panel_title"><a href="#panel3">読書記事</a></li>
         </ul>
+-->
         <div id="panel1" class="panel">
           <?php while (have_posts()) : the_post(); $counter++; ?>
           <?php if ($counter < 10) { ?>
@@ -55,6 +36,7 @@
         </div>
         <?php wp_reset_query(); ?>
 
+<!--
       <section>
         <div id="panel2" class="panel">
         <?php global $post; $mypost = get_posts( array( 'numberposts' => 10, 'category' => 58 ));?>
@@ -104,7 +86,7 @@
         <?php wp_reset_postdata(); ?>
         </div>
       </section>
-
+-->
       </nav>
     </div><!-- /#content -->
 <?php get_sidebar(); ?>
