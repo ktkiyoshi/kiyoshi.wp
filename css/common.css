@@ -127,7 +127,10 @@ img       { max-width: 100%; height: auto; }
   margin-left: 15px;
 }
 #content article .entry_info {
-  margin: 10px 15px 0;
+  margin: 5px 15px 0;
+}
+#content article .entry_info .entry_meta {
+  padding-top: 10px;
 }
 #topContent article .entry_meta li,
 #content article .entry_meta li {
@@ -136,7 +139,7 @@ img       { max-width: 100%; height: auto; }
 #content article .thumbnail_A {
   display: block;
   width: 90%;
-  margin: 3px auto 10px;
+  margin: 10px auto 10px;
   padding: 5px;
   border: 1px solid #CCC;
 }
