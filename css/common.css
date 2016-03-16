@@ -30,7 +30,7 @@ img       { max-width: 100%; height: auto; }
 #header {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding-top: 15px;
 }
 #header h1 {
@@ -143,12 +143,12 @@ img       { max-width: 100%; height: auto; }
   padding: 5px;
   border: 1px solid #CCC;
 }
-#content article .thumbnail_B {
+/*#content article .thumbnail_B {
   width: 212px;
   padding: 5px;
   border: 1px solid #CCC;
   margin: 5px 10px 20px;
-}
+}*/
 #content article .thumbnail_D {
   width: 85%;
   padding: 5px;

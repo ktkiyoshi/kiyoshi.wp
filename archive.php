@@ -32,15 +32,14 @@
         // echo '<div class="page-navi">'."\n";
         // echo paginate_links($pagination);
         // echo '</div>'."\n";
-      ?>
-        <?php while (have_posts()) : the_post(); ?>
+        while (have_posts()) : the_post(); ?>
           <article class="index archive">
             <div class="f_left w100">
-              <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                <img src="<?php echo catch_that_image(); ?>" class="thumbnail_B f_left"/>
-              </a>
               <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
               <p><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></p>
+              <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+                <img src="<?php echo catch_that_image(); ?>" class="thumbnail_A"/>
+              </a>
               <p class="description">
                 <?php echo mb_substr(get_the_excerpt(),0,80);?>...
                 <p class="entry_more ml215">
