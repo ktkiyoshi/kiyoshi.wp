@@ -40,7 +40,7 @@
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                 <img src="<?php echo catch_that_image(); ?>" class="thumbnail_A"/>
               </a>
-              <p class="description">
+              <p class="description_A">
                 <?php echo mb_substr(get_the_excerpt(),0,80);?>...
                 <p class="entry_more ml215">
                   <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">

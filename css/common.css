@@ -160,10 +160,10 @@ img       { max-width: 100%; height: auto; }
   line-height: 1.8;
   margin: 0px 10px 15px;
 }
-#content article .description_B {
+/*#content article .description_B {
   padding: 10px 5px 10px 0;
   margin-left: 212px;
-}
+}*/
 #content article .next {
   text-align: right;
 }
@@ -239,7 +239,7 @@ img       { max-width: 100%; height: auto; }
 ***********************/
 #content article.archive { margin: 7px; padding: 10px; }
 #content article.archive time { font-family: 'Droid Sans Mono', sans-serif; display: block; }
-#content article.archive .description { padding: 5px 5px 10px 0; }
+/*#content article.archive .description { padding: 5px 5px 10px 0; }*/
 /**********************
 *** CONTENT SECTION ***
 **********************/
@@ -501,7 +501,7 @@ article h1 {
   font-weight: bolder;
   padding: 3px 0 3px 5px;
 }
-article.archive h1 { font-size: 145%; }
+/*article.archive h1 { font-size: 145%; }*/
 article h2 {
   position: relative;
   font-size: 165%;
@@ -654,8 +654,8 @@ a.page-numbers:hover {
 /* max-420px for SP */
 @media screen and (max-width: 420px) {
   #content article .description_A { margin: 0px 3px 3px; }
-  #content article .description_B { font-size: 110%; margin-left: 0; clear: both; }
-  #content article .thumbnail_B { width: 90%; }
+  /*#content article .description_B { font-size: 110%; margin-left: 0; clear: both; }*/
+  /*#content article .thumbnail_B { width: 90%; }*/
   #content article .title { padding-top: 0; }
   #content article .description { margin-left: 0; padding: 0 0 5px 0; }
   #content article .entry_info { margin: 5px 5px 0; }
