@@ -445,13 +445,13 @@ footer {
 }
 #topContent article.single .entry img.sp,
 #content article.single .entry img.sp {
-  width: 40%;
-  margin: 3px 0 0 20px !important;
+  width: 50%;
+  /*margin: 3px 0 0 20px !important;*/
 }
 #topContent article.single .entry img.tb,
 #content article.single .entry img.tb {
-  width: 60%;
-  margin: 3px 0 0 20px !important;
+  width: 70%;
+  /*margin: 3px 0 0 20px !important;*/
 }
 #content article.single .entry table {
   width: 90%;
