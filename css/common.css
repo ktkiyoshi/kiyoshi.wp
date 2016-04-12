@@ -453,6 +453,10 @@ footer {
   width: 70%;
   /*margin: 3px 0 0 20px !important;*/
 }
+#topContent article.single .entry img.normal,
+#content article.single .entry img.normal {
+  width: auto;
+}
 #content article.single .entry table {
   width: 90%;
   margin: 0 0 20px 20px;
