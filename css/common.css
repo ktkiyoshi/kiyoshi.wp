@@ -446,12 +446,10 @@ footer {
 #topContent article.single .entry img.sp,
 #content article.single .entry img.sp {
   width: 50%;
-  /*margin: 3px 0 0 20px !important;*/
 }
 #topContent article.single .entry img.tb,
 #content article.single .entry img.tb {
   width: 70%;
-  /*margin: 3px 0 0 20px !important;*/
 }
 #topContent article.single .entry img.normal,
 #content article.single .entry img.normal {
@@ -474,6 +472,7 @@ footer {
 #content article.single .entry table.normalTable td {
   padding: 6px;
   border: 1px solid #b9b9b9;
+  vertical-align: middle;
 }
 /************************
 *** syntaxhighlighter ***
