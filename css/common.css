@@ -267,12 +267,12 @@ img       { max-width: 100%; height: auto; }
 ***********/
 #side {
   float: right;
-  width: 27%;
-  margin-left: 3%;
-  max-width: 320px;
+  width: 30%;
+  /*margin-left: 3%;*/
+  max-width: 360px;
 }
 #sidefixed {
-  max-width: 320px;
+  max-width: 360px;
 }
 #side .r_frame {
   padding: 7px 10px 7px 7px;
