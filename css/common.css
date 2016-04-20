@@ -18,12 +18,11 @@ textarea  { width: 100%; }
 img       { max-width: 100%; height: auto; }
 
 #wrapper {
-  max-width: 1000px;
+  max-width: 1200px;
   height: 100%;
   margin: 0 auto;
   padding: 0 5px;
 }
-
 /*************
 *** HEADER ***
 *************/
@@ -114,7 +113,7 @@ img       { max-width: 100%; height: auto; }
 ***************/
 #content {
   float: left;
-  width: 68%;
+  width: 69%;
 }
 #content .top_img {
   display: block;
@@ -268,11 +267,12 @@ img       { max-width: 100%; height: auto; }
 ***********/
 #side {
   float: right;
-  width: 31%;
-  max-width: 310px;
+  width: 27%;
+  margin-left: 3%;
+  max-width: 320px;
 }
 #sidefixed {
-  max-width: 310px;
+  max-width: 320px;
 }
 #side .r_frame {
   padding: 7px 10px 7px 7px;
