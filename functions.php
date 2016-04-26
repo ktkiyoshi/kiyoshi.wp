@@ -262,14 +262,11 @@ function register_cpt_photo() {
     $args = array(
         'labels' => $labels,
         'hierarchical' => false,
-
         'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
         'taxonomies' => array( 'category', 'post_tag' ),
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
-
-
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'exclude_from_search' => false,
@@ -283,6 +280,45 @@ function register_cpt_photo() {
     register_post_type( 'photo', $args );
 }
 
+/* Custom Post for TechBlog */
+add_action( 'init', 'register_cpt_tech' );
+
+function register_cpt_tech() {
+
+    $labels = array(
+        'menu_name' => __( '技術記事', 'tech' ),
+        'name' => __( '投稿一覧', 'tech' ),
+        'singular_name' => __( 'なぞラベル', 'tech' ),
+        'add_new' => __( '新規追加', 'tech' ),
+        'add_new_item' => __( '新規投稿を追加', 'tech' ),
+        'edit_item' => __( '投稿の編集', 'tech' ),
+        'new_item' => __( 'New TechBlog', 'tech' ),
+        'view_item' => __( 'View TechBlog', 'tech' ),
+        'search_items' => __( 'Search TechBlog', 'tech' ),
+        'not_found' => __( 'No TechBlog found', 'tech' ),
+        'not_found_in_trash' => __( 'No TechBlog found in Trash', 'tech' ),
+        'parent_item_colon' => __( 'Parent TechBlog:', 'tech' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => false,
+        'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
+        'taxonomies' => array( 'category', 'post_tag' ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => true,
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => true,
+        'capability_type' => 'post'
+    );
+
+    register_post_type( 'tech', $args );
+}
 /* Don't change "" to ”” */
 remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');
