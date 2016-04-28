@@ -474,6 +474,21 @@ footer {
   border: 1px solid #b9b9b9;
   vertical-align: middle;
 }
+#content article.single .entry ul.ib2,
+#content article.single .entry ul.ib3 {
+  margin: 0 0 20px 0;
+  text-align: center; 
+}
+#content article.single .entry ul.ib2 li {
+  display: inline-block;
+  list-style-type: none;
+  width: 45%;
+}
+#content article.single .entry ul.ib3 li {
+  display: inline-block;
+  list-style-type: none;
+  width: 30%;
+}
 /************************
 *** syntaxhighlighter ***
 ************************/
