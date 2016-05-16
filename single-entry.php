@@ -2,13 +2,13 @@
 <body>
 <div id="wrapper">
   <?php require("header_parts.php"); ?>
-  <div class="main">
+  <div id="main">
     <div id="content">
       <article class="single">
         <header>
           <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
           <ul class="entry_meta">
-            <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
+            <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></li>
             <li>| <?php the_category(' | ') ?></li>
             <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
           </ul>
@@ -24,7 +24,7 @@
           <li class="panel_title"><a>関連記事</a></li>
         </ul>
         <?php
-        $categories = wp_get_post_categories($post->ID, array('orderby'=>'rand'));
+        $categories = wp_get_post_categories($post->ID);
         if ($categories) {
             $args = array(
                 'category__in' => array($categories[0]),
@@ -37,7 +37,7 @@
             if( $my_query->have_posts() ) { ?>
                 <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
                 <article class="past_entries f_left t_center">
-                  <time datetime="<?php the_time('Y-m-d (D)') ?>" pubdate><?php the_time('Y-m-d (D)'); ?></time>
+                  <time datetime="<?php the_time('Y/m/d (D)') ?>" pubdate><?php the_time('Y/m/d (D)'); ?></time>
                   <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_D" /></a>
                   <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
                 </article>
@@ -52,8 +52,8 @@
 
       <section>
       <?php
-      $pdate = strtotime(the_date('Y-m-d','','',false));
-      $today = strtotime(date('Y-m-d'));
+      $pdate = strtotime(the_date('Y/m/d','','',false));
+      $today = strtotime(date('Y/m/d'));
       $diff = ($today - $pdate) / ( 60 * 60 * 24);
       if (commentNumber($post->ID) > 0 || $diff < commentCloseDays()) { ?>
         <ul class="panels">

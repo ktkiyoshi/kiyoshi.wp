@@ -14,7 +14,7 @@ function popularRanking() {
     $tmp = array(
       'url' => get_template_directory_uri()."/".$val->year."/".$val->month."/".$val->day."/".$val->post_name,
       'post_title' => $val->post_title,
-      'date' => $val->year."-".$val->month."-".$val->day,
+      'date' => $val->year."/".$val->month."/".$val->day,
       'image' => $matches[1][0],
       'count' => $val->count
       );
@@ -79,7 +79,6 @@ function commentCloseDays() {
   $query = "SELECT option_value FROM wp_options WHERE option_name = 'close_comments_days_old'";
   return $wpdb->get_var($query);
 }
-
 
 /* The first image */
 function catch_that_image() {
@@ -154,7 +153,7 @@ if (function_exists('add_filter')){
 }
 
 /* Usable Widgets */
-if ( function_exists('register_sidebar') ) {
+if (function_exists('register_sidebar')) {
   register_sidebar();
 }
 
@@ -241,7 +240,6 @@ if(!function_exists('get_archives_array')){
 
 /* Custom Post for PhotoDiary */
 add_action( 'init', 'register_cpt_photo' );
-
 function register_cpt_photo() {
 
     $labels = array(
@@ -263,7 +261,8 @@ function register_cpt_photo() {
         'labels' => $labels,
         'hierarchical' => false,
         'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
-        'taxonomies' => array( 'category', 'post_tag' ),
+        // 'taxonomies' => array( 'category', 'post_tag' ),
+        'taxonomies' => array(),
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
@@ -282,7 +281,6 @@ function register_cpt_photo() {
 
 /* Custom Post for TechBlog */
 add_action( 'init', 'register_cpt_tech' );
-
 function register_cpt_tech() {
 
     $labels = array(
@@ -304,7 +302,8 @@ function register_cpt_tech() {
         'labels' => $labels,
         'hierarchical' => false,
         'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
-        'taxonomies' => array( 'category', 'post_tag' ),
+        // 'taxonomies' => array( 'category', 'post_tag' ),
+        'taxonomies' => array( 'tech_tag' ),
         'public' => true,
         'show_ui' => true,
         'show_in_nav_menus' => true,
@@ -319,6 +318,16 @@ function register_cpt_tech() {
 
     register_post_type( 'tech', $args );
 }
+/* Custom Taxonomy for TechBlog */
+// Tag Type
+$args = array(
+    'label' => '技術タグ',
+    'public' => true,
+    'show_ui' => true,
+    'hierarchical' => false
+);
+register_taxonomy('tech_tag','tech', $args);
+
 /* Don't change "" to ”” */
 remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');

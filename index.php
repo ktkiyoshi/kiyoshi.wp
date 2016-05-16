@@ -14,24 +14,29 @@
         </ul>
 -->
         <div id="panel1" class="panel">
-          <?php while (have_posts()) : the_post(); $counter++; ?>
-          <?php if ($counter < 10) { ?>
-          <article class="index">
-            <header>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-              <ul class="entry_meta">
-                <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
-                <li>| <?php the_category(' | ') ?></li>
-                <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
-              </ul>
-            </header>
-            <div class="entry_info">
-              <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_A"/></a>
-              <p class="description_A"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "...", "UTF-8"); ?></p>
-              <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
-            </div>
-          </article>
-          <div class="reset"></div>
+          <?php
+            $query_array = $wp_query->query_vars;
+            $query_array['posts_per_page'] = 10;
+            query_posts($query_array);
+            while (have_posts()) : the_post(); $counter++;
+            if ($counter < 10) {
+          ?>
+            <article class="index">
+              <header>
+                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+                <ul class="entry_meta">
+                  <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
+                  <li>| <?php the_category(' | ') ?></li>
+                  <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
+                </ul>
+              </header>
+              <div class="entry_info">
+                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_A"/></a>
+                <p class="description_A"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "...", "UTF-8"); ?></p>
+                <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
+              </div>
+            </article>
+            <div class="reset"></div>
           <?php } else if ($counter == 10) { break; } endwhile; ?>
         </div>
         <?php wp_reset_query(); ?>

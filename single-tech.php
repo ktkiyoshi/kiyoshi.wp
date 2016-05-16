@@ -1,16 +1,17 @@
 <?php get_header(); ?>
 <body>
+<?php require("header_parts_tech.php"); ?>
 <div id="wrapper">
-  <?php require("header_parts.php"); ?>
-  <div class="main">
+  <div id="main">
     <div id="content">
       <article class="single">
         <header>
-          <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
           <ul class="entry_meta">
-            <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
-            <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
+            <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></li>
+            <li><?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
           </ul>
+          <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+          <p class="tags"><?php echo get_the_term_list( $post->ID,'tech_tag',' ' ); ?></p>
         </header>
         <div class="entry">
           <?php the_post();the_content(); ?>
@@ -18,30 +19,9 @@
         <?php require("social_button.php"); ?>
       </article>
 
-    <?php
-     global $post;
-     $args = array(
-      'numberposts' => 10,
-      'post_type' => 'tech', // Custom post name
-      'post__not_in' => array($post->ID) // Except current post
-     );
-    ?>
-    <?php $myPosts = get_posts($args); if($myPosts) : ?>
-    <?php foreach($myPosts as $post) : setup_postdata($post); ?>
-      <article class="single">
-        <div class="entry">
-          <a href="<?php the_permalink(); ?>"><?php the_content(); ?></a>
-        </div>
-        <ul class="entry_meta t_right mr20">
-          <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
-          <li>| <?php the_title(); ?></li>
-          <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
-        </ul>
-      </article>
-    <?php endforeach; endif; wp_reset_postdata(); ?>
     </div><!-- /#content -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('tech'); ?>
   <div class="reset"></div>
   </div><!-- /#main -->
 <?php get_footer(); ?>

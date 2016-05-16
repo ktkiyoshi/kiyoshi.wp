@@ -3,7 +3,7 @@
 <div id="wrapper">
   <?php require("header_parts.php"); ?>
 
-  <div class="main">
+  <div id="main">
     <div id="topContent">
       <article class="single">
         <div class="entry">
@@ -19,16 +19,15 @@
     </div><!-- /#topContent -->
 
     <?php
-     global $post;
-     $args = array(
+      $args = array(
       'numberposts' => 10,
       'post_type' => 'photo', // Custom post name
       'post__not_in' => array($post->ID) // Except current post
-     );
+      );
+      $my_query = new WP_Query($args);
     ?>
     <div id="content">
-    <?php $myPosts = get_posts($args); if($myPosts) : ?>
-    <?php foreach($myPosts as $post) : setup_postdata($post); ?>
+    <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
       <article class="single">
         <div class="entry">
           <a href="<?php the_permalink(); ?>"><?php the_content(); ?></a>
@@ -39,7 +38,10 @@
           <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
         </ul>
       </article>
-    <?php endforeach; endif; wp_reset_postdata(); ?>
+    <?php
+      endwhile;
+      wp_reset_query();
+    ?>
     </div><!-- /#content -->
 
 <?php get_sidebar(); ?>
