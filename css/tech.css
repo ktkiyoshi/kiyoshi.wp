@@ -59,10 +59,7 @@ article h2:after  { content: ""; }
 /*******************
 *** Single Entry ***
 *******************/
-#content article.single .entry {
-  margin: -20px 15px 0
-}
-#content article.single .entry p img:first-child {
+#content article.single .entry p:first-child {
   display: none;
 }
 
