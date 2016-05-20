@@ -16,7 +16,7 @@
           query_posts($query_array);
           while (have_posts()) : the_post();
         ?>
-        <article class="index mb20">
+        <article class="index">
           <header>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
             <ul class="entry_meta">
@@ -28,12 +28,14 @@
           <div class="entry_info">
             <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_A"/></a>
             <p class="description_A"><?php echo mb_strimwidth(get_the_excerpt(), 0, 150, "...", "UTF-8"); ?></p>
-            <p class="entry_more ml215"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
+            <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
           </div>
           <div class="reset"></div>
         </article>
-        <?php endwhile; ?>
-        <?php wp_reset_query(); ?>
+        <?php
+          endwhile;
+          wp_reset_query();
+        ?>
       </section>
     </div><!-- /#content -->
 <?php get_sidebar(); ?>

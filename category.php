@@ -29,7 +29,7 @@
           echo '</div>'."\n";
           while (have_posts()) : the_post();
         ?>
-        <article class="index mb20">
+        <article class="index">
           <header>
             <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
             <ul class="entry_meta">
@@ -41,35 +41,17 @@
           <div class="entry_info">
             <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_A"/></a>
             <p class="description_A"><?php echo mb_strimwidth(get_the_excerpt(), 0, 150, "...", "UTF-8"); ?></p>
-            <p class="entry_more ml215"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
+            <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
           </div>
           <div class="reset"></div>
         </article>
-<!--
-        <article class="index archive">
-          <div class="f_left w100">
-            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-              <img src="<?php echo catch_that_image(); ?>" class="thumbnail_B f_left"/>
-            </a>
-            <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-            <p><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></p>
-            <p class="description">
-              <?php echo mb_substr(get_the_excerpt(),0,80);?>...
-              <p class="entry_more ml215">
-                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                &raquo;続きを読む</a>
-              </p>
-            </p>
-          </div>
-          <div class="reset"></div>
-        </article>
--->
-        <?php endwhile;
+        <?php
+          endwhile;
           echo '<div class="page-navi">'."\n";
           echo paginate_links($pagination);
           echo '</div>'."\n";
+          wp_reset_query();
         ?>
-        <?php wp_reset_query(); ?>
       </section>
     </div><!-- /#content -->
 <?php get_sidebar(); ?>

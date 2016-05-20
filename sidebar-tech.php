@@ -14,14 +14,17 @@
         <?php if ($counter <= 5) { ?>
         <li>
           <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+            <img src="<?php echo catch_that_image(); ?>" class="thumbnail_C f_left"/>
             <time datetime="<?php the_time('Y/m/d/D') ?>" pubdate><?php the_time('Y/m/d/D') ?></time>
             <p class="postTitle">
-            <?php if(mb_strlen($post->post_title)>80) {
-                    $title= mb_substr($post->post_title,0,80);
-                    echo $title. ･･･ ;
-                  } else {
-                    echo $post->post_title;
-                  }?>
+            <?php
+              if(mb_strlen($post->post_title)>80) {
+                $title= mb_substr($post->post_title,0,80);
+                echo $title. ･･･ ;
+              } else {
+                echo $post->post_title;
+              }
+            ?>
             </p>
           </a>
         </li>

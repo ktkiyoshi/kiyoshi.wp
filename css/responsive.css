@@ -18,16 +18,19 @@
   #footer .category_list { width: 45%; }
   #footer .tag_list { width: 400px; }
 }
+@media screen and (max-width: 555px) {
+  #content article .description_B { margin-left: 10px; clear: both; }
+  #content article .thumbnail_B { width: 90%; float: none; }
+  #content article p.tags { margin: 0 10px 0; padding-top: 0; }
+}
 /* max-420px for SP */
 @media screen and (max-width: 420px) {
   #content article .description_A { margin: 0px 3px 3px; }
-  /*#content article .description_B { font-size: 110%; margin-left: 0; clear: both; }*/
-  /*#content article .thumbnail_B { width: 90%; }*/
   #content article .title { padding-top: 0; }
   #content article .description { margin-left: 0; padding: 0 0 5px 0; }
   #content article .entry_info { margin: 5px 5px 0; }
+  #content article .entry_more { margin-right: 5px; }
   #content article.single .entry { margin: 5px 5px 0; }
-  #content article .entry_more { margin-left: 0; margin-right: 5px; float: right; }
   #content .past_entries { width: 50%; }
   #content .past_entries .entry_more { float: none; }
   #footer { width: 80%; margin: 0 auto; }

@@ -37,10 +37,12 @@
               </div>
             </article>
             <div class="reset"></div>
-          <?php } else if ($counter == 10) { break; } endwhile; ?>
+          <?php
+            } else if ($counter == 10) { break; }
+            endwhile;
+          ?>
         </div>
         <?php wp_reset_query(); ?>
-
 <!--
       <section>
         <div id="panel2" class="panel">

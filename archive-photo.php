@@ -23,8 +23,10 @@
           <?php the_content(); ?>
         </div>
       </article>
-      <?php endwhile;　?>
-      <?php wp_reset_query(); ?>
+      <?php
+        endwhile;
+        wp_reset_query();
+      ?>
     </div><!-- /#content -->
 
 <?php get_sidebar(); ?>

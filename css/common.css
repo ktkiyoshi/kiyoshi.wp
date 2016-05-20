@@ -123,7 +123,7 @@ img       { max-width: 100%; height: auto; }
   margin-left: 15px;
 }
 #content article .entry_info {
-  margin: 5px 15px 0;
+  margin: 5px 10px 0;
 }
 #content article .entry_info .entry_meta {
   padding-top: 10px;
@@ -132,24 +132,44 @@ img       { max-width: 100%; height: auto; }
 #content article .entry_meta li {
   display: inline;
 }
+#content article p.tags {
+  font-size: 80%;
+  font-family: 'Droid Sans Mono', sans-serif;
+  margin: 0 10px 0 250px;
+  padding: 7px 0 7px;
+}
+#content article p.tags a {
+  border: 1px #777 solid;
+  border-radius: 10px;
+  color: #777;
+  padding: 3px 10px;
+  margin: 3px 5px 3px 0;
+  display: inline-block;
+}
+#content article p.tags a:hover{
+  background: #3D4349;
+  color: white;
+}
 #content article .thumbnail_A {
   display: block;
-  width: 90%;
+  border: 1px solid #CCC;
   margin: 10px auto 10px;
   padding: 5px;
-  border: 1px solid #CCC;
+  width: 90%;
 }
 #content article .thumbnail_B {
-  width: 212px;
-  padding: 5px;
+  display: block;
   border: 1px solid #CCC;
-  margin: 5px 10px 20px;
+  float: left;
+  margin: 10px auto 10px;
+  padding: 5px;
+  width: 212px;
 }
 #content article .thumbnail_D {
-  width: 85%;
-  padding: 5px;
   border: 1px solid #CCC;
   margin: 5px 10px;
+  padding: 5px;
+  width: 85%;
 }
 #content article .description_A {
   font-size: 110%;
@@ -157,8 +177,9 @@ img       { max-width: 100%; height: auto; }
   margin: 0px 10px 15px;
 }
 #content article .description_B {
-  padding: 10px 5px 10px 0;
-  margin-left: 212px;
+  font-size: 110%;
+  line-height: 1.8;
+  margin: 0px 10px 15px 250px;
 }
 #content article .next {
   text-align: right;
@@ -634,7 +655,9 @@ a.page-numbers:hover {
 .mr20  { margin-right: 20px !important; }
 .ml20  { margin-left: 20px !important; }
 .ml215 { margin-left: 215px !important; }
+.ml250 { margin-left: 250px !important; }
 .mb20  { margin-bottom: 20px !important; }
+.m0a   { margin: 0 auto !important; }
 /* common-class */
 .f_right  { float: right !important; }
 .f_left   { float: left !important; }
