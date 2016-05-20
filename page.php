@@ -2,7 +2,7 @@
 <body>
 <div id="wrapper">
   <?php require("header_parts.php"); ?>
-  <div class="main">
+  <div id="main">
     <div id="content">
       <article class="single">
         <header>

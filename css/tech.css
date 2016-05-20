@@ -1,0 +1,108 @@
+/************
+*** Title ***
+************/
+#title {
+  background: #3D4349;
+  border-bottom: 4px #b9b9b9 solid;
+  margin-bottom: 20px;
+}
+
+/*************
+*** Header ***
+*************/
+#header {
+  color: #efefef;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#header h1 {
+  float: left;
+  margin-left: 20px;
+  font-size: 200%;
+  letter-spacing: .3em;
+}
+#header h1 a {
+  color: #efefef;
+}
+#header p {
+  margin: 0 20px 15px;
+  padding-top: 3px;
+}
+#header nav.txtNav li a {
+  color: #efefef;
+}
+#header nav.txtNav li a:hover {
+  border-bottom: 2px #efefef solid;
+}
+article h1 {
+  border-bottom: 2px #3D4349 solid;
+  font-size: 150%;
+  padding: 3px 0 5px 5px;
+}
+article h2 {
+  padding: 5px 0 5px 12px;
+}
+article h2:before { content: ""; }
+article h2:after  { content: ""; }
+
+/**************
+*** Content ***
+**************/
+#content {
+  float: left;
+  width: 71%;
+}
+#content article .entry_meta {
+  color: #777;
+}
+
+/***********
+*** Side ***
+***********/
+#side {
+  float: right;
+  width: 27%;
+  max-width: 324px;
+}
+#sidefixed {
+  max-width: 324px;
+}
+#side .r_frameTech {
+  border-top: 3px solid #777;
+  border-bottom: 1px solid #777;
+  padding: 7px 10px 7px 3px;
+  margin: 5px 0px 7px 0px;
+}
+#side .r_frameTech p.title {
+  font-family: 'Droid Sans Mono', sans-serif;
+  font-size: 110%;
+  font-weight: bold;
+  letter-spacing: .1em;
+  line-height: 1;
+  padding: 5px 5px 5px 5px;
+}
+#side li p.postTitle {
+  font-weight: bold;
+  line-height: 140%;
+  margin: 0 0 7px 10px;
+}
+/****************
+*** Tag Cloud ***
+****************/
+#side p.tags {
+  font-size: 80%;
+  font-family: 'Droid Sans Mono', sans-serif;
+  margin: 7px 10px;
+}
+#side p.tags a {
+  border: 1px #777 solid;
+  border-radius: 10px;
+  color: #777;
+  padding: 3px 10px;
+  margin: 3px 5px 3px 0;
+  display: inline-block;
+}
+#side p.tags a:hover{
+  background: #3D4349;
+  color: white;
+}

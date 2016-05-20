@@ -1,36 +1,30 @@
 </div><!-- /#wrapper -->
 <footer>
   <div id="footer">
-    <div class="f_frame archive_list">
-      <p class="title">アーカイブ一覧</p>
-      <?php $archives = get_archives_array(); $this_year = ''; ?>
-      <?php if($archives): ?>
-        <ul>
-        <?php foreach($archives as $archive): ?>
-        <?php if($this_year == '' || $this_year != $archive->year) { ?>
-          <p><?php echo $archive->year; ?>年</p>
-        <?php $m_cnt = 0; } ?>
-          <li>
-            <a href="<?php echo get_month_link($archive->year, $archive->month); ?>">
-            <?php echo $archive->month; ?>月(<?php echo $archive->posts; ?>)</a>
-          </li>
-          <?php if($m_cnt == 5) { echo "<br class='display_pc' />"; } ?>
-          <?php if($m_cnt == 3 || $m_cnt == 7) { echo "<br class='display_sp' />"; } ?>
-          <?php $this_year = $archive->year; $m_cnt++; ?>
-          <?php endforeach; ?>
-        </ul>
-      <?php endif; ?>
-    </div>
-
-    <div class="f_frame category_list">
-      <p class="title">カテゴリ一覧</p>
-        <ul>
-        <?php $categories = get_categories('exclude=54','hide_empty=true'); ?>
-        <?php foreach($categories as $category) : ?>
-          <li><a href="<?php echo get_category_link($category->cat_ID); ?>">
-          <?php echo get_catname($category->cat_ID);?>(<?php echo $category->count; ?>)</a></li>
+    <div class="f_frame tag_list">
+      <p class="title">タグ一覧</p>
+        <!-- <ul> -->
+        <?php $tech_tags = get_categories('title_li=&taxonomy=tech_tag'); $initial = '';$m_cnt = 0;?>
+        <?php foreach($tech_tags as $tech_tag) : ?>
+          <?php
+          if($initial != strtoupper(substr(get_catname($tech_tag->cat_ID), 0, 1))) {
+            if($initial != '') {
+              if(($m_cnt % 2) == 1) {
+                echo "</ul><br />";
+              } else {
+                echo "</ul>";
+              }
+              $m_cnt++;
+            }
+            $initial = strtoupper(substr(get_catname($tech_tag->cat_ID), 0, 1));
+            echo "<ul><p>".$initial."</p>";
+          }
+          ?>
+          <li><a href="<?php echo get_category_link($tech_tag->cat_ID); ?>">
+          <?php echo get_catname($tech_tag->cat_ID);?>(<?php echo $tech_tag->count; ?>)
+          </a></li>
         <?php endforeach; ?>
-        </ul>
+        <!-- </ul> -->
     </div>
 
     <div class="f_frame author_info">
