@@ -50,6 +50,7 @@
             margin-bottom: 0;
             border: solid 1px rgba(255,255,255,0.4);
             background: rgba(255,255,255,0.4);
+            color: #3D4349;
         }
         .panel-main p {
           text-align: center;
