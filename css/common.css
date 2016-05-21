@@ -249,17 +249,6 @@ img       { max-width: 100%; height: auto; }
   text-decoration: underline;
 }
 
-/********************
-*** Content Index ***
-********************/
-/*#content article.index { margin-bottom: 50px; }*/
-
-/***********************
-*** Content Artchive ***
-***********************/
-/*#content article.archive { margin: 7px; padding: 10px; }*/
-/*#content article.archive time { font-family: 'Droid Sans Mono', sans-serif; display: block; }*/
-
 /**********************
 *** Content Section ***
 **********************/
@@ -306,11 +295,17 @@ img       { max-width: 100%; height: auto; }
   padding: 5px 5px 5px 10px;
   border-left: 5px #666 solid;
 }
+#side time {
+  font-family: 'Droid Sans Mono', sans-serif;
+  display: block;
+  line-height: 1;
+  padding: 2px 0 5px;
+}
 #side ul {
   margin: 15px 0;
 }
 #side li {
-  margin: 5px 0 10px;
+  margin: 5px 0 7px;
   padding: 0 5px 5px 10px;
   font-size: 85%;
 }
@@ -319,21 +314,16 @@ img       { max-width: 100%; height: auto; }
   clear: both;
   display: block;
 }
-#side li time {
-  font-family: 'Droid Sans Mono', sans-serif;
-  display: block;
-  line-height: 1;
-  padding: 2px 0 5px;
-}
 #side li .thumbnail_C {
   width: 90px;
   padding: 2px;
   border: 1px solid #CCC;
-  margin: 0 5px 0 0;
+  margin: 5px 10px 0 0;
 }
 #side li p.postTitle {
-  margin-left: 101px;
-  line-height: 140%;
+  font-weight: bold;
+  line-height: 145%;
+  margin-bottom: 7px;
 }
 #side li .thumbnail_F {
   width: 120px;
@@ -394,6 +384,11 @@ footer {
 }
 #footer .tag_list li     { display: inline-block; }
 #footer .author_info li  { color: #999; }
+#footer .author_info li  a {
+  font-size: 100%;
+  padding: 0;
+  text-decoration: underline;
+}
 #footer .thumbnail_D {
   width: 150px;
   padding: 2px;
@@ -592,6 +587,14 @@ article h4 {
   font-weight: bolder;
   margin: 7px 0px 7px;
   padding: 0px 0px 0px 12px;
+}
+article h4.about {
+  position: relative;
+  font-size: 110%;
+  margin: 5px 0px 10px;
+  padding: 2px 0px 0px 30px;
+  font-weight: bolder;
+  border-bottom: 1px solid #999;
 }
 
 /****************

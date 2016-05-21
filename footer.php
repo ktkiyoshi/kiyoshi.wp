@@ -33,17 +33,7 @@
         </ul>
     </div>
 
-    <div class="f_frame author_info">
-      <p class="title">中の人</p>
-      <ul>
-        <li>こんな人が書いてます</li>
-        <li><img src="<?php bloginfo('template_directory'); ?>/img/profile.jpg" class="thumbnail_D f_left"></li>
-      </ul>
-    </div>
-    <div class="reset"></div>
-    <div class="copyright">
-      <p>Copyright(C) <script type="text/javascript">myDate = new Date();myYear = myDate.getFullYear();document.write(myYear);</script> Kiyoshi All Rights Reserved.</p>
-    </div>
+    <?php require("footer_profile_parts.php"); ?>
   </div>
 </footer>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

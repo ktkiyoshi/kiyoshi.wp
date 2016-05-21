@@ -88,11 +88,6 @@ article h2:after  { content: ""; }
   line-height: 1;
   padding: 5px 5px 5px 5px;
 }
-#side li p.postTitle {
-  font-weight: bold;
-  line-height: 140%;
-  margin: 0 0 7px 10px;
-}
 /****************
 *** Tag Cloud ***
 ****************/

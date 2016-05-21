@@ -30,7 +30,6 @@ function replaceImagePath($arg) {
 }
 add_action('the_content', 'replaceImagePath');
 
-
 /* Delete header's bar */
 add_filter( 'show_admin_bar', '__return_false' );
 

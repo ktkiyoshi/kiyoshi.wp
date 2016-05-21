@@ -10,7 +10,7 @@
           <?php the_post();the_content(); ?>
         </div>
         <ul class="entry_meta t_right mr20">
-          <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
+          <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></li>
           <li>| <?php the_title(); ?></li>
           <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
         </ul>
@@ -33,7 +33,7 @@
           <a href="<?php the_permalink(); ?>"><?php the_content(); ?></a>
         </div>
         <ul class="entry_meta t_right mr20">
-          <li><time datetime="<?php the_time('Y-m-d (D) G:i') ?>" pubdate><?php the_time('Y-m-d (D) G:i') ?></time></li>
+          <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></li>
           <li>| <?php the_title(); ?></li>
           <li>| <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
         </ul>
