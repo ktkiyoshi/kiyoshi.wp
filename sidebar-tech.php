@@ -53,9 +53,12 @@
             color: #3D4349;
         }
         .panel-main p {
-          text-align: center;
-          font-size: 80%;
-          font-weight: bold;
+            text-align: center;
+            font-weight: bold;
+            font-size: 85%;
+        }
+        .panel-main time {
+            font-size: 85%;
         }
         </style>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
