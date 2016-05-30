@@ -20,7 +20,7 @@
 }
 @media screen and (max-width: 555px) {
   #content article .description_B { margin-left: 10px; clear: both; }
-  #content article .thumbnail_B { width: 90%; float: none; }
+  #content article .thumbnail_B { width: 90%; float: none; margin: 10px auto 10px;}
   #content article p.tags { margin: 0 10px 0; padding-top: 0; }
 }
 /* max-420px for SP */
