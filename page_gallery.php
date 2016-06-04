@@ -6,8 +6,8 @@ Template Name: Gallery
 <?php require_once('insta.php'); ?>
 <?php get_header(); ?>
 <body>
+<?php require("header_parts.php"); ?>
 <div id="wrapper">
-  <?php require("header_parts.php"); ?>
   <div id="main">
     <div id="content">
       <a href="/wp"><img src="<?php bloginfo('template_directory'); ?>/img/top/gallery_001.png" class="top_img" /></a>
