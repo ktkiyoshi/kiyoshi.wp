@@ -327,6 +327,15 @@ $args = array(
 );
 register_taxonomy('tech_tag','tech', $args);
 
+/* Enable to use Martdown for custom_post */
+add_post_type_support( 'tech', 'wpcom-markdown' );
+
+/* Enable to publicize_share by jetpack for custom_post */
+function cpt_publicize_share() {
+    add_post_type_support( 'tech', 'publicize' );
+}
+add_action( 'init', 'cpt_publicize_share' );
+
 /* Don't change "" to ”” */
 remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');
