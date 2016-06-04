@@ -23,13 +23,14 @@
     #content article p.tags { margin: 0 10px 0; padding-top: 0; }
     /* Header for SP */
     #wrapper {
-      padding-top: 60px;
+      padding-top: 55px;
     }
     #wrapper.tech {
       padding-top: 105px;
     }
     #top-head p {
         padding-top: 0;
+        line-height: 1.2;
     }
     #top-head, .inner {
         width: 100%;
@@ -58,9 +59,9 @@
     #top-head.fixed .logo,
     #top-head .logo {
         position: absolute;
-        left: 13px;
+        left: 0;
         top: 13px;
-        font-size: 26px;
+        font-size: 175%;
     }
     #global-nav {
         position: absolute;

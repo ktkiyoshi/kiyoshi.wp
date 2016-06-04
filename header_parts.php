@@ -17,10 +17,10 @@
         </div>
         <nav id="global-nav">
             <ul>
-                <li><a href="/wp">HOME</a></li>
                 <li><a href="/wp/about">ABOUT</a></li>
+                <li><a href="/wp">DIARY</a></li>
                 <li><a href="/wp/gallery">GALLERY</a></li>
-                <li><a href="/wp/tech">TECH</a></li>
+                <li><a href="/wp/tech">TECH-BLOG</a></li>
             </ul>
         </nav>
         <?php if ( get_post_type() == 'tech' ) { ?>
