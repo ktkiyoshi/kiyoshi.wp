@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <body>
+<?php require("header_parts.php"); ?>
 <div id="wrapper">
-  <?php require("header_parts.php"); ?>
   <div id="main">
     <div id="content">
       <?php

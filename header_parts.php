@@ -1,21 +1,30 @@
-<header id="header">
-  <h1><a href="/wp">超日記</a></h1>
-  <nav class="txtNav">
-    <ul>
-      <li><a href="/wp/about">ABOUT</a></li>
-      <li><a href="/wp/gallery">GALLERY</a></li>
-      <li><a href="/wp/tech">TECH</a></li>
-    </ul>
-  </nav>
-  <nav class="catNav reset">
-    <ul>
-      <!-- <li class="home"><a href="/wp">総 合</a></li> -->
-      <!-- <li class="tech"><a href="/wp/category/it">技 術</a></li> -->
-      <li class="book"><a href="/wp/category/book">読 書</a></li>
-      <li class="movie"><a href="/wp/category/movie">映 画</a></li>
-      <li class="live"><a href="/wp/category/live">ライブ</a></li>
-      <li class="travel"><a href="/wp/category/travel">旅 行</a></li>
-      <li class="pokemon"><a href="/wp/category/pokemon">ポケモン</a></li>
-    </ul>
-  </nav>
-</header><!-- /#header -->
+<header id="top-head">
+    <div class="inner">
+        <?php if ( get_post_type() == 'tech' ) { ?>
+        <div id="mobile-head" class="tech">
+            <h1 class="logo"><a href="/wp/tech">タイトル未定</a></h1>
+        <?php } else { ?>
+        <div id="mobile-head">
+            <h1 class="logo"><a href="/wp">超日記</a></h1>
+        <?php } ?>
+            <div id="nav-toggle">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <nav id="global-nav">
+            <ul>
+                <li><a href="/wp">HOME</a></li>
+                <li><a href="/wp/about">ABOUT</a></li>
+                <li><a href="/wp/gallery">GALLERY</a></li>
+                <li><a href="/wp/tech">TECH</a></li>
+            </ul>
+        </nav>
+        <?php if ( get_post_type() == 'tech' ) { ?>
+        <p>セミアマ・エンジニアによる技術的なあれこれを備忘録的に残すブログ</p>
+        <?php } ?>
+    </div>
+</header>

@@ -1,8 +1,17 @@
 <?php get_header(); ?>
 <?php query_posts("cat=-80"); ?>
 <body>
+<?php require("header_parts.php"); ?>
 <div id="wrapper">
-  <?php require("header_parts.php"); ?>
+  <nav class="catNav">
+    <ul>
+      <li class="book"><a href="/wp/category/book">読 書</a></li>
+      <li class="movie"><a href="/wp/category/movie">映 画</a></li>
+      <li class="live"><a href="/wp/category/live">ライブ</a></li>
+      <li class="travel"><a href="/wp/category/travel">旅 行</a></li>
+      <li class="pokemon"><a href="/wp/category/pokemon">ポケモン</a></li>
+    </ul>
+  </nav>
   <div id="main">
     <div id="content">
       <nav id="tabs">

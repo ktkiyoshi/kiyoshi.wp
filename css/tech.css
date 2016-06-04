@@ -1,39 +1,38 @@
-/************
-*** Title ***
-************/
-#title {
-  background: #3D4349;
-  border-bottom: 4px #b9b9b9 solid;
-  margin-bottom: 20px;
+#wrapper {
+  padding-top: 110px;
 }
 
 /*************
 *** Header ***
 *************/
-#header {
-  color: #efefef;
-  max-width: 1200px;
-  margin: 0 auto;
+#top-head {
+    background: #3D4349;
+    border-bottom: 4px #b9b9b9 solid;
+    margin-bottom: 20px;
 }
-#header h1 {
-  float: left;
-  margin-left: 20px;
-  font-size: 200%;
-  letter-spacing: .3em;
-}
-#header h1 a {
+#top-head .logo a {
   color: #efefef;
 }
-#header p {
-  margin: 0 20px 15px;
-  padding-top: 3px;
+#top-head p {
+    color: #efefef;
+    margin: 0 20px 15px;
+    padding-top: 15px;
 }
-#header nav.txtNav li a {
-  color: #efefef;
+#global-nav ul li a {
+    color: #efefef;
 }
-#header nav.txtNav li a:hover {
-  border-bottom: 2px #efefef solid;
+#global-nav ul li a:hover {
+    border-bottom: 2px #efefef solid;
 }
+/* Fixed */
+#top-head.fixed {
+    background: #3D4349;
+    height: auto;
+}
+
+/*************************
+*** h1 - h4 in article ***
+*************************/
 article h1 {
   border-bottom: 2px #3D4349 solid;
   font-size: 150%;

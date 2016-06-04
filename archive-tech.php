@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <body>
-<?php require("header_parts_tech.php"); ?>
-<div id="wrapper">
+<?php require("header_parts.php"); ?>
+<div id="wrapper" class="tech">
   <div id="main">
     <div id="content">
       <section>
@@ -59,4 +59,4 @@
 <?php get_sidebar('tech'); ?>
   <div class="reset"></div>
   </div><!-- /#main -->
-<?php get_footer('tech'); ?>
+<?php get_footer(); ?>

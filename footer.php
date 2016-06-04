@@ -1,6 +1,31 @@
 </div><!-- /#wrapper -->
 <footer>
   <div id="footer">
+    <?php if ( get_post_type() == 'tech' ) { ?>
+    <div class="f_frame tag_list">
+      <p class="title">タグ一覧</p>
+        <?php $tech_tags = get_categories('title_li=&taxonomy=tech_tag'); $initial = '';$m_cnt = 0;?>
+        <?php foreach($tech_tags as $tech_tag) : ?>
+          <?php
+          if($initial != strtoupper(substr(get_catname($tech_tag->cat_ID), 0, 1))) {
+            if($initial != '') {
+              if(($m_cnt % 2) == 1) {
+                echo "</ul><br />";
+              } else {
+                echo "</ul>";
+              }
+              $m_cnt++;
+            }
+            $initial = strtoupper(substr(get_catname($tech_tag->cat_ID), 0, 1));
+            echo "<ul><p>".$initial."</p>";
+          }
+          ?>
+          <li class="f_minLink"><a href="<?php echo get_category_link($tech_tag->cat_ID); ?>">
+          <?php echo get_catname($tech_tag->cat_ID);?>(<?php echo $tech_tag->count; ?>)
+          </a></li>
+        <?php endforeach; ?>
+    </div>
+    <?php } else { ?>
     <div class="f_frame archive_list">
       <p class="title">アーカイブ一覧</p>
       <?php $archives = get_archives_array(); $this_year = ''; ?>
@@ -21,7 +46,6 @@
         </ul>
       <?php endif; ?>
     </div>
-
     <div class="f_frame category_list">
       <p class="title">カテゴリ一覧</p>
         <ul>
@@ -32,12 +56,32 @@
         <?php endforeach; ?>
         </ul>
     </div>
-
+    <?php } ?>
     <?php require("footer_profile_parts.php"); ?>
   </div>
 </footer>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>side-fixed.js"></script>
+<script>
+(function($) {
+    $(function() {
+        var $header = $('#top-head');
+        // Nav Fixed
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 100) {
+                $header.addClass('fixed');
+            } else {
+                $header.removeClass('fixed');
+            }
+        });
+        // Nav Toggle Button
+        $('#nav-toggle').click(function(){
+            $header.toggleClass('open');
+        });
+    });
+})(jQuery);
+</script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
   $(function(){
