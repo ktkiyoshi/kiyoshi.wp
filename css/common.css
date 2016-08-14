@@ -554,6 +554,9 @@ footer {
 #content article.single .entry img.normal {
   width: auto;
 }
+#content article.single .entry div.tabelog iframe {
+  width: 100%;
+}
 #content article.single .entry table {
   width: 90%;
   margin: 0 0 20px 20px;
