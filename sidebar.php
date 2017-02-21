@@ -7,7 +7,7 @@
     </div>
 
     <div class="r_frame">
-      <p class="title">Newest Entries</p>
+      <p class="title">最新記事</p>
     </div>
     <section>
       <ul>
@@ -37,7 +37,7 @@
     </section>
 
     <div class="r_frame">
-      <p class="title">Photo Diaries</p>
+      <p class="title">写真日記</p>
     </div>
     <section class="t_center">
       <ul>
@@ -52,7 +52,7 @@
     </section>
 
     <div class="r_frame">
-      <p class="title">Popular Entries</p>
+      <p class="title">人気の記事</p>
     </div>
     <section id="fixed_point">
       <ul>

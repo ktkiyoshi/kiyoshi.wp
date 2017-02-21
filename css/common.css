@@ -185,7 +185,8 @@ nav.catNav li a:hover { text-decoration: underline; }
 **************/
 #content {
   float: left;
-  width: 68%;
+  /*width: 68%;*/
+  width:71%;
 }
 #content .top_img {
   display: block;
@@ -353,22 +354,26 @@ nav.catNav li a:hover { text-decoration: underline; }
 ***********/
 #side {
   float: right;
-  width: 30%;
-  max-width: 360px;
+  /*width: 30%;*/
+  width: 27%;
+  max-width: 324px;
 }
 #sidefixed {
-  max-width: 360px;
+  max-width: 324px;
 }
 #side .r_frame {
-  padding: 7px 10px 7px 7px;
+  border-top: 3px solid #777;
+  border-bottom: 1px solid #777;
+  padding: 7px 10px 7px 3px;
   margin: 5px 0px 7px 0px;
-  border: 1px solid #c0c0c0;
 }
 #side .r_frame p.title {
   font-family: 'Droid Sans Mono', sans-serif;
+  font-size: 110%;
+  font-weight: bold;
+  letter-spacing: .1em;
   line-height: 1;
-  padding: 5px 5px 5px 10px;
-  border-left: 5px #666 solid;
+  padding: 5px 5px 5px 5px;
 }
 #side time {
   font-family: 'Droid Sans Mono', sans-serif;
