@@ -185,7 +185,6 @@ nav.catNav li a:hover { text-decoration: underline; }
 **************/
 #content {
   float: left;
-  /*width: 68%;*/
   width:71%;
 }
 #content .top_img {
@@ -193,11 +192,20 @@ nav.catNav li a:hover { text-decoration: underline; }
   margin: 3px auto !important;
 }
 #content article { margin-bottom: 50px; }
+#content article.index {
+  width: 50%;
+  float: left;
+}
 #topContent article .entry_meta,
 #content article .entry_meta {
   overflow: hidden;
   font-family: 'Droid Sans Mono', sans-serif;
-  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+#content article.index .entry_meta {
+    border-top: 3px solid #777;
+    padding: 7px 10px 0;
+    margin: 5px 10px 0;
 }
 #content article .entry_info {
   margin: 5px 10px 0;
@@ -252,6 +260,7 @@ nav.catNav li a:hover { text-decoration: underline; }
   font-size: 110%;
   line-height: 1.8;
   margin: 0px 10px 15px;
+  text-align: left;
 }
 #content article .description_B {
   font-size: 110%;
@@ -625,6 +634,10 @@ article h1 {
   line-height: 150%;
   font-weight: bold;
   padding: 3px 0 3px 5px;
+}
+article.index h1 {
+    font-size: 150%;
+    padding: 3px 0 5px 0;
 }
 article h2 {
   position: relative;

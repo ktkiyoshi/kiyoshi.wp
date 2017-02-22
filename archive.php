@@ -2,6 +2,15 @@
 <body>
 <?php require("header_parts.php"); ?>
 <div id="wrapper">
+  <nav class="catNav">
+    <ul>
+      <li class="book"><a href="/wp/category/book">読 書</a></li>
+      <li class="movie"><a href="/wp/category/movie">映 画</a></li>
+      <li class="live"><a href="/wp/category/live">ライブ</a></li>
+      <li class="travel"><a href="/wp/category/travel">旅 行</a></li>
+      <li class="pokemon"><a href="/wp/category/pokemon">ポケモン</a></li>
+    </ul>
+  </nav>
   <div id="main">
     <div id="content">
       <section>
@@ -16,22 +25,19 @@
           query_posts($query_array);
           while (have_posts()) : the_post();
         ?>
-        <article class="index">
+        <article class="index matchHeight">
           <header>
             <ul class="entry_meta">
               <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></li>
-              <li> | 最終更新: <?php echo get_the_modified_date('Y/m/d (D) G:i') ?></li>
               <li><?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
+              <li><h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1></li>
             </ul>
-            <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
           </header>
           <div class="entry_info">
-            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B"/></a>
-            <p class="tags"><?php echo get_the_term_list( $post->ID,'tech_tag',' ' ); ?></p>
-            <p class="description_B"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "...", "UTF-8"); ?></p>
+            <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_D"/></a>
+            <p class="description_A"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "...", "UTF-8"); ?></p>
             <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
           </div>
-          <div class="reset"></div>
         </article>
         <?php
           endwhile;

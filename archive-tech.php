@@ -30,14 +30,14 @@
           echo '</div>'."\n";
           while (have_posts()) : the_post();
         ?>
-          <article class="index">
+          <article>
             <header>
               <ul class="entry_meta">
                 <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></li>
                 <li> | 最終更新: <?php echo get_the_modified_date('Y/m/d (D) G:i') ?></li>
                 <li><?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
+                <li><h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1></li>
               </ul>
-              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
             </header>
             <div class="entry_info">
               <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B"/></a>

@@ -121,13 +121,17 @@
 }
 /* max-420px for SP */
 @media screen and (max-width: 420px) {
+    #content article.index {
+        width: 100%;
+        float: none;
+    }
     #content article .description_A { margin: 0px 3px 3px; }
     #content article .title { padding-top: 0; }
     #content article .description { margin-left: 0; padding: 0 0 5px 0; }
     #content article .entry_info { margin: 5px 5px 0; }
     #content article .entry_more { margin-right: 5px; }
     #content article.single .entry { margin: 5px 5px 0; }
-    #content .past_entries { width: 50%; }
+    #content .past_entries { width: 50%; margin-bottom: 20px; }
     #content .past_entries .entry_more { float: none; }
     #topContent article.single .entry img.normal,
     /* For original-size image but big than sp width */
