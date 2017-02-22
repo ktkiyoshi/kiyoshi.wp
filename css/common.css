@@ -636,6 +636,7 @@ article h1 {
   padding: 3px 0 3px 5px;
 }
 article.index h1 {
+    border-bottom: none;
     font-size: 150%;
     padding: 3px 0 5px 0;
 }
@@ -770,6 +771,7 @@ a.page-numbers:hover {
 .w25   { width: 25% !important; }
 /* margin-xxxxx: xxpx; */
 .mr20  { margin-right: 20px !important; }
+.ml0   { margin-left: 0 !important; }
 .ml20  { margin-left: 20px !important; }
 .ml215 { margin-left: 215px !important; }
 .ml250 { margin-left: 250px !important; }

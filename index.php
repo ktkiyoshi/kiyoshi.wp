@@ -59,7 +59,6 @@
                 <p class="description_A"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "...", "UTF-8"); ?></p>
                 <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
               </div>
-              <!-- <div class="reset"></div> -->
             </article>
           <?php
             } else if ($counter == 10) { break; }
