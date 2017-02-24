@@ -785,5 +785,8 @@ a.page-numbers:hover {
 .t_center { text-align: center !important; }
 .t_left   { text-align: left !important; }
 .reset    { clear: both !important; }
+/* text&font-class */
+.tx_under { text-decoration: underline !important; }
+.fo_italy { font-style: italic !important; }
 /* ページ最下部の余白対応 */
 img[width="0"] { position: absolute; top: 0px !important; }

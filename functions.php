@@ -24,6 +24,24 @@ function popularRanking() {
   return $populars;
 }
 
+function viewingRanking() {
+  global $wpdb;
+  $result = $wpdb->get_results("SELECT wp.post_date AS date, YEAR(wp.post_date) AS year, DATE_FORMAT(wp.post_date, '%m') AS month, DATE_FORMAT(wp.post_date, '%d') AS day, wp.post_name, wp.post_title, wp.post_content, wpm.meta_value FROM wp_postmeta wpm, wp_posts wp WHERE wpm.post_id = wp.ID AND wp.post_status = 'publish' AND wpm.meta_key = 'views' ORDER BY CAST(wpm.meta_value AS DECIMAL) DESC LIMIT 5;");
+  foreach ($result as $val) {
+    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $val->post_content, $matches);
+    $tmp = array(
+      'url' => get_template_directory_uri()."/".$val->year."/".$val->month."/".$val->day."/".$val->post_name,
+      'post_title' => $val->post_title,
+      'date' => $val->year."/".$val->month."/".$val->day,
+      'image' => $matches[1][0],
+      'count' => $val->meta_value
+      );
+    $populars[$n] = $tmp;
+    $n++;
+  }
+  return $populars;
+}
+
 function replaceImagePath($arg) {
   $content = str_replace('"/img/', '"' . get_bloginfo('template_directory') . '/img/', $arg);
   return $content;
