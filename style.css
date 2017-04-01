@@ -2,7 +2,7 @@
 Theme Name: Super_Diary
 Description: This is made for Super_Diary
 Author: Kiyoshi
-Author URI: http://kt-kiyoshi.com/
+Author URI: https://kt-kiyoshi.com/
 Version: 1.0
 */
 @import url("css/default.css");
@@ -11,4 +11,4 @@ Version: 1.0
 @import url("css/about.css");
 
 /* web font */
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@import url("https://fonts.googleapis.com/css?family=Droid+Sans+Mono");
