@@ -42,7 +42,7 @@
       <?php global $post; $mypost = get_posts( array( 'numberposts' => 2, 'post_type' => 'photo' ));?>
       <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
         <li class="photoDiary">
-            <a href="<?php the_permalink(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_F" /></a>
+            <a href="<?php the_permalink(); ?>"><img src="<?php echo catch_that_image("thumbnail"); ?>" class="thumbnail_F" /></a>
             <time datetime="<?php the_time('Y/m/d/D') ?>" pubdate><?php the_time('Y/m/d/D') ?></time>
         </li>
       <?php endforeach; ?>
@@ -63,7 +63,7 @@
         <?php if ($counter <= 5) { ?>
         <li>
           <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-            <img src="<?php echo catch_that_image(); ?>" class="thumbnail_C f_left"/>
+            <img src="<?php echo catch_that_image("thumbnail"); ?>" class="thumbnail_C f_left"/>
             <time datetime="<?php the_time('Y/m/d/D') ?>" pubdate><?php the_time('Y/m/d/D') ?></time>
             <p class="postTitle">
             <?php if(mb_strlen($post->post_title)>80) {
