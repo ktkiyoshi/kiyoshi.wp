@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dist/tech.min.css" type="text/css" />
 <?php endif; ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dist/responsive.min.css" type="text/css" />
-
-<script type="text/javascript" charset="utf-8" src="//use.edgefonts.net/source-code-pro.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="//use.edgefonts.net/source-code-pro.js"></script>-->
 <?php wp_head(); ?>
 </head>
