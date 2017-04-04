@@ -1,0 +1,26 @@
+{
+  "name": "kiyoshi.wp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ktkiyoshi@github.com/ktkiyoshi/kiyoshi.wp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ktkiyoshi/kiyoshi.wp/issues"
+  },
+  "homepage": "https://github.com/ktkiyoshi/kiyoshi.wp#readme"
+}

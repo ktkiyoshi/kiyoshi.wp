@@ -5,10 +5,10 @@ Author: Kiyoshi
 Author URI: https://kt-kiyoshi.com/
 Version: 1.0
 */
-@import url("css/default.css");
-@import url("css/common.css");
+@import url("css/dist/default.min.css");
+@import url("css/dist/common.min.css");
 @import url("css/font-awesome.min.css");
-@import url("css/about.css");
+@import url("css/dist/about.min.css");
 
 /* web font */
 @import url("https://fonts.googleapis.com/css?family=Droid+Sans+Mono");
