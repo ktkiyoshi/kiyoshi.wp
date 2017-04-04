@@ -1,22 +1,28 @@
 <?php
 /* Popular Entries Ranking on sidebar */
 function popularRanking() {
+    $sql = "SELECT wp.ID,(ws.fb_like+ws.fb_share+ws.fb_comment+ws.tweet+ws.go_plus+ws.hatena) AS count, wp.post_date AS date, YEAR(wp.post_date) AS year, DATE_FORMAT(wp.post_date, '%m') AS month, DATE_FORMAT(wp.post_date, '%d') AS day, wp.post_name, wp.post_title, wp.post_content FROM wp_posts wp, wp_social ws WHERE wp.ID = ws.ID AND wp.post_type = 'post' AND wp.post_status = 'publish' ORDER BY count DESC, wp.post_date DESC LIMIT 5;";
+    return getEntryArray($sql);
+}
+
+function viewingRanking() {
+    $sql = "SELECT wp.post_date AS date, YEAR(wp.post_date) AS year, DATE_FORMAT(wp.post_date, '%m') AS month, DATE_FORMAT(wp.post_date, '%d') AS day, wp.post_name, wp.post_title, wp.post_content, wpm.meta_value FROM wp_postmeta wpm, wp_posts wp WHERE wpm.post_id = wp.ID AND wp.post_status = 'publish' AND wpm.meta_key = 'views' ORDER BY CAST(wpm.meta_value AS DECIMAL) DESC LIMIT 5;";
+    return getEntryArray($sql);
+}
+
+function getEntryArray($sql) {
   global $wpdb;
-  $result = $wpdb->get_results("SELECT
-    wp.ID,(ws.fb_like+ws.fb_share+ws.fb_comment+ws.tweet+ws.go_plus+ws.hatena) AS count,
-    wp.post_date AS date, YEAR(wp.post_date) AS year, DATE_FORMAT(wp.post_date, '%m') AS month,
-    DATE_FORMAT(wp.post_date, '%d') AS day, wp.post_name, wp.post_title, wp.post_content
-    FROM wp_posts wp, wp_social ws
-    WHERE wp.ID = ws.ID AND wp.post_type = 'post' AND wp.post_status = 'publish'
-    ORDER BY count DESC, wp.post_date DESC LIMIT 5;");
+  $result = $wpdb->get_results($sql);
   foreach ($result as $val) {
-    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $val->post_content, $matches);
+    // preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $val->post_content, $matches);
+    preg_match_all('/<img.+?class=".+?wp-image-(.+).*?".*?>/i', $val->post_content, $matches);
     $tmp = array(
       'url' => get_template_directory_uri()."/".$val->year."/".$val->month."/".$val->day."/".$val->post_name,
       'post_title' => $val->post_title,
       'date' => $val->year."/".$val->month."/".$val->day,
-      'image' => $matches[1][0],
-      'count' => $val->count
+      // 'image' => $matches[1][0],
+      'image' => my_wp_get_attachment_medium_url($matches[1][0]),
+      'count' => $val->meta_value
       );
     $populars[$n] = $tmp;
     $n++;
@@ -24,22 +30,11 @@ function popularRanking() {
   return $populars;
 }
 
-function viewingRanking() {
-  global $wpdb;
-  $result = $wpdb->get_results("SELECT wp.post_date AS date, YEAR(wp.post_date) AS year, DATE_FORMAT(wp.post_date, '%m') AS month, DATE_FORMAT(wp.post_date, '%d') AS day, wp.post_name, wp.post_title, wp.post_content, wpm.meta_value FROM wp_postmeta wpm, wp_posts wp WHERE wpm.post_id = wp.ID AND wp.post_status = 'publish' AND wpm.meta_key = 'views' ORDER BY CAST(wpm.meta_value AS DECIMAL) DESC LIMIT 5;");
-  foreach ($result as $val) {
-    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $val->post_content, $matches);
-    $tmp = array(
-      'url' => get_template_directory_uri()."/".$val->year."/".$val->month."/".$val->day."/".$val->post_name,
-      'post_title' => $val->post_title,
-      'date' => $val->year."/".$val->month."/".$val->day,
-      'image' => $matches[1][0],
-      'count' => $val->meta_value
-      );
-    $populars[$n] = $tmp;
-    $n++;
-  }
-  return $populars;
+//画像IDからサムネイルサイズのパスを取得
+function my_wp_get_attachment_medium_url( $id ) {
+  $thumbnail_array = image_downsize( $id, 'thumbnail' );
+  $thumbnail_path = $thumbnail_array[0];
+  return $thumbnail_path;
 }
 
 function replaceImagePath($arg) {
@@ -103,8 +98,10 @@ function catch_that_image() {
     $first_img = '';
     ob_start();
     ob_end_clean();
-    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    $first_img = $matches [1] [0];
+    // preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    preg_match_all('/<img.+?class=".+?wp-image-(.+).*?".*?>/i', $post->post_content, $matches);
+    // $first_img = $matches[1][0];
+    $first_img = my_wp_get_attachment_medium_url($matches[1][0]);
     if(empty($first_img)){
         $first_img = 'https://kt-kiyoshi.com/wp/images/nophoto.jpg';
     }
@@ -135,7 +132,7 @@ add_filter('the_content_more_link', 'remove_more_jump_link');
 
 /* Using category in wp_get_archives() */
 function my_getarchives_category_where($where, $args){
-    global  $wpdb;//データベース、テーブル関連の情報が入っているグローバル定数
+    global $wpdb;//データベース、テーブル関連の情報が入っているグローバル定数
     if (isset($args['cat'])){
         // 引数にcatと名前の付いた変数がカンマ区切りでセットされている場合、それぞれの数字を分割して配列$selectedCategoriesに格納する
         $selectedCategories = explode(',',$args['cat']);
@@ -232,7 +229,7 @@ if(!function_exists('get_archives_array')){
         $where  = apply_filters('getarchivesary_where', $where, $args);
         $join   = apply_filters('getarchivesary_join' , $join , $args);
         if($period == 'monthly'){
-                $query = "SELECT YEAR(post_date) AS 'year', MONTH(post_date) AS 'month', count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC $limit";
+            $query = "SELECT YEAR(post_date) AS 'year', MONTH(post_date) AS 'month', count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC $limit";
         }elseif($period == 'yearly'){
             $query = "SELECT YEAR(post_date) AS 'year', count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date) ORDER BY post_date DESC $limit";
         }
