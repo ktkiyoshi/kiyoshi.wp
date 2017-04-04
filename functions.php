@@ -93,15 +93,18 @@ function commentCloseDays() {
 }
 
 /* The first image */
-function catch_that_image() {
+function catch_that_image($page = null) {
     global $post, $posts;
     $first_img = '';
     ob_start();
     ob_end_clean();
-    // preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    preg_match_all('/<img.+?class=".+?wp-image-(.+).*?".*?>/i', $post->post_content, $matches);
-    // $first_img = $matches[1][0];
-    $first_img = my_wp_get_attachment_medium_url($matches[1][0]);
+    if(!empty($page)) {
+        preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+        $first_img = $matches[1][0];
+    } else {
+        preg_match_all('/<img.+?class=".+?wp-image-(.+).*?".*?>/i', $post->post_content, $matches);
+        $first_img = my_wp_get_attachment_medium_url($matches[1][0]);
+    }
     if(empty($first_img)){
         $first_img = 'https://kt-kiyoshi.com/wp/images/nophoto.jpg';
     }
