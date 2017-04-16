@@ -47,6 +47,7 @@
         </li>
       <?php endforeach; ?>
       </ul>
+      <p class="link"><a href="/wp/photo">写真日記一覧を見る</p>
     </section>
 
     <div class="r_frame">

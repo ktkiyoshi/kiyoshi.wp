@@ -384,6 +384,12 @@ nav.catNav li a:hover { text-decoration: underline; }
   line-height: 1;
   padding: 5px 5px 5px 5px;
 }
+#side .t_center p.link {
+    font-family: 'Droid Sans Mono', sans-serif;
+    text-decoration: underline;
+    text-align: right;
+    margin-bottom: 10px;
+}
 #side time {
   font-family: 'Droid Sans Mono', sans-serif;
   display: block;
