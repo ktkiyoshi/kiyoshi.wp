@@ -355,12 +355,6 @@ function cpt_publicize_share() {
 /* Custom Post for Dump
    reference from http://qiita.com/nagasawaaaa/items/9501c0a2e544d85ee78d */
 function create_post_type_dump() {
-    $supports = [
-        'title',
-        'editor',
-        'thumbnail',
-        'revisions'
-    ];
     register_post_type(
         'dump',
         array(
@@ -368,7 +362,7 @@ function create_post_type_dump() {
             'public' => true,
             'has_archive' => true,
             'menu_position' => 5,
-            'supports' => $supports
+            'supports' => array('title', 'editor', 'thumbnail', 'revisions')
         )
     );
     register_taxonomy(
