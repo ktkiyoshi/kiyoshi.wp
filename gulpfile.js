@@ -26,3 +26,14 @@ gulp.task('minify-css', function() {
         .pipe(gulp.dest('css/dist/'));
         //.pipe(gulp.dest('css')); 上書きする場合
 });
+
+gulp.task('watch', function(){
+ var targets = [
+    '*.php',
+    'css/*.css',
+    'js/*.js'
+  ];
+  // gulp.watch(targets ['minify-css']);
+  gulp.watch('css/*.css', ['minify-css']);
+});
+// gulp.task('default', ['minify-css']);

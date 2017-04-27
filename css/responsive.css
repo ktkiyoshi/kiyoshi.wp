@@ -23,10 +23,15 @@
     #content article p.tags { margin: 0 10px 0; padding-top: 0; }
     /* Header for SP */
     #wrapper {
-      padding-top: 55px;
+      padding-top: 60px;
     }
     #wrapper.tech {
       padding-top: 105px;
+    }
+    #top-head {
+        top: 0;
+        position: fixed;
+        margin-top: 0;
     }
     #top-head p {
         padding-top: 0;
@@ -36,11 +41,6 @@
         width: 100%;
         padding: 0;
     }
-    #top-head {
-        top: 0;
-        position: fixed;
-        margin-top: 0;
-    }
     /* Fixed reset */
     #top-head.fixed {
         padding-top: 0;
@@ -48,19 +48,21 @@
     #mobile-head {
         background: #fff;
         width: 100%;
-        height: 55px;
+        height: 60px;
         z-index: 999;
         position: relative;
     }
-    /* For tech blog */
     #mobile-head.tech {
         background: #3D4349;
+    }
+    #mobile-head.dump {
+        background: #00bf3f;
     }
     #top-head.fixed .logo,
     #top-head .logo {
         position: absolute;
         left: 0;
-        top: 13px;
+        top: 18px;
         font-size: 175%;
     }
     #global-nav {
@@ -121,6 +123,10 @@
 }
 /* max-420px for SP */
 @media screen and (max-width: 420px) {
+    #wrapper.dump #content article .entry_info {
+        width: -webkit-calc(100% - 102px);
+        width: calc(100% - 102px);
+    }
     #content article.index {
         width: 100%;
         float: none;
@@ -150,6 +156,7 @@
     #content .box_entry_pc, .count10 { display: none; }
     #content .box_entry_sp { display: block; }
     #content .instagram { width: 50%; }
+    #content .circle { margin: 10px 5px 10px 5px; }
 }
 @media screen and (max-width: 375px) {
     #tabs .panel_title { padding: 10px 20px; }

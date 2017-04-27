@@ -1,5 +1,8 @@
+/*************
+*** Common ***
+*************/
 #wrapper {
-  padding-top: 110px;
+  padding-top: 120px;
 }
 
 /*************
@@ -8,7 +11,12 @@
 #top-head {
     background: #3D4349;
     border-bottom: 4px #b9b9b9 solid;
-    margin-bottom: 20px;
+    height: 120px;
+}
+@media screen and (max-width: 555px) {
+    #top-head {
+        height: 105px;
+    }
 }
 #top-head .logo a {
   color: #efefef;
@@ -17,6 +25,9 @@
     color: #efefef;
     margin: 0 20px 15px;
     padding-top: 15px;
+}
+#global-nav ul {
+    bottom: -30px;
 }
 #global-nav ul li a {
     color: #efefef;
@@ -27,7 +38,6 @@
 /* Fixed */
 #top-head.fixed {
     background: #3D4349;
-    height: auto;
 }
 
 /*************************

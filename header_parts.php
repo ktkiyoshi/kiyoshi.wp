@@ -3,6 +3,9 @@
         <?php if ( get_post_type() == 'tech' ) { ?>
         <div id="mobile-head" class="tech">
             <h1 class="logo"><a href="/wp/tech">タイトル未定</a></h1>
+        <?php } else if ( get_post_type() == 'dump' ) { ?>
+        <div id="mobile-head" class="dump">
+            <h1 class="logo"><a href="/wp/dump">はきだめ日記</a></h1>
         <?php } else { ?>
         <div id="mobile-head">
             <h1 class="logo"><a href="/wp">超日記</a></h1>
@@ -20,6 +23,7 @@
                 <li><a href="/wp/about">ABOUT</a></li>
                 <li><a href="/wp">DIARY</a></li>
                 <li><a href="/wp/gallery">GALLERY</a></li>
+                <!-- <li><a href="/wp/dump">DUMP</a></li> -->
                 <li><a href="/wp/tech">TECH-BLOG</a></li>
             </ul>
         </nav>

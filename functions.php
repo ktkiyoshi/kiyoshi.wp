@@ -255,10 +255,10 @@ if(!function_exists('get_archives_array')){
     }
 }
 
-/* Custom Post for PhotoDiary */
+/* Custom Post for PhotoDiary
+   reference from http://www.webcreatorbox.com/tech/custom-post-type/ */
 add_action( 'init', 'register_cpt_photo' );
 function register_cpt_photo() {
-
     $labels = array(
         'menu_name' => _x( '写真日記', 'photo' ),         // 管理画面左メニュー
         'name' => _x( '投稿一覧', 'photo' ),              // 管理画面右ラベル
@@ -273,7 +273,6 @@ function register_cpt_photo() {
         'not_found_in_trash' => _x( 'No PhotoDiary found in Trash', 'photo' ),
         'parent_item_colon' => _x( 'Parent PhotoDiary:', 'photo' ),
     );
-
     $args = array(
         'labels' => $labels,
         'hierarchical' => false,
@@ -296,10 +295,10 @@ function register_cpt_photo() {
     register_post_type( 'photo', $args );
 }
 
-/* Custom Post for TechBlog */
+/* Custom Post for TechBlog
+   reference from http://www.webcreatorbox.com/tech/custom-post-type/ */
 add_action( 'init', 'register_cpt_tech' );
 function register_cpt_tech() {
-
     $labels = array(
         'menu_name' => __( '技術記事', 'tech' ),
         'name' => __( '投稿一覧', 'tech' ),
@@ -314,7 +313,6 @@ function register_cpt_tech() {
         'not_found_in_trash' => __( 'No TechBlog found in Trash', 'tech' ),
         'parent_item_colon' => __( 'Parent TechBlog:', 'tech' ),
     );
-
     $args = array(
         'labels' => $labels,
         'hierarchical' => false,
@@ -332,30 +330,70 @@ function register_cpt_tech() {
         'rewrite' => true,
         'capability_type' => 'post'
     );
-
+    /* Custom Taxonomy for TechBlog */
+    register_taxonomy(
+        'tech_tag',
+        'tech',
+        array(
+            'label' => '技術タグ',
+            'public' => true,
+            'show_ui' => true,
+            'hierarchical' => false
+        )
+    );
     register_post_type( 'tech', $args );
 }
-/* Custom Taxonomy for TechBlog */
-// Tag Type
-$args = array(
-    'label' => '技術タグ',
-    'public' => true,
-    'show_ui' => true,
-    'hierarchical' => false
-);
-register_taxonomy('tech_tag','tech', $args);
-
 /* Enable to use Martdown for custom_post */
 add_post_type_support( 'tech', 'wpcom-markdown' );
 
 /* Enable to publicize_share by jetpack for custom_post */
+add_action( 'init', 'cpt_publicize_share' );
 function cpt_publicize_share() {
     add_post_type_support( 'tech', 'publicize' );
 }
-add_action( 'init', 'cpt_publicize_share' );
+
+/* Custom Post for Dump
+   reference from http://qiita.com/nagasawaaaa/items/9501c0a2e544d85ee78d */
+function create_post_type_dump() {
+    $supports = [  // supports のパラメータを設定する配列（初期値だと title と editor のみ投稿画面で使える）
+        'title',  // 記事タイトル
+        'editor',  // 記事本文
+        'thumbnail',  // アイキャッチ画像
+        'revisions'  // リビジョン
+    ];
+    register_post_type(
+        'dump',  // カスタム投稿名
+        array(
+            'label' => '掃溜投稿',  // 管理画面の左メニューに表示されるテキスト
+            'public' => true,  // 投稿タイプをパブリックにするか否か
+            'has_archive' => true,  // アーカイブを有効にするか否か
+            'menu_position' => 5,  // 管理画面上でどこに配置するか今回の場合は「投稿」の下に配置
+            'supports' => $supports  // 投稿画面でどのmoduleを使うか的な設定
+        )
+    );
+    register_taxonomy(
+        'dump_taxonomy',  // 追加するタクソノミー名（英小文字とアンダースコアのみ）
+        'dump',  // どのカスタム投稿タイプに追加するか
+        array(
+            'label' => 'タクソノミー',  // 管理画面上に表示される名前（投稿で言うカテゴリー）
+            'labels' => array(
+                'all_items' => 'タクソノミー一覧',  // 投稿画面の右カラムに表示されるテキスト（投稿で言うカテゴリー一覧）
+                'add_new_item' => '新規タクソノミーを追加'  // 投稿画面の右カラムに表示されるカテゴリ追加リンク
+            ),
+            'hierarchical' => true  // タクソノミーを階層化するか否か（子カテゴリを作れるか否か）
+        )
+    );
+}
+add_action( 'init', 'create_post_type_dump' ); // アクションに上記関数をフックします
 
 /* Don't change "" to ”” */
 remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');
 remove_filter('the_title', 'wptexturize');
+
+/* If customer post type don't be shown,
+   please turn off comment-out once.
+*/
+global $wp_rewrite;
+$wp_rewrite->flush_rules();
 ?>
