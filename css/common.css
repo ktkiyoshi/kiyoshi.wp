@@ -127,9 +127,6 @@ img       { max-width: 100%; height: auto; }
 #nav-toggle span:nth-child(3) {
     top: 22px;
 }
-nav.catNav {
-  margin-bottom: 10px;
-}
 nav.catNav ul {
   text-align: center;
 }
