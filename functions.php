@@ -388,6 +388,6 @@ remove_filter('the_title', 'wptexturize');
 /* If customer post type don't be shown,
    please turn off comment-out once.
 */
-global $wp_rewrite;
-$wp_rewrite->flush_rules();
+// global $wp_rewrite;
+// $wp_rewrite->flush_rules();
 ?>

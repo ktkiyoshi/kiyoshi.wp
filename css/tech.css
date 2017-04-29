@@ -2,7 +2,7 @@
 *** Common ***
 *************/
 #wrapper {
-  padding-top: 120px;
+  padding-top: 125px;
 }
 
 /*************
@@ -11,9 +11,9 @@
 #top-head {
     background: #3D4349;
     border-bottom: 4px #b9b9b9 solid;
-    height: 120px;
+    height: 125px;
 }
-@media screen and (max-width: 555px) {
+@media screen and (max-width: 655px) {
     #top-head {
         height: 105px;
     }
@@ -27,9 +27,10 @@
     padding-top: 15px;
 }
 #global-nav ul {
-    bottom: -30px;
+    bottom: -35px;
 }
-#global-nav ul li a {
+#global-nav ul li a,
+#global-nav ul li span {
     color: #efefef;
 }
 #global-nav ul li a:hover {

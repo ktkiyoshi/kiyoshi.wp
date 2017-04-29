@@ -16,8 +16,6 @@
     #footer { width: 417px; }
     #footer .category_list { width: 45%; }
     #footer .tag_list { width: 400px; }
-}
-@media screen and (max-width: 555px) {
     #content article .description_B { margin-left: 10px; clear: both; }
     #content article .thumbnail_B { width: 90%; float: none; margin: 10px auto 10px;}
     #content article p.tags { margin: 0 10px 0; padding-top: 0; }
@@ -83,13 +81,24 @@
     #global-nav ul li {
         display: block;
         position: static;
+        color: #fff;
+        padding-top: 15px;
+    }
+    #global-nav ul li:last-child {
+        padding-bottom: 15px;
     }
     #top-head #global-nav ul li a,
     #top-head.fixed #global-nav ul li a {
         width: 100%;
         display: block;
         color: #fff;
-        padding: 18px 0;
+        padding: 3px 0 0;
+    }
+    #global-nav ul li a:hover {
+        border-bottom: none;
+    }
+    #global-nav ul li span {
+        display: block;
     }
     #nav-toggle {
         display: block;

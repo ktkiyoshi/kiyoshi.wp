@@ -20,11 +20,15 @@
         </div>
         <nav id="global-nav">
             <ul>
-                <li><a href="/wp/about">ABOUT</a></li>
-                <li><a href="/wp">DIARY</a></li>
-                <li><a href="/wp/gallery">GALLERY</a></li>
-                <!-- <li><a href="/wp/dump">DUMP</a></li> -->
-                <li><a href="/wp/tech">TECH-BLOG</a></li>
+            <?php if ( get_post_type() != 'tech' ) { ?>
+                <li><span class="">超日記について</span><a href="/wp/about">ABOUT</a></li>
+            <?php } ?>
+                <li><span class="">日記エントリー</span><a href="/wp">DIARY</a></li>
+                <li><span class="">私のインスタ</span><a href="/wp/gallery">GALLERY</a></li>
+                <!-- <li><span class=""></span><a href="/wp/dump">DUMP</a></li> -->
+            <?php if ( get_post_type() != 'tech' ) { ?>
+                <li><span class="">技術エントリー</span><a href="/wp/tech">TECH-BLOG</a></li>
+            <?php } ?>
             </ul>
         </nav>
         <?php if ( get_post_type() == 'tech' ) { ?>

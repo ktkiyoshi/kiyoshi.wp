@@ -21,7 +21,7 @@ img       { max-width: 100%; height: auto; }
   max-width: 1200px;
   height: 100%;
   margin: 0 auto;
-  padding: 80px 5px 0;
+  padding: 90px 5px 0;
 }
 /*************
 *** Header ***
@@ -75,6 +75,12 @@ img       { max-width: 100%; height: auto; }
 }
 #global-nav ul li a:hover {
     border-bottom: 2px #666 solid;
+}
+#global-nav ul li span {
+    display: table;
+    font-size: 45%;
+    padding: 3px 0 3px 0;
+    white-space: nowrap;
 }
 /* Fixed */
 #top-head.fixed {
