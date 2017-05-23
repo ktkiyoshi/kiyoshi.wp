@@ -29,7 +29,7 @@
                     echo '</div>'."\n";
                     while (have_posts()) : the_post();
                 ?>
-                <article>
+                <article class="archive">
                     <header class="f_left circle">
                         <ul class="entry_meta">
                             <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate></time></li>
@@ -39,7 +39,7 @@
                     </header>
                     <div class="f_right entry_info">
                         <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php edit_post_link(' - Edit', '<span class="admin">', '</span>'); ?></h1>
-                        <p><?php echo mb_strimwidth(get_the_excerpt(), 0, 100, "...", "UTF-8"); ?></p>
+                        <!-- <p><?php echo mb_strimwidth(get_the_excerpt(), 0, 100, "...", "UTF-8"); ?></p> -->
                         <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
                     </div>
                     <div class="reset"></div>

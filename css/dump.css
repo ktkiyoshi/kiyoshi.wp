@@ -40,11 +40,12 @@
 /*************************
 *** h1 - h4 in article ***
 *************************/
-article h1 {
+article.archive h1 {
   font-size: 120%;
   padding: 3px 0 5px 5px;
 }
 article h2 {
+  margin: 20px 0 20px;
   padding: 5px 0 5px 12px;
 }
 article h2:before { content: ""; }
@@ -56,7 +57,7 @@ article h2:after  { content: ""; }
 #content {
   float: none;
   width: 65%;
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
 #content article {
   margin-bottom: 15px;
@@ -67,7 +68,7 @@ article h2:after  { content: ""; }
   margin-left: 0;
 }
 #content article .entry_meta li {
-  display: block;
+  /*display: block;*/
 }
 .admin {
   font-size: 12px;
