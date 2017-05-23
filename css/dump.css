@@ -10,7 +10,12 @@
 *************/
 #top-head {
     background: #00bf3f;
-    height: 70px;
+    height: 80px;
+}
+@media screen and (max-width: 655px) {
+    #top-head {
+        height: 60px;
+    }
 }
 #top-head .logo a {
   color: #fff;

@@ -316,8 +316,13 @@ nav.catNav li a:hover { text-decoration: underline; }
 }
 #tabs .panel_title {
   display: inline-block;
-  padding: 7px 27px;
   border: 1px solid #CCC;
+  width: 50%;
+  box-sizing: border-box;
+}
+#tabs .panel_title a{
+    display: block;
+    padding: 7px 27px;
 }
 #tabs li.active {
   color: #FFF;

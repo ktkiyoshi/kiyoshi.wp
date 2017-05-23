@@ -21,7 +21,7 @@
           $pagination = array( 'base' => $paginate_base,
                                'format' => $paginate_format,
                                'total' => $wp_query->max_num_pages,
-                               'mid_size' => 5,
+                               'mid_size' => 4,
                                'current' => ($paged ? $paged : 1)
                              );
           echo '<div class="page-navi">'."\n";
