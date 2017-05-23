@@ -379,6 +379,8 @@ function create_post_type_dump() {
     );
 }
 add_action( 'init', 'create_post_type_dump' );
+/* Enable to use Martdown for custom_post */
+add_post_type_support( 'dump', 'wpcom-markdown' );
 
 /* Don't change "" to ”” */
 remove_filter('the_content', 'wptexturize');
