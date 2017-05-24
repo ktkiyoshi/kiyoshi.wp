@@ -3,6 +3,10 @@
 <?php require("header_parts.php"); ?>
     <div id="wrapper" class="dump">
         <div id="main">
+            <div class="pre-next">
+                <p><?php previous_post_link('%link','前の記事', false, ''); ?></p>
+                <p><?php next_post_link('%link','次の記事', false, ''); ?></p>
+            </div>
             <div id="content">
                 <article class="single">
                     <header>

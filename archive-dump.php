@@ -30,19 +30,17 @@
                     while (have_posts()) : the_post();
                 ?>
                 <article class="archive">
-                    <header class="f_left circle">
+                    <header class="circle">
                         <ul class="entry_meta">
                             <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate></time></li>
                             <li><?php the_time('Y') ?></li>
                             <li><?php the_time('m/d') ?></li>
                         </ul>
                     </header>
-                    <div class="f_right entry_info">
+                    <div class="entry_info">
                         <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php edit_post_link(' - Edit', '<span class="admin">', '</span>'); ?></h1>
-                        <!-- <p><?php echo mb_strimwidth(get_the_excerpt(), 0, 100, "...", "UTF-8"); ?></p> -->
-                        <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
+                        <p class="tags"><?php echo get_the_term_list( $post->ID,'dump_taxonomy',' ' ); ?></p>
                     </div>
-                    <div class="reset"></div>
                 </article>
                 <?php
                     endwhile;
