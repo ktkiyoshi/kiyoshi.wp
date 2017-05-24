@@ -9,7 +9,8 @@
 /* max-768px for nothing sidebar */
 @media screen and (max-width: 768px) {
     #side { display: none; }
-    #content { width: 100%; margin-right: 0; }
+    #content { width: 100%; }
+    #main div.pre-next { width: 100%; }
 }
 /* max-665px for footer 1 column and photo-diary */
 @media screen and (max-width: 665px) {
