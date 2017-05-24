@@ -56,6 +56,8 @@ article h2:after  { content: ""; }
 ***********/
 #main div.pre-next {
     position: relative;
+    width: 65%;
+    margin: 10px auto 0;
 }
 #main div.pre-next p {
     text-decoration: underline;
