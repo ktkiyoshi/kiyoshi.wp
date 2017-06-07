@@ -7,7 +7,7 @@
                 <section>
                 <?php
                     $query_array = $wp_query->query_vars;
-                    $query_array['posts_per_page'] = 5;
+                    $query_array['posts_per_page'] = 10;
                     $query_array['post_type'] = 'dump';
                     query_posts($query_array);
                     $paginate_base = get_pagenum_link(1);
