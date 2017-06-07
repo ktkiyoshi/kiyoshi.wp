@@ -552,9 +552,12 @@ footer {
 #topContent article.single .entry .bq p,
 #content article.single .entry .bq p { margin: 0; }
 #topContent article.single .entry ul,
-#content article.single .entry ul { margin: 0 0 20px 25px; }
+#content article.single .entry ul,
+#topContent article.single .entry ol,
+#content article.single .entry ol,
+#topContent article.single .entry dl,
+#content article.single .entry dl { margin: 0 0 20px 25px; }
 #content article.single .entry ul.toc_list { margin: 0 0 0px 25px; }
-.entry ol, .entry dl { margin: 22px 0 22px 25px; }
 #topContent article.single .entry ul li,
 #content article.single .entry ul li { list-style-type: square; }
 #topContent article.single .entry ol li,
