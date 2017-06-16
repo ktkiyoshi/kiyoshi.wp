@@ -26,6 +26,9 @@
             <?php if ( get_post_type() != 'post' ) { ?>
                 <li><span class="">日記エントリー</span><a href="/wp">DIARY</a></li>
             <?php } ?>
+            <?php if ( get_post_type() != 'dump' ) { ?>
+                <li><span class="">はきだめ日記</span><a href="/wp/dump">DUMP</a></li>
+            <?php } ?>
                 <li><span class="">私のインスタ</span><a href="/wp/gallery">GALLERY</a></li>
             <?php if ( get_post_type() != 'tech' ) { ?>
                 <li><span class="">技術エントリー</span><a href="/wp/tech">TECH-BLOG</a></li>
