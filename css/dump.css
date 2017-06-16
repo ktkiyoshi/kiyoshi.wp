@@ -9,7 +9,7 @@
 *** Header ***
 *************/
 #top-head {
-    background: #00bf3f;
+    background: #1B7D1B;
     height: 80px;
 }
 @media screen and (max-width: 655px) {
@@ -41,7 +41,7 @@
 *** h1 - h4 in article ***
 *************************/
 article.archive h1 {
-  font-size: 120%;
+  font-size: 150%;
   padding: 3px 0 5px 5px;
 }
 article h2 {
@@ -77,14 +77,15 @@ article h2:after  { content: ""; }
 }
 #content article {
     display: table;
-    margin-bottom: 15px;
+    margin-bottom: 3rem;
     overflow: hidden;
+    width: 100%;
 }
 #content article.single {
     margin-top: 30px;
 }
 #content article .entry_meta {
-  color: #777;
+  color: #1B7D1B;
   margin-left: 0;
 }
 .admin {
@@ -92,7 +93,7 @@ article h2:after  { content: ""; }
 }
 .circle {
     font-family: 'Droid Sans Mono', sans-serif;
-    border:1px solid #777;
+    border:1px solid #1B7D1B;
     border-radius: 50%;
     margin: 10px 10px 10px 0;
     padding: 10px;
@@ -103,10 +104,30 @@ article h2:after  { content: ""; }
 #content article .entry_info {
     display: table-cell;
     vertical-align: middle;
-  margin: 0;
-  width : calc(100% - 92px);
-  width : -webkit-calc(100% - 92px);
+    width: inherit;
+}
+#content article .entry_info > * {
+    margin: 0 10px 0 5px;
+}
+#content article p.read_more {
+    border: 1px solid #1B7D1B;
+    text-align: center;
+}
+#content article p.read_more a {
+    display: block;
+    font-weight: bold;
+    padding: 5px 0;
+    letter-spacing: .2em;
 }
 #content article p.tags {
     margin: 0 0 0 10px;
+}
+#content article p.tags a {
+    border-color: #1B7D1B;
+    color: #1B7D1B;
+}
+#content article p.read_more a:hover,
+#content article p.tags a:hover {
+    background: #1B7D1B;
+    color: #fff;
 }

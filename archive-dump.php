@@ -39,7 +39,9 @@
                     </header>
                     <div class="entry_info">
                         <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php edit_post_link(' - Edit', '<span class="admin">', '</span>'); ?></h1>
+                        <p class="description_A"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "...", "UTF-8"); ?></p>
                         <p class="tags"><?php echo get_the_term_list( $post->ID,'dump_taxonomy',' ' ); ?></p>
+                        <p class="read_more"><a href="<?php the_permalink(); ?>">続きを読む</a></p>
                     </div>
                 </article>
                 <?php
