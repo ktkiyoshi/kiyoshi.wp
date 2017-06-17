@@ -70,7 +70,7 @@ img       { max-width: 100%; height: auto; }
 #global-nav ul li {
     display: inline-block;
     margin: 0 7px;
-    font-family: 'Droid Sans Mono', sans-serif;
+    font-family: 'Source Code Pro', monospace;
     font-size: 120%;
 }
 #global-nav ul li a:hover {
@@ -199,7 +199,7 @@ nav.catNav li a:hover { text-decoration: underline; }
 #topContent article .entry_meta,
 #content article .entry_meta {
   overflow: hidden;
-  font-family: 'Droid Sans Mono', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   margin: 0 0 0 15px;
 }
 #content article.index .entry_meta {
@@ -219,7 +219,7 @@ nav.catNav li a:hover { text-decoration: underline; }
 }
 #content article p.tags {
   font-size: 80%;
-  font-family: 'Droid Sans Mono', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   margin: 0 10px 0 250px;
   padding: 7px 0 7px;
 }
@@ -295,7 +295,7 @@ nav.catNav li a:hover { text-decoration: underline; }
   width: 33%;
 }
 #content .past_entries time {
-  font-family: 'Droid Sans Mono', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-size: 85%;
   display: block;
 }
@@ -382,7 +382,7 @@ nav.catNav li a:hover { text-decoration: underline; }
   margin: 5px 0px 7px 0px;
 }
 #side .r_frame p.title {
-  font-family: 'Droid Sans Mono', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-size: 110%;
   font-weight: bold;
   letter-spacing: .1em;
@@ -390,13 +390,13 @@ nav.catNav li a:hover { text-decoration: underline; }
   padding: 5px 5px 5px 5px;
 }
 #side .t_center p.link {
-    font-family: 'Droid Sans Mono', sans-serif;
+    font-family: 'Source Code Pro', monospace;
     text-decoration: underline;
     text-align: right;
     margin-bottom: 10px;
 }
 #side time {
-  font-family: 'Droid Sans Mono', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   display: block;
   line-height: 1;
   padding: 2px 0 5px;
@@ -451,7 +451,7 @@ footer {
   margin: 0 auto;
 }
 #footer p.title {
-  font-family: 'Droid Sans Mono', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   margin-bottom: 3px;
   padding: 5px 5px 5px 10px;
   border-left: 3px #FFF solid;
@@ -498,7 +498,7 @@ footer {
 #footer .display_pc { display: block; }
 #footer .display_sp { display: none; }
 #footer .copyright {
-  font-family: 'Droid Sans Mono', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   font-size: 75%;
   text-align: center;
   padding: 3px 10px;
@@ -743,7 +743,7 @@ a.page-numbers:hover {
 *** Comment ***
 **************/
 .comment, #respond {
-  font-family: 'Droid Sans Mono', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   margin: 5px 15px 10px 15px;
   list-style-type: none;
 }
@@ -755,7 +755,7 @@ a.page-numbers:hover {
 *** Gallery style ***
 *********************/
 #content .instagram { width: 33%; }
-#content .instagram time { font-family: 'Droid Sans Mono', sans-serif; display: block; }
+#content .instagram time { display: block; }
 #content .instagram .thumbnail_E { width: 95%; }
 
 /* Youtube for SP */
