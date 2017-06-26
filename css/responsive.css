@@ -133,6 +133,9 @@
 }
 /* max-420px for SP */
 @media screen and (max-width: 420px) {
+    body {
+        font-size: 14px;
+    }
     #wrapper.dump #content article .entry_info {
         width: -webkit-calc(100% - 102px);
         width: calc(100% - 102px);
