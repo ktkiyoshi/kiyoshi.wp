@@ -179,6 +179,27 @@ nav.catNav li a:hover { text-decoration: underline; }
   padding: 3px;
   border: 1px solid #CCC;
 }
+/* pre-next */
+#main ul.pre-next {
+    margin-bottom: 7px;
+}
+#main ul.pre-next li {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 50%;
+}
+#main ul.pre-next li:nth-child(odd) {
+    padding-left: 25px;
+    text-align: left;
+}
+#main ul.pre-next li:nth-child(even) {
+    padding-right: 25px;
+    text-align: right;
+}
+#main ul.pre-next li a {
+    border: 1px solid #777;
+    padding: 7px 12px;
+}
 
 /**************
 *** Content ***
@@ -191,7 +212,7 @@ nav.catNav li a:hover { text-decoration: underline; }
   display: block;
   margin: 3px auto !important;
 }
-#content article { margin-bottom: 50px; }
+#content article { margin-bottom: 3rem; }
 #content article.index {
   width: 50%;
   float: left;
@@ -307,22 +328,82 @@ nav.catNav li a:hover { text-decoration: underline; }
 #content .box_entry_pc { display: block; }
 #content .box_entry_sp { display: none; }
 
+/********************
+*** Category Dump ***
+********************/
+#content article.dump {
+    display: table;
+    overflow: hidden;
+    width: 100%;
+}
+#content article.dump.single {
+    margin-top: 30px;
+}
+#content article.dump .entry_meta {
+  margin-left: 0;
+}
+#content article.dump .admin.dump {
+  font-size: 12px;
+}
+#content article.dump .circle {
+    font-family: 'Source Code Pro', monospace;
+    border: 1px solid #777;
+    border-radius: 50%;
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+}
+#content article.dump .entry_info {
+    display: table-cell;
+    vertical-align: middle;
+    width: inherit;
+}
+#content article.dump .entry_info > * {
+    margin: 0 10px 0 5px;
+}
+#content article.dump p.read_more {
+    border: 1px solid #777;
+    text-align: center;
+}
+#content article.dump p.read_more a {
+    display: block;
+    font-weight: bold;
+    padding: 8px 0;
+    letter-spacing: .2em;
+}
+#content article.dump p.tags {
+    /*margin: 0 0 0 10px;*/
+    margin: 0 10px 0 5px;
+}
+#content article.dump p.tags a {
+    border-color: #777;
+    border-radius: 7px;
+}
+#content article.dump p.read_more a:hover,
+#content article.dump p.tags a:hover {
+    background: #1B7D1B;
+    color: #fff;
+}
+
 /**************
 ***   TAB   ***
 **************/
 #tabs .panels {
-  margin-bottom: 10px;
-  list-style: none;
+    margin-bottom: 10px;
+    list-style: none;
 }
 #tabs .panel_title {
-  display: inline-block;
-  border: 1px solid #CCC;
-  width: 50%;
-  box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid #CCC;
+    box-sizing: border-box;
+    width: 27%;
+    margin: 0 7px 0;
 }
 #tabs .panel_title a{
     display: block;
-    padding: 7px 27px;
+    padding: 7px;
 }
 #tabs li.active {
   color: #FFF;
@@ -337,7 +418,6 @@ nav.catNav li a:hover { text-decoration: underline; }
 }
 #tabs li a:hover {
   color: #666;
-  text-decoration: underline;
 }
 
 /**********************
@@ -361,6 +441,18 @@ nav.catNav li a:hover { text-decoration: underline; }
   margin: 7px;
   padding: 10px;
   border: 1px solid #CCC;
+}
+#content .category_more {
+    border: 1px solid #777;
+    text-align: center;
+}
+#content .category_more a {
+    background-color: #808080;
+    color: #fff;
+    display: block;
+    font-weight: 700;
+    padding: 8px 0;
+    letter-spacing: .2em;
 }
 
 /***********
@@ -497,7 +589,7 @@ footer {
 }
 #footer .display_pc { display: block; }
 #footer .display_sp { display: none; }
-#footer .copyright {
+.copyright {
   font-family: 'Source Code Pro', monospace;
   font-size: 75%;
   text-align: center;
@@ -655,35 +747,17 @@ article.index h1 {
     margin: 0 10px;
     padding: 3px 0 5px 0;
 }
+article.dump h1 {
+  font-size: 150%;
+  padding: 3px 0 5px 5px;
+}
 article h2 {
   position: relative;
   font-size: 165%;
   font-weight: bolder;
-  margin: 40px 0 20px;
-  padding: 8px 0 8px 32px;
+  margin: 20px 0 20px;
+  padding: 5px 0 5px 12px;
   border-bottom: 2px solid #B92A2C;
-}
-article h2:before {
-  content: "\f096";
-  font-family: FontAwesome;
-  font-size: 95%;
-  position: absolute;
-  color: #ff6b6e;
-  top: -0.4em;
-  left: 0.5em;
-  height: 12px;
-  width: 12px;
-}
-article h2:after {
-  content: "\f096";
-  font-family: FontAwesome;
-  font-size: 80%;
-  position: absolute;
-  color: #999;
-  top: 0.1em;
-  left: 0.2em;
-  height: 12px;
-  width: 12px;
 }
 article h3 {
   position: relative;
@@ -799,6 +873,15 @@ a.page-numbers:hover {
 .t_center { text-align: center !important; }
 .t_left   { text-align: left !important; }
 .reset    { clear: both !important; }
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+/* font-size */
+.fs_105 { font-size: 105%; }
 /* text&font-class */
 .tx_under { text-decoration: underline !important; }
 .fo_italy { font-style: italic !important; }

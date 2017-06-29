@@ -5,7 +5,6 @@
 <meta charset="<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta property="fb:app_id" content="112219258880440" />
-
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
 <?php if ( get_post_type() == 'tech' ) { ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dist/tech.min.css" type="text/css" />

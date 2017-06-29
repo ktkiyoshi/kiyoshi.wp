@@ -3,9 +3,6 @@
         <?php if ( get_post_type() == 'tech' ) { ?>
         <div id="mobile-head" class="tech">
             <h1 class="logo"><a href="/wp/tech">タイトル未定</a></h1>
-        <?php } else if ( get_post_type() == 'dump' ) { ?>
-        <div id="mobile-head" class="dump">
-            <h1 class="logo"><a href="/wp/dump">はきだめ日記</a></h1>
         <?php } else { ?>
         <div id="mobile-head">
             <h1 class="logo"><a href="/wp">超日記</a></h1>
@@ -25,9 +22,6 @@
             <?php } ?>
             <?php if ( get_post_type() != 'post' ) { ?>
                 <li><span class="">日記エントリー</span><a href="/wp">DIARY</a></li>
-            <?php } ?>
-            <?php if ( get_post_type() != 'dump' ) { ?>
-                <li><span class="">はきだめ日記</span><a href="/wp/dump">DUMP</a></li>
             <?php } ?>
                 <li><span class="">私のインスタ</span><a href="/wp/gallery">GALLERY</a></li>
             <?php if ( get_post_type() != 'tech' ) { ?>

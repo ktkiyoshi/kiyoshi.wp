@@ -54,9 +54,6 @@
     #mobile-head.tech {
         background: #3D4349;
     }
-    #mobile-head.dump {
-        background: #1B7D1B;
-    }
     #top-head.fixed .logo,
     #top-head .logo {
         position: absolute;
@@ -136,13 +133,12 @@
     body {
         font-size: 14px;
     }
-    #wrapper.dump #content article .entry_info {
-        width: -webkit-calc(100% - 102px);
-        width: calc(100% - 102px);
-    }
     #content article.index {
         width: 100%;
         float: none;
+    }
+    #content article.dump {
+        margin-bottom: 2rem;
     }
     #content article .description_A { margin: 0px 3px 3px; }
     #content article .title { padding-top: 0; }
@@ -172,9 +168,8 @@
     #content .circle { margin: 10px 5px 10px 5px; }
 }
 @media screen and (max-width: 375px) {
-    #tabs .panel_title { padding: 10px 20px; }
+    #tabs .panel_title { padding: 5px 5px; }
 }
 @media screen and (max-width: 330px) {
     #footer { width: 95%; }
-    #tabs .panel_title { padding: 10px 15px; }
 }

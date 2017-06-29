@@ -6,7 +6,7 @@
 
     <section>
         <?php
-        $lastposts = get_posts('numberposts=1&orderby=post_date&post_type=post');
+        $lastposts = get_posts( array('numberposts' => '1', 'orderby' => 'post_date', 'post_type' => 'post'));
         foreach($lastposts as $post) :
         setup_postdata($post);
         ?>

@@ -296,7 +296,7 @@ function register_cpt_photo() {
 }
 
 /* Custom Post for TechBlog
-   reference from http://www.webcreatorbox.com/tech/custom-post-type/ */
+   reference from http://qiita.com/nagasawaaaa/items/9501c0a2e544d85ee78d */
 add_action( 'init', 'register_cpt_tech' );
 function register_cpt_tech() {
     $labels = array(
@@ -313,22 +313,25 @@ function register_cpt_tech() {
         'not_found_in_trash' => __( 'No TechBlog found in Trash', 'tech' ),
         'parent_item_colon' => __( 'Parent TechBlog:', 'tech' ),
     );
-    $args = array(
-        'labels' => $labels,
-        'hierarchical' => false,
-        'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
-        // 'taxonomies' => array( 'category', 'post_tag' ),
-        'taxonomies' => array( 'tech_tag' ),
-        'public' => true,
-        'show_ui' => true,
-        'show_in_nav_menus' => true,
-        'publicly_queryable' => true,
-        'exclude_from_search' => false,
-        'has_archive' => true,
-        'query_var' => true,
-        'can_export' => true,
-        'rewrite' => true,
-        'capability_type' => 'post'
+    register_post_type(
+        'tech',
+        array(
+            'labels' => $labels,
+            'menu_position' => 5,
+            'hierarchical' => false,
+            'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
+            'taxonomies' => array( 'tech_tag' ),
+            'public' => true,
+            'show_ui' => true,
+            'show_in_nav_menus' => true,
+            'publicly_queryable' => true,
+            'exclude_from_search' => false,
+            'has_archive' => true,
+            'query_var' => true,
+            'can_export' => true,
+            'rewrite' => true,
+            'capability_type' => 'post'
+        )
     );
     /* Custom Taxonomy for TechBlog */
     register_taxonomy(
@@ -336,12 +339,15 @@ function register_cpt_tech() {
         'tech',
         array(
             'label' => '技術タグ',
+            'labels' => array(
+                'all_items' => '技術タグ一覧',
+                'add_new_item' => '新規技術タグを追加'
+            ),
             'public' => true,
             'show_ui' => true,
             'hierarchical' => false
         )
     );
-    register_post_type( 'tech', $args );
 }
 /* Enable to use Martdown for custom_post */
 add_post_type_support( 'tech', 'wpcom-markdown' );
@@ -351,36 +357,6 @@ add_action( 'init', 'cpt_publicize_share' );
 function cpt_publicize_share() {
     add_post_type_support( 'tech', 'publicize' );
 }
-
-/* Custom Post for Dump
-   reference from http://qiita.com/nagasawaaaa/items/9501c0a2e544d85ee78d */
-function create_post_type_dump() {
-    register_post_type(
-        'dump',
-        array(
-            'label' => '掃溜投稿',
-            'public' => true,
-            'has_archive' => true,
-            'menu_position' => 5,
-            'supports' => array('title', 'editor', 'thumbnail', 'revisions')
-        )
-    );
-    register_taxonomy(
-        'dump_taxonomy',
-        'dump',
-        array(
-            'label' => 'タクソノミー',
-            'labels' => array(
-                'all_items' => 'タクソノミー一覧',
-                'add_new_item' => '新規タクソノミーを追加'
-            ),
-            'hierarchical' => true
-        )
-    );
-}
-add_action( 'init', 'create_post_type_dump' );
-/* Enable to use Martdown for custom_post */
-add_post_type_support( 'dump', 'wpcom-markdown' );
 
 /* Don't change "" to ”” */
 remove_filter('the_content', 'wptexturize');
