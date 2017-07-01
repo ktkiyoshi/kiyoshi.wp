@@ -56,7 +56,7 @@
     <section id="fixed_point">
       <ul>
         <?php
-        $lastposts = get_posts( array( 'numberposts' => 10, 'orderby' => 'post_date', 'category' => '-80,-113'));
+        $lastposts = get_posts( array( 'numberposts' => 10, 'orderby' => 'post_date', 'category' => '-113'));
         foreach($lastposts as $post) :
         $counter++;
         setup_postdata($post);
