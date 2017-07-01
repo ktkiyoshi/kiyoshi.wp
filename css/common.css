@@ -399,7 +399,7 @@ nav.catNav li a:hover { text-decoration: underline; }
     width: 45%;
     margin: 0 7px 0;
 }
-#tabs .panel_title a{
+#tabs .panel_title a {
     display: block;
     padding: 7px;
 }
@@ -422,23 +422,20 @@ nav.catNav li a:hover { text-decoration: underline; }
 *** Content Section ***
 **********************/
 #content section .panels {
-  overflow: hidden;
-  margin: 10px 0 10px 10px;
+    overflow: hidden;
+    margin: 10px 0 10px 10px;
 }
 #content section .panel_title {
-  float: left;
-  padding: 8px 12px;
-  background-color: #000;
-  border: 1px solid #CCC;
-}
-#content section .panel_title a {
-  color: #FFF;
-  background-color: #000;
+    background-color: #000;
+    border: 1px solid #CCC;
+    color: #FFF;
+    float: left;
+    padding: 8px 12px;
 }
 #content section .l_frame {
-  margin: 7px;
-  padding: 10px;
-  border: 1px solid #CCC;
+    margin: 7px;
+    padding: 10px;
+    border: 1px solid #CCC;
 }
 #content .category_more {
     border: 1px solid #777;

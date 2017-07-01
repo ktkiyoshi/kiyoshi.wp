@@ -2,37 +2,33 @@
 <body>
 <?php require("header_parts.php"); ?>
 <div id="wrapper">
-<!--     <nav class="catNav">
-        <ul class="fontAwesome">
-            <li class="book"><a href="/wp/category/book">読 書</a></li>
-            <li class="movie"><a href="/wp/category/movie">映 画</a></li>
-            <li class="live"><a href="/wp/category/live">ライブ</a></li>
-            <li class="travel"><a href="/wp/category/travel">旅 行</a></li>
-            <li class="pokemon"><a href="/wp/category/pokemon">ポケモン</a></li>
-        </ul>
-    </nav> -->
     <div id="main">
         <div id="content">
-        <?php
-            $query_array = $wp_query->query_vars;
-            $query_array['posts_per_page'] = 20;
-            query_posts($query_array);
-            $paginate_base = get_pagenum_link(1);
-            if (strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()) {
-                $paginate_format = '';
-                $paginate_base = add_query_arg('paged', '%#%');
-            } else {
-                $paginate_format = (substr($paginate_base, -1 ,1) == '/' ? '' : '/') .user_trailingslashit('page/%#%/', 'paged');
-                $paginate_base .= '%_%';
-            }
-            $pagination = array('base' => $paginate_base,
-                                'format' => $paginate_format,
-                                'total' => $wp_query->max_num_pages,
-                                'mid_size' => 4,
-                                'current' => ($paged ? $paged : 1)
-                                );
-            echo '<div class="page-navi">'."\n".paginate_links($pagination).'</div>'."\n";
-        ?>
+            <section>
+                <ul class="panels">
+                    <li class="panel_title"><?php single_cat_title(); ?></li>
+                </ul>
+            </section>
+            <?php
+                $query_array = $wp_query->query_vars;
+                $query_array['posts_per_page'] = 20;
+                query_posts($query_array);
+                $paginate_base = get_pagenum_link(1);
+                if (strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()) {
+                    $paginate_format = '';
+                    $paginate_base = add_query_arg('paged', '%#%');
+                } else {
+                    $paginate_format = (substr($paginate_base, -1 ,1) == '/' ? '' : '/') .user_trailingslashit('page/%#%/', 'paged');
+                    $paginate_base .= '%_%';
+                }
+                $pagination = array('base' => $paginate_base,
+                                    'format' => $paginate_format,
+                                    'total' => $wp_query->max_num_pages,
+                                    'mid_size' => 4,
+                                    'current' => ($paged ? $paged : 1)
+                                    );
+                echo '<div class="page-navi">'."\n".paginate_links($pagination).'</div>'."\n";
+            ?>
             <section class="clearfix">
             <?php while (have_posts()) : the_post(); ?>
                 <article class="index matchHeight">

@@ -8,7 +8,7 @@
                 <ul class="panels t_center">
                     <li class="panel_title"><a href="#panel1"><i class="fa fa-pencil" aria-hidden="true"></i><span>ブログ</span></a></li><!--
                  --><li class="panel_title"><a href="#panel2"><i class="fa fa-trash" aria-hidden="true"></i><span>はきだめ日記</span></a></li>
-                 <!-- <li class="panel_title"><a href="#panel2"><i class="fa fa-trash" aria-hidden="true"></i><span>はきだめ日記</span></a></li> -->
+                 <!-- <li class="panel_title"><a href="#panel3"><i class="fa fa-code" aria-hidden="true"></i><span>技術日記</span></a></li> -->
                 </ul>
                 <div id="panel1" class="panel">
                 <?php

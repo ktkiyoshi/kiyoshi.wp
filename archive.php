@@ -17,14 +17,16 @@
                 <ul class="panels">
                     <li class="panel_title"><a><?php echo get_query_var('year').'年'.get_query_var('monthnum').'月'; ?></a></li>
                 </ul>
-            <?php
-                $query_array = $wp_query->query_vars;
-                $query_array['posts_per_page'] = 31;
-                $query_array['orderby'] = 'date';
-                $query_array['order'] = 'ASC';
-                query_posts($query_array);
-                while (have_posts()) : the_post();
-            ?>
+            </section>
+            <section>
+                <?php
+                    $query_array = $wp_query->query_vars;
+                    $query_array['posts_per_page'] = 31;
+                    $query_array['orderby'] = 'date';
+                    $query_array['order'] = 'ASC';
+                    query_posts($query_array);
+                    while (have_posts()) : the_post();
+                ?>
                 <article class="index matchHeight">
                     <header>
                         <ul class="entry_meta">
@@ -39,10 +41,10 @@
                         <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
                     </div>
                 </article>
-            <?php
-                endwhile;
-                wp_reset_query();
-            ?>
+                <?php
+                    endwhile;
+                    wp_reset_query();
+                ?>
             </section>
         </div><!-- /#content -->
 <?php get_sidebar(); ?>
