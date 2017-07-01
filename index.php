@@ -6,9 +6,9 @@
         <div id="content">
             <nav id="tabs">
                 <ul class="panels t_center">
-                    <li class="panel_title"><a href="#panel1">ブログ</a></li><!--
-                 --><li class="panel_title"><a href="#panel2">はきだめ</a></li><!--
-                 --><li class="panel_title"><a href="#panel3">技術記事</a></li>
+                    <li class="panel_title"><a href="#panel1"><i class="fa fa-pencil" aria-hidden="true"></i><span>ブログ</span></a></li><!--
+                 --><li class="panel_title"><a href="#panel2"><i class="fa fa-trash" aria-hidden="true"></i><span>はきだめ日記</span></a></li>
+                 <!-- <li class="panel_title"><a href="#panel2"><i class="fa fa-trash" aria-hidden="true"></i><span>はきだめ日記</span></a></li> -->
                 </ul>
                 <div id="panel1" class="panel">
                 <?php
@@ -105,6 +105,7 @@
                     <div class="category_more"><a href="/wp/category/dump">はきだめ日記をもっと見る</a></div>
                 </div>
 
+                <!--
                 <div id="panel3" class="panel">
                     <section class="clearfix">
                     <?php
@@ -136,6 +137,7 @@
                     <div class="category_more"><a href="/wp/category/dump">はきだめ日記をもっと見る</a></div>
                 </div>
             </nav>
+            -->
         </div><!-- /#content -->
 <?php get_sidebar(); ?>
         <div class="reset"></div>

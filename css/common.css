@@ -144,18 +144,6 @@ nav.catNav li.active a {
   background: #000;
   color: #fff;
 }
-nav.catNav li:before {
-  font: 115% FontAwesome;
-  padding: 0 7px 0 0;
-  font-size: 115%;
-}
-nav.catNav li.home:before { content: "\f015"; }
-nav.catNav li.tech:before { content: "\f109"; }
-nav.catNav li.book:before { content: "\f02d"; }
-nav.catNav li.movie:before { content: "\f008"; }
-nav.catNav li.live:before { content: "\f001"; }
-nav.catNav li.travel:before { content: "\f072"; }
-nav.catNav li.pokemon:before { content: "\f11b"; }
 nav.catNav li a:hover { text-decoration: underline; }
 
 /***********
@@ -181,7 +169,7 @@ nav.catNav li a:hover { text-decoration: underline; }
 }
 /* pre-next */
 #main ul.pre-next {
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 #main ul.pre-next li {
     box-sizing: border-box;
@@ -251,6 +239,16 @@ nav.catNav li a:hover { text-decoration: underline; }
   padding: 3px 10px;
   margin: 3px 5px 3px 0;
   display: inline-block;
+}
+#content article p.tags a:before {
+    content: "\f02b";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-right: 5px;
 }
 #content article p.tags a:hover{
   background: #3D4349;
@@ -398,7 +396,7 @@ nav.catNav li a:hover { text-decoration: underline; }
     display: inline-block;
     border: 1px solid #CCC;
     box-sizing: border-box;
-    width: 27%;
+    width: 45%;
     margin: 0 7px 0;
 }
 #tabs .panel_title a{
@@ -887,3 +885,6 @@ a.page-numbers:hover {
 .fo_italy { font-style: italic !important; }
 /* ページ最下部の余白対応 */
 img[width="0"] { position: absolute; top: 0px !important; }
+/* fontAwesome */
+.fa       { padding: 0 7px 0 0; }
+.fa.right { padding: 0 0 0 7px; }
