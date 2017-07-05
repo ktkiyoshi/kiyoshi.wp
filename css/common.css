@@ -93,6 +93,49 @@ img       { max-width: 100%; height: auto; }
     -webkit-transition: top 0.65s ease-in;
     -moz-transition: top 0.65s ease-in;
 }
+#category-list {
+    display: none;
+    font-family: 'Source Code Pro', monospace;
+    background: #fff;
+    position: absolute;
+    top: 18px;
+    right: 70px;
+}
+#category-list p .fa {
+    padding-left: 3px;
+}
+#category-list ul:before {
+    content: "";
+    display: inline-block;
+    border: 10px solid transparent;
+    border-bottom-color: #000;
+    position: absolute;
+    right: 17px;
+    top: -20px;
+}
+#category-list ul:after {
+    content: "";
+    display: inline-block;
+    border: 9px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    right: 18px;
+    top: -18px
+}
+#category-list ul {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #555;
+    right: 5px;
+    top: 30px;
+    padding: 10px 20px;
+    width: 140px;
+    z-index: -1;
+}
+#category-list ul li {
+    line-height: 1.7;
+}
 /* Toggle Button */
 #nav-toggle {
     display: none;
@@ -882,6 +925,13 @@ a.page-numbers:hover {
 .fo_italy { font-style: italic !important; }
 /* ページ最下部の余白対応 */
 img[width="0"] { position: absolute; top: 0px !important; }
+/* status */
+.show {
+    display: block !important;
+}
+.hide {
+    display: none !important;
+}
 /* fontAwesome */
 .fa       { padding: 0 7px 0 0; }
 .fa.right { padding: 0 0 0 7px; }

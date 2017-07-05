@@ -7,12 +7,18 @@
         <div id="mobile-head">
             <h1 class="logo"><a href="/wp">超日記</a></h1>
         <?php } ?>
+            <div id="category-list">
+                <p>CATEGORY<i class="fa fa-angle-down fa-lg right" aria-hidden="true"></i></p>
+                <ul>
+                <?php $categories = get_categories('exclude=54','hide_empty=true'); ?>
+                <?php foreach($categories as $category): ?>
+                    <li><a href="<?php echo get_category_link($category->cat_ID); ?>">
+                    <?php echo get_catname($category->cat_ID);?>(<?php echo $category->count; ?>)</a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
             <div id="nav-toggle">
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <div><span></span><span></span><span></span></div>
             </div>
         </div>
         <nav id="global-nav">

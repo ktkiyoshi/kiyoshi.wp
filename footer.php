@@ -87,6 +87,20 @@
 <?php } ?>
 <script>
 (function($) {
+    var tap = window.ontouchstart===null?"touchstart":"click";
+    $(function() {
+        $('#category-list p').click(function(){
+            $('#category-list ul').toggleClass('show');
+            $('#category-list i').toggleClass('fa-angle-down').toggleClass('fa-angle-up');
+        });
+    });
+    $(document).on(tap, function(event) {
+        if (!$(event.target).closest('#category-list').length) {
+            $('#category-list ul').removeClass('show');
+            $('#category-list i').removeClass('fa-angle-up').addClass('fa-angle-down');
+      }
+    });
+
     $(function() {
         $('#nav-toggle').click(function(){
             $('#top-head').toggleClass('open');
