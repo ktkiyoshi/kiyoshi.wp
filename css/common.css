@@ -749,11 +749,6 @@ footer {
   list-style-type: none;
   width: 30%;
 }
-/* syntaxhighlighter */
-#content article.single .entry .codeFrame {
-  margin: 0 0 20px 0 !important;
-  padding: 8px 5px 6px 5px !important;
-}
 
 /********************
 *** Social Button ***
@@ -891,7 +886,18 @@ a.page-numbers:hover {
 .slide-container iframe {
   width:100%;
 }
+/* syntaxhighlighter evolved */
+#content article.single .entry .codeFrame {
+  margin: 0 0 20px 0 !important;
+  padding: 8px 5px 6px 5px !important;
+}
+/* highlight.js */
+.hljs {
+    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+    margin: 0 0 20px 0 !important;
+    padding: 8px 10px 5px !important;
 
+}
 /* width */
 .w100  { width: 100% !important; }
 .w50   { width: 50% !important; }
