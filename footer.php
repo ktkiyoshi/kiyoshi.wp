@@ -69,7 +69,12 @@
 </footer>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+// hljs.initHighlightingOnLoad();
+$('div code').each(function(i, block) {
+  hljs.highlightBlock(block);
+});
+</script>
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>side-fixed.js"></script>
 <script>
 (function($) {

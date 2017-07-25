@@ -892,12 +892,13 @@ a.page-numbers:hover {
   padding: 8px 5px 6px 5px !important;
 }
 /* highlight.js */
-.hljs {
+code.hljs {
     font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
     margin: 0 0 20px 0 !important;
     padding: 8px 10px 5px !important;
-
+    line-height: 1.2 !important;
 }
+
 /* width */
 .w100  { width: 100% !important; }
 .w50   { width: 50% !important; }
