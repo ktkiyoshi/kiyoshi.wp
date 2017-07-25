@@ -68,7 +68,8 @@
     <div class="copyright">Copyright(C) <script type="text/javascript">myDate = new Date();myYear = myDate.getFullYear();document.write(myYear);</script> Kiyoshi All Rights Reserved.</div>
 </footer>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<?php if ( get_post_type() != 'dump' ) { ?>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <script type="text/javascript" charset="utf-8" src="<?php echo get_javascript_uri() ?>side-fixed.js"></script>
 <script>
 (function($) {
@@ -84,7 +85,6 @@
     });
 })(jQuery);
 </script>
-<?php } ?>
 <script>
 (function($) {
     var tap = window.ontouchstart===null?"touchstart":"click";

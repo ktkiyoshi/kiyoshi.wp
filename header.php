@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dist/dump.min.css" type="text/css" />
 <?php } ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/dist/responsive.min.css" type="text/css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css">
 <!--<script type="text/javascript" charset="utf-8" src="//use.edgefonts.net/source-code-pro.js"></script>-->
 <?php wp_head(); ?>
 </head>
