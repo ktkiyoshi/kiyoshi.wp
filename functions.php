@@ -358,6 +358,32 @@ function cpt_publicize_share() {
     add_post_type_support( 'tech', 'publicize' );
 }
 
+/* Add style-sheet */
+function register_stylesheet() {
+    wp_register_style( 'default', get_template_directory_uri() . '/css/dist/default.min.css' );
+    wp_register_style( 'base', get_template_directory_uri() . '/css/dist/base.min.css');
+    wp_register_style( 'awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+    wp_register_style( 'source', '//fonts.googleapis.com/css?family=Monda|Source+Code+Pro' );
+    wp_register_style( 'tech', get_template_directory_uri() . '/css/dist/tech.min.css' );
+    wp_register_style( 'responsive', get_template_directory_uri() . '/css/dist/responsive.min.css' );
+    wp_register_style( 'tomorrow', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css' );
+}
+function load_stylesheet() {
+    // Register css
+    register_stylesheet();
+
+    wp_enqueue_style('default');
+    wp_enqueue_style('base');
+    wp_enqueue_style('awesome');
+    wp_enqueue_style('source');
+    if ( get_post_type() == 'tech' ) {
+        wp_enqueue_style('tech');
+    }
+    wp_enqueue_style('responsive');
+    wp_enqueue_style('tomorrow');
+ }
+add_action('wp_enqueue_scripts', 'load_stylesheet');
+
 /* Don't change "" to ”” */
 remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');
