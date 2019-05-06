@@ -14,14 +14,14 @@ function getEntryArray($sql) {
   global $wpdb;
   $result = $wpdb->get_results($sql);
   foreach ($result as $val) {
-    // preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $val->post_content, $matches);
-    preg_match_all('/<img.+?class=".+?wp-image-(.+).*?".*?>/i', $val->post_content, $matches);
-    $tmp = array(
+    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $val->post_content, $matches);
+	  /*preg_match_all('/<img.+?class=".+?wp-image-(.+).*?".*?>/i', $val->post_content, $matches);*/
+	 $tmp = array(
       'url' => get_template_directory_uri()."/".$val->year."/".$val->month."/".$val->day."/".$val->post_name,
       'post_title' => $val->post_title,
       'date' => $val->year."/".$val->month."/".$val->day,
-      // 'image' => $matches[1][0],
-      'image' => my_wp_get_attachment_medium_url($matches[1][0]),
+      'image' => $matches[1][0],
+      //'image' => my_wp_get_attachment_medium_url($matches[1][0]),
       'count' => $val->meta_value
       );
     $populars[$n] = $tmp;
