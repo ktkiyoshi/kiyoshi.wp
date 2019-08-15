@@ -644,7 +644,7 @@ footer {
 #topContent article.single .entry p,
 #content article.single .entry p {
   font-size: 110%;
-  margin-bottom: 30px;
+  padding-bottom: 20px;
   line-height: 1.8;
 }
 #topContent article.single .entry p.word,
