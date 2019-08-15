@@ -12,7 +12,7 @@ body {
 }
 a { text-decoration: none; }
 a:hover, a:link, a:visited { color: #666; }
-hr        { margin: 15px 15px 20px; color: #CCC; }
+hr        { margin: 15px 15px 30px; color: #CCC; }
 strong, b { font-weight: bold !important; }
 textarea  { width: 100%; }
 img       { max-width: 100%; height: auto; }
@@ -644,7 +644,7 @@ footer {
 #topContent article.single .entry p,
 #content article.single .entry p {
   font-size: 110%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   line-height: 1.8;
 }
 #topContent article.single .entry p.word,
