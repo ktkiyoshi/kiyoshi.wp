@@ -1,8 +1,7 @@
 <?php
 require('/var/www/sec/instagram.php');
-$limit=30;
 
-$uri = array(API_URL_USER, API_URL_MEDIA.'&count='.$limit);
+$uri = array(API_URL_USER, API_URL_MEDIA);
 $options = array(
       CURLOPT_POST => false,
       CURLOPT_SSL_VERIFYPEER => false,
@@ -15,6 +14,6 @@ for($i = 0; $i < count($uri); $i++) {
     $json[$i] = json_decode(curl_exec($ch), true);
     curl_close($ch);
 }
-$user = $json[0][data];
-$media = $json[1][data];
+$user = $json[0]['data'];
+$media = $json[1]['data'];
 ?>

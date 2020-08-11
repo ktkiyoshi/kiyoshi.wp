@@ -14,14 +14,19 @@ Template Name: Gallery
       <section>
         <?php
           for($i=0; $i < count($media); $i++) {
-            $caption = $media[$i][caption];
-            $images = $media[$i][images];
+            $caption = $media[$i]['caption'];
+            $permalink = $media[$i]['permalink'];
+            $media_url = $media[$i]['media_url'];
+            $timestamp = $media[$i]['timestamp'];
+            // 変換
+            $datetime = DateTime::createFromFormat('Y-m-d\TH:i:s+', $timestamp);
+            $datetime->setTimezone(new DateTimeZone('Asia/Tokyo'));
         ?>
         <div class="instagram f_left t_center">
-          <time datetime="<?php echo date('Y/m/d', $caption[created_time]); ?>" pubdate><?php echo date('Y/m/d', $caption[created_time]); ?></time>
-          <a href="<?php echo $media[$i][link]; ?>" title="<?php echo $caption[text]; ?>">
-          <img src="<?php echo $images[thumbnail][url]; ?>" class="thumbnail_E"/>
-          <p><?php echo $caption[text]; ?></p></a>
+          <time datetime="<?php echo $datetime->format('Y/m/d'); ?>" pubdate><?php echo $datetime->format('Y/m/d');  ?></time>
+          <a href="<?php echo $permalink; ?>" title="<?php echo $caption; ?>">
+          <img src="<?php echo $media_url; ?>" class="thumbnail_E"/>
+          <p><?php echo $caption; ?></p></a>
         </div>
           <?php if (($i+1) == count($media)) { ?>
           <div class="reset"></div>
