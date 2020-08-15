@@ -1,33 +1,12 @@
 /*************
-*** Common ***
-*************/
-#wrapper {
-  padding-top: 125px;
-}
-
-/*************
 *** Header ***
 *************/
 #top-head {
     background: #3D4349;
     border-bottom: 4px #b9b9b9 solid;
-    height: 125px;
-}
-@media screen and (max-width: 655px) {
-    #top-head {
-        height: 105px;
-    }
 }
 #top-head .logo a {
   color: #efefef;
-}
-#top-head p {
-    color: #efefef;
-    margin: 0 20px 15px;
-    padding-top: 15px;
-}
-#global-nav ul {
-    bottom: -35px;
 }
 #global-nav ul li a,
 #global-nav ul li span {
@@ -58,10 +37,6 @@ article h2:after  { content: ""; }
 /**************
 *** Content ***
 **************/
-#content {
-  float: left;
-  width: 71%;
-}
 #content article .entry_meta {
   color: #777;
 }
@@ -73,31 +48,6 @@ article h2:after  { content: ""; }
   display: none;
 }
 
-/***********
-*** Side ***
-***********/
-#side {
-  float: right;
-  width: 27%;
-  max-width: 324px;
-}
-#sidefixed {
-  max-width: 324px;
-}
-#side .r_frameTech {
-  border-top: 3px solid #777;
-  border-bottom: 1px solid #777;
-  padding: 7px 10px 7px 3px;
-  margin: 5px 0px 7px 0px;
-}
-#side .r_frameTech p.title {
-  font-family: 'Source Code Pro', monospace;
-  font-size: 110%;
-  font-weight: bold;
-  letter-spacing: .1em;
-  line-height: 1;
-  padding: 5px 5px 5px 5px;
-}
 /****************
 *** Tag Cloud ***
 ****************/

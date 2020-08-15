@@ -5,6 +5,10 @@
     <div id="main">
         <div id="content">
             <section>
+                <p class="dashed mt10">
+                    技術記事については、<a href="https://qiita.com/ktkiyoshi" target="_blank" class="tdu">Qiita</a>にも稀に投稿しています。
+                </p>
+            </section>
             <?php
                 $query_array = $wp_query->query_vars;
                 $query_array['posts_per_page'] = 10;
@@ -49,7 +53,6 @@
                     echo '<div class="page-navi">'."\n".paginate_links($pagination).'</div>'."\n";
                     wp_reset_query();
                 ?>
-            </section>
         </div><!-- /#content -->
 <?php get_sidebar('tech'); ?>
         <div class="reset"></div>

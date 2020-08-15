@@ -24,9 +24,6 @@
     #wrapper {
       padding-top: 60px;
     }
-    #wrapper.tech {
-      padding-top: 105px;
-    }
     #top-head {
         top: 0;
         position: fixed;
@@ -92,20 +89,23 @@
         color: #fff;
         padding: 3px 0 0;
     }
-    #global-nav ul li a:hover {
-        border-bottom: none;
-    }
-    #global-nav ul li span {
-        display: block;
-    }
     #category-list {
         display: block;
     }
     #nav-toggle {
         display: block;
     }
+    #mobile-head.tech #category-list {
+        display: none;
+    }
     #mobile-head.tech #nav-toggle span {
         background: #efefef;
+    }
+    #global-nav ul li a:hover {
+        border-bottom: none;
+    }
+    #global-nav ul li span {
+        display: block;
     }
     /* #nav-toggle 切り替えアニメーション */
     .open #nav-toggle span:nth-child(1) {

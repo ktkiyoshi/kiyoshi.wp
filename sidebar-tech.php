@@ -1,91 +1,6 @@
 <div id="side">
   <div id="sidefixed">
-    <div class="r_frameTech">
-      <p class="title">超日記</p>
-    </div>
-
-    <section>
-        <?php
-        $lastposts = get_posts( array('numberposts' => '1', 'orderby' => 'post_date', 'post_type' => 'post', 'category' => '-113'));
-        foreach($lastposts as $post) :
-        setup_postdata($post);
-        ?>
-        <style>
-        *::before,
-        * {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-        .panel-in::before,
-        .panel {
-            background: url("<?php echo catch_that_image(); ?>") no-repeat center;
-            -webkit-background-size: cover;
-            background-size: cover;
-        }
-        .panel {
-            position: relative;
-            margin: 5px 15px 25px;
-        }
-        .panel-in::before {
-            content: "";
-            position: absolute;
-            background-clip: content-box;
-            width: 100%;
-            height: 100%;
-            padding: 15px;
-            top: 0;
-            left: 0;
-            -webkit-filter: blur(5px);
-            filter: blur(5px);
-        }
-        .panel-in {
-            padding: 15px;
-            position: relative;
-        }
-        .panel-main {
-            padding: 7px 10px;
-            z-index: 30;
-            position: relative;
-            margin-bottom: 0;
-            border: solid 1px rgba(255,255,255,0.4);
-            background: rgba(255,255,255,0.4);
-            color: #3D4349;
-        }
-        .panel-main p {
-            text-align: center;
-            font-weight: bold;
-            font-size: 85%;
-        }
-        .panel-main time {
-            font-size: 85%;
-        }
-        </style>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-          <div class="panel">
-            <div class="panel-in">
-              <div class="panel-main">
-                <time datetime="<?php the_time('Y/m/d/D') ?>" pubdate><?php the_time('Y/m/d/D') ?></time>
-                <p>
-                <?php
-                  if(mb_strlen($post->post_title)>50) {
-                    $title= mb_substr($post->post_title,0,50);
-                    echo $title. ･･･ ;
-                  } else {
-                    echo $post->post_title;
-                  }
-                ?>
-                </p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <?php
-        endforeach;
-        ?>
-    </section>
-
-    <div class="r_frameTech">
+    <div class="r_frame">
       <p class="title">最新記事</p>
     </div>
     <section>
@@ -117,9 +32,12 @@
       </ul>
     </section>
 
-    <div class="r_frameTech">
+    <div class="r_frame">
       <p class="title">タグ</p>
     </div>
-    <p class="tags"><?php wp_tag_cloud( array( 'taxonomy' => 'tech_tag' ) ); ?></p>
+    <section>
+      <p class="tags"><?php wp_tag_cloud( array( 'taxonomy' => 'tech_tag' ) ); ?></p>
+    </sction>
+
   </div><!-- /#sidefixed -->
 </div><!-- /#side -->

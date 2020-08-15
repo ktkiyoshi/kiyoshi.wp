@@ -136,8 +136,8 @@
                     </section>
                     <div class="category_more"><a href="/wp/category/dump">はきだめ日記をもっと見る</a></div>
                 </div>
+                -->
             </nav>
-            -->
         </div><!-- /#content -->
 <?php get_sidebar(); ?>
         <div class="reset"></div>

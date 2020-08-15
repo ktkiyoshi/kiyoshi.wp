@@ -27,6 +27,7 @@ gulp.task('minify-css', function() {
         //.pipe(gulp.dest('css')); 上書きする場合
 });
 
+// CMD: gulp watch
 gulp.task('watch', function(){
  var targets = [
     '*.php',

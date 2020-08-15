@@ -280,6 +280,7 @@ function register_cpt_photo() {
         'hierarchical' => false,
         'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
         // 'taxonomies' => array( 'category', 'post_tag' ),
+        // カテゴリとタグ使わない
         'taxonomies' => array(),
         'public' => true,
         'show_ui' => true,
@@ -315,26 +316,26 @@ function register_cpt_tech() {
         'not_found_in_trash' => __( 'No TechBlog found in Trash', 'tech' ),
         'parent_item_colon' => __( 'Parent TechBlog:', 'tech' ),
     );
-    register_post_type(
-        'tech',
-        array(
-            'labels' => $labels,
-            'menu_position' => 5,
-            'hierarchical' => false,
-            'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
-            'taxonomies' => array( 'tech_tag' ),
-            'public' => true,
-            'show_ui' => true,
-            'show_in_nav_menus' => true,
-            'publicly_queryable' => true,
-            'exclude_from_search' => false,
-            'has_archive' => true,
-            'query_var' => true,
-            'can_export' => true,
-            'rewrite' => true,
-            'capability_type' => 'post'
-        )
+    $args = array(
+        'labels' => $labels,
+        'menu_position' => 5,
+        'hierarchical' => false,
+        'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
+        // 技術用タグを使う(定義は、register_taxonomy参照)
+        'taxonomies' => array( 'tech_tag' ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => true,
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => true,
+        'capability_type' => 'post'
     );
+    register_post_type( 'tech', $args );
+
     /* Custom Taxonomy for TechBlog */
     register_taxonomy(
         'tech_tag',

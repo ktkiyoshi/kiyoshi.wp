@@ -1,35 +1,25 @@
 </div><!-- /#wrapper -->
 <footer>
     <div id="footer" class="clearfix">
-    <?php if ( get_post_type() == 'tech' || get_post_type() == 'dump' ) { ?>
+    <?php if ( get_post_type() == 'tech' ) { ?>
         <div class="f_frame tag_list">
             <p class="title">タグ一覧</p>
+            <ul>
             <?php
-                if ( get_post_type() == 'tech' ) {
-                    $taxo_tags = get_categories('title_li=&taxonomy=tech_tag'); $initial = '';$m_cnt = 0;
-                } else {
-                    $taxo_tags = get_categories('title_li=&taxonomy=dump_tag'); $initial = '';$m_cnt = 0;
-                }
+                $taxo_tags = get_terms(
+                    array(
+                        'taxonomy' => 'tech_tag',
+                        'hide_empty' => true,
+                    ));
                 foreach($taxo_tags as $taxo_tag):
-                if($initial != strtoupper(substr(get_catname($taxo_tag->cat_ID), 0, 1))) {
-                    if($initial != '') {
-                        if(($m_cnt % 2) == 1) {
-                            echo "</ul><br />";
-                        } else {
-                            echo "</ul>";
-                        }
-                        $m_cnt++;
-                    }
-                    $initial = strtoupper(substr(get_catname($taxo_tag->cat_ID), 0, 1));
-                    echo "<ul><p>".$initial."</p>";
-                }
             ?>
-            <li class="f_minLink">
-                <a href="<?php echo get_category_link($taxo_tag->cat_ID); ?>">
-                <?php echo get_catname($taxo_tag->cat_ID);?>(<?php echo $taxo_tag->count; ?>)
-                </a>
-            </li>
+                <li class="f_minLink">
+                    <a href="<?php echo get_term_link($taxo_tag->term_id); ?>">
+                    <?php echo get_term($taxo_tag->term_id)->name;?>(<?php echo $taxo_tag->count; ?>)
+                    </a>
+                </li>
             <?php endforeach; ?>
+            </ul>
         </div>
         <?php } else { ?>
         <div class="f_frame archive_list">
@@ -41,10 +31,9 @@
             <?php if($this_year == '' || $this_year != $archive->year) { ?>
                 <p><?php echo $archive->year; ?>年</p>
                 <?php $m_cnt = 0; } ?>
-                <li>
-                    <a href="<?php echo get_month_link($archive->year, $archive->month); ?>">
-                    <?php echo $archive->month; ?>月(<?php echo $archive->posts; ?>)</a>
-                </li>
+                <li><a href="<?php echo get_month_link($archive->year, $archive->month); ?>">
+                    <?php echo $archive->month; ?>月(<?php echo $archive->posts; ?>)
+                </a></li>
                 <?php if($m_cnt == 5) { echo "<br class='display_pc' />"; } ?>
                 <?php if($m_cnt == 3 || $m_cnt == 7) { echo "<br class='display_sp' />"; } ?>
                 <?php $this_year = $archive->year; $m_cnt++; ?>
@@ -55,11 +44,19 @@
         <div class="f_frame category_list">
             <p class="title">カテゴリ一覧</p>
             <ul>
-            <?php $categories = get_categories('exclude=54','hide_empty=true'); ?>
-            <?php foreach($categories as $category): ?>
-                <li><a href="<?php echo get_category_link($category->cat_ID); ?>">
-                <?php echo get_catname($category->cat_ID);?>(<?php echo $category->count; ?>)</a></li>
-                <?php endforeach; ?>
+            <?php $categories = get_terms(
+                array(
+                    'taxonomy' => 'category',
+                    'hide_empty' => true,
+                ));
+                foreach($categories as $category):
+            ?>
+                <li>
+                    <a href="<?php echo get_term_link($category->term_id); ?>">
+                    <?php echo get_cat_name($category->term_id);?>(<?php echo $category->count; ?>)
+                    </a>
+                </li>
+            <?php endforeach; ?>
             </ul>
         </div>
         <?php } ?>

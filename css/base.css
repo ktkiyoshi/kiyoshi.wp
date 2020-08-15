@@ -47,7 +47,7 @@ img       { max-width: 100%; height: auto; }
 #top-head {
     top: -100px;
     position: absolute;
-    height: 60px;
+    height: 70px;
     width: 100%;
     margin: 100px auto 0;
     padding: 20px 0 0;
@@ -480,6 +480,11 @@ nav.catNav li a:hover { text-decoration: underline; }
     padding: 10px;
     border: 1px solid #CCC;
 }
+#content p.dashed {
+  border: 1px dashed #000;
+  padding: 15px 20px !important;
+  margin-bottom: 30px;
+}
 #content .category_more {
     border: 1px solid #777;
     text-align: center;
@@ -498,7 +503,6 @@ nav.catNav li a:hover { text-decoration: underline; }
 ***********/
 #side {
   float: right;
-  /*width: 30%;*/
   width: 27%;
   max-width: 324px;
 }
@@ -554,6 +558,7 @@ nav.catNav li a:hover { text-decoration: underline; }
   font-weight: bold;
   line-height: 145%;
   margin-bottom: 7px;
+  padding-left: 105px;
 }
 #side li .thumbnail_F {
   width: 120px;
@@ -610,7 +615,6 @@ footer {
 #footer .tag_list ul {
   display: inline-block;
   vertical-align: top;
-  width: 45%;
 }
 #footer .tag_list li     { display: inline-block; }
 #footer .author_info li  { color: #999; }
@@ -653,14 +657,8 @@ footer {
   font-weight: bold;
   margin: 30px 0px 30px;
 }
-#topContent article.single .entry p.dashed,
-#content article.single .entry p.dashed {
-  border: 1px dashed #000;
-  padding: 10px 20px;
-  margin-bottom: 30px;
-}
-#topContent article.single .entry a.link,
-#content article.single .entry a.link { text-decoration: underline; }
+#topContent article.single .entry a,
+#content article.single .entry a { text-decoration: underline; }
 #topContent article.single .entry p:first-child,
 #content article.single .entry p:first-child { margin-top: 10px; }
 #topContent article.single .entry p:last-child,
@@ -810,8 +808,9 @@ article h4 {
   position: relative;
   font-size: 115%;
   font-weight: bolder;
-  margin: 7px 0px 7px;
-  padding: 0px 0px 0px 12px;
+  margin: 7px 0px 10px;
+  padding: 0px 0px 5px 12px;
+  border-bottom: 1px solid #999;
 }
 article h4.about {
   position: relative;
@@ -820,6 +819,11 @@ article h4.about {
   padding: 2px 0px 0px 30px;
   font-weight: bolder;
   border-bottom: 1px solid #999;
+}
+article h5 {
+  position: relative;
+  font-size: 105%;
+  font-weight: bolder;
 }
 
 /****************
@@ -978,6 +982,7 @@ h4.game:before {
 .w50   { width: 50% !important; }
 .w25   { width: 25% !important; }
 /* margin-xxxxx: xxpx; */
+.mt10  { margin-top: 10px !important;}
 .mr20  { margin-right: 20px !important; }
 .ml0   { margin-left: 0 !important; }
 .ml20  { margin-left: 20px !important; }
@@ -1002,8 +1007,8 @@ h4.game:before {
 /* font-size */
 .fs_105 { font-size: 105%; }
 /* text&font-class */
-.tx_under { text-decoration: underline !important; }
-.fo_italy { font-style: italic !important; }
+.tdu { text-decoration: underline !important; }
+.fsi { font-style: italic !important; }
 /* ページ最下部の余白対応 */
 img[width="0"] { position: absolute; top: 0px !important; }
 /* status */

@@ -5,11 +5,10 @@
     <script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="0c90124c.ed5776d5.0c90124d.28929496";rakuten_items="ctsmatch";rakuten_genreId=0;rakuten_size="200x350";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
     </div>
 -->
-
-  <div class="r_frame">
+    <div class="r_frame">
       <p class="title">最新記事</p>
     </div>
-    <section id="fixed_point">
+    <section id="fixed-point">
       <ul>
         <?php
         $lastposts = get_posts( array( 'numberposts' => 10, 'orderby' => 'post_date', 'category' => '-113'));
@@ -74,7 +73,7 @@
                     echo $post['post_title'];
                   }?>
             </p>
-            <p class="t_right tx_under fo_italy"><?php echo number_format($post['count']);?> views</p>
+            <p class="t_right tdu fsi"><?php echo number_format($post['count']);?> views</p>
           </a>
         </li>
         <?php } ?>
