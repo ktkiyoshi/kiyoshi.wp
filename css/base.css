@@ -758,7 +758,7 @@ footer {
 /********************
 *** tiled-gallery ***
 ********************/
-.tiled-gallery__gallery #content article.single .entry img {
+#content article.single .entry .tiled-gallery__gallery img {
   width: auto;
   margin: auto;
   padding: unset !important;
