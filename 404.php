@@ -1,20 +1,12 @@
 <?php get_header(); ?>
-</head>
-
 <body>
-<div id="container">
-  <div id="header">
-    <div class="top_img">
-      <a href="/wp"><img src="<?php echo image(); ?>" /></a>
-    </div>
-  </div>
-
-  <div id="left">
-    <div class="l_frame">
-      <h1 class="entry_title">お探しのページはありません</h1>
-      <div class="entry"><a href="/wp">TOPへ戻る</a></div>
-    </div>
-  </div>
-
+<?php require("header_parts.php"); ?>
+<div id="wrapper">
+    <div id="main">
+        <div id="content">
+            <h1>お探しのページはありません</h1>
+        </div><!-- /#content -->
 <?php get_sidebar(); ?>
+        <div class="reset"></div>
+    </div><!-- /#main -->
 <?php get_footer(); ?>

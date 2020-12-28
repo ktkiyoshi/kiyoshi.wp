@@ -696,7 +696,6 @@ footer {
 #content article.single .entry ul li { list-style-type: square; }
 #topContent article.single .entry ol li,
 #content article.single .entry ol li { list-style-type: decimal; }
-
 #topContent article.single .entry img,
 #content article.single .entry img {
   display: block;
