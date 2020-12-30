@@ -8,7 +8,6 @@
                 <ul class="panels t_center">
                     <li class="panel_title"><a href="#panel1"><i class="fa fa-pencil" aria-hidden="true"></i><span>ブログ</span></a></li><!--
                  --><li class="panel_title"><a href="#panel2"><i class="fa fa-trash" aria-hidden="true"></i><span>はきだめ日記</span></a></li>
-                 <!-- <li class="panel_title"><a href="#panel3"><i class="fa fa-code" aria-hidden="true"></i><span>技術日記</span></a></li> -->
                 </ul>
                 <div id="panel1" class="panel">
                 <?php
@@ -104,39 +103,6 @@
                     </section>
                     <div class="category_more"><a href="/wp/category/dump">はきだめ日記をもっと見る</a></div>
                 </div>
-
-                <!--
-                <div id="panel3" class="panel">
-                    <section class="clearfix">
-                    <?php
-                        $query_array = $wp_query->query_vars;
-                        $query_array['posts_per_page'] = 10;
-                        $query_array['post_type'] = 'tech';
-                        query_posts($query_array);
-                        while (have_posts()) : the_post();
-                    ?>
-                        <article class="index matchHeight">
-                            <header>
-                                <ul class="entry_meta">
-                                    <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></li>
-                                    <li><?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
-                                </ul>
-                                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-                            </header>
-                            <div class="entry_info t_center">
-                                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_D"/></a>
-                                <p class="description_A"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "...", "UTF-8"); ?></p>
-                                <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
-                            </div>
-                        </article>
-                    <?php
-                        endwhile;
-                        wp_reset_query();
-                    ?>
-                    </section>
-                    <div class="category_more"><a href="/wp/category/dump">はきだめ日記をもっと見る</a></div>
-                </div>
-                -->
             </nav>
         </div><!-- /#content -->
 <?php get_sidebar(); ?>
