@@ -5,9 +5,8 @@ Author: Kiyoshi
 Author URI: https://kt-kiyoshi.com/
 Version: 1.0
 */
-@import url("css/dist/default.min.css");
-@import url("css/dist/common.min.css");
-@import url("css/font-awesome.min.css");
-
-/* web font */
-@import url('https://fonts.googleapis.com/css?family=Monda|Source+Code+Pro');
+/*
+CSS is defined in functions.php
+  - register_stylesheet
+  - load_stylesheet
+*/

@@ -663,28 +663,6 @@ footer {
 #content article.single .entry p:first-child { margin-top: 10px; }
 #topContent article.single .entry p:last-child,
 #content article.single .entry p:last-child { margin-bottom: 10px; }
-#topContent article.single .entry .bq,
-#content article.single .entry .bq {
-  position: relative;
-  border-left: 5px solid #c0c0c0;
-  background: #eee;
-  margin: 0 0 20px 10px;
-  padding: 10px 10px 10px 40px;
-}
-#topContent article.single .entry .bq:before,
-#content article.single .entry .bq:before {
-  content: "\f10d";
-  font-family: FontAwesome;
-  font-size: 170%;
-  position: absolute;
-  color: #999;
-  top: 0em;
-  left: 0.4em;
-  height: 12px;
-  width: 12px;
-}
-#topContent article.single .entry .bq p,
-#content article.single .entry .bq p { margin: 0; }
 #topContent article.single .entry ul,
 #content article.single .entry ul,
 #topContent article.single .entry ol,
@@ -702,7 +680,6 @@ footer {
   width: 90%;
   margin: 3px auto 30px;
   padding: 5px !important;
-  border: 1px solid #CCC;
 }
 #topContent article.single .entry img.sp,
 #content article.single .entry img.sp {
@@ -752,6 +729,38 @@ footer {
   display: inline-block;
   list-style-type: none;
   width: 30%;
+}
+
+/*****************
+*** blockquote ***
+*****************/
+blockquote,
+#topContent article.single .entry .bq,
+#content article.single .entry .bq {
+  position: relative;
+  border-left: 5px solid #c0c0c0;
+  background: #eee;
+  margin: 0 0 20px 10px;
+  padding: 10px 10px 10px 40px;
+}
+blockquote:before,
+#topContent article.single .entry .bq:before,
+#content article.single .entry .bq:before {
+  content: "\f10d";
+  font-family: FontAwesome;
+  font-size: 170%;
+  position: absolute;
+  color: #999;
+  top: 0em;
+  left: 0.4em;
+  height: 12px;
+  width: 12px;
+}
+blockquote p,
+#topContent article.single .entry .bq p,
+#content article.single .entry .bq p {
+  margin: 0;
+  padding-bottom: 0;
 }
 
 /********************
