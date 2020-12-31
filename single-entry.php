@@ -4,10 +4,18 @@
 <div id="wrapper">
     <div id="main">
         <div id="content">
+            <!-- category: dump以外 -->
+            <?php if ( !in_category('dump') ) { ?>
             <ul class="pre-next">
-                <li><?php previous_post_link('%link','<i class="fa fa-chevron-left" aria-hidden="true"></i>前の記事', true, ''); ?></li><!--
-             --><li><?php next_post_link('%link','次の記事<i class="fa fa-chevron-right right" aria-hidden="true"></i>', true, ''); ?></li>
+                <li><?php previous_post_link('%link','<i class="fa fa-chevron-left" aria-hidden="true"></i>前の記事', false, '113'); ?></li><!--
+             --><li><?php next_post_link('%link','次の記事<i class="fa fa-chevron-right right" aria-hidden="true"></i>', false, '113'); ?></li>
             </ul>
+            <?php } else { ?>
+                <ul class="pre-next">
+                <li><?php previous_post_link('%link','<i class="fa fa-chevron-left" aria-hidden="true"></i>前のはきだめ', true, ''); ?></li><!--
+             --><li><?php next_post_link('%link','次のはきだめ<i class="fa fa-chevron-right right" aria-hidden="true"></i>', true, ''); ?></li>
+            </ul>
+            <?php } ?>
             <article class="single">
                 <header>
                     <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
