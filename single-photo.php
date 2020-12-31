@@ -4,6 +4,10 @@
 <div id="wrapper">
     <div id="main">
         <div id="topContent">
+            <ul class="pre-next">
+                <li><?php previous_post_link('%link','<i class="fa fa-chevron-left" aria-hidden="true"></i>前の写真', false, ''); ?></li><!--
+             --><li><?php next_post_link('%link','次の写真<i class="fa fa-chevron-right right" aria-hidden="true"></i>', false, ''); ?></li>
+            </ul>
             <article class="single">
                 <div class="entry">
                     <?php the_post();the_content(); ?>
@@ -46,7 +50,7 @@
                 wp_reset_query();
             ?>
             </section>
-            <p class="category_more"><a href="/wp/category/dump">はきだめ日記をもっと見る</a></p>
+            <p class="category_more"><a href="/wp/photo/">写真日記一覧を見る</a></p>
         </div><!-- /#content -->
 <?php get_sidebar(); ?>
         <div class="reset"></div>
