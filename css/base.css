@@ -734,7 +734,7 @@ footer {
 /*****************
 *** blockquote ***
 *****************/
-#topContent article.single .entry blockquote,
+#content article.single .entry blockquote,
 #topContent article.single .entry .bq,
 #content article.single .entry .bq {
   position: relative;
@@ -743,7 +743,7 @@ footer {
   margin: 0 0 20px 10px;
   padding: 10px 10px 10px 40px;
 }
-#topContent article.single .entry blockquote:before,
+#content article.single .entry blockquote:before,
 #topContent article.single .entry .bq:before,
 #content article.single .entry .bq:before {
   content: "\f10d";
@@ -756,7 +756,7 @@ footer {
   height: 12px;
   width: 12px;
 }
-#topContent article.single .entry blockquote p,
+#content article.single .entry blockquote p,
 #topContent article.single .entry .bq p,
 #content article.single .entry .bq p {
   margin: 0;
