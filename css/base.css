@@ -659,8 +659,10 @@ footer {
 }
 #topContent article.single .entry a,
 #content article.single .entry a { text-decoration: underline; }
+/*
 #topContent article.single .entry p:first-child,
 #content article.single .entry p:first-child { margin-top: 10px; }
+*/
 #topContent article.single .entry p:last-child,
 #content article.single .entry p:last-child { margin-bottom: 10px; }
 #topContent article.single .entry ul,
