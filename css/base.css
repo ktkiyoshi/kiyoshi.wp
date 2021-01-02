@@ -196,20 +196,6 @@ nav.catNav li a:hover { text-decoration: underline; }
   width: 100%;
   padding-top: 10px;
 }
-#topContent .head {
-  text-align: center;
-  margin-bottom: 20px;
-}
-#topContent .head li.photo {
-  display: inline-block;
-  width: 22%;
-}
-#topContent .head li.photo img {
-  height: 120px;
-  margin: 0 auto;
-  padding: 3px;
-  border: 1px solid #CCC;
-}
 /* pre-next */
 #main ul.pre-next {
     margin-bottom: 10px;
@@ -248,7 +234,6 @@ nav.catNav li a:hover { text-decoration: underline; }
   width: 50%;
   float: left;
 }
-#topContent article .entry_meta,
 #content article .entry_meta {
   overflow: hidden;
   font-family: 'Source Code Pro', monospace;
@@ -265,7 +250,6 @@ nav.catNav li a:hover { text-decoration: underline; }
 #content article .entry_info .entry_meta {
   padding-top: 10px;
 }
-#topContent article .entry_meta li,
 #content article .entry_meta li {
   display: inline;
 }
@@ -641,57 +625,38 @@ footer {
 /*******************
 *** Single Entry ***
 *******************/
-#topContent article.single,
 #content article.single { margin: 0 0 25px; }
-#topContent article.single .entry,
 #content article.single .entry { margin: 5px 15px 0; }
-#topContent article.single .entry p,
 #content article.single .entry p {
   font-size: 110%;
   padding-bottom: 25px;
   line-height: 1.8;
 }
-#topContent article.single .entry p.word,
 #content article.single .entry p.word {
   font-size: 135%;
   font-weight: bold;
   margin: 30px 0px 30px;
 }
-#topContent article.single .entry a,
 #content article.single .entry a { text-decoration: underline; }
-/*
-#topContent article.single .entry p:first-child,
-#content article.single .entry p:first-child { margin-top: 10px; }
-*/
-#topContent article.single .entry p:last-child,
 #content article.single .entry p:last-child { margin-bottom: 10px; }
-#topContent article.single .entry ul,
 #content article.single .entry ul,
-#topContent article.single .entry ol,
 #content article.single .entry ol,
-#topContent article.single .entry dl,
 #content article.single .entry dl { margin: 0 0 20px 25px; }
 #content article.single .entry ul.toc_list { margin: 0 0 0px 25px; }
-#topContent article.single .entry ul li,
 #content article.single .entry ul li { list-style-type: square; }
-#topContent article.single .entry ol li,
 #content article.single .entry ol li { list-style-type: decimal; }
-#topContent article.single .entry img,
 #content article.single .entry img {
   display: block;
   width: 90%;
   margin: 3px auto 30px;
   padding: 5px !important;
 }
-#topContent article.single .entry img.sp,
 #content article.single .entry img.sp {
   width: 50%;
 }
-#topContent article.single .entry img.tb,
 #content article.single .entry img.tb {
   width: 70%;
 }
-#topContent article.single .entry img.normal,
 #content article.single .entry img.normal {
   width: auto;
 }
@@ -736,18 +701,14 @@ footer {
 /*****************
 *** blockquote ***
 *****************/
-#content article.single .entry blockquote,
-#topContent article.single .entry .bq,
-#content article.single .entry .bq {
+#content article.single .entry blockquote {
   position: relative;
   border-left: 5px solid #c0c0c0;
   background: #eee;
   margin: 0 0 20px 10px;
   padding: 10px 10px 10px 40px;
 }
-#content article.single .entry blockquote:before,
-#topContent article.single .entry .bq:before,
-#content article.single .entry .bq:before {
+#content article.single .entry blockquote:before {
   content: "\f10d";
   font-family: FontAwesome;
   font-size: 170%;
@@ -758,11 +719,14 @@ footer {
   height: 12px;
   width: 12px;
 }
-#content article.single .entry blockquote p,
-#topContent article.single .entry .bq p,
-#content article.single .entry .bq p {
+#content article.single .entry blockquote p {
   margin: 0;
   padding-bottom: 0;
+}
+#content article.single .entry blockquote cite {
+  color: #999;
+  display: block;
+  text-align: right;
 }
 
 /********************
@@ -784,9 +748,12 @@ footer {
 }
 .social iframe, .social div {
   display: inline !important;
-  margin-right: 3px;
   vertical-align: bottom !important;
   line-height: 1;
+}
+.fb-like > span {
+  height: 20px !important;
+  width: 80px !important;
 }
 .twitter-share-button { width: 90px !important; }
 
