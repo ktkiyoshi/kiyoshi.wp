@@ -259,44 +259,7 @@ if(!function_exists('get_archives_array')){
 
 /* Custom Post for PhotoDiary
    reference from http://www.webcreatorbox.com/tech/custom-post-type/ */
-add_action( 'init', 'register_cpt_photo' );
-function register_cpt_photo() {
-    $labels = array(
-        'menu_name' => _x( '写真日記', 'photo' ),         // 管理画面左メニュー
-        'name' => _x( '投稿一覧', 'photo' ),              // 管理画面右ラベル
-        'singular_name' => _x( 'なぞラベル', 'photo' ),
-        'add_new' => _x( '新規追加', 'photo' ),           // 管理画面左メニュー
-        'add_new_item' => _x( '新規投稿を追加', 'photo' ), // 管理画面右ラベル
-        'edit_item' => _x( '投稿の編集', 'photo' ),
-        'new_item' => _x( 'New PhotoDiary', 'photo' ),
-        'view_item' => _x( 'View PhotoDiary', 'photo' ),
-        'search_items' => _x( 'Search PhotoDiary', 'photo' ),
-        'not_found' => _x( 'No PhotoDiary found', 'photo' ),
-        'not_found_in_trash' => _x( 'No PhotoDiary found in Trash', 'photo' ),
-        'parent_item_colon' => _x( 'Parent PhotoDiary:', 'photo' ),
-    );
-    $args = array(
-        'labels' => $labels,
-        'hierarchical' => false,
-        'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
-        // 'taxonomies' => array( 'category', 'post_tag' ),
-        // カテゴリとタグ使わない
-        'taxonomies' => array(),
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_nav_menus' => true,
-        'publicly_queryable' => true,
-        'exclude_from_search' => false,
-        'has_archive' => true,
-        'query_var' => true,
-        'can_export' => true,
-        'rewrite' => true,
-        'capability_type' => 'post'
-    );
-
-    register_post_type( 'photo', $args );
-}
+/* DELETED this custom post */
 
 /* Custom Post for TechBlog
    reference from http://qiita.com/nagasawaaaa/items/9501c0a2e544d85ee78d */

@@ -36,22 +36,6 @@
     </section>
 
     <div class="r_frame">
-      <p class="title">写真日記</p>
-    </div>
-    <section class="t_center">
-      <ul>
-      <?php global $post; $mypost = get_posts( array( 'numberposts' => 2, 'post_type' => 'photo' ));?>
-      <?php foreach( $mypost as $post ) : setup_postdata($post); ?>
-        <li class="photoDiary">
-            <a href="<?php the_permalink(); ?>"><img src="<?php echo catch_that_image("thumbnail"); ?>" class="thumbnail_F" /></a>
-            <time datetime="<?php the_time('Y/m/d/D') ?>" pubdate><?php the_time('Y/m/d/D') ?></time>
-        </li>
-      <?php endforeach; ?>
-      </ul>
-      <p class="link"><a href="/wp/photo">写真日記一覧を見る</p>
-    </section>
-
-    <div class="r_frame">
       <p class="title">人気記事ランキング</p>
     </div>
     <section>
