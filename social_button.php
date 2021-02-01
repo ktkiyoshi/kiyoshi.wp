@@ -6,4 +6,6 @@
     <div><a href="https://b.hatena.ne.jp/entry/<?php the_permalink(); ?>" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="en" title="<?php the_title(); ?>"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></div>
     <!-- Twitter -->
     <div><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>" data-via="ktkiyoshi" data-lang="en">Tweet</a></div>
+    <!-- note -->
+    <div><a href="https://note.com/intent/social_button" class="note-social-button" data-url="<?php the_permalink(); ?>"></a></div>
 </div>
