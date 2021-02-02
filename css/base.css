@@ -281,13 +281,13 @@ nav.catNav li a:hover { text-decoration: underline; }
   background: #3D4349;
   color: white;
 }
-#content article .thumbnail_A {
+/* #content article .thumbnail_A {
   display: block;
   border: 1px solid #CCC;
   margin: 10px auto 10px;
   padding: 5px;
   width: 90%;
-}
+} */
 #content article .thumbnail_B {
   display: block;
   border: 1px solid #CCC;
@@ -352,6 +352,39 @@ nav.catNav li a:hover { text-decoration: underline; }
 }
 #content .box_entry_pc { display: block; }
 #content .box_entry_sp { display: none; }
+
+/***********
+*** note ***
+***********/
+#content .note_logo {
+  display: block;
+  margin: 3px auto 30px !important;
+  width: 70%;
+}
+#content article.index.note .entry_meta {
+  border-top: 3px solid #41C9B4;
+}
+#content article.note .entry_more a {
+  background: #41C9B4;
+}
+#content article.note .entry_more a:hover {
+  opacity: 0.7;
+}
+#content .note_more {
+  border: 1px solid #fff;
+  text-align: center;
+}
+#content .note_more a {
+  background-color: #41C9B4;
+  color: #fff;
+  display: block;
+  font-weight: 700;
+  padding: 8px 0;
+  letter-spacing: .2em;
+}
+#content .note_more a:hover {
+  opacity: 0.7;
+}
 
 /********************
 *** Category Dump ***
@@ -549,10 +582,25 @@ nav.catNav li a:hover { text-decoration: underline; }
   padding: 2px;
   border: 1px solid #CCC;
 }
-#side li.photoDiary {
+
+/****************
+*** Tag/Category Cloud ***
+****************/
+#side p.cloud {
+  font-family: 'Source Code Pro', monospace;
+  margin: 7px 10px;
+}
+#side p.cloud a {
+  border: 1px #777 solid;
+  border-radius: 10px;
+  color: #777;
+  padding: 3px 10px;
+  margin: 3px 5px 3px 0;
   display: inline-block;
-  margin: 0 5px;
-  padding: 0;
+}
+#side p.cloud a:hover{
+  background: #3D4349;
+  color: white;
 }
 
 /*************

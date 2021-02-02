@@ -36,7 +36,7 @@
       <p class="title">タグ</p>
     </div>
     <section>
-      <p class="tags"><?php wp_tag_cloud( array( 'taxonomy' => 'tech_tag' ) ); ?></p>
+      <p class="cloud"><?php wp_tag_cloud( array( 'taxonomy' => 'tech_tag' ) ); ?></p>
     </sction>
 
   </div><!-- /#sidefixed -->

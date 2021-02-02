@@ -355,7 +355,27 @@ remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');
 remove_filter('the_title', 'wptexturize');
 
-/* If customer post type don't be shown,
+/* get note RSS */
+//RSSの読み込み
+function my_feed_display($feedURL, $num){
+    if(!$feedURL){return false;}
+    if(!$num){$num = 6;}
+    include_once( ABSPATH . WPINC . '/feed.php' );
+    $rss = fetch_feed( $feedURL );
+    if ( !is_wp_error( $rss ) ) {
+        $maxitems = $rss->get_item_quantity($num);
+        $rss_items = $rss->get_items( 0, $maxitems );
+    }
+    if ( !empty( $maxitems ) ) {
+        if ($maxitems == 0){
+            echo '<!-- RSSデータがありませんでした -->';
+        } else {
+            return $rss_items;
+        }
+    }
+ }
+
+/* If custom post type don't be shown,
    please turn off comment-out once.
 */
 // global $wp_rewrite;

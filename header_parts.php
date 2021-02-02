@@ -28,6 +28,7 @@
             <ul>
                 <li><span class="">超日記について</span><a href="/wp/about">ABOUT</a></li>
                 <li><span class="">日記エントリー</span><a href="/wp">DIARY</a></li>
+                <li><span class="">私のnote</span><a href="/wp/note">NOTE</a></li>
                 <li><span class="">私のインスタ</span><a href="/wp/gallery">GALLERY</a></li>
                 <li><span class="">技術エントリー</span><a href="/wp/tech">TECH-BLOG</a></li>
             </ul>
