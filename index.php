@@ -13,7 +13,7 @@
                 <div id="panel1" class="panel">
                     <?php
                         $query_array = $wp_query->query_vars;
-                        $query_array['posts_per_page'] = 9;
+                        $query_array['posts_per_page'] = 10;
                         $query_array['cat'] = -113; // Dump除外
                         query_posts($query_array);
                         $paginate_base = get_pagenum_link(1);
