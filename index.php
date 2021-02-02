@@ -33,7 +33,7 @@
                         );
                         echo '<div class="page-navi">'."\n".paginate_links($pagination).'</div>'."\n";
                     ?>
-                    <section>
+                    <section class="clearfix">
                     <?php
                         while (have_posts()) : the_post();
                     ?>
