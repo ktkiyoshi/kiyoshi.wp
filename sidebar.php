@@ -22,6 +22,7 @@
       <ul>
         <?php
         $lastposts = get_posts( array( 'numberposts' => 10, 'orderby' => 'post_date', 'category' => '-113'));
+        $counter = 0;
         foreach($lastposts as $post) :
         $counter++;
         setup_postdata($post);

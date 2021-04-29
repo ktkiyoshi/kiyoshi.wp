@@ -18,7 +18,7 @@ textarea  { width: 100%; }
 img       { max-width: 100%; height: auto; }
 
 #wrapper {
-  max-width: 1200px;
+  max-width: 1000px;
   height: 100%;
   margin: 0 auto;
   padding: 90px 5px 0;
@@ -40,7 +40,7 @@ img       { max-width: 100%; height: auto; }
 }
 .inner {
     position: relative;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 /* header */
@@ -223,7 +223,7 @@ nav.catNav li a:hover { text-decoration: underline; }
 **************/
 #content {
   float: left;
-  width: 71%;
+  width: 67%;
 }
 #content .top_img {
   display: block;
@@ -520,7 +520,7 @@ nav.catNav li a:hover { text-decoration: underline; }
 ***********/
 #side {
   float: right;
-  width: 27%;
+  width: 33%;
   max-width: 324px;
 }
 #sidefixed {
@@ -676,7 +676,7 @@ footer {
 #content article.single { margin: 0 0 25px; }
 #content article.single .entry { margin: 5px 15px 0; }
 #content article.single .entry p {
-  font-size: 110%;
+  font-size: 115%;
   padding-bottom: 25px;
   line-height: 1.8;
 }

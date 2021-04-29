@@ -13,6 +13,7 @@ function viewingRanking() {
 function getEntryArray($sql) {
   global $wpdb;
   $result = $wpdb->get_results($sql);
+  $n = 0;
   foreach ($result as $val) {
     preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $val->post_content, $matches);
 	  /*preg_match_all('/<img.+?class=".+?wp-image-(.+).*?".*?>/i', $val->post_content, $matches);*/
