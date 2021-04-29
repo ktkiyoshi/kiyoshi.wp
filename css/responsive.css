@@ -163,9 +163,8 @@
     #footer .f_frame { width: 95%; }
     #footer .display_pc { display: none; }
     #footer .display_sp { display: block; }
-    #content .box_entry_pc, .count10 { display: none; }
+    #content .box_entry_pc { display: none; }
     #content .box_entry_sp { display: block; }
-    #content .instagram { width: 50%; }
     #content .circle { margin: 10px 5px 10px 5px; }
 }
 @media screen and (max-width: 375px) {

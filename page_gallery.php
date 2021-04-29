@@ -30,7 +30,7 @@ Template Name: Gallery
         </div>
           <?php if (($i+1) == count($media)) { ?>
           <div class="reset"></div>
-          <?php } elseif (($i%3) == 2) { ?>
+          <?php } elseif (($i%2) == 1) { ?>
           <div class="reset box_entry_pc"><br /></div>
           <?php } if (($i%2) == 1) { ?>
           <div class="reset box_entry_sp"><br /></div>

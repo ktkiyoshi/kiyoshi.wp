@@ -14,6 +14,5 @@ for($i = 0; $i < count($uri); $i++) {
     $json[$i] = json_decode(curl_exec($ch), true);
     curl_close($ch);
 }
-$user = $json[0]['data'];
 $media = $json[1]['data'];
 ?>
