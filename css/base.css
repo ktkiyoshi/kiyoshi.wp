@@ -522,10 +522,10 @@ nav.catNav li a:hover { text-decoration: underline; }
 #side {
   float: right;
   width: 28%;
-  max-width: 324px;
+  max-width: 280px;
 }
 #sidefixed {
-  max-width: 324px;
+  max-width: 280px;
 }
 #side .r_frame {
   border-top: 3px solid #777;
