@@ -44,7 +44,7 @@ article h2:after  { content: ""; }
 /*******************
 *** Single Entry ***
 *******************/
-#content article.single .entry > p:first-child {
+#content.single article .entry > p:first-child {
   display: none;
 }
 

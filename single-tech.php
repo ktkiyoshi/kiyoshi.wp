@@ -4,13 +4,13 @@
     <?php require("parts/header_link.php"); ?>
     <div id="wrapper" class="tech">
         <div id="main">
-            <div id="content">
+            <div id="content" class="single">
                 <section>
                     <p class="dashed mt10">
                         技術記事については、<a href="https://qiita.com/ktkiyoshi" target="_blank" class="tdu">Qiita</a>にも稀に投稿しています。
                     </p>
                 </section>
-                <article class="single">
+                <article>
                     <header>
                         <ul class="entry_meta">
                             <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></li>
@@ -30,7 +30,5 @@
                     <?php require("parts/social_button.php"); ?>
                 </article>
             </div><!-- /#content -->
-            <?php get_sidebar('tech'); ?>
-            <div class="reset"></div>
         </div><!-- /#main -->
         <?php get_footer(); ?>

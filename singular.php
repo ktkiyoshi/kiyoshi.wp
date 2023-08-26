@@ -20,8 +20,6 @@
                     </div>
                     <?php require("parts/social_button.php"); ?>
                 </article>
-
             </div><!-- /#content -->
-            <div class="reset"></div>
         </div><!-- /#main -->
         <?php get_footer(); ?>
