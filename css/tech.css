@@ -47,3 +47,23 @@ article h2:after  { content: ""; }
 #content article.single .entry > p:first-child {
   display: none;
 }
+
+/************
+*** Cloud ***
+************/
+#side p.cloud {
+  font-family: 'Source Code Pro', monospace;
+  margin: 7px 10px;
+}
+#side p.cloud a {
+  border: 1px #777 solid;
+  border-radius: 10px;
+  color: #777;
+  padding: 3px 10px;
+  margin: 3px 5px 3px 0;
+  display: inline-block;
+}
+#side p.cloud a:hover{
+  background: #3D4349;
+  color: white;
+}

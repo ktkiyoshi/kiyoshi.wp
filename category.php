@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <body>
-<?php require("header_parts.php"); ?>
+<?php require("parts/header_link.php"); ?>
 <div id="wrapper">
     <div id="main">
         <div id="content">

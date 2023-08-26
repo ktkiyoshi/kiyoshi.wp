@@ -9,8 +9,7 @@
 /* max-768px for nothing sidebar */
 @media screen and (max-width: 768px) {
     #side { display: none; }
-    #content { width: 100%; }
-    #main div.pre-next { width: 100%; }
+    #content, #content.single { width: 100%; }
 }
 /* max-665px for footer 1 column and photo-diary */
 @media screen and (max-width: 665px) {
@@ -148,15 +147,15 @@
     #content article .description { margin-left: 0; padding: 0 0 5px 0; }
     #content article .entry_info { margin: 5px 5px 0; }
     #content article .entry_more { margin-right: 5px; }
-    #content article.single .entry { margin: 5px 5px 0; }
+    #content.single article .entry { margin: 5px 5px 0; }
     #content .past_entries { width: 50%; margin-bottom: 20px; }
     #content .past_entries .entry_more { float: none; }
     /* For original-size image but big than sp width */
-    #content article.single .entry img.normal {
+    #content.single article .entry img.normal {
       width: 90%;
     }
     /* For original-size image */
-    #content article.single .entry img.normal.org {
+    #content.single article .entry img.normal.org {
       width: auto;
     }
     #footer { width: 80%; margin: 0 auto; }

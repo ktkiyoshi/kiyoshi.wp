@@ -1,384 +1,82 @@
 <?php
-/* Popular Entries Ranking on sidebar */
-function popularRanking() {
-    $sql = "SELECT wp.ID,(ws.fb_like+ws.fb_share+ws.fb_comment+ws.tweet+ws.go_plus+ws.hatena) AS count, wp.post_date AS date, YEAR(wp.post_date) AS year, DATE_FORMAT(wp.post_date, '%m') AS month, DATE_FORMAT(wp.post_date, '%d') AS day, wp.post_name, wp.post_title, wp.post_content FROM wp_posts wp, wp_social ws WHERE wp.ID = ws.ID AND wp.post_type = 'post' AND wp.post_status = 'publish' ORDER BY count DESC, wp.post_date DESC LIMIT 5;";
-    return getEntryArray($sql);
-}
+// global $wp_rewrite;
+// $wp_rewrite->flush_rules();
 
-function viewingRanking() {
-    $sql = "SELECT wp.post_date AS date, YEAR(wp.post_date) AS year, DATE_FORMAT(wp.post_date, '%m') AS month, DATE_FORMAT(wp.post_date, '%d') AS day, wp.post_name, wp.post_title, wp.post_content, wpm.meta_value FROM wp_postmeta wpm, wp_posts wp WHERE wpm.post_id = wp.ID AND wp.post_status = 'publish' AND wpm.meta_key = 'views' ORDER BY CAST(wpm.meta_value AS DECIMAL) DESC LIMIT 5;";
-    return getEntryArray($sql);
-}
+// セキュリティ対策
+remove_action('wp_head', 'wp_generator'); // WordPressのバージョン
+remove_action('wp_head', 'wp_shortlink_wp_head'); // 短縮URLのlink
+remove_action('wp_head', 'wlwmanifest_link'); // ブログエディターのマニフェストファイル
+remove_action('wp_head', 'rsd_link'); // 外部から編集するためのAPI
+remove_action('wp_head', 'feed_links_extra', 3); // フィードへのリンク
+remove_action('wp_head', 'print_emoji_detection_script', 7); // 絵文字に関するJavaScript
+remove_action('wp_head', 'rel_canonical'); // カノニカル
+remove_action('wp_print_styles', 'print_emoji_styles'); // 絵文字に関するCSS
+remove_action('admin_print_scripts', 'print_emoji_detection_script'); // 絵文字に関するJavaScript
+remove_action('admin_print_styles', 'print_emoji_styles'); // 絵文字に関するCSS
 
-function getEntryArray($sql) {
-  global $wpdb;
-  $result = $wpdb->get_results($sql);
-  $n = 0;
-  foreach ($result as $val) {
-    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $val->post_content, $matches);
-	  /*preg_match_all('/<img.+?class=".+?wp-image-(.+).*?".*?>/i', $val->post_content, $matches);*/
-	 $tmp = array(
-      'url' => get_template_directory_uri()."/".$val->year."/".$val->month."/".$val->day."/".$val->post_name,
-      'post_title' => $val->post_title,
-      'date' => $val->year."/".$val->month."/".$val->day,
-      'image' => $matches[1][0],
-      //'image' => my_wp_get_attachment_medium_url($matches[1][0]),
-      'count' => $val->meta_value
-      );
-    $populars[$n] = $tmp;
-    $n++;
-  }
-  return $populars;
-}
-
-//画像IDからサムネイルサイズのパスを取得
-function my_wp_get_attachment_medium_url( $id ) {
-  $thumbnail_array = image_downsize( $id, 'thumbnail' );
-  $thumbnail_path = $thumbnail_array[0];
-  return $thumbnail_path;
-}
-
-function replaceImagePath($arg) {
-  $content = str_replace('"/img/', '"' . get_bloginfo('template_directory') . '/img/', $arg);
-  return $content;
-}
-add_action('the_content', 'replaceImagePath');
-
-/* Delete header's bar */
-add_filter( 'show_admin_bar', '__return_false' );
-
-/* javascript */
-function get_javascript_uri() {
-  return $javascript_uri = get_template_directory_uri() . "/js/";
-}
-
-/* Header img */
-function image(){
-  $rdmimg = array();
-  $rdmimg[0]=get_template_directory_uri() ."/img/header/image1_1000.png";
-  $rdmimg[1]=get_template_directory_uri() ."/img/header/image2_1000.png";
-  $rdmimg[2]=get_template_directory_uri() ."/img/header/image3_1000.png";
-  $rdmimg[3]=get_template_directory_uri() ."/img/header/image4_1000.png";
-  $rdmimg[4]=get_template_directory_uri() ."/img/header/image5_1000.png";
-  $rdmimg[5]=get_template_directory_uri() ."/img/header/image6_1000.png";
-  $rdmimg[6]=get_template_directory_uri() ."/img/header/image7_1000.png";
-  return $rdmimg[rand(0,6)];
-}
-
-/* Super comments */
-function super_comments($comment, $args, $depth) {
-  $GLOBALS['comment'] = $comment; ?>
-  <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-  <div id="comment-<?php comment_ID(); ?>">
-    <?php printf(get_comment_author_link()) ?> |
-    <?php if ($comment->comment_approved == '0') : ?>
-      <em><?php _e('Your comment is awaiting moderation.') ?></em><br />
-    <?php endif; ?>
-    <?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a> |
-    <?php edit_comment_link('Edit') ?>
-    <?php comment_text() ?>
-  </div>
-<?php
-}
-
-function commentNumber($post_id) {
-  global $wpdb;
-  $query = "SELECT count(*) FROM wp_comments WHERE comment_post_ID = '$post_id'";
-  return $wpdb->get_var($query);
-}
-
-function commentCloseDays() {
-  global $wpdb;
-  $query = "SELECT option_value FROM wp_options WHERE option_name = 'close_comments_days_old'";
-  return $wpdb->get_var($query);
-}
-
-/* The first image */
-function catch_that_image($type = null) {
-    global $post, $posts;
-    $first_img = '';
-    ob_start();
-    ob_end_clean();
-    /*
-    if(!empty($type)) {
-        preg_match_all('/<img.+?class=".+?wp-image-(.+).*?".*?>/i', $post->post_content, $matches);
-        $first_img = my_wp_get_attachment_medium_url($matches[1][0]);
-    } else {
-    */
-        preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-        $first_img = $matches[1][0];
-    /*}*/
-    if(empty($first_img)){
-        $first_img = 'https://kt-kiyoshi.com/wp/images/nophoto.jpg';
-    }
-    return $first_img;
-}
-
-/* Delete [...] */
-function new_excerpt_more($more) {
-    return '';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
-
-/* Add support for WordPress 3.0's custom menus */
-add_action( 'init', 'register_my_menu' );
-/* Register area for custom menu */
-function register_my_menu() {
-    register_nav_menu( 'primary-menu', __( 'Primary Menu' ) );
-}
-
-/* Display page top via more link   */
-function remove_more_jump_link($link) {
-  $offset = strpos($link, '#more-');
-  if ($offset) { $end = strpos($link, '"',$offset); }
-  if ($end) { $link = substr_replace($link, '', $offset, $end-$offset); }
-  return $link;
-}
-add_filter('the_content_more_link', 'remove_more_jump_link');
-
-/* Using category in wp_get_archives() */
-function my_getarchives_category_where($where, $args){
-    global $wpdb;//データベース、テーブル関連の情報が入っているグローバル定数
-    if (isset($args['cat'])){
-        // 引数にcatと名前の付いた変数がカンマ区切りでセットされている場合、それぞれの数字を分割して配列$selectedCategoriesに格納する
-        $selectedCategories = explode(',',$args['cat']);
-        //それぞれの配列の数字が、負の場合=>$categoriesOutに、正の場合=>$categoriesInに、カンマ区切りで付け加える。
-        foreach ($selectedCategories as $key) {
-            if($key<0){
-                    $categoriesOut .= abs($key).",";
-            }else{
-                    $categoriesIn .= abs($key).",";
-            }
-        }
-        //それぞれの変数の最後の,文字を削除
-        $categoriesIn = rtrim($categoriesIn,",");
-        $categoriesOut = rtrim($categoriesOut,",");
-        //$whereでSQLのwhere句を作成する。
-        $where .= ' AND '.$wpdb->prefix.'posts.ID IN (SELECT DISTINCT ID FROM '.$wpdb->prefix.'posts'
-                .' JOIN '.$wpdb->prefix.'term_relationships term_relationships ON term_relationships.object_id = '.$wpdb->prefix.'posts.ID'
-                .' JOIN '.$wpdb->prefix.'term_taxonomy term_taxonomy ON term_taxonomy.term_taxonomy_id = term_relationships.term_taxonomy_id'
-                .' WHERE term_taxonomy.taxonomy = \'category\'';
-        if (!empty($categoriesIn)) {
-            $where .= " AND term_taxonomy.term_id IN ($categoriesIn)";
-        }
-        if (!empty($categoriesOut)) {
-            $where .= " AND term_taxonomy.term_id NOT IN ($categoriesOut)";
-        }
-        $where .= ')';
-    }
-    return $where;
-}
-if (function_exists('add_filter')){
-    add_filter('getarchives_where', 'my_getarchives_category_where', 10, 2);
-}
-
-/* Usable Widgets */
-if (function_exists('register_sidebar')) {
-  register_sidebar();
-}
-
-/* Remove <p> */
-/*remove_filter('the_content', 'wpautop');*/
-
-/**
-* @function get_archives_array
-* @param post_type(string) / period(string) / year(Y) / limit(int)
-* @return array
-*/
-if(!function_exists('get_archives_array')){
-    function get_archives_array($args = ''){
-        global $wpdb, $wp_locale;
-        $defaults = array(
-            'post_type' => '',
-            'period'  => 'monthly',
-            'year' => '',
-            'limit' => ''
-        );
-        $args = wp_parse_args($args, $defaults);
-        extract($args, EXTR_SKIP);
-        if($post_type == ''){
-            $post_type = 'post';
-        }elseif($post_type == 'any'){
-            $post_types = get_post_types(array('public'=>true, '_builtin'=>false, 'show_ui'=>true));
-            $post_type_ary = array();
-            foreach($post_types as $post_type){
-                $post_type_obj = get_post_type_object($post_type);
-                if(!$post_type_obj){
-                    continue;
-                }
-                if($post_type_obj->has_archive === true){
-                    $slug = $post_type_obj->rewrite['slug'];
-                }else{
-                    $slug = $post_type_obj->has_archive;
-                }
-                array_push($post_type_ary, $slug);
-            }
-            $post_type = join("', '", $post_type_ary);
-        }else{
-            if(!post_type_exists($post_type)){
-                return false;
-            }
-        }
-        if($period == ''){
-            $period = 'monthly';
-        }
-        if($year != ''){
-            $year = intval($year);
-            $year = " AND DATE_FORMAT(post_date, '%Y') = ".$year;
-        }
-        if($limit != ''){
-            $limit = absint($limit);
-            $limit = ' LIMIT '.$limit;
-        }
-        $where  = "WHERE post_type IN ('".$post_type."') AND post_status = 'publish'{$year}";
-        $join   = "";
-        $where  = apply_filters('getarchivesary_where', $where, $args);
-        $join   = apply_filters('getarchivesary_join' , $join , $args);
-        if($period == 'monthly'){
-            $query = "SELECT YEAR(post_date) AS 'year', MONTH(post_date) AS 'month', count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC $limit";
-        }elseif($period == 'yearly'){
-            $query = "SELECT YEAR(post_date) AS 'year', count(ID) as posts FROM $wpdb->posts $join $where GROUP BY YEAR(post_date) ORDER BY post_date DESC $limit";
-        }
-        $key = md5($query);
-        $cache = wp_cache_get('get_archives_array', 'general');
-        if(!isset($cache[$key])){
-            $arcresults = $wpdb->get_results($query);
-            $cache[$key] = $arcresults;
-            wp_cache_set('get_archives_array', $cache, 'general');
-        }else{
-            $arcresults = $cache[$key];
-        }
-        if($arcresults){
-            $output = (array)$arcresults;
-        }
-        if(empty($output)){
-            return false;
-        }
-        return $output;
-    }
-}
-
-/* Custom Post for PhotoDiary
-   reference from http://www.webcreatorbox.com/tech/custom-post-type/ */
-/* DELETED this custom post */
-
-/* Custom Post for TechBlog
-   reference from http://qiita.com/nagasawaaaa/items/9501c0a2e544d85ee78d */
-add_action( 'init', 'register_cpt_tech' );
-function register_cpt_tech() {
-    $labels = array(
-        'menu_name' => __( '技術記事', 'tech' ),
-        'name' => __( '投稿一覧', 'tech' ),
-        'singular_name' => __( 'なぞラベル', 'tech' ),
-        'add_new' => __( '新規追加', 'tech' ),
-        'add_new_item' => __( '新規投稿を追加', 'tech' ),
-        'edit_item' => __( '投稿の編集', 'tech' ),
-        'new_item' => __( 'New TechBlog', 'tech' ),
-        'view_item' => __( 'View TechBlog', 'tech' ),
-        'search_items' => __( 'Search TechBlog', 'tech' ),
-        'not_found' => __( 'No TechBlog found', 'tech' ),
-        'not_found_in_trash' => __( 'No TechBlog found in Trash', 'tech' ),
-        'parent_item_colon' => __( 'Parent TechBlog:', 'tech' ),
-    );
-    $args = array(
-        'labels' => $labels,
-        'menu_position' => 5,
-        'hierarchical' => false,
-        'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes' ),
-        // 技術用タグを使う(定義は、register_taxonomy参照)
-        'taxonomies' => array( 'tech_tag' ),
-        'public' => true,
-        'show_ui' => true,
-        'show_in_nav_menus' => true,
-        'publicly_queryable' => true,
-        'exclude_from_search' => false,
-        'has_archive' => true,
-        'query_var' => true,
-        'can_export' => true,
-        'rewrite' => true,
-        'capability_type' => 'post'
-    );
-    register_post_type( 'tech', $args );
-
-    /* Custom Taxonomy for TechBlog */
-    register_taxonomy(
-        'tech_tag',
-        'tech',
-        array(
-            'label' => '技術タグ',
-            'labels' => array(
-                'all_items' => '技術タグ一覧',
-                'add_new_item' => '新規技術タグを追加'
-            ),
-            'public' => true,
-            'show_ui' => true,
-            'hierarchical' => false
-        )
-    );
-}
-/* Enable to use Martdown for custom_post */
-add_post_type_support( 'tech', 'wpcom-markdown' );
-
-/* Enable to publicize_share by jetpack for custom_post */
-add_action( 'init', 'cpt_publicize_share' );
-function cpt_publicize_share() {
-    add_post_type_support( 'tech', 'publicize' );
-}
-
-/* Add style-sheet */
-function register_stylesheet() {
-    wp_register_style( 'default', get_template_directory_uri() . '/css/dist/default.min.css' );
-    wp_register_style( 'base', get_template_directory_uri() . '/css/dist/base.min.css');
-    wp_register_style( 'awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-    wp_register_style( 'source', '//fonts.googleapis.com/css?family=Monda|Source+Code+Pro' );
-    wp_register_style( 'tech', get_template_directory_uri() . '/css/dist/tech.min.css' );
-    wp_register_style( 'responsive', get_template_directory_uri() . '/css/dist/responsive.min.css' );
-    wp_register_style( 'tomorrow', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css' );
-}
-function load_stylesheet() {
-    // Register css
-    register_stylesheet();
-
-    wp_enqueue_style('default');
-    wp_enqueue_style('base');
-    wp_enqueue_style('awesome');
-    wp_enqueue_style('source');
-    if ( get_post_type() == 'tech' ) {
-        wp_enqueue_style('tech');
-    }
-    wp_enqueue_style('responsive');
-    wp_enqueue_style('tomorrow');
- }
-add_action('wp_enqueue_scripts', 'load_stylesheet');
+// 記事・抜粋の自動整形を無効化
+remove_filter('the_content', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
 
 /* Don't change "" to ”” */
 remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');
 remove_filter('the_title', 'wptexturize');
 
-/* get note RSS */
-//RSSの読み込み
-function my_feed_display($feedURL, $num){
-    if(!$feedURL){return false;}
-    if(!$num){$num = 6;}
-    include_once( ABSPATH . WPINC . '/feed.php' );
-    $rss = fetch_feed( $feedURL );
-    if ( !is_wp_error( $rss ) ) {
-        $maxitems = $rss->get_item_quantity($num);
-        $rss_items = $rss->get_items( 0, $maxitems );
-    }
-    if ( !empty( $maxitems ) ) {
-        if ($maxitems == 0){
-            echo '<!-- RSSデータがありませんでした -->';
-        } else {
-            return $rss_items;
-        }
-    }
- }
+// WPで自動挿入されるCSSを削除
+// add_action('wp_enqueue_scripts', 'remove_auto_inserted_style');
+// function remove_auto_inserted_style()
+// {
+//     wp_dequeue_style('wp-block-library');
+//     wp_dequeue_style('wp-block-library-theme');
+//     wp_dequeue_style('classic-theme-styles');
+// }
 
-/* If custom post type don't be shown,
-   please turn off comment-out once.
-*/
-// global $wp_rewrite;
-// $wp_rewrite->flush_rules();
-?>
+// WPによるURL推測を無効化
+add_filter('redirect_canonical', 'disable_redirect_canonical');
+function disable_redirect_canonical($redirect_url)
+{
+    if (is_404()) {
+        return false;
+    }
+    return $redirect_url;
+}
+
+/* Delete header's bar */
+add_filter('show_admin_bar', '__return_false');
+
+/* Add CSS / JS */
+add_action('wp_enqueue_scripts', 'load_style_script');
+function load_style_script()
+{
+    // stylesheet
+    wp_enqueue_style('default', get_template_directory_uri() . '/css/dist/default.min.css', array(), '1.0.0', '');
+    wp_enqueue_style('base', get_template_directory_uri() . '/css/dist/base.min.css', array(), '1.0.0', '');
+    wp_enqueue_style('awesome', get_template_directory_uri() . '/css/dist/font-awesome.min.css', array(), '1.0.0', '');
+    wp_enqueue_style('source', '//fonts.googleapis.com/css?family=Monda|Source+Code+Pro', array(), '1.0.0', '');
+    if (get_post_type() == 'tech') {
+        wp_enqueue_style('tech', get_template_directory_uri() . '/css/dist/tech.min.css', array(), '1.0.0', '');
+    }
+    wp_enqueue_style('responsive', get_template_directory_uri() . '/css/dist/responsive.min.css', array(), '1.0.0', '');
+    wp_enqueue_style('tomorrow', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css', array(), '1.0.0', '');
+
+    // javascript
+    // wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', array(), '', true);
+    // wp_enqueue_script('social_button', 'https://cdn.st-note.com/js/social_button.min.js', array(), '', true);
+    // wp_enqueue_script('highlight', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"', array(), '', true);
+}
+
+/* Load other function files */
+$function_files = [
+    '/functions/custom-post.php',
+    '/functions/utils.php',
+];
+foreach ($function_files as $file) {
+    if ((file_exists(__DIR__ . $file))) { // ファイルが存在する場合
+        // ファイルを読み込む
+        locate_template($file, true, true);
+    } else { // ファイルが見つからない場合
+        // エラーメッセージを表示
+        trigger_error("`$file`ファイルが見つかりません", E_USER_ERROR);
+    }
+}
