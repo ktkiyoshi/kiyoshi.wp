@@ -44,8 +44,8 @@
                         </header>
                         <div class="entry_info">
                             <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B" /></a>
-                            <p class="tags"><?php echo get_the_term_list($post->ID, 'tech_tag', ' '); ?></p>
                             <p class="description_B"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "...", "UTF-8"); ?></p>
+                            <p class="tags"><?php echo get_the_term_list($post->ID, 'tech_tag', ' '); ?></p>
                             <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
                         </div>
                     </article>

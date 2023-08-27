@@ -18,11 +18,8 @@
                             <li><?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
                         </ul>
                         <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-                    </header>
-                    <div class="entry_info">
-                        <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_B" /></a>
                         <p class="tags"><?php echo get_the_term_list($post->ID, 'tech_tag', ' '); ?></p>
-                    </div>
+                    </header>
                     <div class="entry">
                         <?php the_post();
                         the_content(); ?>

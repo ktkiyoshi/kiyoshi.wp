@@ -24,7 +24,6 @@
 *** h1 - h4 in article ***
 *************************/
 article h1 {
-  border-bottom: 2px #3D4349 solid;
   font-size: 150%;
   padding: 3px 0 5px 5px;
 }
@@ -37,15 +36,8 @@ article h2:after  { content: ""; }
 /**************
 *** Content ***
 **************/
-#content article .entry_meta {
-  color: #777;
-}
-
-/*******************
-*** Single Entry ***
-*******************/
-#content.single article .entry > p:first-child {
-  display: none;
+#content.single article .entry img {
+  border: 1px solid #777;
 }
 
 /************

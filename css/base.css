@@ -224,9 +224,9 @@ nav.catNav li a:hover { text-decoration: underline; }
   margin: 0 0 10px 15px;
 }
 #content article.index .entry_meta {
-    border-top: 3px solid #777;
-    padding: 7px 10px 0;
-    margin: 5px 10px 0;
+  border-top: 3px solid #777;
+  padding: 7px 10px 0;
+  margin: 5px 10px 0;
 }
 #content article .entry_info {
   margin: 5px 10px 0;
@@ -240,8 +240,7 @@ nav.catNav li a:hover { text-decoration: underline; }
 #content article p.tags {
   font-size: 80%;
   font-family: 'Source Code Pro', monospace;
-  margin: 0 10px 0 250px;
-  padding: 7px 0 7px;
+  margin: 5px 10px;
 }
 #content article p.tags a {
   border: 1px #777 solid;
@@ -252,14 +251,14 @@ nav.catNav li a:hover { text-decoration: underline; }
   display: inline-block;
 }
 #content article p.tags a:before {
-    content: "\f02b";
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    padding-right: 5px;
+  content: "\f02b";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-right: 5px;
 }
 #content article p.tags a:hover{
   background: #3D4349;
@@ -269,7 +268,7 @@ nav.catNav li a:hover { text-decoration: underline; }
   display: block;
   border: 1px solid #CCC;
   float: left;
-  margin: 10px 25px 10px 10px;
+  margin: 0 25px 10px 10px;
   padding: 5px;
   width: 212px;
 }
@@ -288,7 +287,7 @@ nav.catNav li a:hover { text-decoration: underline; }
 #content article .description_B {
   font-size: 110%;
   line-height: 1.8;
-  margin: 0px 10px 15px 250px;
+  margin: 0px 10px 10px 250px;
 }
 #content article .next {
   text-align: right;
@@ -367,12 +366,12 @@ nav.catNav li a:hover { text-decoration: underline; }
 *** Category Dump ***
 ********************/
 #content article.dump {
-    display: table;
-    overflow: hidden;
-    width: 100%;
+  display: table;
+  overflow: hidden;
+  width: 100%;
 }
 #content article.dump.single {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 #content article.dump .entry_meta {
   margin-left: 0;
@@ -381,14 +380,14 @@ nav.catNav li a:hover { text-decoration: underline; }
   font-size: 12px;
 }
 #content article.dump .circle {
-    font-family: 'Source Code Pro', monospace;
-    border: 1px solid #777;
-    border-radius: 50%;
-    margin: 10px 10px 10px 0;
-    padding: 10px;
-    text-align: center;
-    height: 50px;
-    width: 50px;
+  font-family: 'Source Code Pro', monospace;
+  border: 1px solid #777;
+  border-radius: 50%;
+  margin: 10px 10px 10px 0;
+  padding: 10px;
+  text-align: center;
+  height: 50px;
+  width: 50px;
 }
 #content article.dump .entry_info {
     display: table-cell;
