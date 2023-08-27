@@ -14,8 +14,7 @@ remove_action('wp_print_styles', 'print_emoji_styles'); // 絵文字に関する
 remove_action('admin_print_scripts', 'print_emoji_detection_script'); // 絵文字に関するJavaScript
 remove_action('admin_print_styles', 'print_emoji_styles'); // 絵文字に関するCSS
 
-// 記事・抜粋の自動整形を無効化
-remove_filter('the_content', 'wpautop');
+// 抜粋の自動整形を無効化
 remove_filter('the_excerpt', 'wpautop');
 
 /* Don't change "" to ”” */
