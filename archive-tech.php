@@ -57,5 +57,6 @@
             </div><!-- /#content -->
             <?php get_sidebar('tech'); ?>
             <div class="reset"></div>
-        </div><!-- /#main -->
-        <?php get_footer(); ?>
+        </div>
+    </div>
+    <?php get_footer(); ?>

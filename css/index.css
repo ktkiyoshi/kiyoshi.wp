@@ -1,4 +1,21 @@
 @charset "UTF-8";
+:root {
+  --size-content: 940px;
+}
+main {
+  display: grid;
+  grid-template-columns: 280px minmax(auto, var(--size-content));
+  justify-content: center;
+  margin: 18px 26px 0;
+  column-gap: 32px;
+}
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 12px;
+  margin-top: 12px;
+}
+
 /*************
 *** Common ***
 *************/
@@ -37,14 +54,13 @@ img {
 }
 
 #wrapper {
-  max-width: 1000px;
   height: 100%;
   margin: 0 auto;
   padding: 90px 5px 0;
 }
 /*************
-*** Header ***
-*************/
+  *** Header ***
+  *************/
 #header {
   width: 100%;
   overflow: hidden;
@@ -209,22 +225,9 @@ nav.catNav li a:hover {
   text-decoration: underline;
 }
 
-/***********
-*** Main ***
-***********/
-#main {
-  width: 100%;
-  padding-top: 10px;
-}
-
 /**************
-*** Content ***
-**************/
-#content {
-  float: left;
-  width: 71%;
-  margin-right: 1%;
-}
+  *** Content ***
+  **************/
 #content.single {
   float: none;
   width: 650px;
@@ -234,22 +237,9 @@ nav.catNav li a:hover {
   display: block;
   margin: 3px auto !important;
 }
-#content article {
-  margin-bottom: 3rem;
-}
-#content article.index {
-  width: 50%;
-  float: left;
-}
 #content article .entry_meta {
-  overflow: hidden;
   font-family: "Source Code Pro", monospace;
-  margin: 0 0 10px 15px;
-}
-#content article.index .entry_meta {
-  border-top: 3px solid #777;
-  padding: 7px 10px 0;
-  margin: 5px 10px 0;
+  text-align: center;
 }
 #content article .entry_info {
   margin: 5px 10px 0;
@@ -357,15 +347,12 @@ nav.catNav li a:hover {
 }
 
 /***********
-*** note ***
-***********/
+  *** note ***
+  ***********/
 #content .note_logo {
   display: block;
   margin: 3px auto 30px !important;
   width: 70%;
-}
-#content article.index.note .entry_meta {
-  border-top: 3px solid #41c9b4;
 }
 #content article.note .entry_more a {
   background: #41c9b4;
@@ -390,8 +377,8 @@ nav.catNav li a:hover {
 }
 
 /********************
-*** Category Dump ***
-********************/
+  *** Category Dump ***
+  ********************/
 #content article.dump {
   display: table;
   overflow: hidden;
@@ -435,7 +422,6 @@ nav.catNav li a:hover {
   letter-spacing: 0.2em;
 }
 #content article.dump p.tags {
-  /*margin: 0 0 0 10px;*/
   margin: 0 10px 0 5px;
 }
 #content article.dump p.tags a {
@@ -449,8 +435,8 @@ nav.catNav li a:hover {
 }
 
 /**************
-***   Tab   ***
-**************/
+  ***   Tab   ***
+  **************/
 #tabs .panels {
   margin-bottom: 10px;
   list-style: none;
@@ -482,8 +468,8 @@ nav.catNav li a:hover {
 }
 
 /**********************
-*** Content Section ***
-**********************/
+  *** Content Section ***
+  **********************/
 #content section .panels {
   overflow: hidden;
   margin: 10px 0 10px 10px;
@@ -519,11 +505,9 @@ nav.catNav li a:hover {
 }
 
 /***********
-*** Side ***
-***********/
+  *** Side ***
+  ***********/
 #side {
-  float: right;
-  width: 28%;
   max-width: 280px;
 }
 #sidefixed {
@@ -587,17 +571,13 @@ nav.catNav li a:hover {
 }
 
 /*************************
-*** h1 - h4 in article ***
-*************************/
+  *** h1 - h4 in article ***
+  *************************/
 article h1 {
-  font-size: 185%;
-  line-height: 1.5;
-  font-weight: bold;
-  padding: 3px 0 3px 5px;
-}
-article.index h1 {
   border-bottom: none;
   font-size: 140%;
+  font-weight: bold;
+  line-height: 1.5;
   margin: 0 10px;
   padding: 3px 0 5px 0;
 }
@@ -671,166 +651,9 @@ article h5 {
   font-weight: bolder;
 }
 
-/*******************
-*** Single Entry ***
-*******************/
-#content.single article {
-  margin: 0 0 25px;
-}
-#content.single article .entry {
-  margin: 0 15px 0;
-}
-#content.single article .entry p {
-  font-size: 1.125rem;
-  margin: 25px 0 25px;
-  line-height: 2.25rem;
-}
-#content.single article .entry p.word {
-  font-size: 135%;
-  font-weight: bold;
-  margin: 30px 0px 30px;
-}
-#content.single article .entry a {
-  text-decoration: underline;
-}
-#content.single article .entry ul,
-#content.single article .entry ol,
-#content.single article .entry dl {
-  font-size: 1.125rem;
-  margin-left: 25px;
-  line-height: 2.25rem;
-}
-#content.single article .entry ul.toc_list {
-  margin: 0 0 0px 25px;
-}
-#content.single article .entry ul > li {
-  list-style-type: square;
-  margin: 9px 0 9px;
-}
-#content.single article .entry ol > li {
-  list-style-type: decimal;
-  margin: 9px 0 9px;
-}
-#content.single article .entry img {
-  display: block;
-  padding: 5px !important;
-}
-#content.single article .entry img.sp {
-  width: 50%;
-}
-#content.single article .entry img.tb {
-  width: 70%;
-}
-#content.single article .entry img.normal {
-  width: auto;
-}
-#content.single article .entry div.tabelog iframe {
-  width: 100%;
-}
-#content.single article .entry table {
-  width: 90%;
-  margin: 0 0 20px 20px;
-  border-collapse: collapse;
-}
-#content.single article .entry table th {
-  font-weight: bolder;
-}
-#content.single article .entry .normalTable th {
-  color: #333;
-  padding: 6px;
-  background-color: #eee;
-  border: 1px solid #b9b9b9;
-}
-#content.single article .entry .normalTable td {
-  padding: 6px;
-  border: 1px solid #b9b9b9;
-  vertical-align: middle;
-}
-#content.single article .entry ul.ib2,
-#content.single article .entry ul.ib3 {
-  margin: 0;
-  text-align: center;
-}
-#content.single article .entry ul.ib2 li {
-  display: inline-block;
-  list-style-type: none;
-  width: 45%;
-}
-#content.single article .entry ul.ib3 li {
-  display: inline-block;
-  list-style-type: none;
-  width: 30%;
-}
-
-/*****************
-*** blockquote ***
-*****************/
-#content.single article .entry blockquote {
-  position: relative;
-  border-left: 5px solid #c0c0c0;
-  background: #eee;
-  margin: 25px 0 25px 10px;
-  padding: 10px 10px 10px 40px;
-}
-#content.single article .entry blockquote:before {
-  position: absolute;
-  content: "\f10d";
-  font-family: FontAwesome;
-  font-size: 1.7rem;
-  opacity: 0.5;
-  top: 0em;
-  left: 0.6rem;
-}
-#content.single article .entry blockquote p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.85rem;
-}
-#content.single article .entry blockquote ul,
-#content.single article .entry blockquote ol,
-#content.single article .entry blockquote dl {
-  margin: 0 0 0 20px;
-  font-size: 1rem;
-  line-height: 1.75rem;
-}
-#content.single article .entry blockquote cite {
-  color: #999;
-  display: block;
-  text-align: right;
-}
-
-/********************
-*** tiled-gallery ***
-********************/
-#content.single article .entry .tiled-gallery__gallery img {
-  width: auto;
-  margin: auto;
-  padding: unset !important;
-  border: none;
-}
-
-/********************
-*** Social Button ***
-********************/
-.social {
-  margin: 5px 0 15px 15px;
-  line-height: 2em;
-}
-.social iframe,
-.social div {
-  display: inline !important;
-  vertical-align: bottom !important;
-  margin: 0;
-  line-height: 1;
-}
-.fb-like > span {
-  height: 20px !important;
-  width: 80px !important;
-}
-
 /*************
-*** Footer ***
-*************/
+  *** Footer ***
+  *************/
 footer {
   width: 100%;
   background: #444;
@@ -910,8 +733,8 @@ footer {
 }
 
 /****************
-*** Page Navi ***
-****************/
+  *** Page Navi ***
+  ****************/
 .page-navi {
   margin: 1em auto;
   text-align: center;
@@ -941,53 +764,6 @@ a.page-numbers:hover {
   background: #808080;
 }
 
-/*********************
-*** Gallery style ***
-*********************/
-#content .instagram {
-  width: 50%;
-}
-#content .instagram time {
-  display: block;
-}
-#content .instagram .thumbnail_E {
-  width: 90%;
-}
-
-/* Youtube for SP */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  margin-bottom: 20px;
-  height: 0;
-  overflow: hidden;
-}
-.video-container iframe,
-.video-container object,
-.video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.slide-container iframe {
-  width: 100%;
-}
-/* syntaxhighlighter evolved */
-#content.single article .entry .codeFrame {
-  margin: 0 0 20px 0 !important;
-  padding: 8px 5px 6px 5px !important;
-}
-/* highlight.js */
-code.hljs {
-  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier,
-    monospace !important;
-  margin: 0 0 20px 0 !important;
-  padding: 8px 10px 5px !important;
-  line-height: 1.2 !important;
-}
 /* iframe */
 iframe {
   display: block;

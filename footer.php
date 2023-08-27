@@ -1,4 +1,3 @@
-</div><!-- /#wrapper -->
 <footer>
     <div id="footer" class="clearfix">
         <?php if (get_post_type() == 'tech') { ?>

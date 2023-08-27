@@ -10,4 +10,5 @@
             <?php get_sidebar(); ?>
             <div class="reset"></div>
         </div><!-- /#main -->
-        <?php get_footer(); ?>
+    </div>
+    <?php get_footer(); ?>

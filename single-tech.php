@@ -28,4 +28,5 @@
                 </article>
             </div><!-- /#content -->
         </div><!-- /#main -->
-        <?php get_footer(); ?>
+    </div>
+    <?php get_footer(); ?>

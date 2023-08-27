@@ -50,7 +50,11 @@ function load_style_script()
 {
     // stylesheet
     wp_enqueue_style('default', get_template_directory_uri() . '/css/dist/default.min.css', array(), '1.0.0', '');
-    wp_enqueue_style('base', get_template_directory_uri() . '/css/dist/base.min.css', array(), '1.0.0', '');
+    if (is_home()) {
+        wp_enqueue_style('index', get_template_directory_uri() . '/css/dist/index.min.css', array(), '1.0.0', '');
+    } else {
+        wp_enqueue_style('base', get_template_directory_uri() . '/css/dist/base.min.css', array(), '1.0.0', '');
+    }
     wp_enqueue_style('awesome', get_template_directory_uri() . '/css/dist/font-awesome.min.css', array(), '1.0.0', '');
     wp_enqueue_style('source', '//fonts.googleapis.com/css?family=Monda|Source+Code+Pro', array(), '1.0.0', '');
     if (get_post_type() == 'tech') {
