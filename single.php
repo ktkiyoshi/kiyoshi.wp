@@ -24,12 +24,12 @@
                     <p class="fa-icon categories">
                         <?php the_category(' ') ?>
                     </p>
+                    <p class="fa-icon tags">
+                        <?php echo get_the_term_list($post->ID, 'tech_tag', ' '); ?>
+                    </p>
                     <p>
                         <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?>
                     </p>
-                </section>
-                <section class="fa-icon tags">
-                    <?php echo get_the_term_list($post->ID, 'tech_tag', ' '); ?>
                 </section>
                 <section class="entry">
                     <?php the_post();

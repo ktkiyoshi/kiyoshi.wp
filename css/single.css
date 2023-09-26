@@ -90,6 +90,8 @@ main {
 
 /* Tag / Category */
 .fa-icon {
+  display: flex;
+  column-gap: 10px;
   font-size: 0.75rem;
   font-family: "Source Code Pro", monospace;
 }
