@@ -33,7 +33,7 @@ function disable_redirect_canonical($redirect_url)
 }
 
 /* Delete header's bar */
-// add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');
 
 /* Add CSS / JS */
 add_action('wp_enqueue_scripts', 'load_style_script');
@@ -43,7 +43,7 @@ function load_style_script()
     wp_enqueue_style('default', get_template_directory_uri() . '/css/dist/default.min.css', array(), '1.0.0', '');
     wp_enqueue_style('navi', get_template_directory_uri() . '/css/dist/navi.min.css', array(), '1.0.0', '');
     wp_enqueue_style('main', get_template_directory_uri() . '/css/dist/main.min.css', array(), '1.0.0', '');
-    if (is_page() || is_singular()) {
+    if (is_page() || is_singular() || is_404()) {
         wp_enqueue_style('single', get_template_directory_uri() . '/css/dist/single.min.css', array(), '1.0.0', '');
     }
 
@@ -57,6 +57,22 @@ function load_style_script()
     // wp_enqueue_script('social_button', 'https://cdn.st-note.com/js/social_button.min.js', array(), '', true);
     // wp_enqueue_script('highlight', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"', array(), '', true);
 }
+
+/* Change main-loop setting */
+function my_pre_get_posts($query)
+{
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    } elseif ($query->is_category()) {
+        $query->set('posts_per_page', 30);
+        return;
+    } elseif ($query->is_archive()) {
+        $query->set('posts_per_page', 30);
+        return;
+    }
+}
+add_action('pre_get_posts', 'my_pre_get_posts');
+
 
 /* Load other function files */
 $function_files = [
@@ -72,17 +88,3 @@ foreach ($function_files as $file) {
         trigger_error("`$file`ファイルが見つかりません", E_USER_ERROR);
     }
 }
-/* Change main-loop setting */
-function my_pre_get_posts($query)
-{
-    if (is_admin() || !$query->is_main_query()) {
-        return;
-    } elseif ($query->is_category()) {
-        $query->set('posts_per_page', 30);
-        return;
-    } elseif ($query->is_archive()) {
-        $query->set('posts_per_page', 30);
-        return;
-    }
-}
-add_action('pre_get_posts', 'my_pre_get_posts');
