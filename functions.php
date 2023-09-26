@@ -22,15 +22,6 @@ remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');
 remove_filter('the_title', 'wptexturize');
 
-// WPで自動挿入されるCSSを削除
-// add_action('wp_enqueue_scripts', 'remove_auto_inserted_style');
-// function remove_auto_inserted_style()
-// {
-//     wp_dequeue_style('wp-block-library');
-//     wp_dequeue_style('wp-block-library-theme');
-//     wp_dequeue_style('classic-theme-styles');
-// }
-
 // WPによるURL推測を無効化
 add_filter('redirect_canonical', 'disable_redirect_canonical');
 function disable_redirect_canonical($redirect_url)
@@ -42,28 +33,26 @@ function disable_redirect_canonical($redirect_url)
 }
 
 /* Delete header's bar */
-add_filter('show_admin_bar', '__return_false');
+// add_filter('show_admin_bar', '__return_false');
 
 /* Add CSS / JS */
 add_action('wp_enqueue_scripts', 'load_style_script');
 function load_style_script()
 {
-    // stylesheet
+    // CSS
     wp_enqueue_style('default', get_template_directory_uri() . '/css/dist/default.min.css', array(), '1.0.0', '');
-    if (is_home()) {
-        wp_enqueue_style('index', get_template_directory_uri() . '/css/dist/index.min.css', array(), '1.0.0', '');
-    } else {
-        wp_enqueue_style('base', get_template_directory_uri() . '/css/dist/base.min.css', array(), '1.0.0', '');
+    wp_enqueue_style('navi', get_template_directory_uri() . '/css/dist/navi.min.css', array(), '1.0.0', '');
+    wp_enqueue_style('main', get_template_directory_uri() . '/css/dist/main.min.css', array(), '1.0.0', '');
+    if (is_page() || is_singular()) {
+        wp_enqueue_style('single', get_template_directory_uri() . '/css/dist/single.min.css', array(), '1.0.0', '');
     }
+
+    // 3rd vendor CSS
     wp_enqueue_style('awesome', get_template_directory_uri() . '/css/dist/font-awesome.min.css', array(), '1.0.0', '');
     wp_enqueue_style('source', '//fonts.googleapis.com/css?family=Monda|Source+Code+Pro', array(), '1.0.0', '');
-    if (get_post_type() == 'tech') {
-        wp_enqueue_style('tech', get_template_directory_uri() . '/css/dist/tech.min.css', array(), '1.0.0', '');
-    }
-    wp_enqueue_style('responsive', get_template_directory_uri() . '/css/dist/responsive.min.css', array(), '1.0.0', '');
     wp_enqueue_style('tomorrow', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css', array(), '1.0.0', '');
 
-    // javascript
+    // JS
     // wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', array(), '', true);
     // wp_enqueue_script('social_button', 'https://cdn.st-note.com/js/social_button.min.js', array(), '', true);
     // wp_enqueue_script('highlight', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"', array(), '', true);
@@ -83,3 +72,17 @@ foreach ($function_files as $file) {
         trigger_error("`$file`ファイルが見つかりません", E_USER_ERROR);
     }
 }
+/* Change main-loop setting */
+function my_pre_get_posts($query)
+{
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    } elseif ($query->is_category()) {
+        $query->set('posts_per_page', 30);
+        return;
+    } elseif ($query->is_archive()) {
+        $query->set('posts_per_page', 30);
+        return;
+    }
+}
+add_action('pre_get_posts', 'my_pre_get_posts');

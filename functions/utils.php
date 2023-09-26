@@ -94,6 +94,7 @@ function get_archives_array($args = '')
     return $output;
 }
 
+/* WIP */
 /* get note RSS */
 function my_feed_display($feedURL, $num)
 {

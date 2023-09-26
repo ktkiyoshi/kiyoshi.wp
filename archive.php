@@ -1,55 +1,77 @@
 <?php get_header(); ?>
 
 <body>
-    <?php require("parts/header_link.php"); ?>
-    <div id="wrapper">
-        <!--     <nav class="catNav">
-        <ul>
-            <li class="book"><a href="/wp/category/book">読 書</a></li>
-            <li class="movie"><a href="/wp/category/movie">映 画</a></li>
-            <li class="live"><a href="/wp/category/live">ライブ</a></li>
-            <li class="travel"><a href="/wp/category/travel">旅 行</a></li>
-            <li class="pokemon"><a href="/wp/category/pokemon">ポケモン</a></li>
-        </ul>
-    </nav> -->
-        <div id="main">
-            <div id="content">
-                <section>
-                    <ul class="panels">
-                        <li class="panel_title"><a><?php echo get_query_var('year') . '年' . get_query_var('monthnum') . '月'; ?></a></li>
-                    </ul>
-                </section>
-                <section>
-                    <?php
-                    $query_array = $wp_query->query_vars;
-                    $query_array['posts_per_page'] = 31;
-                    $query_array['orderby'] = 'date';
-                    $query_array['order'] = 'ASC';
-                    query_posts($query_array);
-                    while (have_posts()) : the_post();
-                    ?>
-                        <article class="index matchHeight">
-                            <header>
-                                <ul class="entry_meta">
-                                    <li><time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate><?php the_time('Y/m/d (D) G:i') ?></time></li>
-                                    <li><?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?></li>
-                                </ul>
-                                <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-                            </header>
-                            <div class="entry_info">
-                                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo catch_that_image(); ?>" class="thumbnail_D" /></a>
-                                <p class="description_A"><?php echo mb_strimwidth(get_the_excerpt(), 0, 200, "...", "UTF-8"); ?></p>
-                                <p class="entry_more"><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">&raquo;続きを読む</a></p>
-                            </div>
+    <?php require_once("parts/header_link.php"); ?>
+    <main>
+        <?php get_sidebar(); ?>
+        <div id="content">
+            <section>
+                <ul class="panels">
+                    <li class="panel_title">
+                        <?php if (is_post_type_archive('tech')) : ?>
+                            <p>Tech</p>
+                        <?php else : ?>
+                            <?php if (is_year()) : ?>
+                                <p><?php echo get_query_var('year') . '年'; ?></p>
+                            <?php elseif (is_month()) : ?>
+                                <p><?php echo get_query_var('year') . '年' . get_query_var('monthnum') . '月'; ?></p>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </li>
+                </ul>
+            </section>
+            <?php
+            $paginate_base = get_pagenum_link(1);
+            if (strpos($paginate_base, '?') || !$wp_rewrite->using_permalinks()) {
+                $paginate_format = '';
+                $paginate_base = add_query_arg('paged', '%#%');
+            } else {
+                $paginate_format = (substr($paginate_base, -1, 1) == '/' ? '' : '/') . user_trailingslashit('page/%#%/', 'paged');
+                $paginate_base .= '%_%';
+            }
+            $pagination = array(
+                'base' => $paginate_base,
+                'format' => $paginate_format,
+                'total' => $wp_query->max_num_pages,
+                'mid_size' => 4,
+                'current' => ($paged ? $paged : 1)
+            );
+            ?>
+            <section class="entries grid">
+                <?php
+                if (have_posts()) :
+                    while (have_posts()) :
+                        the_post();
+                ?>
+                        <article>
+                            <section class="thumbnail">
+                                <a href=" <?php the_permalink() ?>" title="<?php the_title(); ?>">
+                                    <img src="<?php echo catch_that_image(); ?>" />
+                                </a>
+                            </section>
+                            <section class="entry_meta">
+                                <p class="postdate">
+                                    <time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate>
+                                        <?php the_time('Y/m/d (D) G:i') ?>
+                                    </time>
+                                </p>
+                                <h1 class="index">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </h1>
+                                <p class="description">
+                                    <?php echo mb_strimwidth(get_the_excerpt(), 0, 70, "...", "UTF-8"); ?>
+                                </p>
+                            </section>
                         </article>
-                    <?php
+
+                <?php
                     endwhile;
-                    wp_reset_query();
-                    ?>
-                </section>
-            </div><!-- /#content -->
-            <?php get_sidebar(); ?>
-            <div class="reset"></div>
-        </div><!-- /#main -->
-    </div>
+                endif;
+                ?>
+            </section>
+            <?php
+            echo '<div class="page-navi">' . "\n" . paginate_links($pagination) . '</div>' . "\n";
+            ?>
+        </div><!-- /#content -->
+    </main>
     <?php get_footer(); ?>

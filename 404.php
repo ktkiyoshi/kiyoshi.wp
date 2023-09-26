@@ -1,14 +1,11 @@
 <?php get_header(); ?>
 
 <body>
-    <?php require("parts/header_link.php"); ?>
-    <div id="wrapper">
-        <div id="main">
-            <div id="content">
-                <h1>お探しのページはありません</h1>
-            </div><!-- /#content -->
-            <?php get_sidebar(); ?>
-            <div class="reset"></div>
-        </div><!-- /#main -->
-    </div>
+    <?php require_once("parts/header_link.php"); ?>
+    <main>
+        <?php get_sidebar(); ?>
+        <div id="content">
+            <h1>お探しのページはありません</h1>
+        </div><!-- /#content -->
+    </main>
     <?php get_footer(); ?>
