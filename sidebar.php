@@ -1,8 +1,19 @@
 <div id="side">
-    <div class="side_title">
-        <p>最新ブログ記事</p>
-    </div>
     <section>
+        <div class="side_title">
+            <p>中の人</p>
+        </div>
+        <p>こんな人が書いてます</p>
+        <div class="profile">
+            <img src="<?php bloginfo('template_directory'); ?>/img/profile.jpg" alt="">
+            <p><a href="https://twitter.com/ktkiyoshi" target="_blank">@ktkiyoshi</a></p>
+        </div>
+    </section>
+
+    <section>
+        <div class="side_title">
+            <p>最新ブログ記事</p>
+        </div>
         <ul>
             <?php
             $lastposts = get_posts(array('numberposts' => 10, 'orderby' => 'post_date', 'category' => '-113'));
@@ -26,10 +37,10 @@
         </ul>
     </section>
 
-    <div class="side_title">
-        <p>技術タグ</p>
-    </div>
     <section>
+        <div class="side_title">
+            <p>技術タグ</p>
+        </div>
         <p class="cloud"><?php wp_tag_cloud(array('taxonomy' => 'tech_tag')); ?></p>
     </section>
 

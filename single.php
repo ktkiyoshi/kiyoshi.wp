@@ -21,12 +21,16 @@
                             <?php the_time('Y/m/d (D) G:i') ?>
                         </time>
                     </p>
-                    <p class="fa-icon categories">
-                        <?php the_category(' ') ?>
-                    </p>
-                    <p class="fa-icon tags">
-                        <?php echo get_the_term_list($post->ID, 'tech_tag', ' '); ?>
-                    </p>
+                    <?php if (!empty(get_the_category())) : ?>
+                        <p class="fa-icon categories">
+                            <?php the_category(' '); ?>
+                        </p>
+                    <?php endif; ?>
+                    <?php if (!empty(get_the_terms($post->ID, 'tech_tag', ' '))) : ?>
+                        <p class="fa-icon tags">
+                            <?php echo get_the_term_list($post->ID, 'tech_tag', ' '); ?>
+                        </p>
+                    <?php endif; ?>
                     <p>
                         <?php edit_post_link('Edit', '<span class="admin">', '</span>'); ?>
                     </p>
