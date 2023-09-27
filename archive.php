@@ -10,12 +10,12 @@
                     <li class="panel_title">
                         <?php if (is_post_type_archive('tech')) : ?>
                             <p>Tech</p>
-                        <?php else : ?>
-                            <?php if (is_year()) : ?>
-                                <p><?php echo get_query_var('year') . '年'; ?></p>
-                            <?php elseif (is_month()) : ?>
-                                <p><?php echo get_query_var('year') . '年' . get_query_var('monthnum') . '月'; ?></p>
-                            <?php endif; ?>
+                        <?php elseif (is_tag()) : ?>
+                            <p><?php single_tag_title(); ?></p>
+                        <?php elseif (is_year()) : ?>
+                            <p><?php echo get_query_var('year') . '年'; ?></p>
+                        <?php elseif (is_month()) : ?>
+                            <p><?php echo get_query_var('year') . '年' . get_query_var('monthnum') . '月'; ?></p>
                         <?php endif; ?>
                     </li>
                 </ul>

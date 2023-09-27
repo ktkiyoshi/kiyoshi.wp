@@ -11,12 +11,8 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 a {
-  text-decoration: none;
-}
-a:hover,
-a:link,
-a:visited {
   color: #666;
+  text-decoration: none;
 }
 hr {
   margin: 15px 15px 30px;
@@ -78,6 +74,7 @@ main {
 }
 #side .profile {
   text-align: center;
+  margin: 5px 0;
 }
 #side .profile img {
   width: 60%;

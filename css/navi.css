@@ -104,23 +104,19 @@ footer .copyright {
     background: #333;
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     transform: scale(1, 0);
     transform-origin: top;
     transition: 0.3s ease-in-out;
   }
   header nav ul {
-    display: block;
-    position: static;
+    flex-direction: column;
+    row-gap: 15px;
   }
   header nav ul li {
     display: block;
     position: static;
     color: #ccc;
-    padding-top: 15px;
-  }
-  header nav ul li:last-child {
-    padding-bottom: 15px;
   }
   header nav ul li span {
     display: block;
@@ -131,9 +127,9 @@ footer .copyright {
     padding: 3px 0 0;
     color: #fff;
   }
-  header nav ul li a:visited {
+  /* header nav ul li a:link {
     color: #fff;
-  }
+  } */
   #nav-toggle {
     display: block;
     width: 34px;

@@ -8,10 +8,11 @@ function catch_that_image($type = null)
     ob_start();
     ob_end_clean();
 
-    preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-    $first_img = $matches[1][0];
+    $output = preg_match_all("/<img[^>]+src=[\"'](s?https?:\/\/[\-_\.!~\*'()a-z0-9;\/\?:@&=\+\$,%#]+\.(jpg|jpeg|png|gif))[\"'][^>]+>/i", $post->post_content, $matches);
 
-    if (empty($first_img)) {
+    if ($output) {
+        $first_img = $matches[1][0];
+    } else {
         $first_img = 'https://kt-kiyoshi.com/wp/images/nophoto.jpg';
     }
     return $first_img;
