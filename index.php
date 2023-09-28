@@ -162,7 +162,7 @@
                 endif;
                 ?>
             </article>
-            <section class="entries grid">
+            <section class="entries flex">
                 <?php
                 $args = array(
                     'category_name' => 'pokemon',
