@@ -43,7 +43,7 @@ function load_style_script()
     wp_enqueue_style('default', get_template_directory_uri() . '/css/dist/default.min.css', array(), '1.0.0', '');
     wp_enqueue_style('navi', get_template_directory_uri() . '/css/dist/navi.min.css', array(), '1.0.0', '');
     wp_enqueue_style('main', get_template_directory_uri() . '/css/dist/main.min.css', array(), '1.0.0', '');
-    if (is_page() || is_singular() || is_404()) {
+    if ((is_page() || is_singular() || is_404()) && !is_page('gallery')) {
         wp_enqueue_style('single', get_template_directory_uri() . '/css/dist/single.min.css', array(), '1.0.0', '');
     }
 

@@ -45,7 +45,7 @@
                                         <?php the_time('Y/m/d (D) G:i') ?>
                                     </time>
                                 </p>
-                                <h1 class="index">
+                                <h1>
                                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h1>
                                 <p class="description">
