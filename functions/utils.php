@@ -95,9 +95,8 @@ function get_archives_array($args = '')
     return $output;
 }
 
-/* WIP */
 /* get note RSS */
-function my_feed_display($feedURL, $num)
+function my_note_feed($feedURL, $num)
 {
     if (!$feedURL) {
         return false;

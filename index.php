@@ -82,46 +82,35 @@
                 ?>
             </section>
             <section class="panels">
-                <div class="panel_title">技術記事</div>
+                <div class="panel_title">note</div>
             </section>
             <section class="entries flex">
                 <?php
-                $args = array(
-                    'post_type' => 'tech',
-                    'posts_per_page' => 6
-                );
-                $wp_query = new WP_Query($args);
+                $rss_items = my_note_feed('https://note.com/ktkiyoshi/rss', '12');
+                foreach ($rss_items as $item) :
+                    $eyecatch = $item->data["child"]["http://search.yahoo.com/mrss/"]["thumbnail"][0]["data"];
                 ?>
-                <?php
-                if ($wp_query->have_posts()) :
-                    while ($wp_query->have_posts()) :
-                        $wp_query->the_post();
-                ?>
-                        <article>
-                            <section class="thumbnail">
-                                <a href=" <?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                    <img src="<?php echo catch_that_image(); ?>" />
-                                </a>
-                            </section>
-                            <section class="entry_meta">
-                                <p class="postdate">
-                                    <time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate>
-                                        <?php the_time('Y/m/d (D) G:i') ?>
-                                    </time>
-                                </p>
-                                <h1>
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                </h1>
-                                <p class="description">
-                                    <?php echo mb_strimwidth(get_the_excerpt(), 0, 70, "...", "UTF-8"); ?>
-                                </p>
-                            </section>
-                        </article>
-                <?php
-                    endwhile;
-                endif;
-                wp_reset_query();
-                ?>
+                    <article>
+                        <section class="thumbnail">
+                            <a href=" <?php echo $item->get_permalink(); ?>" title="<?php echo $item->get_title(); ?>">
+                                <img src="<?php echo $eyecatch; ?>" />
+                            </a>
+                        </section>
+                        <section class="entry_meta">
+                            <p class="postdate">
+                                <time datetime="<?php echo $item->get_date('Y/m/d (D) G:i'); ?>" pubdate>
+                                    <?php echo $item->get_date('Y/m/d (D) G:i'); ?>
+                                </time>
+                            </p>
+                            <h1>
+                                <a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a>
+                            </h1>
+                            <p class="description">
+                                <?php echo mb_strimwidth(strip_tags($item->get_description()), 0, 70, "...", "UTF-8"); ?>
+                            </p>
+                        </section>
+                    </article>
+                <?php endforeach; ?>
             </section>
             <section class="panels">
                 <div class="panel_title">ポケモン記事</div>

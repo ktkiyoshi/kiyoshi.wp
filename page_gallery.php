@@ -11,9 +11,11 @@ Template Name: Gallery
     <main>
         <?php get_sidebar(); ?>
         <div id="content">
-            <!-- <a href="/wp">
-                <img src="<?php bloginfo('template_directory'); ?>/img/top/gallery_001.png" class="top_img" />
-            </a> -->
+            <section class="logo">
+                <a href="https://www.instagram.com/ktkiyoshi/" target="_blank">
+                    <img src="<?php bloginfo('template_directory'); ?>/img/gallery_001.png" class="top_img" />
+                </a>
+            </section>
             <section class="entries grid">
                 <?php
                 for ($i = 0; $i < count($media); $i++) :
