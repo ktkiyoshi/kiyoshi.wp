@@ -25,8 +25,8 @@
                         </section>
                         <section class="entry_meta">
                             <p class="postdate">
-                                <time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate>
-                                    <?php the_time('Y/m/d (D) G:i') ?>
+                                <time datetime="<?php the_time('Y/m/d H:i') ?>" pubdate>
+                                    <?php the_time('Y/m/d H:i') ?>
                                 </time>
                             </p>
                             <h1>
@@ -63,8 +63,8 @@
                             </section>
                             <section class="entry_meta">
                                 <p class="postdate">
-                                    <time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate>
-                                        <?php the_time('Y/m/d (D) G:i') ?>
+                                    <time datetime="<?php the_time('Y/m/d H:i') ?>" pubdate>
+                                        <?php the_time('Y/m/d H:i') ?>
                                     </time>
                                 </p>
                                 <h1>
@@ -98,8 +98,8 @@
                         </section>
                         <section class="entry_meta">
                             <p class="postdate">
-                                <time datetime="<?php echo $item->get_date('Y/m/d (D) G:i'); ?>" pubdate>
-                                    <?php echo $item->get_date('Y/m/d (D) G:i'); ?>
+                                <time datetime="<?php echo date("Y/m/d H:i", strtotime($item->get_date() . " +9 hour")); ?>" pubdate>
+                                    <?php echo date("Y/m/d H:i", strtotime($item->get_date() . " +9 hour")); ?>
                                 </time>
                             </p>
                             <h1>
@@ -135,8 +135,8 @@
                         </section>
                         <section class="entry_meta">
                             <p class="postdate">
-                                <time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate>
-                                    <?php the_time('Y/m/d (D) G:i') ?>
+                                <time datetime="<?php the_time('Y/m/d H:i') ?>" pubdate>
+                                    <?php the_time('Y/m/d H:i') ?>
                                 </time>
                             </p>
                             <h1>
@@ -173,8 +173,8 @@
                             </section>
                             <section class="entry_meta">
                                 <p class="postdate">
-                                    <time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate>
-                                        <?php the_time('Y/m/d (D) G:i') ?>
+                                    <time datetime="<?php the_time('Y/m/d H:i') ?>" pubdate>
+                                        <?php the_time('Y/m/d H:i') ?>
                                     </time>
                                 </p>
                                 <h1>

@@ -45,7 +45,9 @@ Template Name: Gallery
                     </article>
                 <?php endfor; ?>
             </section>
-
+            <section class="more">
+                <a href="https://www.instagram.com/ktkiyoshi/" target="_blank">Instagramをもっと見る</a>
+            </section>
         </div><!-- /#content -->
     </main>
     <?php get_footer(); ?>

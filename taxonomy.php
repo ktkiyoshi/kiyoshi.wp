@@ -41,8 +41,8 @@
                             </section>
                             <section class="entry_meta">
                                 <p class="postdate">
-                                    <time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate>
-                                        <?php the_time('Y/m/d (D) G:i') ?>
+                                    <time datetime="<?php the_time('Y/m/d H:i') ?>" pubdate>
+                                        <?php the_time('Y/m/d H:i') ?>
                                     </time>
                                 </p>
                                 <h1>

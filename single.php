@@ -17,8 +17,8 @@
                 </h1>
                 <section class="entry_meta">
                     <p class="postdate">
-                        <time datetime="<?php the_time('Y/m/d (D) G:i') ?>" pubdate>
-                            <?php the_time('Y/m/d (D) G:i') ?>
+                        <time datetime="<?php the_time('Y/m/d H:i') ?>" pubdate>
+                            <?php the_time('Y/m/d H:i') ?>
                         </time>
                     </p>
                     <?php if (!empty(get_the_category())) : ?>

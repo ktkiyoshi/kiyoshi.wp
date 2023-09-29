@@ -26,7 +26,9 @@
                     <li>
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <img src="<?php echo catch_that_image("thumbnail"); ?>" class="thumbnail" />
-                            <time datetime=" <?php the_time('Y/m/d/D') ?>" pubdate><?php the_time('Y/m/d/D') ?></time>
+                            <time datetime=" <?php the_time('Y/m/d') ?>" pubdate>
+                                <?php the_time('Y/m/d') ?>
+                            </time>
                             <p class="post_title">
                                 <?php echo $post->post_title; ?>
                             </p>
