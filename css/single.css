@@ -51,7 +51,6 @@ main {
   background: #eee;
   margin: 25px 0 25px 10px;
   padding: 10px 10px 10px 40px;
-  z-index: -1;
 }
 .entry blockquote:before {
   position: absolute;
@@ -85,7 +84,7 @@ main {
   align-items: center;
   column-gap: 10px;
   font-family: "Source Code Pro", monospace;
-  margin-bottom: 5px;
+  margin: 5px 0 10px;
 }
 
 /* Tag / Category */
@@ -195,9 +194,9 @@ iframe.note-embed {
 @media screen and (max-width: 600px) {
   /* Entry */
   .entry p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 25px 0 25px;
-    line-height: 2.25rem;
+    line-height: 2rem;
   }
   /* Entry meta */
   .entry_meta {
