@@ -150,7 +150,8 @@ code.hljs {
   padding: 8px 10px 5px !important;
   line-height: 1.2 !important;
 }
-/* Youtube for SP */
+/* for YouTube embed */
+/* video-container is old */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -171,13 +172,18 @@ code.hljs {
 .slide-container iframe {
   width: 100%;
 }
-/* Other iframe */
+/* for iframe embed */
 iframe {
   display: block;
-  margin: 25px auto 25px;
+  margin: 25px auto;
 }
+/* for note embed */
 iframe.note-embed {
-  margin: 25px auto 25px !important;
+  margin: 25px auto !important;
+}
+/* for X embed */
+div.twitter-tweet {
+  margin: 10px auto;
 }
 
 /* for Tablet */
