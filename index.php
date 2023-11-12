@@ -7,8 +7,10 @@
         <div id="content">
             <article class="latest">
                 <?php
+                $exclude_cat = get_category_by_slug('pokemon')->cat_ID;
                 $args = array(
                     'post_type' => 'post',
+                    'category__not_in' => $exclude_cat,
                     'posts_per_page' => 1
                 );
                 $wp_query = new WP_Query($args);
@@ -43,8 +45,10 @@
             </article>
             <section class="entries flex">
                 <?php
+                $exclude_cat = get_category_by_slug('pokemon')->cat_ID;
                 $args = array(
                     'post_type' => 'post',
+                    'category__not_in' => $exclude_cat,
                     'posts_per_page' => 10,
                     'offset' => 1
                 );
