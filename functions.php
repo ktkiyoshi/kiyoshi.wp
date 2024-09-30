@@ -78,6 +78,7 @@ add_action('pre_get_posts', 'my_pre_get_posts');
 function show_Linkcard($atts) {
     extract(shortcode_atts(array(
         'url'=>"",
+        'shorturl'=>"",
         'title'=>"",
         'excerpt'=>"",
         'image'=>""
@@ -125,12 +126,12 @@ function show_Linkcard($atts) {
     $sc_Linkcard = '';
     $sc_Linkcard .='
     <div class="blogcard ex">
-    <a href="'. $url .'" target="_blank">
+    <a href="'. $shorturl .'" target="_blank">
      <div class="blogcard_thumbnail">'. $xLink_img .'</div>
      <div class="blogcard_content">
       <div class="blogcard_title">'. $Link_title .'</div>
       <div class="blogcard_excerpt">'. $Link_description .'</div>
-      <div class="blogcard_link">'. $favicon .' '. $url .' <i class="icon-external-link-alt"></i></div>
+      <div class="blogcard_link">'. $favicon .' '. $shorturl .' <i class="icon-external-link-alt"></i></div>
      </div>
     </a>
     </div>';    
