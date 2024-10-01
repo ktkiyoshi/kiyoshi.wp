@@ -63,7 +63,6 @@ add_shortcode("sc_Linkcard", "show_Linkcard");
 function show_AmazonAffiliate($atts) {
     extract(shortcode_atts(array(
         'url'=>"",
-        'shorturl'=>"",
         'title'=>"",
         'image'=>""
     ),$atts));
@@ -94,11 +93,11 @@ function show_AmazonAffiliate($atts) {
     $sc_Linkcard = '';
     $sc_Linkcard .='
     <div class="blogcard ex">
-    <a href="'. $shorturl .'" target="_blank">
+    <a href="'. $url .'" target="_blank">
      <div class="blogcard_thumbnail">'. $Link_img .'</div>
      <div class="blogcard_content">
       <div class="blogcard_title">'. $Link_title .'</div>
-      <div class="blogcard_link">'. $favicon .' '. $shorturl .' <i class="icon-external-link-alt"></i></div>
+      <div class="blogcard_link">'. $favicon .' '. $url .' <i class="icon-external-link-alt"></i></div>
      </div>
     </a>
     </div>';    
