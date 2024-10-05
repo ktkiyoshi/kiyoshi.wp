@@ -1,6 +1,6 @@
 <section class="social">
     <!-- facebook -->
-    <div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+    <!-- <div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div> -->
     <div class="fb-share-button" data-href="<?php the_permalink(); ?>" data-type="button_count"></div>
     <!-- Hatena -->
     <div>
