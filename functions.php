@@ -74,6 +74,42 @@ function my_pre_get_posts($query)
 }
 add_action('pre_get_posts', 'my_pre_get_posts');
 
+/* Register widget areas */
+add_action('widgets_init', 'kiyoshi_register_widget_areas');
+function kiyoshi_register_widget_areas()
+{
+    register_sidebar(array(
+        'name'          => __('サイドバー・バナー', 'kiyoshi'),
+        'id'            => 'sidebar-banner',
+        'description'   => __('サイドバーに表示する固定バナー。画像ウィジェットやカスタムHTMLを追加してください。', 'kiyoshi'),
+        'before_widget' => '<div id="%1$s" class="sidebar_banner_widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '',
+        'after_title'   => '',
+    ));
+}
+
+/* Customizer options */
+add_action('customize_register', 'kiyoshi_customize_sidebar_banner');
+function kiyoshi_customize_sidebar_banner($wp_customize)
+{
+    $wp_customize->add_section('kiyoshi_sidebar_banner_section', array(
+        'title'    => __('サイドバー・バナー', 'kiyoshi'),
+        'priority' => 160,
+    ));
+
+    $wp_customize->add_setting('sidebar_banner_title', array(
+        'default'           => __('バナー', 'kiyoshi'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('sidebar_banner_title', array(
+        'label'   => __('バナーセクションのタイトル', 'kiyoshi'),
+        'section' => 'kiyoshi_sidebar_banner_section',
+        'type'    => 'text',
+    ));
+}
+
 /* Load other function files */
 $function_files = [
     '/functions/custom-post.php',

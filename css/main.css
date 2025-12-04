@@ -55,6 +55,11 @@ main {
   font-family: "Source Code Pro", monospace;
 }
 
+/* Sidebar banner: add margin around banner widgets */
+.sidebar_banner_widget {
+  margin: 5px;
+}
+
 /* Side */
 #side .side_title {
   border-top: 3px solid #777;

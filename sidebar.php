@@ -10,6 +10,20 @@
         </div>
     </section>
 
+    <?php
+    $sidebar_banner_title = get_theme_mod('sidebar_banner_title', __('バナー', 'kiyoshi'));
+    ?>
+    <section class="sidebar_banner">
+        <div class="side_title">
+            <p><?php echo esc_html($sidebar_banner_title); ?></p>
+        </div>
+        <?php if (is_active_sidebar('sidebar-banner')) : ?>
+            <?php dynamic_sidebar('sidebar-banner'); ?>
+        <?php else : ?>
+            <p class="banner_placeholder"><?php esc_html_e('外観 > ウィジェット からバナーを設定してください。', 'kiyoshi'); ?></p>
+        <?php endif; ?>
+    </section>
+
     <section>
         <div class="side_title">
             <p>最新ブログ記事</p>
