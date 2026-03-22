@@ -12,9 +12,19 @@ function show_Linkcard($atts) {
     //画像サイズの高さを指定
     $img_height = "170";
     
-    //OGP情報を取得
-    require_once 'OpenGraph.php';
-    $graph = OpenGraph::fetch($url);
+    //OGP情報を取得（テーマディレクトリ内のOpenGraphを読み込み）
+    if (!class_exists('OpenGraph')) {
+        $ogp_path = get_template_directory() . '/OpenGraph.php';
+        if (file_exists($ogp_path)) {
+            require_once $ogp_path;
+        }
+    }
+
+    if (class_exists('OpenGraph')) {
+        $graph = OpenGraph::fetch($url);
+    } else {
+        return '<!-- OpenGraph.php not found -->';
+    }
     
     //OGPタグからタイトルを取得
     $Link_title = $graph->title;
