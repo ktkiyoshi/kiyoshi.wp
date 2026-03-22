@@ -25,23 +25,30 @@ function show_Linkcard($atts) {
     } else {
         return '<!-- OpenGraph.php not found -->';
     }
+    $graph = $graph ?: null;
     
     //OGPタグからタイトルを取得
-    $Link_title = $graph->title;
+    $Link_title = ($graph && !empty($graph->title)) ? $graph->title : '';
     if(!empty($title)){
         $Link_title = $title;//title=""の入力がある場合はそちらを優先
     }
         
     //OGPタグからdescriptionを取得（抜粋文として利用）
-    $Link_description = wp_trim_words($graph->description, 60, '…' );//文字数は任意で変更
+    $description_source = ($graph && !empty($graph->description)) ? $graph->description : '';
+    $Link_description = wp_trim_words($description_source, 60, '…' );//文字数は任意で変更
     if(!empty($excerpt)){
         $Link_description = $excerpt;//値を取得できない時は手動でexcerpt=""を入力
     }
     
     //wordpress.comのAPIを利用してスクリーンショットを取得
     $screenShot = 'https://s.wordpress.com/mshots/v1/'. urlencode(esc_url(rtrim( $url, '/' ))) .'?w='. $img_width .'&h='.$img_height.'';
-    //スクリーンショットを表示
-    $xLink_img = '<img src="'. $screenShot .'" width="'. $img_width .'" />';
+    //OGP画像を優先し、なければスクリーンショットを表示
+    $og_image = ($graph && !empty($graph->image)) ? esc_url($graph->image) : '';
+    if (!empty($og_image)) {
+        $xLink_img = '<img src="'. $og_image .'" width="'. $img_width .'" />';
+    } else {
+        $xLink_img = '<img src="'. $screenShot .'" width="'. $img_width .'" />';
+    }
     
     //ファビコンを取得（GoogleのAPIでスクレイピング）
     $host = parse_url($url)['host'];
