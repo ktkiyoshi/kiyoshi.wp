@@ -118,3 +118,58 @@ function my_note_feed($feedURL, $num)
         }
     }
 }
+
+/* OGP tag */
+function custom_ogp() {
+  // フロントページ、ホーム、または個別ページの場合にOGPタグを出力
+  if( is_front_page() || is_home() || is_singular() ){
+    global $post;
+    $ogp_title = '';
+    $ogp_descr = '';
+    $ogp_url = '';
+    $ogp_img = '';
+    $insert = '';
+
+    // 記事＆固定ページの場合
+    if( is_singular() ) { 
+       setup_postdata($post);
+       $ogp_title = $post->post_title; 
+       $ogp_descr = mb_substr(get_the_excerpt(), 0, 100); // 記事を100文字抜粋
+       $ogp_url = get_permalink(); 
+       wp_reset_postdata();
+    // トップページの場合
+    } elseif ( is_front_page() || is_home() ) { 
+       $ogp_title = get_bloginfo('name'); 
+       $ogp_descr = get_bloginfo('description'); 
+       $ogp_url = home_url(); // サイトのURL
+    }
+
+    // 共通のOGPタグ設定
+    $ogp_type = ( is_front_page() || is_home() ) ? 'website' : 'article';
+
+    if ( is_singular() && has_post_thumbnail() ) {
+       $ps_thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full');
+       $ogp_img = $ps_thumb[0]; 
+    } else {
+       $ogp_img = 'https://kt-kiyoshi.com/wp/images/nophoto.jpg'; //アップロードしたOGP画像のURLを入力
+    }
+
+    // OGPタグのアウトプット
+    $insert .= '<meta property="og:title" content="'.esc_attr($ogp_title).'" />' . "\n";
+    $insert .= '<meta property="og:description" content="'.esc_attr($ogp_descr).'" />' . "\n";
+    $insert .= '<meta property="og:type" content="'.$ogp_type.'" />' . "\n";
+    $insert .= '<meta property="og:url" content="'.esc_url($ogp_url).'" />' . "\n";
+    $insert .= '<meta property="og:image" content="'.esc_url($ogp_img).'" />' . "\n";
+    $insert .= '<meta property="og:site_name" content="'.esc_attr(get_bloginfo('name')).'" />' . "\n";
+    $insert .= '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+    $insert .= '<meta name="twitter:site" content="@ktkiyoshi" />' . "\n";//Xのアカウント名を入力
+    $insert .= '<meta property="og:locale" content="ja_JP" />' . "\n";
+    // FacebookのOGPタグ設定
+    // $insert .= '<meta property="fb:app_id" content="FBのappID">' . "\n";//FacebookのappIDを入力
+
+    echo $insert;
+  }
+} // END custom_ogp
+
+// headにOGPタグを出力するアクションを追加
+add_action('wp_head','custom_ogp');
