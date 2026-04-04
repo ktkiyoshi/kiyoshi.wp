@@ -23,6 +23,11 @@
                     the_content(); ?>
                 </section>
                 <?php require_once("parts/social_button.php"); ?>
+                <?php if (function_exists('render_rmobile_banner')) : ?>
+                    <div class="sp_footer_banner">
+                        <?php render_rmobile_banner(); ?>
+                    </div>
+                <?php endif; ?>
             </article>
         </div><!-- /#content -->
     </main>

@@ -110,6 +110,44 @@ function kiyoshi_customize_sidebar_banner($wp_customize)
     ));
 }
 
+if (!function_exists('render_rmobile_banner')) {
+    /**
+     * Output the reusable sidebar banner section.
+     */
+    function render_rmobile_banner($extra_classes = '')
+    {
+        $sidebar_banner_title = get_theme_mod('sidebar_banner_title', __('バナー', 'kiyoshi'));
+
+        $classes = ['sidebar_banner'];
+        if (!empty($extra_classes)) {
+            if (!is_array($extra_classes)) {
+                $extra_classes = preg_split('/\s+/', (string) $extra_classes);
+            }
+            foreach ($extra_classes as $class_name) {
+                $class_name = trim((string) $class_name);
+                if ($class_name === '') {
+                    continue;
+                }
+                $classes[] = sanitize_html_class($class_name);
+            }
+        }
+        $classes = array_unique(array_filter($classes));
+
+        ?>
+        <section class="<?php echo esc_attr(implode(' ', $classes)); ?>">
+            <div class="side_title">
+                <p><?php echo esc_html($sidebar_banner_title); ?></p>
+            </div>
+            <?php if (is_active_sidebar('sidebar-banner')) : ?>
+                <?php dynamic_sidebar('sidebar-banner'); ?>
+            <?php else : ?>
+                <p class="banner_placeholder"><?php esc_html_e('外観 > ウィジェット からバナーを設定してください。', 'kiyoshi'); ?></p>
+            <?php endif; ?>
+        </section>
+        <?php
+    }
+}
+
 /* Load other function files */
 $function_files = [
     '/functions/custom-post.php',
