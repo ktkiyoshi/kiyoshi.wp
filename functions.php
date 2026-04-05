@@ -112,13 +112,30 @@ function kiyoshi_customize_sidebar_banner($wp_customize)
 
 if (!function_exists('render_rmobile_banner')) {
     /**
-     * Output the reusable sidebar banner section.
+     * Output the reusable sidebar/mobile banner section with context-aware heading & wrapper.
      */
-    function render_rmobile_banner($extra_classes = '')
+    function render_rmobile_banner($extra_classes = '', $heading_variant = 'sidebar', $context = 'sidebar')
     {
         $sidebar_banner_title = get_theme_mod('sidebar_banner_title', __('バナー', 'kiyoshi'));
 
+        $wrapper_tag = 'section';
         $classes = ['sidebar_banner'];
+        switch ($context) {
+            case 'content':
+                $wrapper_tag = 'div';
+                $classes = ['content_banner'];
+                break;
+            case 'top':
+                $wrapper_tag = 'div';
+                $classes = ['top_banner'];
+                break;
+        }
+
+        $allowed_wrapper_tags = ['section', 'div'];
+        if (!in_array($wrapper_tag, $allowed_wrapper_tags, true)) {
+            $wrapper_tag = 'div';
+        }
+
         if (!empty($extra_classes)) {
             if (!is_array($extra_classes)) {
                 $extra_classes = preg_split('/\s+/', (string) $extra_classes);
@@ -133,17 +150,35 @@ if (!function_exists('render_rmobile_banner')) {
         }
         $classes = array_unique(array_filter($classes));
 
+        $heading_markup = '';
+        switch ($heading_variant) {
+            case 'content':
+                $heading_markup = '<h2 class="sp_banner_title">' . esc_html($sidebar_banner_title) . '</h2>';
+                break;
+            case 'top':
+                $heading_markup = '<div class="panel_title">' . esc_html($sidebar_banner_title) . '</div>';
+                break;
+            case 'sidebar':
+            default:
+                ob_start();
+                ?>
+                <div class="side_title">
+                    <p><?php echo esc_html($sidebar_banner_title); ?></p>
+                </div>
+                <?php
+                $heading_markup = ob_get_clean();
+                break;
+        }
+
         ?>
-        <section class="<?php echo esc_attr(implode(' ', $classes)); ?>">
-            <div class="side_title">
-                <p><?php echo esc_html($sidebar_banner_title); ?></p>
-            </div>
+        <<?php echo esc_html($wrapper_tag); ?> class="<?php echo esc_attr(implode(' ', $classes)); ?>">
+            <?php echo $heading_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
             <?php if (is_active_sidebar('sidebar-banner')) : ?>
                 <?php dynamic_sidebar('sidebar-banner'); ?>
             <?php else : ?>
                 <p class="banner_placeholder"><?php esc_html_e('外観 > ウィジェット からバナーを設定してください。', 'kiyoshi'); ?></p>
             <?php endif; ?>
-        </section>
+        </<?php echo esc_html($wrapper_tag); ?>>
         <?php
     }
 }

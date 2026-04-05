@@ -196,5 +196,10 @@
                 ?>
             </section>
         </div>
+        <?php if (function_exists('render_rmobile_banner')) : ?>
+            <div class="sp_footer_banner">
+                <?php render_rmobile_banner('', 'top', 'top'); ?>
+            </div>
+        <?php endif; ?>
     </main>
     <?php get_footer(); ?>

@@ -25,7 +25,7 @@
                 <?php require_once("parts/social_button.php"); ?>
                 <?php if (function_exists('render_rmobile_banner')) : ?>
                     <div class="sp_footer_banner">
-                        <?php render_rmobile_banner(); ?>
+                        <?php render_rmobile_banner('', 'content', 'content'); ?>
                     </div>
                 <?php endif; ?>
             </article>
