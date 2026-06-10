@@ -85,6 +85,15 @@
                 wp_reset_query();
                 ?>
             </section>
+
+            <section>
+            <?php if (function_exists('render_rmobile_banner')) : ?>
+                <div class="sp_campaign_banner">
+                    <?php render_rmobile_banner('', 'top', 'top'); ?>
+                </div>
+            <?php endif; ?>
+            </section>
+
             <section class="panels">
                 <div class="panel_title">note</div>
             </section>
@@ -116,6 +125,7 @@
                     </article>
                 <?php endforeach; ?>
             </section>
+
             <section class="panels">
                 <div class="panel_title">ポケモン記事</div>
             </section>
@@ -196,10 +206,5 @@
                 ?>
             </section>
         </div>
-        <?php if (function_exists('render_rmobile_banner')) : ?>
-            <div class="sp_footer_banner">
-                <?php render_rmobile_banner('', 'top', 'top'); ?>
-            </div>
-        <?php endif; ?>
     </main>
     <?php get_footer(); ?>
