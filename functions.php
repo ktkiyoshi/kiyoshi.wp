@@ -40,16 +40,18 @@ add_action('wp_enqueue_scripts', 'load_style_script');
 function load_style_script()
 {
     // CSS
-    wp_enqueue_style('default', get_template_directory_uri() . '/css/dist/default.min.css', array(), '1.0.0', '');
-    wp_enqueue_style('navi', get_template_directory_uri() . '/css/dist/navi.min.css', array(), '1.0.0', '');
-    wp_enqueue_style('main', get_template_directory_uri() . '/css/dist/main.min.css', array(), '1.0.0', '');
+    $dist = get_template_directory() . '/css/dist/';
+    $uri  = get_template_directory_uri() . '/css/dist/';
+    wp_enqueue_style('default', $uri . 'default.min.css', array(), filemtime($dist . 'default.min.css'), '');
+    wp_enqueue_style('navi', $uri . 'navi.min.css', array(), filemtime($dist . 'navi.min.css'), '');
+    wp_enqueue_style('main', $uri . 'main.min.css', array(), filemtime($dist . 'main.min.css'), '');
     if ((is_page() || is_singular() || is_404()) && !is_page('gallery') && !is_page('note')) {
-        wp_enqueue_style('single', get_template_directory_uri() . '/css/dist/single.min.css', array(), '1.0.0', '');
+        wp_enqueue_style('single', $uri . 'single.min.css', array(), filemtime($dist . 'single.min.css'), '');
     }
-    wp_enqueue_style('blogcard', get_template_directory_uri() . '/css/dist/blogcard.min.css', array(), '1.0.0', '');
+    wp_enqueue_style('blogcard', $uri . 'blogcard.min.css', array(), filemtime($dist . 'blogcard.min.css'), '');
 
     // 3rd vendor CSS
-    wp_enqueue_style('awesome', get_template_directory_uri() . '/css/dist/font-awesome.min.css', array(), '1.0.0', '');
+    wp_enqueue_style('awesome', $uri . 'font-awesome.min.css', array(), filemtime($dist . 'font-awesome.min.css'), '');
     wp_enqueue_style('source', '//fonts.googleapis.com/css?family=Monda|Source+Code+Pro', array(), '1.0.0', '');
     wp_enqueue_style('tomorrow', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-blue.min.css', array(), '1.0.0', '');
 
