@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*
+ * 投稿編集画面（ブロック / クラシックエディター）のフォントを
+ * 実際の投稿表示（css/main.css・css/single.css）に合わせるためのスタイル。
+ * add_theme_support('editor-styles') により body 等のセレクタは
+ * WordPress 側で自動的にエディター領域へスコープされる。
+ */
+
+/* Site base (= css/main.css body) */
+body {
+  font: 15px / 1.7 "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro", Meiryo, "メイリオ", "ＭＳ Ｐゴシック", Helvetica,
+    Sans-Serif, serif;
+  letter-spacing: 0.5px;
+  color: #666;
+  word-break: break-all;
+}
+
+/* Entry 本文 (= css/single.css .entry) */
+p {
+  font-size: 1.125rem;
+  line-height: 2.25rem;
+  margin: 25px 0;
+}
+ul,
+ol {
+  font-size: 1.125rem;
+  line-height: 2.25rem;
+}
+blockquote p {
+  font-size: 1rem;
+  line-height: 1.85rem;
+}
+
+/* 見出し (= css/main.css h1-h4) */
+h1 {
+  font-size: 1.85rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.65rem;
+  font-weight: bolder;
+  line-height: 2.25rem;
+  border-bottom: 2px solid #b92a2c;
+}
+h3 {
+  font-size: 1.35rem;
+  font-weight: bolder;
+  line-height: 2.25rem;
+  border-bottom: 1px solid #999;
+}
+h4 {
+  font-size: 1.15rem;
+  font-weight: bolder;
+  line-height: 2.25rem;
+  border-bottom: 1px solid #999;
+}
+
+/* コード (= css 内 "Source Code Pro") */
+code,
+pre {
+  font-family: "Source Code Pro", monospace;
+}
