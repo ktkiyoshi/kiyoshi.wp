@@ -201,6 +201,7 @@ $function_files = [
     '/functions/custom-post.php',
     '/functions/utils.php',
     '/functions/blog-card.php',
+    '/functions/live-preview.php',
 ];
 foreach ($function_files as $file) {
     if ((file_exists(__DIR__ . $file))) { // ファイルが存在する場合
